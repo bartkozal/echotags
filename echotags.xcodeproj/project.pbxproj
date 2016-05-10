@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1E838921CE23596001653AD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E838911CE23596001653AD /* MapKit.framework */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
 		A1F2A0E21CE2030000593EB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0E11CE2030000593EB0 /* ViewController.swift */; };
 		A1F2A0E51CE2030000593EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A0E31CE2030000593EB0 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		63C7BD4540E37EBE6B729417 /* Pods_echotags.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_echotags.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB152ABA1050BB7CB71A5BF /* Pods-echotags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.debug.xcconfig"; sourceTree = "<group>"; };
+		A1E838911CE23596001653AD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1F2A0E11CE2030000593EB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E838921CE23596001653AD /* MapKit.framework in Frameworks */,
 				DEA8C9293083A86A2B653A3E /* Pods_echotags.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +86,7 @@
 		C162163EB18D2D04A0F90692 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1E838911CE23596001653AD /* MapKit.framework */,
 				63C7BD4540E37EBE6B729417 /* Pods_echotags.framework */,
 			);
 			name = Frameworks;
