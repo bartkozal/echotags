@@ -1,18 +1,21 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  echotags
 //
-//  Created by bkzl on 10/05/16.
+//  Created by bkzl on 11/05/16.
 //  Copyright © 2016 bkzl. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
+    @IBAction internal func unwindToHomeViewController (sender: UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
