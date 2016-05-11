@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1E838921CE23596001653AD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E838911CE23596001653AD /* MapKit.framework */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
 		A1F2A0E21CE2030000593EB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0E11CE2030000593EB0 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		63C7BD4540E37EBE6B729417 /* Pods_echotags.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_echotags.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB152ABA1050BB7CB71A5BF /* Pods-echotags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.debug.xcconfig"; sourceTree = "<group>"; };
+		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1E838911CE23596001653AD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A1F2A0E11CE2030000593EB0 /* ViewController.swift */,
+				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
 				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			files = (
 				A1F2A0E21CE2030000593EB0 /* ViewController.swift in Sources */,
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
+				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
