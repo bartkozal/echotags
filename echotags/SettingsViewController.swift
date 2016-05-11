@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class SettingsViewController: UIViewController {
+    @IBOutlet weak var checkbox: BEMCheckBox!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkbox.onAnimationType = .Bounce
+        checkbox.offAnimationType = .Bounce
     }
 
     override func didReceiveMemoryWarning() {
