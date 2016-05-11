@@ -79,8 +79,8 @@
 				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
 				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
-				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
+				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
 			);
 			path = echotags;
