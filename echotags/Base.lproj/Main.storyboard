@@ -36,7 +36,7 @@
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="eUb-bE-RYC" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="b72-IS-iCw"/>
+                                            <segue destination="lrS-sX-cxy" kind="unwind" unwindAction="unwindToHomeViewController:" id="dbP-Be-RfM"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
@@ -121,6 +121,7 @@ For the first run we would like to ask you for the localization permission and a
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="lrS-sX-cxy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1425.5" y="1776.5"/>
         </scene>
@@ -147,7 +148,7 @@ For the first run we would like to ask you for the localization permission and a
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="eUb-bE-RYC" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="bdE-MQ-uJt"/>
+                                            <segue destination="Txk-Fh-3Mg" kind="unwind" unwindAction="unwindToHomeViewController:" id="0Lz-vm-Opd"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-2" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-lj-hX7">
@@ -278,6 +279,7 @@ For the first run we would like to ask you for the localization permission and a
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-3h-mvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Txk-Fh-3Mg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1944.5" y="1776.5"/>
         </scene>
@@ -304,7 +306,7 @@ For the first run we would like to ask you for the localization permission and a
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="eUb-bE-RYC" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="sPB-cy-pTX"/>
+                                            <segue destination="Jik-MY-4FW" kind="unwind" unwindAction="unwindToHomeViewController:" id="wYR-gt-Ume"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-3" translatesAutoresizingMaskIntoConstraints="NO" id="Xnf-t0-UTN">
@@ -414,10 +416,10 @@ For the first run we would like to ask you for the localization permission and a
             </objects>
             <point key="canvasLocation" x="2487.5" y="1776.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Overlay View Controller-->
         <scene sceneID="Jea-CK-qjV">
             <objects>
-                <viewController id="eUb-bE-RYC" sceneMemberID="viewController">
+                <viewController id="eUb-bE-RYC" customClass="OverlayViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocL-Ap-gfk"/>
                         <viewControllerLayoutGuide type="bottom" id="uhq-pd-Q5b"/>
@@ -428,7 +430,41 @@ For the first run we would like to ask you for the localization permission and a
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-b4-Blt">
+                                        <rect key="frame" x="207" y="563" width="88" height="59"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
+                                        <rect key="frame" x="75" y="505" width="265" height="43"/>
+                                        <string key="text">Settings are there if you'll need them.
+Tap anywhere to close this overlay.</string>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA0-f1-VdC" customClass="DesignableView" customModule="Spring">
+                                        <rect key="frame" x="307" y="599" width="84" height="84"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="7lo-6x-5sp"/>
+                                            <constraint firstAttribute="height" constant="84" id="LQa-WU-vM3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="42"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="F5F-b4-Blt" firstAttribute="top" secondItem="Vkj-Ox-Lk7" secondAttribute="bottom" constant="15" id="Bqr-ag-I6r"/>
+                                    <constraint firstAttribute="trailing" secondItem="eA0-f1-VdC" secondAttribute="trailing" constant="-16" id="Uxg-EH-aH7"/>
+                                    <constraint firstItem="Vkj-Ox-Lk7" firstAttribute="centerX" secondItem="F5F-b4-Blt" secondAttribute="centerX" constant="-44" id="d9e-Y1-Szd"/>
+                                    <constraint firstAttribute="bottom" secondItem="eA0-f1-VdC" secondAttribute="bottom" constant="-16" id="gS3-KZ-8ZC"/>
+                                    <constraint firstAttribute="trailing" secondItem="F5F-b4-Blt" secondAttribute="trailing" constant="80" id="tij-uu-Qiz"/>
+                                    <constraint firstAttribute="bottom" secondItem="F5F-b4-Blt" secondAttribute="bottom" constant="45" id="xEF-5b-8Ef"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -437,7 +473,7 @@ For the first run we would like to ask you for the localization permission and a
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="EqS-fN-jbD"/>
                             <constraint firstItem="uhq-pd-Q5b" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="N8Q-fh-BWq"/>
@@ -449,7 +485,7 @@ For the first run we would like to ask you for the localization permission and a
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQO-MN-44d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WOY-MP-zHb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1944.5" y="2707.5"/>
+            <point key="canvasLocation" x="907.5" y="1776.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="eUt-nJ-LtZ">
@@ -509,19 +545,32 @@ For the first run we would like to ask you for the localization permission and a
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mr-kQ-nH3">
                                 <rect key="frame" x="146" y="627" width="82" height="30"/>
-                                <state key="normal" title="Test tutorial"/>
+                                <state key="normal" title="Test tutorial">
+                                    <color key="titleColor" red="0.88235294119999996" green="0.23529411759999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6wg-az-eGM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOV-EJ-Ej6">
+                                <rect key="frame" x="146" y="597" width="83" height="30"/>
+                                <state key="normal" title="Test overlay">
+                                    <color key="titleColor" red="0.88235294119999996" green="0.23529411759999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eUb-bE-RYC" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="3AI-En-k5w"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8Mr-kQ-nH3" firstAttribute="top" secondItem="pOV-EJ-Ej6" secondAttribute="bottom" id="01N-6H-38r"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="top" secondItem="b02-4k-5ac" secondAttribute="bottom" constant="8" id="1vl-Zk-lsK"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="3dP-4Q-zYM"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AFn-Td-hTd"/>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AY3-Gk-wC9"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
+                            <constraint firstItem="pOV-EJ-Ej6" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="LCT-rl-zAl"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="QmC-8L-3Io" secondAttribute="bottom" id="PLm-et-QvS"/>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="PPJ-By-LAS"/>
                             <constraint firstAttribute="trailing" secondItem="ofR-6D-YPC" secondAttribute="trailing" id="R3g-ur-LUw"/>
@@ -776,6 +825,7 @@ For the first run we would like to ask you for the localization permission and a
         </scene>
     </scenes>
     <resources>
+        <image name="icon-arrow" width="88" height="59"/>
         <image name="icon-download" width="21" height="20"/>
         <image name="icon-download-outline" width="22" height="20"/>
         <image name="icon-indicator-1" width="42" height="10"/>
@@ -784,7 +834,4 @@ For the first run we would like to ask you for the localization permission and a
         <image name="icon-permissions-outline" width="20" height="20"/>
         <image name="icon-settings" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="sPB-cy-pTX"/>
-    </inferredMetricsTieBreakers>
 </document>
