@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642F71CE7C42400ABE7BF /* MaskLayer.swift */; };
 		A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175F2581CE39EAD00A14B2E /* HomeViewController.swift */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1E838921CE23596001653AD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E838911CE23596001653AD /* MapKit.framework */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		7F98CC84396B9733BF8C19B8 /* Pods-echotags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.debug.xcconfig"; sourceTree = "<group>"; };
+		A10642F71CE7C42400ABE7BF /* MaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayer.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A175F2581CE39EAD00A14B2E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
 				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
+				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
 				A10642F61CE7C3EB00ABE7BF /* Supporting Files */,
 			);
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */,
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
 				A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */,

@@ -490,7 +490,7 @@ For the first run we would like to ask you for the localization permission and a
                                     <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="SLI-Jx-emR"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
@@ -499,9 +499,6 @@ For the first run we would like to ask you for the localization permission and a
                                             <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="pAf-M9-9BD"/>
                                         </connections>
                                     </button>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-b4-Blt">
-                                        <rect key="frame" x="207" y="563" width="88" height="59"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
                                         <rect key="frame" x="75" y="505" width="265" height="43"/>
                                         <string key="text">Settings are there if you'll need them.
@@ -510,6 +507,9 @@ Tap anywhere to close this overlay.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" image="icon-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-b4-Blt">
+                                        <rect key="frame" x="207" y="563" width="88" height="59"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80338983050000001" colorSpace="calibratedRGB"/>
                                 <constraints>
