@@ -684,62 +684,19 @@ Tap anywhere to close this overlay.</string>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food &amp; Drink" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLm-ic-KSR" customClass="DesignableLabel" customModule="Spring">
-                                        <rect key="frame" x="55" y="299" width="92" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightlife" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tV-3V-R9j" customClass="DesignableLabel" customModule="Spring">
-                                        <rect key="frame" x="55" y="342" width="60" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64M-NN-3sF" customClass="BEMCheckBox">
-                                        <rect key="frame" x="15" y="337" width="28" height="28"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="0sq-C3-2VL"/>
-                                            <constraint firstAttribute="width" constant="28" id="4de-du-F4d"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
-                                                <color key="value" red="0.2274509804" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
-                                                <color key="value" red="0.2274509804" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
+                                        <rect key="frame" x="53" y="293" width="90" height="30"/>
+                                        <state key="normal" title="Food &amp; Drink">
+                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchCheckboxLabel:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="cRA-fk-PDs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="hPI-pe-HGu" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="2u9-gA-Q1s"/>
-                                    <constraint firstItem="64M-NN-3sF" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="6Sq-2D-UNq"/>
                                     <constraint firstItem="KZN-h5-GOn" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="8mk-TJ-OBG"/>
                                     <constraint firstItem="hm5-nn-rZd" firstAttribute="top" secondItem="hCt-65-i1m" secondAttribute="bottom" constant="20" id="ANb-Cy-7yN"/>
                                     <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="hm5-nn-rZd" secondAttribute="bottom" constant="20" id="Bhm-9R-d0B"/>
@@ -747,16 +704,13 @@ Tap anywhere to close this overlay.</string>
                                     <constraint firstAttribute="trailing" secondItem="hPI-pe-HGu" secondAttribute="trailing" id="I8f-HS-sdX"/>
                                     <constraint firstAttribute="bottom" secondItem="PVp-cY-MlJ" secondAttribute="bottom" id="IcW-w1-Wzf"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="top" secondItem="Y6m-Ta-1Vp" secondAttribute="bottom" constant="20" id="P39-xU-5wK"/>
+                                    <constraint firstItem="Pbe-oB-dpg" firstAttribute="leading" secondItem="KZN-h5-GOn" secondAttribute="trailing" constant="10" id="PwG-5F-Wbl"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="X0d-gX-RI4"/>
-                                    <constraint firstItem="6tV-3V-R9j" firstAttribute="centerY" secondItem="64M-NN-3sF" secondAttribute="centerY" id="YzE-wf-DVG"/>
                                     <constraint firstAttribute="trailing" secondItem="PVp-cY-MlJ" secondAttribute="trailing" id="ZZo-il-OTU"/>
                                     <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="a1V-CD-VpQ"/>
-                                    <constraint firstItem="PLm-ic-KSR" firstAttribute="centerY" secondItem="KZN-h5-GOn" secondAttribute="centerY" id="gNF-Gg-OrC"/>
-                                    <constraint firstItem="64M-NN-3sF" firstAttribute="top" secondItem="KZN-h5-GOn" secondAttribute="bottom" constant="15" id="iQh-6c-GEH"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="top" id="k5O-lO-06J"/>
-                                    <constraint firstItem="PLm-ic-KSR" firstAttribute="leading" secondItem="KZN-h5-GOn" secondAttribute="trailing" constant="12" id="nda-Rb-Crz"/>
-                                    <constraint firstItem="6tV-3V-R9j" firstAttribute="leading" secondItem="64M-NN-3sF" secondAttribute="trailing" constant="12" id="pIi-HU-H2v"/>
+                                    <constraint firstItem="Pbe-oB-dpg" firstAttribute="centerY" secondItem="KZN-h5-GOn" secondAttribute="centerY" id="mUa-xC-hBo"/>
                                     <constraint firstItem="hm5-nn-rZd" firstAttribute="centerX" secondItem="S4C-Jq-KN2" secondAttribute="centerX" id="vtI-57-a8n"/>
                                     <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                 </constraints>
@@ -780,7 +734,6 @@ Tap anywhere to close this overlay.</string>
                     </view>
                     <connections>
                         <outlet property="checkbox" destination="KZN-h5-GOn" id="aeM-Ye-YQm"/>
-                        <outlet property="checkbox2" destination="64M-NN-3sF" id="edd-MJ-aQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41m-U5-ThT" userLabel="First Responder" sceneMemberID="firstResponder"/>
