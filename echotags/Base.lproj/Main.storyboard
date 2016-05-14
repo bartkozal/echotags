@@ -490,7 +490,7 @@ For the first run we would like to ask you for the localization permission and a
                                     <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="SLI-Jx-emR"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
@@ -510,26 +510,11 @@ Tap anywhere to close this overlay.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA0-f1-VdC" customClass="DesignableView" customModule="Spring">
-                                        <rect key="frame" x="307" y="599" width="84" height="84"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="7lo-6x-5sp"/>
-                                            <constraint firstAttribute="height" constant="84" id="LQa-WU-vM3"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="42"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80338983050000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="F5F-b4-Blt" firstAttribute="top" secondItem="Vkj-Ox-Lk7" secondAttribute="bottom" constant="15" id="Bqr-ag-I6r"/>
-                                    <constraint firstAttribute="trailing" secondItem="eA0-f1-VdC" secondAttribute="trailing" constant="-16" id="Uxg-EH-aH7"/>
                                     <constraint firstItem="Vkj-Ox-Lk7" firstAttribute="centerX" secondItem="F5F-b4-Blt" secondAttribute="centerX" constant="-44" id="d9e-Y1-Szd"/>
-                                    <constraint firstAttribute="bottom" secondItem="eA0-f1-VdC" secondAttribute="bottom" constant="-16" id="gS3-KZ-8ZC"/>
                                     <constraint firstAttribute="trailing" secondItem="F5F-b4-Blt" secondAttribute="trailing" constant="80" id="tij-uu-Qiz"/>
                                     <constraint firstAttribute="bottom" secondItem="F5F-b4-Blt" secondAttribute="bottom" constant="45" id="xEF-5b-8Ef"/>
                                 </constraints>
