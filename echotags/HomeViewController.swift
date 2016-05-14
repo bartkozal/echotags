@@ -18,6 +18,10 @@ class HomeViewController: UIViewController {
         overlayView.hidden = !overlayView.hidden
     }
     
+    @IBAction func touchTestTutorial(sender: UIButton) {
+        performSegueWithIdentifier("tutorialSegue", sender: self)
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -30,4 +34,6 @@ class HomeViewController: UIViewController {
         
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
     }
+    
+    
 }

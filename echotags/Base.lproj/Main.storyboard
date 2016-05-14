@@ -81,7 +81,7 @@ For the first run we would like to ask you for the localization permission and a
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="dFO-Bs-lys" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="a3c-Gq-h4O"/>
+                                            <segue destination="dFO-Bs-lys" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="a3c-Gq-h4O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -472,22 +472,13 @@ For the first run we would like to ask you for the localization permission and a
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mr-kQ-nH3">
-                                <rect key="frame" x="146" y="627" width="82" height="30"/>
-                                <state key="normal" title="Test tutorial">
-                                    <color key="titleColor" red="0.88235294119999996" green="0.23529411759999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2O-GD-JGg">
+                                <rect key="frame" x="145" y="622" width="85" height="30"/>
+                                <state key="normal" title="Test Tutorial">
+                                    <color key="titleColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6wg-az-eGM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOV-EJ-Ej6">
-                                <rect key="frame" x="146" y="597" width="83" height="30"/>
-                                <state key="normal" title="Test overlay">
-                                    <color key="titleColor" red="0.88235294119999996" green="0.23529411759999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="SLI-Jx-emR"/>
+                                    <action selector="touchTestTutorial:" destination="NdK-S1-o1x" eventType="touchUpInside" id="ASz-GY-2wB"/>
                                 </connections>
                             </button>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
@@ -522,7 +513,7 @@ Tap anywhere to close this overlay.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Mr-kQ-nH3" firstAttribute="top" secondItem="pOV-EJ-Ej6" secondAttribute="bottom" id="01N-6H-38r"/>
+                            <constraint firstItem="k2O-GD-JGg" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="16R-jd-HJQ"/>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="top" secondItem="b02-4k-5ac" secondAttribute="bottom" constant="8" id="1vl-Zk-lsK"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="3dP-4Q-zYM"/>
@@ -530,16 +521,14 @@ Tap anywhere to close this overlay.</string>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AY3-Gk-wC9"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
-                            <constraint firstItem="pOV-EJ-Ej6" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="LCT-rl-zAl"/>
+                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="k2O-GD-JGg" secondAttribute="bottom" constant="15" id="Kec-KL-r0J"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="QmC-8L-3Io" secondAttribute="bottom" id="PLm-et-QvS"/>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="PPJ-By-LAS"/>
                             <constraint firstAttribute="trailing" secondItem="ofR-6D-YPC" secondAttribute="trailing" id="R3g-ur-LUw"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TuT-TS-zre"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="hs8-EM-LLh"/>
-                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="8Mr-kQ-nH3" secondAttribute="bottom" constant="10" id="iE1-hv-2NK"/>
                             <constraint firstAttribute="trailing" secondItem="QmC-8L-3Io" secondAttribute="trailing" id="iaO-Or-dNh"/>
-                            <constraint firstItem="8Mr-kQ-nH3" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="ivI-kz-Rb8"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="mQ2-Ec-6QC"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="ofR-6D-YPC" secondAttribute="bottom" id="pAQ-qF-gQX"/>
                         </constraints>
@@ -547,6 +536,7 @@ Tap anywhere to close this overlay.</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="xDk-57-4aP"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="tutorialSegue" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="rqx-1u-ZEn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
