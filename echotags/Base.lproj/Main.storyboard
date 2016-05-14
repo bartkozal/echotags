@@ -416,77 +416,6 @@ For the first run we would like to ask you for the localization permission and a
             </objects>
             <point key="canvasLocation" x="2487.5" y="1776.5"/>
         </scene>
-        <!--Overlay View Controller-->
-        <scene sceneID="Jea-CK-qjV">
-            <objects>
-                <viewController id="eUb-bE-RYC" customClass="OverlayViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ocL-Ap-gfk"/>
-                        <viewControllerLayoutGuide type="bottom" id="uhq-pd-Q5b"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="buq-Hj-0jf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-b4-Blt">
-                                        <rect key="frame" x="207" y="563" width="88" height="59"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
-                                        <rect key="frame" x="75" y="505" width="265" height="43"/>
-                                        <string key="text">Settings are there if you'll need them.
-Tap anywhere to close this overlay.</string>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA0-f1-VdC" customClass="DesignableView" customModule="Spring">
-                                        <rect key="frame" x="307" y="599" width="84" height="84"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="7lo-6x-5sp"/>
-                                            <constraint firstAttribute="height" constant="84" id="LQa-WU-vM3"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="42"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="F5F-b4-Blt" firstAttribute="top" secondItem="Vkj-Ox-Lk7" secondAttribute="bottom" constant="15" id="Bqr-ag-I6r"/>
-                                    <constraint firstAttribute="trailing" secondItem="eA0-f1-VdC" secondAttribute="trailing" constant="-16" id="Uxg-EH-aH7"/>
-                                    <constraint firstItem="Vkj-Ox-Lk7" firstAttribute="centerX" secondItem="F5F-b4-Blt" secondAttribute="centerX" constant="-44" id="d9e-Y1-Szd"/>
-                                    <constraint firstAttribute="bottom" secondItem="eA0-f1-VdC" secondAttribute="bottom" constant="-16" id="gS3-KZ-8ZC"/>
-                                    <constraint firstAttribute="trailing" secondItem="F5F-b4-Blt" secondAttribute="trailing" constant="80" id="tij-uu-Qiz"/>
-                                    <constraint firstAttribute="bottom" secondItem="F5F-b4-Blt" secondAttribute="bottom" constant="45" id="xEF-5b-8Ef"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="WOY-MP-zHb" kind="unwind" unwindAction="unwindToHomeViewController:" id="3d3-G2-YaK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="EqS-fN-jbD"/>
-                            <constraint firstItem="uhq-pd-Q5b" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="N8Q-fh-BWq"/>
-                            <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="buq-Hj-0jf" secondAttribute="leading" id="cmO-9s-72r"/>
-                            <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="buq-Hj-0jf" secondAttribute="top" id="k5V-6G-JQd"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aQO-MN-44d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="WOY-MP-zHb" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="907.5" y="1776.5"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="eUt-nJ-LtZ">
             <objects>
@@ -558,23 +487,71 @@ Tap anywhere to close this overlay.</string>
                                     <color key="titleColor" red="0.88235294119999996" green="0.23529411759999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eUb-bE-RYC" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="3AI-En-k5w"/>
+                                    <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="SLI-Jx-emR"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <connections>
+                                            <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="pAf-M9-9BD"/>
+                                        </connections>
+                                    </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-b4-Blt">
+                                        <rect key="frame" x="207" y="563" width="88" height="59"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
+                                        <rect key="frame" x="75" y="505" width="265" height="43"/>
+                                        <string key="text">Settings are there if you'll need them.
+Tap anywhere to close this overlay.</string>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA0-f1-VdC" customClass="DesignableView" customModule="Spring">
+                                        <rect key="frame" x="307" y="599" width="84" height="84"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="7lo-6x-5sp"/>
+                                            <constraint firstAttribute="height" constant="84" id="LQa-WU-vM3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="42"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="F5F-b4-Blt" firstAttribute="top" secondItem="Vkj-Ox-Lk7" secondAttribute="bottom" constant="15" id="Bqr-ag-I6r"/>
+                                    <constraint firstAttribute="trailing" secondItem="eA0-f1-VdC" secondAttribute="trailing" constant="-16" id="Uxg-EH-aH7"/>
+                                    <constraint firstItem="Vkj-Ox-Lk7" firstAttribute="centerX" secondItem="F5F-b4-Blt" secondAttribute="centerX" constant="-44" id="d9e-Y1-Szd"/>
+                                    <constraint firstAttribute="bottom" secondItem="eA0-f1-VdC" secondAttribute="bottom" constant="-16" id="gS3-KZ-8ZC"/>
+                                    <constraint firstAttribute="trailing" secondItem="F5F-b4-Blt" secondAttribute="trailing" constant="80" id="tij-uu-Qiz"/>
+                                    <constraint firstAttribute="bottom" secondItem="F5F-b4-Blt" secondAttribute="bottom" constant="45" id="xEF-5b-8Ef"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Mr-kQ-nH3" firstAttribute="top" secondItem="pOV-EJ-Ej6" secondAttribute="bottom" id="01N-6H-38r"/>
+                            <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="top" secondItem="b02-4k-5ac" secondAttribute="bottom" constant="8" id="1vl-Zk-lsK"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="3dP-4Q-zYM"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AFn-Td-hTd"/>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AY3-Gk-wC9"/>
+                            <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
                             <constraint firstItem="pOV-EJ-Ej6" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="LCT-rl-zAl"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="QmC-8L-3Io" secondAttribute="bottom" id="PLm-et-QvS"/>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="PPJ-By-LAS"/>
                             <constraint firstAttribute="trailing" secondItem="ofR-6D-YPC" secondAttribute="trailing" id="R3g-ur-LUw"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TuT-TS-zre"/>
+                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
+                            <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="hs8-EM-LLh"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="8Mr-kQ-nH3" secondAttribute="bottom" constant="10" id="iE1-hv-2NK"/>
                             <constraint firstAttribute="trailing" secondItem="QmC-8L-3Io" secondAttribute="trailing" id="iaO-Or-dNh"/>
                             <constraint firstItem="8Mr-kQ-nH3" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="ivI-kz-Rb8"/>
@@ -583,6 +560,9 @@ Tap anywhere to close this overlay.</string>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="overlayView" destination="2du-kH-0Q3" id="xDk-57-4aP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

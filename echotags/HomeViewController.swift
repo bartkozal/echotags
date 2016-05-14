@@ -10,17 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var overlayView: UIView!
+
     @IBAction internal func unwindToHomeViewController (sender: UIStoryboardSegue) {}
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    @IBAction func toggleOverlayView(sender: UIButton) {
+        overlayView.hidden = !overlayView.hidden
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
