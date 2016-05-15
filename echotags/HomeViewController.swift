@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         overlayView.hidden = !overlayView.hidden
     }
     
-    @IBAction func touchTestTutorial(sender: UIButton) {
+    @IBAction private func touchTestTutorial(sender: UIButton) {
         performSegueWithIdentifier("tutorialSegue", sender: self)
     }
     
