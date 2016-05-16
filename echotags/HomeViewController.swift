@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction private func touchTestTutorial(sender: UIButton) {
-        performSegueWithIdentifier("tutorialSegue", sender: self)
+        performSegueWithIdentifier("segueToTutorial", sender: self)
     }
     
     override func viewWillLayoutSubviews() {

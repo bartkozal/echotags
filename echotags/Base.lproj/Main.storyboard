@@ -79,9 +79,6 @@
                                             <action selector="touchSkipTutorial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3r-bF-gYY"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
-                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-wW-Sbk" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="114" y="506" width="117" height="46"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,6 +93,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
+                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bZE-pr-w3e">
                                         <rect key="frame" x="15" y="306" width="315" height="160"/>
                                         <subviews>
@@ -110,7 +110,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrY-qa-wMm" customClass="DesignableLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrY-qa-wMm" customClass="DesignableLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="42" width="314" height="118"/>
                                                 <string key="text">Echotags is very simple to use. Just launch the app and... that's all.
 
@@ -186,9 +186,6 @@ For the first run we would like to ask you for the localization permission and a
                                             <action selector="touchSkipTutorial:" destination="dFO-Bs-lys" eventType="touchUpInside" id="Sfy-hQ-xPj"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-2" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-lj-hX7">
-                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hp0-PZ-kgh" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="121" y="506" width="104" height="46"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,67 +200,82 @@ For the first run we would like to ask you for the localization permission and a
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-nZ-Rvs">
-                                        <rect key="frame" x="15" y="222" width="315" height="244"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-2" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-lj-hX7">
+                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iub-XX-8lp">
+                                        <rect key="frame" x="15" y="31" width="315" height="475"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMz-8r-cMR" customClass="DesignableLabel" customModule="Spring">
-                                                <rect key="frame" x="3" y="0.0" width="310" height="78"/>
-                                                <string key="text">We need your permission to localize your phone position during the trip. Please don't worry, we don't gather any data about your location.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2L-YUn" customClass="DesignableButton" customModule="Spring">
-                                                <rect key="frame" x="28" y="118" width="260" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="260" id="2Ma-iP-6M9"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                <state key="normal" title="Enable location permission" image="icon-permissions-outline">
-                                                    <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All content is already available offline. You don't need to care about your mobile data." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dN-CSp" customClass="DesignableLabel" customModule="Spring">
-                                                <rect key="frame" x="7" y="206" width="302" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-nZ-Rvs">
+                                                <rect key="frame" x="0.0" y="106" width="315" height="264"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMz-8r-cMR" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="3" y="0.0" width="310" height="78"/>
+                                                        <string key="text">We need your permission to localize your phone position during the trip. Please don't worry, we don't gather any data about your location.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2L-YUn" customClass="DesignableButton" customModule="Spring">
+                                                        <rect key="frame" x="28" y="118" width="260" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="260" id="2Ma-iP-6M9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <state key="normal" title="Enable location permission" image="icon-permissions-outline">
+                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All content is already available offline. You don't need to care about your mobile data plan." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dN-CSp" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="7" y="206" width="302" height="58"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="C7y-nZ-Rvs" firstAttribute="leading" secondItem="Iub-XX-8lp" secondAttribute="leading" id="BNp-yn-alK"/>
+                                            <constraint firstItem="C7y-nZ-Rvs" firstAttribute="centerY" secondItem="Iub-XX-8lp" secondAttribute="centerY" id="pRJ-OJ-4Dn"/>
+                                            <constraint firstAttribute="trailing" secondItem="C7y-nZ-Rvs" secondAttribute="trailing" id="uuq-Z7-tgf"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="C7y-nZ-Rvs" firstAttribute="leading" secondItem="lOh-3g-7bY" secondAttribute="leading" constant="15" id="7CF-sQ-TE8"/>
+                                    <constraint firstItem="Iub-XX-8lp" firstAttribute="leading" secondItem="lOh-3g-7bY" secondAttribute="leading" constant="15" id="0kG-zz-BP3"/>
+                                    <constraint firstItem="hp0-PZ-kgh" firstAttribute="top" secondItem="Iub-XX-8lp" secondAttribute="bottom" id="4K8-Mn-YZ2"/>
                                     <constraint firstItem="eW8-34-jpe" firstAttribute="top" secondItem="lOh-3g-7bY" secondAttribute="top" id="BLM-yL-QEE"/>
+                                    <constraint firstItem="Iub-XX-8lp" firstAttribute="top" secondItem="eW8-34-jpe" secondAttribute="bottom" constant="-15" id="Cx1-XF-iLw"/>
                                     <constraint firstAttribute="bottom" secondItem="tcm-lj-hX7" secondAttribute="bottom" constant="15" id="EJ9-3x-YMs"/>
-                                    <constraint firstAttribute="trailing" secondItem="C7y-nZ-Rvs" secondAttribute="trailing" constant="15" id="MYt-YL-7fA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iub-XX-8lp" secondAttribute="trailing" constant="15" id="Qxz-7j-8U5"/>
                                     <constraint firstAttribute="trailing" secondItem="eW8-34-jpe" secondAttribute="trailing" id="dBw-LE-MhT"/>
-                                    <constraint firstItem="hp0-PZ-kgh" firstAttribute="top" secondItem="C7y-nZ-Rvs" secondAttribute="bottom" constant="40" id="lYB-0i-mkn"/>
                                     <constraint firstItem="hp0-PZ-kgh" firstAttribute="centerX" secondItem="lOh-3g-7bY" secondAttribute="centerX" id="qHE-rg-iVr"/>
                                     <constraint firstItem="tcm-lj-hX7" firstAttribute="top" secondItem="hp0-PZ-kgh" secondAttribute="bottom" constant="40" id="to3-0o-LuJ"/>
                                     <constraint firstItem="tcm-lj-hX7" firstAttribute="centerX" secondItem="lOh-3g-7bY" secondAttribute="centerX" id="znW-JW-BYG"/>
@@ -324,66 +336,78 @@ For the first run we would like to ask you for the localization permission and a
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-3" translatesAutoresizingMaskIntoConstraints="NO" id="Xnf-t0-UTN">
                                         <rect key="frame" x="152" y="592" width="42" height="10"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
-                                        <rect key="frame" x="15" y="222" width="315" height="244"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXz-a0-eXG">
+                                        <rect key="frame" x="15" y="31" width="315" height="475"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echotags isn't free but you can try the app before you decide to pay for it. First five spots will work without a charge." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
-                                                <rect key="frame" x="5" y="0.0" width="305" height="58"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-pG-dh6" customClass="DesignableButton" customModule="Spring">
-                                                <rect key="frame" x="34" y="98" width="247" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="247" id="LdX-0d-qPu"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                <state key="normal" title="Unlock content for €7,99" image="icon-map">
-                                                    <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. In case you'll look for settings there is an      icon in the right bottom corner of the screen." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
-                                                <rect key="frame" x="10" y="186" width="296" height="58"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
+                                                <rect key="frame" x="0.0" y="116" width="315" height="244"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echotags isn't free but you can try the app before you decide to pay for it. First five spots will work without a charge." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="5" y="0.0" width="305" height="58"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-pG-dh6" customClass="DesignableButton" customModule="Spring">
+                                                        <rect key="frame" x="34" y="98" width="247" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="247" id="LdX-0d-qPu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <state key="normal" title="Unlock content for €7,99" image="icon-map">
+                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. In case you'll look for settings there is an      icon in the right bottom corner of the screen." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="10" y="186" width="296" height="58"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="2Cf-VW-q30" firstAttribute="centerY" secondItem="zXz-a0-eXG" secondAttribute="centerY" id="GDY-Rv-zQ8"/>
+                                            <constraint firstItem="2Cf-VW-q30" firstAttribute="leading" secondItem="zXz-a0-eXG" secondAttribute="leading" id="aPU-tE-34Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Cf-VW-q30" secondAttribute="trailing" id="aYI-M6-CDn"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="2Cf-VW-q30" firstAttribute="leading" secondItem="ffX-xL-6NW" secondAttribute="leading" constant="15" id="2be-Rn-RxK"/>
+                                    <constraint firstAttribute="trailing" secondItem="zXz-a0-eXG" secondAttribute="trailing" constant="15" id="0Eh-Hv-Azy"/>
                                     <constraint firstItem="HWU-rW-kqK" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="3XD-m9-A50"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Cf-VW-q30" secondAttribute="trailing" constant="15" id="4pa-p6-Edz"/>
                                     <constraint firstAttribute="bottom" secondItem="Xnf-t0-UTN" secondAttribute="bottom" constant="15" id="50O-sQ-ilr"/>
+                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="top" secondItem="zXz-a0-eXG" secondAttribute="bottom" id="DgX-6v-0Lx"/>
                                     <constraint firstItem="Xnf-t0-UTN" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="RnN-ay-tSr"/>
-                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="top" secondItem="2Cf-VW-q30" secondAttribute="bottom" constant="40" id="l5D-kZ-uhp"/>
+                                    <constraint firstItem="zXz-a0-eXG" firstAttribute="leading" secondItem="ffX-xL-6NW" secondAttribute="leading" constant="15" id="agU-9L-US5"/>
+                                    <constraint firstItem="zXz-a0-eXG" firstAttribute="top" secondItem="ffX-xL-6NW" secondAttribute="top" constant="31" id="mON-Mb-vgO"/>
                                     <constraint firstItem="Xnf-t0-UTN" firstAttribute="top" secondItem="HWU-rW-kqK" secondAttribute="bottom" constant="40" id="uk0-xj-nZG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -427,7 +451,7 @@ For the first run we would like to ask you for the localization permission and a
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="icon-settings"/>
                                 <connections>
-                                    <segue destination="Xi3-nm-dYf" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="kAs-WN-E8N"/>
+                                    <segue destination="Xi3-nm-dYf" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" id="kAs-WN-E8N"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
@@ -527,7 +551,7 @@ Tap anywhere to close this overlay.</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="xDk-57-4aP"/>
-                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="tutorialSegue" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
+                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" id="ip1-XH-utK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,13 +581,13 @@ Tap anywhere to close this overlay.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <connections>
-                                    <segue destination="Aoj-DM-LQ6" kind="unwind" unwindAction="unwindToHomeViewController:" id="I26-Ug-VEQ"/>
+                                    <segue destination="Aoj-DM-LQ6" kind="unwind" animates="NO" unwindAction="unwindToHomeViewController:" id="I26-Ug-VEQ"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-65-i1m" customClass="DesignableLabel" customModule="Spring">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-65-i1m" customClass="DesignableLabel" customModule="Spring">
                                         <rect key="frame" x="15" y="64" width="345" height="78"/>
                                         <string key="text">Using Echotags, you will get tailor-made information just for you, exactly when it is useful. Put headphones on, hide your phone in a pocket and enjoy the trip.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -644,7 +668,7 @@ Tap anywhere to close this overlay.</string>
                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                         <state key="normal" image="icon-settings"/>
                                         <connections>
-                                            <segue destination="Aoj-DM-LQ6" kind="unwind" unwindAction="unwindToHomeViewController:" id="SER-E0-vkG"/>
+                                            <segue destination="Aoj-DM-LQ6" kind="unwind" animates="NO" unwindAction="unwindToHomeViewController:" id="SER-E0-vkG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
