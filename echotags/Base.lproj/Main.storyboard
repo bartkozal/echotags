@@ -304,9 +304,6 @@ For the first run we would like to ask you for the localization permission and a
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-xL-6NW" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-3" translatesAutoresizingMaskIntoConstraints="NO" id="Xnf-t0-UTN">
-                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-rW-kqK" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="120" y="506" width="106" height="46"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -324,6 +321,9 @@ For the first run we would like to ask you for the localization permission and a
                                             <action selector="touchSkipTutorial:" destination="nMg-DA-Qdy" eventType="touchUpInside" id="7yx-Wm-sEy"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-3" translatesAutoresizingMaskIntoConstraints="NO" id="Xnf-t0-UTN">
+                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
                                         <rect key="frame" x="15" y="222" width="315" height="244"/>
                                         <subviews>
@@ -339,15 +339,15 @@ For the first run we would like to ask you for the localization permission and a
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-pG-dh6" customClass="DesignableButton" customModule="Spring">
-                                                <rect key="frame" x="25" y="98" width="266" height="48"/>
+                                                <rect key="frame" x="34" y="98" width="247" height="48"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="266" id="6TC-rG-d7e"/>
+                                                    <constraint firstAttribute="width" constant="247" id="LdX-0d-qPu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                <state key="normal" title="Unlock all content for €7,99" image="icon-map">
+                                                <state key="normal" title="Unlock content for €7,99" image="icon-map">
                                                     <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -378,13 +378,13 @@ For the first run we would like to ask you for the localization permission and a
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Xnf-t0-UTN" firstAttribute="top" secondItem="HWU-rW-kqK" secondAttribute="bottom" constant="40" id="5OP-7v-zGS"/>
-                                    <constraint firstItem="2Cf-VW-q30" firstAttribute="leading" secondItem="ffX-xL-6NW" secondAttribute="leading" constant="15" id="6vZ-Op-7Ny"/>
-                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="BkM-jE-TZV"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Cf-VW-q30" secondAttribute="trailing" constant="15" id="GkX-KC-BDP"/>
-                                    <constraint firstAttribute="bottom" secondItem="Xnf-t0-UTN" secondAttribute="bottom" constant="15" id="JoZ-3g-chB"/>
-                                    <constraint firstItem="Xnf-t0-UTN" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="gHB-Px-Tdo"/>
-                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="top" secondItem="2Cf-VW-q30" secondAttribute="bottom" constant="40" id="idr-9n-smD"/>
+                                    <constraint firstItem="2Cf-VW-q30" firstAttribute="leading" secondItem="ffX-xL-6NW" secondAttribute="leading" constant="15" id="2be-Rn-RxK"/>
+                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="3XD-m9-A50"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Cf-VW-q30" secondAttribute="trailing" constant="15" id="4pa-p6-Edz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xnf-t0-UTN" secondAttribute="bottom" constant="15" id="50O-sQ-ilr"/>
+                                    <constraint firstItem="Xnf-t0-UTN" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="RnN-ay-tSr"/>
+                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="top" secondItem="2Cf-VW-q30" secondAttribute="bottom" constant="40" id="l5D-kZ-uhp"/>
+                                    <constraint firstItem="Xnf-t0-UTN" firstAttribute="top" secondItem="HWU-rW-kqK" secondAttribute="bottom" constant="40" id="uk0-xj-nZG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -395,10 +395,10 @@ For the first run we would like to ask you for the localization permission and a
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ffX-xL-6NW" firstAttribute="top" secondItem="CHd-qU-Gwa" secondAttribute="bottom" constant="15" id="YTG-RC-mYJ"/>
-                            <constraint firstAttribute="trailing" secondItem="ffX-xL-6NW" secondAttribute="trailing" constant="15" id="Zbq-tL-Q8f"/>
-                            <constraint firstItem="i56-Zl-2Hn" firstAttribute="top" secondItem="ffX-xL-6NW" secondAttribute="bottom" constant="15" id="cyk-WN-i8D"/>
-                            <constraint firstItem="ffX-xL-6NW" firstAttribute="leading" secondItem="OaV-N8-Nhw" secondAttribute="leading" constant="15" id="mfP-fz-PC2"/>
+                            <constraint firstAttribute="trailing" secondItem="ffX-xL-6NW" secondAttribute="trailing" constant="15" id="HOu-7p-ISW"/>
+                            <constraint firstItem="ffX-xL-6NW" firstAttribute="top" secondItem="CHd-qU-Gwa" secondAttribute="bottom" constant="15" id="K0C-8Y-Dlv"/>
+                            <constraint firstItem="i56-Zl-2Hn" firstAttribute="top" secondItem="ffX-xL-6NW" secondAttribute="bottom" constant="15" id="PQJ-gM-kaP"/>
+                            <constraint firstItem="ffX-xL-6NW" firstAttribute="leading" secondItem="OaV-N8-Nhw" secondAttribute="leading" constant="15" id="joQ-56-pA5"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
