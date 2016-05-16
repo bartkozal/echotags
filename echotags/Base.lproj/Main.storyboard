@@ -92,6 +92,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="touchNextStep:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dr6-9b-eZu"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
                                         <rect key="frame" x="152" y="592" width="42" height="10"/>
@@ -199,6 +202,9 @@ For the first run we would like to ask you for the localization permission and a
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="touchNextStep:" destination="dFO-Bs-lys" eventType="touchUpInside" id="xmV-mp-dIQ"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-2" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-lj-hX7">
                                         <rect key="frame" x="152" y="592" width="42" height="10"/>

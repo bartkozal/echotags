@@ -21,4 +21,15 @@ class TutorialStepViewController: UIViewController {
     @IBAction private func touchFinishTutorial(sender: UIButton) {
         dismissViewControllerAnimated(false, completion: nil)
     }
+    
+    
+    @IBAction private func touchNextStep(sender: UIButton) {
+        guard let tutorialPageViewController = parentViewController as? TutorialPageViewController else { return }
+        guard let currentStepViewController = tutorialPageViewController.viewControllers?.first else { return }
+        
+        if let nextStepViewController = tutorialPageViewController.pageViewController(tutorialPageViewController, viewControllerAfterViewController: currentStepViewController) {
+            tutorialPageViewController.setViewControllers([nextStepViewController], direction: .Forward, animated: true, completion: nil)
+        }
+    }
+    
 }
