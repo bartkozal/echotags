@@ -511,10 +511,10 @@ For the first run we would like to ask you for the localization permission and a
                                             <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="pAf-M9-9BD"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
-                                        <rect key="frame" x="75" y="505" width="265" height="43"/>
-                                        <string key="text">Settings are there if you'll need them.
-Tap anywhere to close this overlay.</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
+                                        <rect key="frame" x="82" y="505" width="250" height="43"/>
+                                        <string key="text">Settings are here, if you need them.
+Tap anywhere to hide the overlay.</string>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
