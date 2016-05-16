@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1944.5" y="1744.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Step View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -69,14 +69,14 @@
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj5-4l-R9Z">
-                                        <rect key="frame" x="242" y="0.0" width="103" height="40"/>
+                                        <rect key="frame" x="242" y="0.0" width="103" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="12" maxX="15" maxY="12"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                                         <state key="normal" title="Skip tutorial">
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="lrS-sX-cxy" kind="unwind" unwindAction="unwindToHomeViewController:" id="dbP-Be-RfM"/>
+                                            <action selector="touchSkipTutorial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3r-bF-gYY"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
@@ -157,14 +157,13 @@ For the first run we would like to ask you for the localization permission and a
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="lrS-sX-cxy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2360.5" y="1754.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Step View Controller-->
         <scene sceneID="0bG-8a-Cts">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepPermissionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dFO-Bs-lys" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepPermissionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dFO-Bs-lys" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yKz-SN-RUx"/>
                         <viewControllerLayoutGuide type="bottom" id="Q4y-iJ-qdg"/>
@@ -177,14 +176,14 @@ For the first run we would like to ask you for the localization permission and a
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-34-jpe">
-                                        <rect key="frame" x="242" y="0.0" width="103" height="40"/>
+                                        <rect key="frame" x="242" y="0.0" width="103" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="12" maxX="15" maxY="12"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                                         <state key="normal" title="Skip tutorial">
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Txk-Fh-3Mg" kind="unwind" unwindAction="unwindToHomeViewController:" id="0Lz-vm-Opd"/>
+                                            <action selector="touchSkipTutorial:" destination="dFO-Bs-lys" eventType="touchUpInside" id="Sfy-hQ-xPj"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-2" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-lj-hX7">
@@ -205,7 +204,7 @@ For the first run we would like to ask you for the localization permission and a
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-nZ-Rvs">
-                                        <rect key="frame" x="15" y="187" width="315" height="244"/>
+                                        <rect key="frame" x="15" y="222" width="315" height="244"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMz-8r-cMR" customClass="DesignableLabel" customModule="Spring">
                                                 <rect key="frame" x="3" y="0.0" width="310" height="78"/>
@@ -264,10 +263,9 @@ For the first run we would like to ask you for the localization permission and a
                                     <constraint firstAttribute="bottom" secondItem="tcm-lj-hX7" secondAttribute="bottom" constant="15" id="EJ9-3x-YMs"/>
                                     <constraint firstAttribute="trailing" secondItem="C7y-nZ-Rvs" secondAttribute="trailing" constant="15" id="MYt-YL-7fA"/>
                                     <constraint firstAttribute="trailing" secondItem="eW8-34-jpe" secondAttribute="trailing" id="dBw-LE-MhT"/>
-                                    <constraint firstItem="hp0-PZ-kgh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="C7y-nZ-Rvs" secondAttribute="bottom" constant="40" id="lYB-0i-mkn"/>
+                                    <constraint firstItem="hp0-PZ-kgh" firstAttribute="top" secondItem="C7y-nZ-Rvs" secondAttribute="bottom" constant="40" id="lYB-0i-mkn"/>
                                     <constraint firstItem="hp0-PZ-kgh" firstAttribute="centerX" secondItem="lOh-3g-7bY" secondAttribute="centerX" id="qHE-rg-iVr"/>
                                     <constraint firstItem="tcm-lj-hX7" firstAttribute="top" secondItem="hp0-PZ-kgh" secondAttribute="bottom" constant="40" id="to3-0o-LuJ"/>
-                                    <constraint firstItem="C7y-nZ-Rvs" firstAttribute="centerY" secondItem="lOh-3g-7bY" secondAttribute="centerY" id="yMG-m0-ZOC"/>
                                     <constraint firstItem="tcm-lj-hX7" firstAttribute="centerX" secondItem="lOh-3g-7bY" secondAttribute="centerX" id="znW-JW-BYG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -288,14 +286,13 @@ For the first run we would like to ask you for the localization permission and a
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-3h-mvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Txk-Fh-3Mg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2775.5" y="1754.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Step View Controller-->
         <scene sceneID="tCl-J8-ZpQ">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepPurchaseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nMg-DA-Qdy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepPurchaseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nMg-DA-Qdy" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CHd-qU-Gwa"/>
                         <viewControllerLayoutGuide type="bottom" id="i56-Zl-2Hn"/>
@@ -324,11 +321,11 @@ For the first run we would like to ask you for the localization permission and a
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Jik-MY-4FW" kind="unwind" animates="NO" unwindAction="unwindToHomeViewController:" id="Ens-7K-Xyi"/>
+                                            <action selector="touchSkipTutorial:" destination="nMg-DA-Qdy" eventType="touchUpInside" id="7yx-Wm-sEy"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
-                                        <rect key="frame" x="15" y="187" width="315" height="244"/>
+                                        <rect key="frame" x="15" y="222" width="315" height="244"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echotags isn't free but you can try the app before you decide to pay for it. First five spots will work without a charge." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
                                                 <rect key="frame" x="5" y="0.0" width="305" height="58"/>
@@ -345,9 +342,6 @@ For the first run we would like to ask you for the localization permission and a
                                                 <rect key="frame" x="25" y="98" width="266" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="266" id="6TC-rG-d7e"/>
-                                                    <constraint firstAttribute="width" constant="245" id="LaY-K9-171"/>
-                                                    <constraint firstAttribute="width" constant="260" id="e0M-G2-Luu"/>
-                                                    <constraint firstAttribute="height" constant="48" id="lGt-Kj-2wX"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
@@ -367,12 +361,6 @@ For the first run we would like to ask you for the localization permission and a
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="LaY-K9-171"/>
-                                                        <exclude reference="e0M-G2-Luu"/>
-                                                    </mask>
-                                                </variation>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. In case you'll look for settings there is an      icon in the right bottom corner of the screen." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
                                                 <rect key="frame" x="10" y="186" width="296" height="58"/>
@@ -395,9 +383,8 @@ For the first run we would like to ask you for the localization permission and a
                                     <constraint firstItem="HWU-rW-kqK" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="BkM-jE-TZV"/>
                                     <constraint firstAttribute="trailing" secondItem="2Cf-VW-q30" secondAttribute="trailing" constant="15" id="GkX-KC-BDP"/>
                                     <constraint firstAttribute="bottom" secondItem="Xnf-t0-UTN" secondAttribute="bottom" constant="15" id="JoZ-3g-chB"/>
-                                    <constraint firstItem="2Cf-VW-q30" firstAttribute="centerY" secondItem="ffX-xL-6NW" secondAttribute="centerY" id="Jz6-T5-QpF"/>
                                     <constraint firstItem="Xnf-t0-UTN" firstAttribute="centerX" secondItem="ffX-xL-6NW" secondAttribute="centerX" id="gHB-Px-Tdo"/>
-                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2Cf-VW-q30" secondAttribute="bottom" constant="40" id="s9L-RD-CXP"/>
+                                    <constraint firstItem="HWU-rW-kqK" firstAttribute="top" secondItem="2Cf-VW-q30" secondAttribute="bottom" constant="40" id="idr-9n-smD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -417,7 +404,6 @@ For the first run we would like to ask you for the localization permission and a
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZ8-GL-8pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Jik-MY-4FW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3193.5" y="1754.5"/>
         </scene>
