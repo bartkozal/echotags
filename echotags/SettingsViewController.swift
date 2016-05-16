@@ -10,7 +10,7 @@ import UIKit
 import BEMCheckBox
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var checkbox: BEMCheckBox!
+    @IBOutlet private weak var checkbox: BEMCheckBox!
     
     @IBAction private func touchCheckboxLabel(sender: UIButton) {
         checkbox.setOn(!checkbox.on, animated: true)

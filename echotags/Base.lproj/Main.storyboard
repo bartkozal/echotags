@@ -5,10 +5,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="iB5-8p-lcN">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xxj-VH-DK6" customClass="TutorialPageViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GY5-Go-Dl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425.5" y="1770.5"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -40,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
-                                        <rect key="frame" x="151" y="592" width="42" height="10"/>
+                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrY-qa-wMm" customClass="DesignableLabel" customModule="Spring">
                                         <rect key="frame" x="15" y="348" width="315" height="118"/>
@@ -80,9 +88,6 @@ For the first run we would like to ask you for the localization permission and a
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="dFO-Bs-lys" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="a3c-Gq-h4O"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,12 +128,12 @@ For the first run we would like to ask you for the localization permission and a
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="lrS-sX-cxy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1425.5" y="1776.5"/>
+            <point key="canvasLocation" x="1944.5" y="1770.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0bG-8a-Cts">
             <objects>
-                <viewController id="dFO-Bs-lys" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepPermissionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dFO-Bs-lys" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yKz-SN-RUx"/>
                         <viewControllerLayoutGuide type="bottom" id="Q4y-iJ-qdg"/>
@@ -152,7 +157,7 @@ For the first run we would like to ask you for the localization permission and a
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-2" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-lj-hX7">
-                                        <rect key="frame" x="151" y="592" width="42" height="10"/>
+                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2L-YUn" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="43" y="242" width="260" height="48"/>
@@ -238,9 +243,6 @@ For the first run we would like to ask you for the localization permission and a
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="nMg-DA-Qdy" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="HeD-TT-pAW"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -277,16 +279,17 @@ For the first run we would like to ask you for the localization permission and a
                             <constraint firstAttribute="trailing" secondItem="lOh-3g-7bY" secondAttribute="trailing" constant="15" id="bMf-tc-PkG"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-3h-mvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Txk-Fh-3Mg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1944.5" y="1776.5"/>
+            <point key="canvasLocation" x="2359.5" y="1770.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tCl-J8-ZpQ">
             <objects>
-                <viewController id="nMg-DA-Qdy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepPurchaseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nMg-DA-Qdy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CHd-qU-Gwa"/>
                         <viewControllerLayoutGuide type="bottom" id="i56-Zl-2Hn"/>
@@ -310,7 +313,7 @@ For the first run we would like to ask you for the localization permission and a
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-3" translatesAutoresizingMaskIntoConstraints="NO" id="Xnf-t0-UTN">
-                                        <rect key="frame" x="151" y="592" width="42" height="10"/>
+                                        <rect key="frame" x="152" y="592" width="42" height="10"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-rW-kqK" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="120" y="506" width="106" height="46"/>
@@ -410,11 +413,12 @@ For the first run we would like to ask you for the localization permission and a
                             <constraint firstItem="ffX-xL-6NW" firstAttribute="leading" secondItem="OaV-N8-Nhw" secondAttribute="leading" constant="15" id="mfP-fz-PC2"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZ8-GL-8pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jik-MY-4FW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2487.5" y="1776.5"/>
+            <point key="canvasLocation" x="2777.5" y="1770.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="eUt-nJ-LtZ">
@@ -536,7 +540,7 @@ Tap anywhere to close this overlay.</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="xDk-57-4aP"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="tutorialSegue" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="rqx-1u-ZEn"/>
+                        <segue destination="xxj-VH-DK6" kind="presentation" identifier="tutorialSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="2hh-r3-pEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
