@@ -600,16 +600,16 @@ Tap anywhere to close this overlay.</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
-                                        <rect key="frame" x="55" y="162" width="266" height="48"/>
+                                        <rect key="frame" x="64" y="162" width="247" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="266" id="Gwe-Py-ohX"/>
-                                            <constraint firstAttribute="width" constant="266" id="rTd-vV-EEb"/>
+                                            <constraint firstAttribute="width" constant="247" id="rTd-vV-EEb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                        <state key="normal" title="Unlock all content for €7,99" image="icon-map">
+                                        <state key="normal" title="Unlock content for €7,99" image="icon-map">
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

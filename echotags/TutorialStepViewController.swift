@@ -11,8 +11,10 @@ import UIKit
 class TutorialStepViewController: UIViewController {
     
     @IBAction private func touchDismissTutorial(sender: UIButton) {
+        let homeViewController = presentingViewController as? HomeViewController
+        
         dismissViewControllerAnimated(false, completion: {
-            print("show overlay")
+            homeViewController?.overlayView.hidden = false
         })
     }
     

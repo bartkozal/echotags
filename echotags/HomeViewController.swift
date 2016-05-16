@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet private weak var overlayView: UIView!
+    @IBOutlet weak var overlayView: UIView!
     
     @IBAction internal func unwindToHomeViewController (sender: UIStoryboardSegue) {}
     
