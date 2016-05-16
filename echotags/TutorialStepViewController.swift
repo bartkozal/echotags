@@ -8,7 +8,18 @@
 
 import UIKit
 
+
 class TutorialStepViewController: UIViewController {
+    
+    @IBOutlet weak var settingsLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if settingsLabel != nil {
+            settingsLabel = GlyphLabel(label: settingsLabel).replace("@", withImage: "glyph-settings")
+        }
+    }
     
     @IBAction private func touchDismissTutorial(sender: UIButton) {
         let homeViewController = presentingViewController as? HomeViewController

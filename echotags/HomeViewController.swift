@@ -23,8 +23,6 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
         createMaskLayer()
     }
     

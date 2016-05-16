@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642F71CE7C42400ABE7BF /* MaskLayer.swift */; };
+		A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F34D31CEA85A600186314 /* GlyphLabel.swift */; };
 		A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */; };
 		A15493491CEA33F7000B096E /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15493481CEA33F7000B096E /* TutorialStepViewController.swift */; };
 		A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175F2581CE39EAD00A14B2E /* HomeViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		7F98CC84396B9733BF8C19B8 /* Pods-echotags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.debug.xcconfig"; sourceTree = "<group>"; };
 		A10642F71CE7C42400ABE7BF /* MaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayer.swift; sourceTree = "<group>"; };
+		A10F34D31CEA85A600186314 /* GlyphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphLabel.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		A15493481CEA33F7000B096E /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
+				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
 				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
 				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
 				A15493481CEA33F7000B096E /* TutorialStepViewController.swift */,
@@ -241,6 +244,7 @@
 				A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */,
 				A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */,
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
+				A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
 				A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */,
 			);
