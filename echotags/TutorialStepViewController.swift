@@ -9,9 +9,14 @@
 import UIKit
 
 class TutorialStepViewController: UIViewController {
-
-    @IBAction private func touchSkipTutorial(sender: UIButton) {
+    
+    @IBAction private func touchDismissTutorial(sender: UIButton) {
+        dismissViewControllerAnimated(false, completion: {
+            print("show overlay")
+        })
+    }
+    
+    @IBAction private func touchFinishTutorial(sender: UIButton) {
         dismissViewControllerAnimated(false, completion: nil)
     }
-
 }

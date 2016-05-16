@@ -76,7 +76,7 @@
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="touchSkipTutorial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3r-bF-gYY"/>
+                                            <action selector="touchDismissTutorial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDV-pE-oAH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-wW-Sbk" customClass="DesignableButton" customModule="Spring">
@@ -183,7 +183,7 @@ For the first run we would like to ask you for the localization permission and a
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="touchSkipTutorial:" destination="dFO-Bs-lys" eventType="touchUpInside" id="Sfy-hQ-xPj"/>
+                                            <action selector="touchDismissTutorial:" destination="dFO-Bs-lys" eventType="touchUpInside" id="NUb-IP-tFi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hp0-PZ-kgh" customClass="DesignableButton" customModule="Spring">
@@ -316,23 +316,6 @@ For the first run we would like to ask you for the localization permission and a
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-xL-6NW" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-rW-kqK" customClass="DesignableButton" customModule="Spring">
-                                        <rect key="frame" x="120" y="506" width="106" height="46"/>
-                                        <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                        <state key="normal" title="All ready!">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="touchSkipTutorial:" destination="nMg-DA-Qdy" eventType="touchUpInside" id="7yx-Wm-sEy"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-3" translatesAutoresizingMaskIntoConstraints="NO" id="Xnf-t0-UTN">
                                         <rect key="frame" x="152" y="592" width="42" height="10"/>
                                     </imageView>
@@ -398,6 +381,23 @@ For the first run we would like to ask you for the localization permission and a
                                             <constraint firstAttribute="trailing" secondItem="2Cf-VW-q30" secondAttribute="trailing" id="aYI-M6-CDn"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWU-rW-kqK" customClass="DesignableButton" customModule="Spring">
+                                        <rect key="frame" x="120" y="506" width="106" height="46"/>
+                                        <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                        <state key="normal" title="All ready!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="touchFinishTutorial:" destination="nMg-DA-Qdy" eventType="touchUpInside" id="BEq-yX-qN7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
