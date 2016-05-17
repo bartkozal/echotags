@@ -12,6 +12,7 @@
 		A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */; };
 		A15493491CEA33F7000B096E /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15493481CEA33F7000B096E /* TutorialStepViewController.swift */; };
 		A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175F2581CE39EAD00A14B2E /* HomeViewController.swift */; };
+		A1B2B8DB1CEB450A00077D80 /* WrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1E838921CE23596001653AD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E838911CE23596001653AD /* MapKit.framework */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 		A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		A15493481CEA33F7000B096E /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
 		A175F2581CE39EAD00A14B2E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperViewController.swift; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1E838911CE23596001653AD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
 				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
 				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
+				A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */,
 				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
 				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
 				A15493481CEA33F7000B096E /* TutorialStepViewController.swift */,
@@ -246,6 +249,7 @@
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
 				A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
+				A1B2B8DB1CEB450A00077D80 /* WrapperViewController.swift in Sources */,
 				A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

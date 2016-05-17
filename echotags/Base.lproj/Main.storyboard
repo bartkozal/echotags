@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NdK-S1-o1x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HOl-Oj-aVS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -441,10 +441,53 @@ For the first run we would like to ask you for the localization permission and a
             </objects>
             <point key="canvasLocation" x="3193.5" y="1754.5"/>
         </scene>
+        <!--Wrapper View Controller-->
+        <scene sceneID="n9Z-7B-QpK">
+            <objects>
+                <viewController id="HOl-Oj-aVS" customClass="WrapperViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MSh-fg-JSp"/>
+                        <viewControllerLayoutGuide type="bottom" id="S6Z-JZ-c8e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6vp-PY-GHk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ink-JH-nM8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="NdK-S1-o1x" kind="embed" identifier="" id="R4L-TL-8sC"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8f-yk-cUK" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="323" y="615" width="52" height="52"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="icon-settings"/>
+                                <connections>
+                                    <action selector="touchSettings:" destination="HOl-Oj-aVS" eventType="touchUpInside" id="rhL-A6-rHl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S6Z-JZ-c8e" firstAttribute="top" secondItem="Ink-JH-nM8" secondAttribute="bottom" id="5B4-b0-vIb"/>
+                            <constraint firstAttribute="trailing" secondItem="Ink-JH-nM8" secondAttribute="trailing" id="AP0-cB-u5c"/>
+                            <constraint firstItem="Ink-JH-nM8" firstAttribute="leading" secondItem="6vp-PY-GHk" secondAttribute="leading" id="Mce-B7-WB9"/>
+                            <constraint firstItem="Ink-JH-nM8" firstAttribute="top" secondItem="MSh-fg-JSp" secondAttribute="bottom" id="e7B-Mw-zbr"/>
+                            <constraint firstItem="S6Z-JZ-c8e" firstAttribute="top" secondItem="j8f-yk-cUK" secondAttribute="bottom" id="k9j-uf-EDj"/>
+                            <constraint firstAttribute="trailing" secondItem="j8f-yk-cUK" secondAttribute="trailing" id="lTj-TJ-kO9"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="212-89-dc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921.5" y="933.5"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="eUt-nJ-LtZ">
             <objects>
-                <viewController id="NdK-S1-o1x" customClass="HomeViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="NdK-S1-o1x" customClass="HomeViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h9P-oE-CXM"/>
                         <viewControllerLayoutGuide type="bottom" id="MAh-qW-QRa"/>
@@ -456,16 +499,8 @@ For the first run we would like to ask you for the localization permission and a
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ofR-6D-YPC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmC-8L-3Io">
-                                <rect key="frame" x="323" y="615" width="52" height="52"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="icon-settings"/>
-                                <connections>
-                                    <action selector="touchSettings:" destination="NdK-S1-o1x" eventType="touchUpInside" id="Cqg-vL-0Kt"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
-                                <rect key="frame" x="0.0" y="71" width="209" height="28"/>
+                                <rect key="frame" x="0.0" y="51" width="209" height="28"/>
                                 <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="SEg-R8-Ub7"/>
@@ -476,7 +511,7 @@ For the first run we would like to ask you for the localization permission and a
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENJOY AMSTERDAM!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-Y9-r9C">
-                                <rect key="frame" x="0.0" y="107" width="216" height="28"/>
+                                <rect key="frame" x="0.0" y="87" width="216" height="28"/>
                                 <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="OVt-ic-5PR"/>
@@ -487,7 +522,7 @@ For the first run we would like to ask you for the localization permission and a
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUT HEADPHONES ON." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHU-jl-Ov8">
-                                <rect key="frame" x="0.0" y="35" width="237" height="28"/>
+                                <rect key="frame" x="0.0" y="15" width="237" height="28"/>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.2627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="4KJ-Jj-tff"/>
@@ -547,13 +582,11 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="k2O-GD-JGg" secondAttribute="bottom" constant="15" id="Kec-KL-r0J"/>
-                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="QmC-8L-3Io" secondAttribute="bottom" id="PLm-et-QvS"/>
                             <constraint firstItem="ofR-6D-YPC" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="PPJ-By-LAS"/>
                             <constraint firstAttribute="trailing" secondItem="ofR-6D-YPC" secondAttribute="trailing" id="R3g-ur-LUw"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TuT-TS-zre"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="hs8-EM-LLh"/>
-                            <constraint firstAttribute="trailing" secondItem="QmC-8L-3Io" secondAttribute="trailing" id="iaO-Or-dNh"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="mQ2-Ec-6QC"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="ofR-6D-YPC" secondAttribute="bottom" id="pAQ-qF-gQX"/>
                         </constraints>
@@ -562,7 +595,7 @@ Tap anywhere to hide the overlay.</string>
                     <connections>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="xDk-57-4aP"/>
                         <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" id="ip1-XH-utK"/>
-                        <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overFullScreen" id="LNm-oK-Z5r"/>
+                        <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,13 +635,13 @@ Tap anywhere to hide the overlay.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                 <connections>
                                     <action selector="touchOverlayEffect:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="RvF-tA-zsp"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2" customClass="DesignableView" customModule="Spring">
-                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-65-i1m" customClass="DesignableLabel" customModule="Spring">
                                         <rect key="frame" x="15" y="64" width="345" height="78"/>
@@ -745,14 +778,6 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-cY-MlJ" customClass="DesignableButton" customModule="Spring">
-                                <rect key="frame" x="323" y="615" width="52" height="52"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="icon-settings"/>
-                                <connections>
-                                    <action selector="touchSettings:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="8fX-lG-7cY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -763,9 +788,7 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="bZS-Nl-bMV" secondAttribute="bottom" id="6nF-ez-ZWN"/>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="bottom" id="Eln-Oc-A29"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="GIA-ep-BRF"/>
-                            <constraint firstAttribute="trailing" secondItem="PVp-cY-MlJ" secondAttribute="trailing" id="Knu-uy-iXm"/>
                             <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="Nva-B2-aMs"/>
-                            <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="PVp-cY-MlJ" secondAttribute="bottom" id="RLB-VD-hIf"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="cL2-bA-YNP"/>
                             <constraint firstAttribute="trailing" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="fE8-HM-uNR"/>
                             <constraint firstItem="S4C-Jq-KN2" firstAttribute="top" secondItem="arE-04-u5z" secondAttribute="bottom" id="hP5-gS-BlR"/>
@@ -791,7 +814,6 @@ Tap anywhere to hide the overlay.</string>
                     <connections>
                         <outlet property="checkbox" destination="KZN-h5-GOn" id="aeM-Ye-YQm"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
-                        <outlet property="settingsButton" destination="PVp-cY-MlJ" id="6Ih-CV-rc1"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
                         <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToHome" animates="NO" unwindAction="unwindToHomeViewController:" id="ZBM-oy-Ddr"/>
                     </connections>
@@ -799,7 +821,7 @@ Tap anywhere to hide the overlay.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41m-U5-ThT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Aoj-DM-LQ6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1944.5" y="933.5"/>
+            <point key="canvasLocation" x="1928.5" y="933.5"/>
         </scene>
     </scenes>
     <resources>

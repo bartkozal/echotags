@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 
 class HomeViewController: UIViewController {
     
@@ -23,10 +22,6 @@ class HomeViewController: UIViewController {
         performSegueWithIdentifier("segueToTutorial", sender: self)
     }
     
-    @IBAction private func touchSettings(sender: UIButton) {
-        self.performSegueWithIdentifier("segueToSettings", sender: self)
-    }
-    
     override func viewWillLayoutSubviews() {
         createMaskLayer()
     }
@@ -37,6 +32,4 @@ class HomeViewController: UIViewController {
         
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
     }
-    
-    
 }

@@ -22,7 +22,7 @@ class TutorialStepViewController: UIViewController {
     }
     
     @IBAction private func touchDismissTutorial(sender: UIButton) {
-        let homeViewController = presentingViewController as? HomeViewController
+        let homeViewController = presentingViewController?.childViewControllers.first as? HomeViewController
         
         dismissViewControllerAnimated(false, completion: {
             homeViewController?.overlayView.hidden = false
