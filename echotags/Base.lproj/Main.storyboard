@@ -26,7 +26,7 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hL5-mU-Zx2">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hL5-mU-Zx2">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <segue destination="xxj-VH-DK6" kind="embed" id="g48-FY-EcB"/>
@@ -777,6 +777,11 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstItem="hm5-nn-rZd" firstAttribute="centerX" secondItem="S4C-Jq-KN2" secondAttribute="centerX" id="vtI-57-a8n"/>
                                     <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="damping">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

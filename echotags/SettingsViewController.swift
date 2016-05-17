@@ -12,8 +12,8 @@ import Spring
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet private weak var overlayView: DesignableView!
-    @IBOutlet private weak var settingsView: DesignableView!
+    @IBOutlet weak var overlayView: DesignableView!
+    @IBOutlet weak var settingsView: DesignableView!
     @IBOutlet private weak var checkbox: BEMCheckBox!
     
     @IBAction private func touchCheckboxLabel(sender: UIButton) {
@@ -21,7 +21,46 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func touchOverlayEffect(sender: UIButton) {
-        performSegueWithIdentifier("unwindToHome", sender: self)
+        performUnwindToHomeOnButton(nil)
+    }
+    
+    func performUnwindToHomeOnButton(sender: UIButton?) {
+        overlayView.animation = "fadeOut"
+        overlayView.animate()
+        
+        settingsView.y = view.frame.height
+        
+        if let settingsButton = sender as? DesignableButton {
+            settingsView.animateTo()
+            settingsButton.rotate = 90.0
+            settingsButton.animateNext({
+                self.performSegueWithIdentifier("unwindToHome", sender: self)
+            })
+        } else {
+            settingsView.animateToNext({
+                self.performSegueWithIdentifier("unwindToHome", sender: self)
+            })
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false)
+        
+        overlayView.hidden = true
+        settingsView.hidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(false)
+        
+        overlayView.animation = "fadeIn"
+        overlayView.animate()
+        
+        settingsView.y = view.frame.height
+        settingsView.animate()
+        
+        overlayView.hidden = false
+        settingsView.hidden = false
     }
     
     override func viewDidLoad() {
@@ -30,5 +69,4 @@ class SettingsViewController: UIViewController {
         checkbox.onAnimationType = .Bounce
         checkbox.offAnimationType = .Bounce
     }
-    
 }

@@ -12,15 +12,11 @@ import Spring
 class WrapperViewController: UIViewController {
     
     @IBAction func touchSettings(sender: DesignableButton) {
-        if let homeViewController = childViewControllers.first {
-            if let settingViewController = homeViewController.presentedViewController as? SettingsViewController {
-                sender.rotate = 90.0
-                sender.animateTo()
-                settingViewController.performSegueWithIdentifier("unwindToHome", sender: self)
+        if let homeViewController = childViewControllers.first as? HomeViewController {
+            if let settingsViewController = homeViewController.presentedViewController as? SettingsViewController {
+                settingsViewController.performUnwindToHomeOnButton(sender)
             } else {
-                sender.rotate = -90.0
-                sender.animateTo()
-                homeViewController.performSegueWithIdentifier("segueToSettings", sender: self)
+                homeViewController.performSegueToSettingsOnButton(sender)
             }
         }
     }
