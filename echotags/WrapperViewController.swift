@@ -10,6 +10,7 @@ import UIKit
 import Spring
 
 class WrapperViewController: UIViewController {
+    @IBOutlet weak var settingsButton: DesignableButton!
     
     @IBAction func touchSettings(sender: DesignableButton) {
         if let homeViewController = childViewControllers.first as? HomeViewController {

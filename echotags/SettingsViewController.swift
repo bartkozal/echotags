@@ -21,7 +21,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func touchOverlayEffect(sender: UIButton) {
-        performUnwindToHomeOnButton(nil)
+        if let wrapperViewController = presentingViewController?.parentViewController as? WrapperViewController {
+            performUnwindToHomeOnButton(wrapperViewController.settingsButton)
+        }
     }
     
     func performUnwindToHomeOnButton(sender: UIButton?) {
