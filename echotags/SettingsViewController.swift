@@ -12,8 +12,8 @@ import Spring
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet private weak var overlayEffectView: UIVisualEffectView!
-    @IBOutlet private weak var settingsView: UIView!
+    @IBOutlet private weak var overlayView: DesignableView!
+    @IBOutlet private weak var settingsView: DesignableView!
     @IBOutlet private weak var settingsButton: DesignableButton!
     @IBOutlet private weak var checkbox: BEMCheckBox!
     
@@ -22,26 +22,48 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func touchOverlayEffect(sender: UIButton) {
-        performSegueWithIdentifier("unwindToHome", sender: self)
+        slideDownSettingsView()
+        
+        overlayView.curve = "easeOut"
+        overlayView.duration = 0.3
+        overlayView.delay = 0.2
+        overlayView.opacity = 0
+        overlayView.animateToNext({
+            self.performSegueWithIdentifier("unwindToHome", sender: self)
+        })
     }
     
     @IBAction private func touchSettings(sender: DesignableButton) {
-        performSegueWithIdentifier("unwindToHome", sender: self)
+        slideDownSettingsView()
+        
+        settingsButton.curve = "easeOut"
+        settingsButton.duration = 0.3
+        settingsButton.damping = 1
+        settingsButton.rotate = -90.0
+        settingsButton.animateTo()
+        
+        overlayView.curve = "easeOut"
+        overlayView.duration = 0.3
+        overlayView.delay = 0.2
+        overlayView.opacity = 0
+        overlayView.animateToNext({
+            self.performSegueWithIdentifier("unwindToHome", sender: self)
+        })
+    }
+    
+    private func slideDownSettingsView() {
+        settingsView.curve = "easeOut"
+        settingsView.duration = 0.3
+        settingsView.damping = 1
+        settingsView.y = settingsView.frame.height
+        settingsView.animateTo()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        settingsButton.rotate = 90.0
-//        settingsButton.animate()
-//        settingsButton.animateNext({
-            self.settingsView.hidden = false
-            self.overlayEffectView.hidden = false
-//        })
-
-        
         checkbox.onAnimationType = .Bounce
         checkbox.offAnimationType = .Bounce
     }
-
+    
 }

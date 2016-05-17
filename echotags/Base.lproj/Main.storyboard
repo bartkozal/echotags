@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -580,21 +581,33 @@ Tap anywhere to hide the overlay.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-3m-bfq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQL-jL-fWV" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iCm-LM-kgX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-3m-bfq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iCm-LM-kgX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="QyY-3m-bfq" secondAttribute="bottom" id="F6j-Eb-UQn"/>
+                                    <constraint firstAttribute="trailing" secondItem="QyY-3m-bfq" secondAttribute="trailing" id="IbL-PG-4B1"/>
+                                    <constraint firstItem="QyY-3m-bfq" firstAttribute="leading" secondItem="KQL-jL-fWV" secondAttribute="leading" id="ukq-Fx-kXL"/>
+                                    <constraint firstItem="QyY-3m-bfq" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="top" id="vjP-Um-UOO"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <connections>
                                     <action selector="touchOverlayEffect:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="RvF-tA-zsp"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-65-i1m" customClass="DesignableLabel" customModule="Spring">
@@ -743,25 +756,41 @@ Tap anywhere to hide the overlay.</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="bottom" id="1CR-4h-HKy"/>
+                            <constraint firstItem="KQL-jL-fWV" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leadingMargin" id="1Lw-w8-ImL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="2dA-Dn-Cde"/>
                             <constraint firstAttribute="trailing" secondItem="S4C-Jq-KN2" secondAttribute="trailing" id="5Vx-E7-oUA"/>
-                            <constraint firstAttribute="trailing" secondItem="QyY-3m-bfq" secondAttribute="trailing" id="6iH-ON-Vqo"/>
+                            <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="bZS-Nl-bMV" secondAttribute="bottom" id="6nF-ez-ZWN"/>
+                            <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="bottom" id="Eln-Oc-A29"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="GIA-ep-BRF"/>
                             <constraint firstAttribute="trailing" secondItem="PVp-cY-MlJ" secondAttribute="trailing" id="Knu-uy-iXm"/>
-                            <constraint firstItem="QyY-3m-bfq" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="QHE-1G-ExL"/>
+                            <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="Nva-B2-aMs"/>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="PVp-cY-MlJ" secondAttribute="bottom" id="RLB-VD-hIf"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="cL2-bA-YNP"/>
+                            <constraint firstAttribute="trailing" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="fE8-HM-uNR"/>
                             <constraint firstItem="S4C-Jq-KN2" firstAttribute="top" secondItem="arE-04-u5z" secondAttribute="bottom" id="hP5-gS-BlR"/>
+                            <constraint firstItem="KQL-jL-fWV" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="jKb-7V-6Ic"/>
+                            <constraint firstItem="KQL-jL-fWV" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leadingMargin" id="kvK-dV-WCF"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="lx5-ui-bXV"/>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="bottom" id="nVY-0g-1yC"/>
                             <constraint firstAttribute="trailing" secondItem="arE-04-u5z" secondAttribute="trailing" id="o6S-3p-cYj"/>
                             <constraint firstItem="S4C-Jq-KN2" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="rM4-mc-QND"/>
-                            <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="QyY-3m-bfq" secondAttribute="bottom" id="sHN-0B-m4w"/>
-                            <constraint firstItem="QyY-3m-bfq" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="wnw-i2-2wv"/>
                             <constraint firstItem="S4C-Jq-KN2" firstAttribute="top" secondItem="bZS-Nl-bMV" secondAttribute="bottom" constant="55" id="zxs-ua-OsE"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Lw-w8-ImL"/>
+                                <exclude reference="2dA-Dn-Cde"/>
+                                <exclude reference="6nF-ez-ZWN"/>
+                                <exclude reference="GIA-ep-BRF"/>
+                                <exclude reference="kvK-dV-WCF"/>
+                                <exclude reference="Eln-Oc-A29"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="checkbox" destination="KZN-h5-GOn" id="aeM-Ye-YQm"/>
-                        <outlet property="overlayEffectView" destination="QyY-3m-bfq" id="YSA-NS-V8Z"/>
+                        <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
                         <outlet property="settingsButton" destination="PVp-cY-MlJ" id="6Ih-CV-rc1"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
                         <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToHome" animates="NO" unwindAction="unwindToHomeViewController:" id="ZBM-oy-Ddr"/>
