@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class HomeViewController: UIViewController {
     
@@ -20,6 +21,10 @@ class HomeViewController: UIViewController {
     
     @IBAction private func touchTestTutorial(sender: UIButton) {
         performSegueWithIdentifier("segueToTutorial", sender: self)
+    }
+    
+    @IBAction private func touchSettings(sender: UIButton) {
+        self.performSegueWithIdentifier("segueToSettings", sender: self)
     }
     
     override func viewWillLayoutSubviews() {

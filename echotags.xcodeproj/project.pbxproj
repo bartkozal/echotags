@@ -63,14 +63,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A10642F61CE7C3EB00ABE7BF /* Supporting Files */ = {
+		A10642F61CE7C3EB00ABE7BF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
 				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 		A1F2A0D31CE2030000593EB0 = {
@@ -94,15 +94,15 @@
 		A1F2A0DE1CE2030000593EB0 /* echotags */ = {
 			isa = PBXGroup;
 			children = (
-				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
 				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
+				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
 				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
 				A15493481CEA33F7000B096E /* TutorialStepViewController.swift */,
 				A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
-				A10642F61CE7C3EB00ABE7BF /* Supporting Files */,
+				A10642F61CE7C3EB00ABE7BF /* Support Files */,
 			);
 			path = echotags;
 			sourceTree = "<group>";

@@ -455,12 +455,12 @@ For the first run we would like to ask you for the localization permission and a
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ofR-6D-YPC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmC-8L-3Io">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmC-8L-3Io">
                                 <rect key="frame" x="323" y="615" width="52" height="52"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="icon-settings"/>
                                 <connections>
-                                    <segue destination="Xi3-nm-dYf" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" id="kAs-WN-E8N"/>
+                                    <action selector="touchSettings:" destination="NdK-S1-o1x" eventType="touchUpInside" id="Cqg-vL-0Kt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
@@ -561,6 +561,7 @@ Tap anywhere to hide the overlay.</string>
                     <connections>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="xDk-57-4aP"/>
                         <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" id="ip1-XH-utK"/>
+                        <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overFullScreen" id="LNm-oK-Z5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,7 +580,7 @@ Tap anywhere to hide the overlay.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-3m-bfq">
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-3m-bfq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iCm-LM-kgX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -590,10 +591,10 @@ Tap anywhere to hide the overlay.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <connections>
-                                    <segue destination="Aoj-DM-LQ6" kind="unwind" animates="NO" unwindAction="unwindToHomeViewController:" id="I26-Ug-VEQ"/>
+                                    <action selector="touchOverlayEffect:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="RvF-tA-zsp"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2">
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-65-i1m" customClass="DesignableLabel" customModule="Spring">
@@ -672,14 +673,6 @@ Tap anywhere to hide the overlay.</string>
                                             <constraint firstItem="rv7-Ra-BOv" firstAttribute="centerY" secondItem="hPI-pe-HGu" secondAttribute="centerY" id="weY-jK-n84"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-cY-MlJ">
-                                        <rect key="frame" x="323" y="540" width="52" height="52"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                        <state key="normal" image="icon-settings"/>
-                                        <connections>
-                                            <segue destination="Aoj-DM-LQ6" kind="unwind" animates="NO" unwindAction="unwindToHomeViewController:" id="SER-E0-vkG"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
                                         <rect key="frame" x="53" y="293" width="90" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -728,12 +721,10 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="hm5-nn-rZd" secondAttribute="bottom" constant="20" id="Bhm-9R-d0B"/>
                                     <constraint firstItem="KZN-h5-GOn" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="20" id="Ga3-nk-NgY"/>
                                     <constraint firstAttribute="trailing" secondItem="hPI-pe-HGu" secondAttribute="trailing" id="I8f-HS-sdX"/>
-                                    <constraint firstAttribute="bottom" secondItem="PVp-cY-MlJ" secondAttribute="bottom" id="IcW-w1-Wzf"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="top" secondItem="Y6m-Ta-1Vp" secondAttribute="bottom" constant="20" id="P39-xU-5wK"/>
                                     <constraint firstItem="Pbe-oB-dpg" firstAttribute="leading" secondItem="KZN-h5-GOn" secondAttribute="trailing" constant="10" id="PwG-5F-Wbl"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="X0d-gX-RI4"/>
-                                    <constraint firstAttribute="trailing" secondItem="PVp-cY-MlJ" secondAttribute="trailing" id="ZZo-il-OTU"/>
                                     <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="a1V-CD-VpQ"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="top" id="k5O-lO-06J"/>
                                     <constraint firstItem="Pbe-oB-dpg" firstAttribute="centerY" secondItem="KZN-h5-GOn" secondAttribute="centerY" id="mUa-xC-hBo"/>
@@ -741,12 +732,22 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-cY-MlJ" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="323" y="615" width="52" height="52"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="icon-settings"/>
+                                <connections>
+                                    <action selector="touchSettings:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="8fX-lG-7cY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="S4C-Jq-KN2" secondAttribute="trailing" id="5Vx-E7-oUA"/>
                             <constraint firstAttribute="trailing" secondItem="QyY-3m-bfq" secondAttribute="trailing" id="6iH-ON-Vqo"/>
+                            <constraint firstAttribute="trailing" secondItem="PVp-cY-MlJ" secondAttribute="trailing" id="Knu-uy-iXm"/>
                             <constraint firstItem="QyY-3m-bfq" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="QHE-1G-ExL"/>
+                            <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="PVp-cY-MlJ" secondAttribute="bottom" id="RLB-VD-hIf"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="cL2-bA-YNP"/>
                             <constraint firstItem="S4C-Jq-KN2" firstAttribute="top" secondItem="arE-04-u5z" secondAttribute="bottom" id="hP5-gS-BlR"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="lx5-ui-bXV"/>
@@ -760,6 +761,10 @@ Tap anywhere to hide the overlay.</string>
                     </view>
                     <connections>
                         <outlet property="checkbox" destination="KZN-h5-GOn" id="aeM-Ye-YQm"/>
+                        <outlet property="overlayEffectView" destination="QyY-3m-bfq" id="YSA-NS-V8Z"/>
+                        <outlet property="settingsButton" destination="PVp-cY-MlJ" id="6Ih-CV-rc1"/>
+                        <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
+                        <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToHome" animates="NO" unwindAction="unwindToHomeViewController:" id="ZBM-oy-Ddr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41m-U5-ThT" userLabel="First Responder" sceneMemberID="firstResponder"/>
