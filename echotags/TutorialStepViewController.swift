@@ -30,7 +30,7 @@ class TutorialStepViewController: UIViewController {
     }
     
     @IBAction private func touchFinishTutorial(sender: UIButton) {
-        dismissViewControllerAnimated(false, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     

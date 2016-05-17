@@ -11,12 +11,15 @@ import Spring
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var overlayView: DesignableView!
     
-    @IBAction internal func unwindToHomeViewController (sender: UIStoryboardSegue) {}
+    @IBAction internal func unwindToHomeViewController(sender: UIStoryboardSegue) {}
     
     @IBAction func toggleOverlayView(sender: UIButton) {
-        overlayView.hidden = !overlayView.hidden
+        overlayView.animation = "fadeOut"
+        overlayView.animateNext({
+            self.overlayView.hidden = true
+        })
     }
     
     @IBAction private func touchTestTutorial(sender: UIButton) {
