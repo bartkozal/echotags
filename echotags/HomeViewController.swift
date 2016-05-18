@@ -22,6 +22,9 @@ class HomeViewController: UIViewController {
         overlayView.animation = "fadeOut"
         overlayView.animateNext({
             self.overlayView.hidden = true
+            
+            // MARK: Remove after remove of "Test tutorial button"
+            self.overlayView.alpha = CGFloat(1.0)
         })
     }
     
