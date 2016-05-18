@@ -1,9 +1,11 @@
 PODS:
   - BEMCheckBox (1.2.1)
+  - Mapbox-iOS-SDK (3.2.2)
   - Spring (1.0.3)
 
 DEPENDENCIES:
-  - BEMCheckBox
+  - BEMCheckBox (= 1.2.1)
+  - Mapbox-iOS-SDK (= 3.2.2)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
 
 EXTERNAL SOURCES:
@@ -18,8 +20,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BEMCheckBox: 264b8b72aa92adbfefa265cc58a0cdb86b207b9f
+  Mapbox-iOS-SDK: 117ba1b0ed31107d3fe5826878a0f1531775aedc
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: ac657c42ccc3186a9ea095ef576587f54e449f9b
+PODFILE CHECKSUM: 1ef370a82710dc84a2108c9adf98cf67ffe044b3
 
 COCOAPODS: 1.0.0

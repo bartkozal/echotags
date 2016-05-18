@@ -8,10 +8,13 @@
 
 import UIKit
 import Spring
+import Mapbox
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var overlayView: DesignableView!
+    @IBOutlet weak var mapView: MGLMapView!
+    
     
     @IBAction internal func unwindToHomeViewController(sender: UIStoryboardSegue) {}
     
@@ -43,5 +46,11 @@ class HomeViewController: UIViewController {
         let yOffset = CGFloat(overlayView.frame.height - 26)
         
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mapView.attributionButton.hidden = true
     }
 }

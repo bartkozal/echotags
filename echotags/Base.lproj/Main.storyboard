@@ -499,9 +499,22 @@ For the first run we would like to ask you for the localization permission and a
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ofR-6D-YPC">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hue-2G-3ru" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </mapView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="latitude">
+                                        <real key="value" value="52.369940999999997"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="longitude">
+                                        <real key="value" value="4.8949069999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/streets-v9"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
                                 <rect key="frame" x="0.0" y="51" width="209" height="28"/>
                                 <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -580,22 +593,23 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="top" secondItem="b02-4k-5ac" secondAttribute="bottom" constant="8" id="1vl-Zk-lsK"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="3dP-4Q-zYM"/>
+                            <constraint firstAttribute="bottom" secondItem="hue-2G-3ru" secondAttribute="bottom" id="6dg-X3-gtK"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AFn-Td-hTd"/>
-                            <constraint firstItem="ofR-6D-YPC" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AY3-Gk-wC9"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="k2O-GD-JGg" secondAttribute="bottom" constant="15" id="Kec-KL-r0J"/>
-                            <constraint firstItem="ofR-6D-YPC" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="PPJ-By-LAS"/>
-                            <constraint firstAttribute="trailing" secondItem="ofR-6D-YPC" secondAttribute="trailing" id="R3g-ur-LUw"/>
+                            <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TuT-TS-zre"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="hs8-EM-LLh"/>
+                            <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="jFk-mB-Y3s"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="mQ2-Ec-6QC"/>
-                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="ofR-6D-YPC" secondAttribute="bottom" id="pAQ-qF-gQX"/>
+                            <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
                         <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
                         <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
