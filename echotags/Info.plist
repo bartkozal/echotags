@@ -25,7 +25,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoiYmt6bCIsImEiOiJjaW9jdnRvMjUwMDZudjhtMW5iNTVqMXByIn0.6VpUHjqi1kUcS4UTNOqXDQ</string>
+	<string>sk.eyJ1IjoiZWNob3RhZ3MiLCJhIjoiY2lvZWNsNHJ5MDAyNnZvbHg2aWV6dHNkYyJ9.KuublGJwYeA1vsAeWiyQYg</string>
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
