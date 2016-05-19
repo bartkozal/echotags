@@ -11,12 +11,8 @@ import UIKit
 
 class TutorialStepViewController: UIViewController {
     
-    @IBOutlet weak var settingsLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if settingsLabel != nil {
+    @IBOutlet weak var settingsLabel: UILabel! {
+        didSet {
             settingsLabel = GlyphLabel(label: settingsLabel).replace("@", withImage: "glyph-settings")
         }
     }
