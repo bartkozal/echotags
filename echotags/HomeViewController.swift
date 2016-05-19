@@ -66,18 +66,6 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         mapView.addAnnotation(point)
     }
     
-    // MARK: Custom image
-    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
-        var annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier("point")
-        
-        if annotationImage == nil {
-            let image = UIImage(named: "icon-pin")!
-            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: "point")
-        }
-        
-        return annotationImage
-    }
-    
     // MARK: Tap on point
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
