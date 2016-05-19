@@ -13,6 +13,7 @@ class WrapperViewController: UIViewController {
     @IBOutlet weak var settingsButton: DesignableButton!
     
     @IBAction func touchSettings(sender: DesignableButton) {
+        sender.userInteractionEnabled = false
         if let homeViewController = childViewControllers.first as? HomeViewController {
             if let settingsViewController = homeViewController.presentedViewController as? SettingsViewController {
                 settingsViewController.performUnwindToHomeOnButton(sender)

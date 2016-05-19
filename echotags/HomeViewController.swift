@@ -35,7 +35,9 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     func performSegueToSettingsOnButton(sender: UIButton?) {
         if let settingsButton = sender as? DesignableButton {
             settingsButton.rotate = -90.0
-            settingsButton.animate()
+            settingsButton.animateNext({
+                settingsButton.userInteractionEnabled = true
+            })
         }
         performSegueWithIdentifier("segueToSettings", sender: sender)
     }
