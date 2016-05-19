@@ -14,7 +14,13 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet weak var settingsView: DesignableView!
-    @IBOutlet private weak var checkbox: BEMCheckBox!
+    
+    @IBOutlet private weak var checkbox: BEMCheckBox! {
+        didSet {
+            checkbox.onAnimationType = .Bounce
+            checkbox.offAnimationType = .Bounce
+        }
+    }
     
     @IBAction private func touchCheckboxLabel(sender: UIButton) {
         checkbox.setOn(!checkbox.on, animated: true)
@@ -60,12 +66,5 @@ class SettingsViewController: UIViewController {
         
         overlayView.hidden = false
         settingsView.hidden = false
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        checkbox.onAnimationType = .Bounce
-        checkbox.offAnimationType = .Bounce
     }
 }

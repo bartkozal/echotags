@@ -10,10 +10,15 @@ import UIKit
 import Spring
 import Mapbox
 
-class HomeViewController: UIViewController, MGLMapViewDelegate {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var overlayView: DesignableView!
-    @IBOutlet weak var mapView: MGLMapView!
+    @IBOutlet weak var mapView: MGLMapView! {
+        didSet {
+            mapView.delegate = self
+            mapView.attributionButton.hidden = true
+        }
+    }
     
     
     @IBAction internal func unwindToHomeViewController(sender: UIStoryboardSegue) {}
@@ -56,17 +61,16 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.delegate = self
-        mapView.attributionButton.hidden = true
-        
         let point = MGLPointAnnotation()
         point.coordinate = CLLocationCoordinate2D(latitude: 52.36907, longitude: 4.89752)
         point.title = "Upstream Gallery"
         
         mapView.addAnnotation(point)
     }
-    
-    // MARK: Tap on point
+
+}
+
+extension HomeViewController: MGLMapViewDelegate {
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
