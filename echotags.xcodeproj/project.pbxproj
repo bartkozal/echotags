@@ -72,6 +72,15 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		A1E0C6F01CEE0A1A00636552 /* Dropins */ = {
+			isa = PBXGroup;
+			children = (
+				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
+				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
+			);
+			name = Dropins;
+			sourceTree = "<group>";
+		};
 		A1F2A0D31CE2030000593EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +102,7 @@
 		A1F2A0DE1CE2030000593EB0 /* echotags */ = {
 			isa = PBXGroup;
 			children = (
-				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
-				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
+				A1E0C6F01CEE0A1A00636552 /* Dropins */,
 				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */,
 				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
