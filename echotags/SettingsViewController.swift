@@ -36,10 +36,7 @@ class SettingsViewController: UIViewController {
             settingsView.animateTo()
             settingsButton.rotate = 90.0
             settingsButton.animateNext({
-                self.performSegueWithIdentifier("unwindToHome", sender: self)
-            })
-        } else {
-            settingsView.animateToNext({
+                settingsButton.userInteractionEnabled = true
                 self.performSegueWithIdentifier("unwindToHome", sender: self)
             })
         }
