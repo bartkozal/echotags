@@ -41,10 +41,10 @@ class SettingsViewController: UIViewController {
         if let settingsButton = sender as? DesignableButton {
             settingsView.animateTo()
             settingsButton.rotate = 90.0
-            settingsButton.animateNext({
+            settingsButton.animateNext { [weak weakSelf = self] in
                 settingsButton.userInteractionEnabled = true
-                self.performSegueWithIdentifier("unwindToHome", sender: self)
-            })
+                weakSelf?.performSegueWithIdentifier("unwindToHome", sender: self)
+            }
         }
     }
     
