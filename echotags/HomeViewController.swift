@@ -25,12 +25,12 @@ class HomeViewController: UIViewController {
     
     @IBAction func toggleOverlayView(sender: UIButton) {
         overlayView.animation = "fadeOut"
-        overlayView.animateNext({
-            self.overlayView.hidden = true
+        overlayView.animateNext { [weak weakSelf = self] in
+            weakSelf?.overlayView.hidden = true
             
             // MARK: Remove after remove of "Test tutorial button"
-            self.overlayView.alpha = CGFloat(1.0)
-        })
+            weakSelf?.overlayView.alpha = CGFloat(1.0)
+        }
     }
     
     @IBAction private func touchTestTutorial(sender: UIButton) {
@@ -40,9 +40,9 @@ class HomeViewController: UIViewController {
     func performSegueToSettingsOnButton(sender: UIButton?) {
         if let settingsButton = sender as? DesignableButton {
             settingsButton.rotate = -90.0
-            settingsButton.animateNext({
+            settingsButton.animateNext {
                 settingsButton.userInteractionEnabled = true
-            })
+            }
         }
         performSegueWithIdentifier("segueToSettings", sender: sender)
     }
