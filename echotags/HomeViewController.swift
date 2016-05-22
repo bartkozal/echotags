@@ -9,6 +9,7 @@
 import UIKit
 import Spring
 import Mapbox
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
@@ -17,6 +18,12 @@ class HomeViewController: UIViewController {
         didSet {
             mapView.delegate = self
             mapView.attributionButton.hidden = true
+            
+//            let point = MGLPointAnnotation()
+//            point.coordinate = CLLocationCoordinate2D(latitude: 52.36907, longitude: 4.89752)
+//            point.title = "Upstream Gallery"
+//            
+//            mapView.addAnnotation(point)
         }
     }
     
@@ -61,11 +68,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let point = MGLPointAnnotation()
-        point.coordinate = CLLocationCoordinate2D(latitude: 52.36907, longitude: 4.89752)
-        point.title = "Upstream Gallery"
-        
-        mapView.addAnnotation(point)
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
 
 }

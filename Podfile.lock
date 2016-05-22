@@ -1,11 +1,17 @@
 PODS:
   - BEMCheckBox (1.2.1)
   - Mapbox-iOS-SDK (3.2.2)
+  - Realm (0.103.1):
+    - Realm/Headers (= 0.103.1)
+  - Realm/Headers (0.103.1)
+  - RealmSwift (0.103.1):
+    - Realm (= 0.103.1)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - BEMCheckBox (= 1.2.1)
   - Mapbox-iOS-SDK (= 3.2.2)
+  - RealmSwift
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
 
 EXTERNAL SOURCES:
@@ -21,8 +27,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   BEMCheckBox: 264b8b72aa92adbfefa265cc58a0cdb86b207b9f
   Mapbox-iOS-SDK: 117ba1b0ed31107d3fe5826878a0f1531775aedc
+  Realm: 9ed57109332e95bdc48a7caedff80b70c51d5ef4
+  RealmSwift: 56629adb4acd2dc33eb2c8199fe856585dfd3ba3
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 1ef370a82710dc84a2108c9adf98cf67ffe044b3
+PODFILE CHECKSUM: 4dfcdd98a895a3a2e30f31839065469dab8e77b9
 
 COCOAPODS: 1.0.0
