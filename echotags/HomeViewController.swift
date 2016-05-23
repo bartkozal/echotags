@@ -19,11 +19,11 @@ class HomeViewController: UIViewController {
             mapView.delegate = self
             mapView.attributionButton.hidden = true
             
-//            let point = MGLPointAnnotation()
-//            point.coordinate = CLLocationCoordinate2D(latitude: 52.36907, longitude: 4.89752)
-//            point.title = "Upstream Gallery"
-//            
-//            mapView.addAnnotation(point)
+            let point = MGLPointAnnotation()
+            point.coordinate = CLLocationCoordinate2D(latitude: 52.36907, longitude: 4.89752)
+            point.title = "Upstream Gallery"
+            
+            mapView.addAnnotation(point)
         }
     }
     
