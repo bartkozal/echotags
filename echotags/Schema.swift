@@ -15,7 +15,6 @@ class Point: Object {
     dynamic var title: String?
     dynamic var latitude = 0.0
     dynamic var longitude = 0.0
-    dynamic var recordingPath: String?
 }
 
 class Marker: Object {
@@ -25,5 +24,5 @@ class Marker: Object {
 
 class Category: Object {
     dynamic var title: String?
-    dynamic var isVisible = true
+    dynamic var visible = true
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,12 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         application.statusBarHidden = true
-        
-        // MARK: Remove this print
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-        
-        // MARK: Setup example DB
-        if Data.isPopulateRequired() { Data.populate() }
         
         return true
     }
