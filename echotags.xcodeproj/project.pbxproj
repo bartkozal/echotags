@@ -13,6 +13,7 @@
 		A15493491CEA33F7000B096E /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15493481CEA33F7000B096E /* TutorialStepViewController.swift */; };
 		A1650A581CF220700010765D /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1650A571CF220700010765D /* Schema.swift */; };
 		A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175F2581CE39EAD00A14B2E /* HomeViewController.swift */; };
+		A19FDFD81CF381E800BC54D0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDFD71CF381E800BC54D0 /* Data.swift */; };
 		A1B2B8DB1CEB450A00077D80 /* WrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		A15493481CEA33F7000B096E /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
 		A1650A571CF220700010765D /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		A175F2581CE39EAD00A14B2E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A19FDFD71CF381E800BC54D0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperViewController.swift; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A1650A571CF220700010765D /* Schema.swift */,
+				A19FDFD71CF381E800BC54D0 /* Data.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				A15493491CEA33F7000B096E /* TutorialStepViewController.swift in Sources */,
 				A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */,
 				A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */,
+				A19FDFD81CF381E800BC54D0 /* Data.swift in Sources */,
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
 				A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
