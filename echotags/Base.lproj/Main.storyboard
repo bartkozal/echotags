@@ -736,10 +736,10 @@ Tap anywhere to hide the overlay.</string>
                                             <constraint firstItem="rv7-Ra-BOv" firstAttribute="centerY" secondItem="hPI-pe-HGu" secondAttribute="centerY" id="weY-jK-n84"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
-                                        <rect key="frame" x="53" y="293" width="90" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
+                                        <rect key="frame" x="53" y="293" width="307" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Food &amp; Drink">
+                                        <state key="normal" title="Art">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -784,6 +784,7 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="hm5-nn-rZd" secondAttribute="bottom" constant="20" id="Bhm-9R-d0B"/>
                                     <constraint firstItem="KZN-h5-GOn" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="20" id="Ga3-nk-NgY"/>
                                     <constraint firstAttribute="trailing" secondItem="hPI-pe-HGu" secondAttribute="trailing" id="I8f-HS-sdX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pbe-oB-dpg" secondAttribute="trailing" constant="15" id="JIy-3M-RiD"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="top" secondItem="Y6m-Ta-1Vp" secondAttribute="bottom" constant="20" id="P39-xU-5wK"/>
                                     <constraint firstItem="Pbe-oB-dpg" firstAttribute="leading" secondItem="KZN-h5-GOn" secondAttribute="trailing" constant="10" id="PwG-5F-Wbl"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
