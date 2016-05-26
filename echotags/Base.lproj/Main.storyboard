@@ -740,8 +740,9 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
-                                                <rect key="frame" x="15" y="289" width="345" height="308"/>
+                                                <rect key="frame" x="15" y="289" width="345" height="250"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="sMK-Rx-yS9"/>
                                                     <constraint firstAttribute="height" constant="200" id="xUw-4L-oCU"/>
                                                 </constraints>
                                                 <variation key="default">
@@ -765,7 +766,6 @@ Tap anywhere to hide the overlay.</string>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="ZgD-0R-Jih"/>
                                             <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="a1V-CD-VpQ"/>
                                             <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="e9P-cw-dd7"/>
-                                            <constraint firstAttribute="bottom" secondItem="PRD-sG-6ZS" secondAttribute="bottom" constant="15" id="euc-71-e9q"/>
                                             <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="top" id="k5O-lO-06J"/>
                                             <constraint firstAttribute="width" constant="375" id="pgi-ht-Vhl"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="sQ0-BE-09d"/>
