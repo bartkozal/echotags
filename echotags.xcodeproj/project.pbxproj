@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642F71CE7C42400ABE7BF /* MaskLayer.swift */; };
 		A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F34D31CEA85A600186314 /* GlyphLabel.swift */; };
+		A12F457D1CF70550009D902C /* DB.realm in Resources */ = {isa = PBXBuildFile; fileRef = A12E14E91CF65A6F00E033C4 /* DB.realm */; };
 		A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */; };
 		A15493491CEA33F7000B096E /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15493481CEA33F7000B096E /* TutorialStepViewController.swift */; };
 		A1650A581CF220700010765D /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1650A571CF220700010765D /* Schema.swift */; };
@@ -207,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12F457D1CF70550009D902C /* DB.realm in Resources */,
 				A1F2A0EA1CE2030000593EB0 /* LaunchScreen.storyboard in Resources */,
 				A1F2A0E71CE2030000593EB0 /* Assets.xcassets in Resources */,
 				A1F2A0E51CE2030000593EB0 /* Main.storyboard in Resources */,
