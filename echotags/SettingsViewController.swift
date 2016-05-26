@@ -15,6 +15,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet weak var settingsView: DesignableView!
     
+    @IBOutlet var categoryStackView: UIStackView!
+    @IBOutlet weak var categoriesStackView: UIStackView!
+    
     @IBOutlet private weak var checkbox: BEMCheckBox! {
         didSet {
             checkbox.onAnimationType = .Bounce

@@ -79,6 +79,18 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		A143EB5E1CF72AA600E2E16D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */,
+				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
+				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
+				A15493481CEA33F7000B096E /* TutorialStepViewController.swift */,
+				A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		A1650A591CF220980010765D /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,15 +130,11 @@
 		A1F2A0DE1CE2030000593EB0 /* echotags */ = {
 			isa = PBXGroup;
 			children = (
-				A1E0C6F01CEE0A1A00636552 /* Views */,
-				A1650A591CF220980010765D /* Database */,
 				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
-				A1B2B8DA1CEB450A00077D80 /* WrapperViewController.swift */,
-				A175F2581CE39EAD00A14B2E /* HomeViewController.swift */,
-				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
-				A15493481CEA33F7000B096E /* TutorialStepViewController.swift */,
-				A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
+				A1E0C6F01CEE0A1A00636552 /* Views */,
+				A143EB5E1CF72AA600E2E16D /* View Controllers */,
+				A1650A591CF220980010765D /* Database */,
 				A10642F61CE7C3EB00ABE7BF /* Support Files */,
 			);
 			path = echotags;
