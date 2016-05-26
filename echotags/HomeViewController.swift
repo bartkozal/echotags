@@ -19,6 +19,10 @@ class HomeViewController: UIViewController {
             mapView.delegate = self
             mapView.attributionButton.hidden = true
             
+            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
+            
+            mapView.setCamera(camera, animated: false)
+            
             for point in Data.db.objects(Point) {
                 let marker = MGLPointAnnotation()
                 marker.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
