@@ -12,12 +12,18 @@ class Data {
     static let db = try! Realm()
     
     static func dbInit() {
-        var dbConfig = Realm.Configuration()
+        let db = try! Realm()
+        let defaultURL = db.configuration.fileURL!
+        let fileManager = NSFileManager.defaultManager()
         
-        guard let dbPath = NSBundle.mainBundle().URLForResource("DB", withExtension: "realm") else { return }
+        if let dbPath = NSBundle.mainBundle().URLForResource("DB", withExtension: "realm") {
+            do {
+                try fileManager.removeItemAtURL(defaultURL)
+                try fileManager.copyItemAtURL(dbPath, toURL: defaultURL)
+            } catch {}
+        }
         
-        dbConfig.fileURL = dbPath
-        
-        Realm.Configuration.defaultConfiguration = dbConfig
+        let folderPath = defaultURL.URLByDeletingLastPathComponent!.path!
+        try! fileManager.setAttributes([NSFileProtectionKey: NSFileProtectionNone], ofItemAtPath: folderPath)
     }
 }
