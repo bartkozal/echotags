@@ -7,26 +7,21 @@
 //
 
 import UIKit
-import BEMCheckBox
 import Spring
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var overlayView: DesignableView!
-    @IBOutlet weak var settingsView: DesignableView!
+    @IBOutlet private weak var overlayView: DesignableView!
+    @IBOutlet private weak var settingsView: DesignableView!
     
-    @IBOutlet var categoryStackView: UIStackView!
-    @IBOutlet weak var categoriesStackView: UIStackView!
-    
-    @IBOutlet private weak var checkbox: BEMCheckBox! {
+    @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {
-            checkbox.onAnimationType = .Bounce
-            checkbox.offAnimationType = .Bounce
+            for category in Data.db.objects(Category) {
+                guard let categoryView = NSBundle.mainBundle().loadNibNamed("CategoryView", owner: self, options: nil)[0] as? CategoryView else { return }
+                categoryView.checkboxLabel.setTitle(category.title, forState: .Normal)
+                categoriesStackView.addArrangedSubview(categoryView)
+            }
         }
-    }
-    
-    @IBAction private func touchCheckboxLabel(sender: UIButton) {
-        checkbox.setOn(!checkbox.on, animated: true)
     }
     
     @IBAction private func touchOverlayEffect(sender: UIButton) {

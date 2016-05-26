@@ -14,7 +14,7 @@ import RealmSwift
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var overlayView: DesignableView!
-    @IBOutlet weak var mapView: MGLMapView! {
+    @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
             mapView.delegate = self
             mapView.attributionButton.hidden = true

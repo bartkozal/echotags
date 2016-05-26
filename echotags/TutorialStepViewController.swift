@@ -11,7 +11,7 @@ import UIKit
 
 class TutorialStepViewController: UIViewController {
     
-    @IBOutlet weak var settingsLabel: UILabel! {
+    @IBOutlet private weak var settingsLabel: UILabel! {
         didSet {
             settingsLabel = GlyphLabel(label: settingsLabel).replace("@", withImage: "glyph-settings")
         }
