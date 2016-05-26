@@ -16,6 +16,7 @@ class WrapperViewController: UIViewController {
         sender.userInteractionEnabled = false
         if let homeViewController = childViewControllers.first as? HomeViewController {
             if let settingsViewController = homeViewController.presentedViewController as? SettingsViewController {
+                homeViewController.reloadPointAnnotations()
                 settingsViewController.performUnwindToHomeOnButton(sender)
             } else {
                 homeViewController.performSegueToSettingsOnButton(sender)

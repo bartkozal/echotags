@@ -16,9 +16,10 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {
-            for category in Data.db.objects(Category) {
+            for category in Category.all() {
                 guard let categoryView = NSBundle.mainBundle().loadNibNamed("CategoryView", owner: self, options: nil)[0] as? CategoryView else { return }
                 categoryView.checkboxLabel.setTitle(category.title, forState: .Normal)
+                categoryView.checkbox.on = category.visible
                 categoriesStackView.addArrangedSubview(categoryView)
             }
         }
@@ -30,7 +31,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func performUnwindToHomeOnButton(sender: UIButton?) {
+    func performUnwindToHomeOnButton(sender: UIButton?) {   
         overlayView.animation = "fadeOut"
         overlayView.animate()
         

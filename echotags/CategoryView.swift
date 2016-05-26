@@ -9,12 +9,13 @@
 import UIKit
 import BEMCheckBox
 
-class CategoryView: UIView {
+class CategoryView: UIView, BEMCheckBoxDelegate {
     
-    @IBOutlet private weak var checkbox: BEMCheckBox! {
+    @IBOutlet weak var checkbox: BEMCheckBox! {
         didSet {
             checkbox.onAnimationType = .Bounce
             checkbox.offAnimationType = .Bounce
+            checkbox.delegate = self
         }
     }
     
@@ -22,7 +23,16 @@ class CategoryView: UIView {
     
     @IBAction private func touchCheckboxLabel(sender: UIButton) {
         checkbox.setOn(!checkbox.on, animated: true)
-        
+        updateValue()
     }
     
+    func didTapCheckBox(checkBox: BEMCheckBox) {
+        updateValue()
+    }
+    
+    private func updateValue() {
+        if let category = Category.findByTitle(checkboxLabel.currentTitle!) {
+            category.updateVisibility(checkbox.on)
+        }
+    }
 }
