@@ -66,10 +66,6 @@ class HomeViewController: UIViewController {
         
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
 }
 
