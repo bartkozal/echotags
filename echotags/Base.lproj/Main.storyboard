@@ -736,63 +736,71 @@ Tap anywhere to hide the overlay.</string>
                                             <constraint firstItem="rv7-Ra-BOv" firstAttribute="centerY" secondItem="hPI-pe-HGu" secondAttribute="centerY" id="weY-jK-n84"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
-                                        <rect key="frame" x="53" y="293" width="307" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Art">
-                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="touchCheckboxLabel:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="cRA-fk-PDs"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZN-h5-GOn" customClass="BEMCheckBox">
-                                        <rect key="frame" x="15" y="294" width="28" height="28"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="28" id="3cP-eB-hdM"/>
-                                            <constraint firstAttribute="height" constant="28" id="igz-Hm-rFI"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
-                                                <color key="value" red="0.22745098039215686" green="0.65490196078431373" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
-                                                <color key="value" red="0.2274509804" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
+                                        <rect key="frame" x="15" y="289" width="345" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RNT-66-13W">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZN-h5-GOn" customClass="BEMCheckBox">
+                                                        <rect key="frame" x="0.0" y="1" width="28" height="28"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="28" id="3cP-eB-hdM"/>
+                                                            <constraint firstAttribute="height" constant="28" id="igz-Hm-rFI"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                                                <color key="value" red="0.22745098039215686" green="0.65490196078431373" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
+                                                                <color key="value" red="0.2274509804" green="0.65490196079999996" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                                <real key="value" value="0.29999999999999999"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-oB-dpg">
+                                                        <rect key="frame" x="36" y="0.0" width="309" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="Title">
+                                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchCheckboxLabel:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="cRA-fk-PDs"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="hPI-pe-HGu" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="2u9-gA-Q1s"/>
-                                    <constraint firstItem="KZN-h5-GOn" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="8mk-TJ-OBG"/>
                                     <constraint firstItem="hm5-nn-rZd" firstAttribute="top" secondItem="hCt-65-i1m" secondAttribute="bottom" constant="20" id="ANb-Cy-7yN"/>
                                     <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="hm5-nn-rZd" secondAttribute="bottom" constant="20" id="Bhm-9R-d0B"/>
-                                    <constraint firstItem="KZN-h5-GOn" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="20" id="Ga3-nk-NgY"/>
                                     <constraint firstAttribute="trailing" secondItem="hPI-pe-HGu" secondAttribute="trailing" id="I8f-HS-sdX"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pbe-oB-dpg" secondAttribute="trailing" constant="15" id="JIy-3M-RiD"/>
+                                    <constraint firstAttribute="trailing" secondItem="PRD-sG-6ZS" secondAttribute="trailing" constant="15" id="Mjd-eh-2UD"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="top" secondItem="Y6m-Ta-1Vp" secondAttribute="bottom" constant="20" id="P39-xU-5wK"/>
-                                    <constraint firstItem="Pbe-oB-dpg" firstAttribute="leading" secondItem="KZN-h5-GOn" secondAttribute="trailing" constant="10" id="PwG-5F-Wbl"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
                                     <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="X0d-gX-RI4"/>
+                                    <constraint firstItem="PRD-sG-6ZS" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="ZgD-0R-Jih"/>
                                     <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="a1V-CD-VpQ"/>
                                     <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="top" id="k5O-lO-06J"/>
-                                    <constraint firstItem="Pbe-oB-dpg" firstAttribute="centerY" secondItem="KZN-h5-GOn" secondAttribute="centerY" id="mUa-xC-hBo"/>
                                     <constraint firstItem="hm5-nn-rZd" firstAttribute="centerX" secondItem="S4C-Jq-KN2" secondAttribute="centerX" id="vtI-57-a8n"/>
+                                    <constraint firstItem="PRD-sG-6ZS" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="15" id="xZ7-83-ciM"/>
                                     <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -835,6 +843,8 @@ Tap anywhere to hide the overlay.</string>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="categoriesStackView" destination="PRD-sG-6ZS" id="Pnb-yp-aUh"/>
+                        <outlet property="categoryStackView" destination="RNT-66-13W" id="scE-mQ-cBK"/>
                         <outlet property="checkbox" destination="KZN-h5-GOn" id="aeM-Ye-YQm"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
