@@ -9,30 +9,21 @@
 import UIKit
 import Spring
 import Mapbox
-import RealmSwift
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
-            mapView.delegate = self
-            mapView.attributionButton.hidden = true
-            
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             
+            mapView.delegate = self
+            mapView.attributionButton.hidden = true
             mapView.setCamera(camera, animated: false)
             
-            for point in Data.db.objects(Point) {
-                let marker = MGLPointAnnotation()
-                marker.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-                marker.title = point.title
-                
-                mapView.addAnnotation(marker)
-            }
+            reloadPointAnnotations()
         }
     }
-    
     
     @IBAction internal func unwindToHomeViewController(sender: UIStoryboardSegue) {}
     
@@ -61,6 +52,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
         createMaskLayer()
     }
     
@@ -69,6 +62,22 @@ class HomeViewController: UIViewController {
         let yOffset = CGFloat(overlayView.frame.height - 26)
         
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
+    }
+    
+    func reloadPointAnnotations() {
+        if let pointAnnotations = mapView.annotations {
+            mapView.removeAnnotations(pointAnnotations)
+        }
+        
+        for marker in Marker.visible() {
+            if let point = marker.point {
+                let pointAnnotation = MGLPointAnnotation()
+                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+                pointAnnotation.title = point.title
+                
+                mapView.addAnnotation(pointAnnotation)
+            }
+        }
     }
 
 }

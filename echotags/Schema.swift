@@ -20,9 +20,27 @@ class Point: Object {
 class Marker: Object {
     dynamic var point: Point?
     dynamic var category: Category?
+    
+    static func visible() -> Results<Marker> {
+        return Data.db.objects(Marker).filter("category.visible = true")
+    }
 }
 
 class Category: Object {
     dynamic var title: String?
     dynamic var visible = true
+    
+    static func all() -> Results<Category> {
+        return Data.db.objects(Category)
+    }
+    
+    static func findByTitle(title: String) -> Category? {
+        return Data.db.objects(Category).filter("title = %@", title).first ?? nil
+    }
+    
+    func updateVisibility(value: Bool) {
+        try! Data.db.write {
+            visible = value
+        }
+    }
 }
