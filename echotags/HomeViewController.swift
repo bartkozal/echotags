@@ -31,14 +31,7 @@ class HomeViewController: UIViewController {
         overlayView.animation = "fadeOut"
         overlayView.animateNext { [weak weakSelf = self] in
             weakSelf?.overlayView.hidden = true
-            
-            // MARK: Remove after remove of "Test tutorial button"
-            weakSelf?.overlayView.alpha = CGFloat(1.0)
         }
-    }
-    
-    @IBAction private func touchTestTutorial(sender: UIButton) {
-        performSegueWithIdentifier("segueToTutorial", sender: sender)
     }
     
     func performSegueToSettingsOnButton(sender: UIButton?) {
@@ -80,6 +73,11 @@ class HomeViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+
+        performSegueWithIdentifier("segueToTutorial", sender: self)
+    }
 }
 
 extension HomeViewController: MGLMapViewDelegate {
