@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var overlayView: DesignableView!
     @IBOutlet private weak var settingsView: DesignableView!
     @IBOutlet private weak var settingsScrollView: UIScrollView!
+    @IBOutlet private weak var overlayButton: UIButton!
     
     @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {
@@ -26,7 +27,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction private func touchOverlayEffect(sender: UIButton) {
+    @IBAction private func touchOverlayButton(sender: UIButton) {
         if let wrapperViewController = presentingViewController?.parentViewController as? WrapperViewController {
             performUnwindToHomeOnButton(wrapperViewController.settingsButton)
         }
@@ -51,7 +52,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        settingsScrollView.contentInset.top = CGFloat(55.0)
+        settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     
     override func viewWillLayoutSubviews() {

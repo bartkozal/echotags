@@ -548,15 +548,6 @@ For the first run we would like to ask you for the localization permission and a
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2O-GD-JGg">
-                                <rect key="frame" x="145" y="622" width="85" height="30"/>
-                                <state key="normal" title="Test Tutorial">
-                                    <color key="titleColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchTestTutorial:" destination="NdK-S1-o1x" eventType="touchUpInside" id="ASz-GY-2wB"/>
-                                </connections>
-                            </button>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -589,7 +580,6 @@ Tap anywhere to hide the overlay.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k2O-GD-JGg" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="16R-jd-HJQ"/>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="top" secondItem="b02-4k-5ac" secondAttribute="bottom" constant="8" id="1vl-Zk-lsK"/>
                             <constraint firstItem="oHU-jl-Ov8" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="3dP-4Q-zYM"/>
@@ -597,7 +587,6 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AFn-Td-hTd"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
-                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="k2O-GD-JGg" secondAttribute="bottom" constant="15" id="Kec-KL-r0J"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
                             <constraint firstItem="X7J-Y9-r9C" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TuT-TS-zre"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
@@ -651,12 +640,6 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstItem="QyY-3m-bfq" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="top" id="vjP-Um-UOO"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                                <connections>
-                                    <action selector="touchOverlayEffect:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="RvF-tA-zsp"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myz-WO-kb8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -802,6 +785,15 @@ Tap anywhere to hide the overlay.</string>
                                     <constraint firstItem="S4C-Jq-KN2" firstAttribute="top" secondItem="Myz-WO-kb8" secondAttribute="top" id="qgg-0P-dHm"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="kHb-MV-cnc"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="touchOverlayButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="OaE-uv-XVQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -809,14 +801,17 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="KQL-jL-fWV" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leadingMargin" id="1Lw-w8-ImL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="2dA-Dn-Cde"/>
                             <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="bZS-Nl-bMV" secondAttribute="bottom" id="6nF-ez-ZWN"/>
+                            <constraint firstItem="arE-04-u5z" firstAttribute="top" secondItem="bZS-Nl-bMV" secondAttribute="bottom" id="ERI-48-rdk"/>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="bottom" id="Eln-Oc-A29"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="GIA-ep-BRF"/>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="Myz-WO-kb8" secondAttribute="bottom" id="K8i-zn-cbD"/>
                             <constraint firstItem="Myz-WO-kb8" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="KWm-bw-TA5"/>
                             <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="Nva-B2-aMs"/>
                             <constraint firstAttribute="trailing" secondItem="arE-04-u5z" secondAttribute="trailing" id="TuS-G6-9nZ"/>
+                            <constraint firstAttribute="trailing" secondItem="arE-04-u5z" secondAttribute="trailing" id="Znw-vr-84G"/>
                             <constraint firstItem="Myz-WO-kb8" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="adl-Vm-pjB"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="cL2-bA-YNP"/>
+                            <constraint firstItem="arE-04-u5z" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="f6P-B9-vCe"/>
                             <constraint firstAttribute="trailing" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="fE8-HM-uNR"/>
                             <constraint firstItem="Myz-WO-kb8" firstAttribute="top" secondItem="arE-04-u5z" secondAttribute="bottom" id="ggA-Lt-e3L"/>
                             <constraint firstItem="arE-04-u5z" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="hcG-Jy-JOP"/>
@@ -834,12 +829,20 @@ Tap anywhere to hide the overlay.</string>
                                 <exclude reference="6nF-ez-ZWN"/>
                                 <exclude reference="GIA-ep-BRF"/>
                                 <exclude reference="kvK-dV-WCF"/>
+                                <exclude reference="ggA-Lt-e3L"/>
+                                <exclude reference="TuS-G6-9nZ"/>
+                                <exclude reference="cL2-bA-YNP"/>
+                                <exclude reference="hcG-Jy-JOP"/>
+                                <exclude reference="lx5-ui-bXV"/>
+                                <exclude reference="o6S-3p-cYj"/>
+                                <exclude reference="vHj-PE-Q71"/>
                                 <exclude reference="Eln-Oc-A29"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="categoriesStackView" destination="PRD-sG-6ZS" id="Pnb-yp-aUh"/>
+                        <outlet property="overlayButton" destination="arE-04-u5z" id="EbP-oj-KTa"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
