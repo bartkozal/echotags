@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet private weak var overlayView: DesignableView!
     @IBOutlet private weak var settingsView: DesignableView!
+    @IBOutlet private weak var settingsScrollView: UIScrollView!
     
     @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {
@@ -45,6 +46,12 @@ class SettingsViewController: UIViewController {
                 weakSelf?.performSegueWithIdentifier("unwindToHome", sender: self)
             }
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        settingsScrollView.contentInset.top = CGFloat(55.0)
     }
     
     override func viewWillAppear(animated: Bool) {

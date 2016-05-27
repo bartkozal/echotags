@@ -652,16 +652,16 @@ Tap anywhere to hide the overlay.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arE-04-u5z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                 <connections>
                                     <action selector="touchOverlayEffect:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="RvF-tA-zsp"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myz-WO-kb8">
-                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2" customClass="DesignableView" customModule="Spring">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="667" translatesAutoresizingMaskIntoConstraints="NO" id="S4C-Jq-KN2" customClass="DesignableView" customModule="Spring">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-65-i1m" customClass="DesignableLabel" customModule="Spring">
                                                 <rect key="frame" x="15" y="64" width="345" height="78"/>
@@ -739,8 +739,8 @@ Tap anywhere to hide the overlay.</string>
                                                     <constraint firstItem="rv7-Ra-BOv" firstAttribute="centerY" secondItem="hPI-pe-HGu" secondAttribute="centerY" id="weY-jK-n84"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
-                                                <rect key="frame" x="15" y="289" width="345" height="100"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
+                                                <rect key="frame" x="15" y="289" width="345" height="363"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="sMK-Rx-yS9"/>
                                                     <constraint firstAttribute="height" constant="200" id="xUw-4L-oCU"/>
@@ -766,7 +766,10 @@ Tap anywhere to hide the overlay.</string>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="X0d-gX-RI4"/>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="ZgD-0R-Jih"/>
                                             <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="a1V-CD-VpQ"/>
+                                            <constraint firstAttribute="height" constant="700" id="aQ9-E0-hGU"/>
                                             <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="e9P-cw-dd7"/>
+                                            <constraint firstAttribute="bottom" secondItem="PRD-sG-6ZS" secondAttribute="bottom" constant="15" id="eTj-N4-UcK"/>
+                                            <constraint firstAttribute="height" constant="800" id="ecy-kR-U5w"/>
                                             <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="top" id="k5O-lO-06J"/>
                                             <constraint firstAttribute="width" constant="375" id="pgi-ht-Vhl"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="sQ0-BE-09d"/>
@@ -782,6 +785,8 @@ Tap anywhere to hide the overlay.</string>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Vss-ql-13V"/>
+                                                <exclude reference="aQ9-E0-hGU"/>
+                                                <exclude reference="ecy-kR-U5w"/>
                                                 <exclude reference="pgi-ht-Vhl"/>
                                                 <exclude reference="X0d-gX-RI4"/>
                                                 <exclude reference="a1V-CD-VpQ"/>
@@ -790,11 +795,10 @@ Tap anywhere to hide the overlay.</string>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="S4C-Jq-KN2" firstAttribute="width" secondItem="Myz-WO-kb8" secondAttribute="width" id="Dsa-Tc-JFk"/>
                                     <constraint firstItem="S4C-Jq-KN2" firstAttribute="leading" secondItem="Myz-WO-kb8" secondAttribute="leading" id="QDW-pw-67s"/>
                                     <constraint firstAttribute="trailing" secondItem="S4C-Jq-KN2" secondAttribute="trailing" id="cYF-RK-H6v"/>
-                                    <constraint firstItem="S4C-Jq-KN2" firstAttribute="height" secondItem="Myz-WO-kb8" secondAttribute="height" id="gW7-ab-N33"/>
                                     <constraint firstAttribute="bottom" secondItem="S4C-Jq-KN2" secondAttribute="bottom" id="oCP-Zw-QmF"/>
-                                    <constraint firstItem="S4C-Jq-KN2" firstAttribute="width" secondItem="Myz-WO-kb8" secondAttribute="width" id="qf1-mF-co2"/>
                                     <constraint firstItem="S4C-Jq-KN2" firstAttribute="top" secondItem="Myz-WO-kb8" secondAttribute="top" id="qgg-0P-dHm"/>
                                 </constraints>
                             </scrollView>
@@ -808,7 +812,7 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="KQL-jL-fWV" secondAttribute="bottom" id="Eln-Oc-A29"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KQL-jL-fWV" secondAttribute="trailing" id="GIA-ep-BRF"/>
                             <constraint firstItem="RK0-Fa-eto" firstAttribute="top" secondItem="Myz-WO-kb8" secondAttribute="bottom" id="K8i-zn-cbD"/>
-                            <constraint firstItem="Myz-WO-kb8" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" constant="55" id="KWm-bw-TA5"/>
+                            <constraint firstItem="Myz-WO-kb8" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="KWm-bw-TA5"/>
                             <constraint firstItem="KQL-jL-fWV" firstAttribute="top" secondItem="zV5-gh-U4l" secondAttribute="top" id="Nva-B2-aMs"/>
                             <constraint firstAttribute="trailing" secondItem="arE-04-u5z" secondAttribute="trailing" id="TuS-G6-9nZ"/>
                             <constraint firstItem="Myz-WO-kb8" firstAttribute="leading" secondItem="zV5-gh-U4l" secondAttribute="leading" id="adl-Vm-pjB"/>
@@ -837,6 +841,7 @@ Tap anywhere to hide the overlay.</string>
                     <connections>
                         <outlet property="categoriesStackView" destination="PRD-sG-6ZS" id="Pnb-yp-aUh"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
+                        <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
                         <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToHome" animates="NO" unwindAction="unwindToHomeViewController:" id="ZBM-oy-Ddr"/>
                     </connections>
