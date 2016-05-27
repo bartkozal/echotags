@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLU-fH-snx">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLU-fH-snx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="deK-hy-8Kg">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="deK-hy-8Kg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
@@ -36,9 +36,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hL5-mU-Zx2" firstAttribute="top" secondItem="EWa-NR-aAl" secondAttribute="bottom" id="6Fv-BG-Dl1"/>
+                            <constraint firstItem="YLU-fH-snx" firstAttribute="top" secondItem="EWa-NR-aAl" secondAttribute="bottom" id="SDE-aY-Uug"/>
+                            <constraint firstAttribute="trailing" secondItem="YLU-fH-snx" secondAttribute="trailing" id="VP2-2e-II7"/>
                             <constraint firstItem="cz7-b8-sIr" firstAttribute="top" secondItem="hL5-mU-Zx2" secondAttribute="bottom" id="XoF-G2-o3g"/>
                             <constraint firstAttribute="trailing" secondItem="hL5-mU-Zx2" secondAttribute="trailing" id="emG-gJ-k1A"/>
+                            <constraint firstItem="cz7-b8-sIr" firstAttribute="top" secondItem="YLU-fH-snx" secondAttribute="bottom" id="f3F-kj-Mmb"/>
                             <constraint firstItem="hL5-mU-Zx2" firstAttribute="leading" secondItem="izh-rF-nni" secondAttribute="leading" id="v46-0j-dQx"/>
+                            <constraint firstItem="YLU-fH-snx" firstAttribute="leading" secondItem="izh-rF-nni" secondAttribute="leading" id="zEe-lM-5gf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -600,7 +604,7 @@ Tap anywhere to hide the overlay.</string>
                     <connections>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
-                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
+                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
                         <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>
                 </viewController>
