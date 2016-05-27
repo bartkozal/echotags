@@ -600,7 +600,7 @@ Tap anywhere to hide the overlay.</string>
                     <connections>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
-                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
+                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
                         <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>
                 </viewController>
