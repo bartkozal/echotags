@@ -48,10 +48,18 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         settingsScrollView.contentInset.top = CGFloat(55.0)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let bottomBackground = UIView(frame: CGRectMake(0, settingsScrollView.contentSize.height, settingsScrollView.contentSize.width, 200))
+        bottomBackground.backgroundColor = .whiteColor()
+        settingsScrollView.addSubview(bottomBackground)
     }
     
     override func viewWillAppear(animated: Bool) {
