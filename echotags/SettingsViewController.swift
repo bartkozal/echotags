@@ -61,7 +61,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     
@@ -74,14 +74,14 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(false)
+        super.viewWillAppear(animated)
         
         overlayView.hidden = true
         settingsView.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(false)
+        super.viewDidAppear(animated)
         
         overlayView.animation = "fadeIn"
         overlayView.animate()
