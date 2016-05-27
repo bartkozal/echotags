@@ -13,7 +13,13 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet private weak var overlayView: DesignableView!
     @IBOutlet private weak var settingsView: DesignableView!
-    @IBOutlet private weak var settingsScrollView: UIScrollView!
+    
+    @IBOutlet private weak var settingsScrollView: UIScrollView! {
+        didSet {
+            settingsScrollView.delegate = self
+        }
+    }
+    
     @IBOutlet private weak var overlayButton: UIButton!
     
     @IBOutlet private weak var categoriesStackView: UIStackView! {
@@ -28,9 +34,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func touchOverlayButton(sender: UIButton) {
-        if let wrapperViewController = presentingViewController?.parentViewController as? WrapperViewController {
-            performUnwindToHomeOnButton(wrapperViewController.settingsButton)
-        }
+        performUnwindToHomeOnSettingsButton()
     }
     
     func performUnwindToHomeOnButton(sender: UIButton?) {   
@@ -49,9 +53,15 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    private func performUnwindToHomeOnSettingsButton() {
+        if let wrapperViewController = presentingViewController?.parentViewController as? WrapperViewController {
+            performUnwindToHomeOnButton(wrapperViewController.settingsButton)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     
@@ -81,5 +91,14 @@ class SettingsViewController: UIViewController {
         
         overlayView.hidden = false
         settingsView.hidden = false
+    }
+}
+
+extension SettingsViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let breakScrollPoint = CGFloat(-130.0)
+        if scrollView.contentOffset.y < breakScrollPoint {
+            performUnwindToHomeOnSettingsButton()
+        }
     }
 }
