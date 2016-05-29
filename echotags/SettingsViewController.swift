@@ -41,7 +41,14 @@ class SettingsViewController: UIViewController {
         overlayView.animation = "fadeOut"
         overlayView.animate()
         
-        settingsView.y = view.frame.height
+        settingsView.curve = "linear"
+        settingsView.damping = CGFloat(1.0)
+        
+        if settingsScrollView.contentOffset.y > 0 {
+            settingsView.y = settingsScrollView.bounds.maxY
+        } else {
+            settingsView.y = view.frame.height
+        }
         
         if let settingsButton = sender as? DesignableButton {
             settingsView.animateTo()
@@ -86,6 +93,8 @@ class SettingsViewController: UIViewController {
         overlayView.animation = "fadeIn"
         overlayView.animate()
         
+        settingsView.curve = "linear"
+        settingsView.damping = CGFloat(1.0)
         settingsView.y = view.frame.height
         settingsView.animate()
         
