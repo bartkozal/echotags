@@ -764,11 +764,6 @@ Tap anywhere to hide the overlay.</string>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="15" id="xZ7-83-ciM"/>
                                             <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Vss-ql-13V"/>
