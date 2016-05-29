@@ -12,8 +12,7 @@ class Data {
     static let db = try! Realm()
     
     static func dbInit() {
-        let db = try! Realm()
-        let defaultURL = db.configuration.fileURL!
+        let defaultURL = Realm.Configuration.defaultConfiguration.fileURL!
         let fileManager = NSFileManager.defaultManager()
         
         if let dbPath = NSBundle.mainBundle().URLForResource("DB", withExtension: "realm") {

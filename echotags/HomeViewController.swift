@@ -62,14 +62,13 @@ class HomeViewController: UIViewController {
             mapView.removeAnnotations(pointAnnotations)
         }
         
-        for marker in Marker.visible() {
-            if let point = marker.point {
-                let pointAnnotation = MGLPointAnnotation()
-                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-                pointAnnotation.title = point.title
-                
-                mapView.addAnnotation(pointAnnotation)
-            }
+        for point in Marker.visible() {
+            let point = point as! Point
+            let pointAnnotation = MGLPointAnnotation()
+            pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+            pointAnnotation.title = point.title
+            
+            mapView.addAnnotation(pointAnnotation)
         }
     }
 
