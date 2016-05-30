@@ -11,7 +11,7 @@ import Spring
 import Mapbox
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
