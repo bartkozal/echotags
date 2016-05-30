@@ -10,6 +10,7 @@ import UIKit
 import BEMCheckBox
 
 class CategoryView: UIView, BEMCheckBoxDelegate {
+    var parentViewController: UIViewController?
     
     @IBOutlet weak var checkbox: BEMCheckBox! {
         didSet {
@@ -33,6 +34,9 @@ class CategoryView: UIView, BEMCheckBoxDelegate {
     private func updateValue() {
         if let category = Category.findByTitle(checkboxLabel.currentTitle!) {
             category.updateVisibility(checkbox.on)
+            if let settingsVC = parentViewController as? SettingsViewController {
+                settingsVC.categoriesChanged = true
+            }
         }
     }
 }
