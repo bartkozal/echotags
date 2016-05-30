@@ -14,15 +14,12 @@ class WrapperViewController: UIViewController {
     
     @IBAction func touchSettings(sender: DesignableButton) {
         sender.userInteractionEnabled = false
-        if let homeVC = childViewControllers.first as? HomeViewController {
-            if let settingsVC = homeVC.presentedViewController as? SettingsViewController {
-                if settingsVC.categoriesChanged {
-                    homeVC.reloadPointAnnotations()
-                    settingsVC.categoriesChanged = false
-                }
-                settingsVC.performUnwindToHomeOnButton(sender)
+        if let homeViewController = childViewControllers.first as? HomeViewController {
+            if let settingsViewController = homeViewController.presentedViewController as? SettingsViewController {
+                homeViewController.reloadPointAnnotations()
+                settingsViewController.performUnwindToHomeOnButton(sender)
             } else {
-                homeVC.performSegueToSettingsOnButton(sender)
+                homeViewController.performSegueToSettingsOnButton(sender)
             }
         }
     }

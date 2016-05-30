@@ -10,11 +10,16 @@ import UIKit
 import Spring
 
 class SettingsViewController: UIViewController {
-    var categoriesChanged = false
     
     @IBOutlet private weak var overlayView: DesignableView!
     @IBOutlet private weak var settingsView: DesignableView!
-    @IBOutlet private weak var settingsScrollView: UIScrollView!
+    
+    @IBOutlet private weak var settingsScrollView: UIScrollView! {
+        didSet {
+            settingsScrollView.delegate = self
+        }
+    }
+    
     @IBOutlet private weak var overlayButton: UIButton!
     
     @IBOutlet private weak var categoriesStackView: UIStackView! {
@@ -23,7 +28,6 @@ class SettingsViewController: UIViewController {
                 guard let categoryView = NSBundle.mainBundle().loadNibNamed("CategoryView", owner: self, options: nil)[0] as? CategoryView else { return }
                 categoryView.checkboxLabel.setTitle(category.title, forState: .Normal)
                 categoryView.checkbox.on = category.visible
-                categoryView.parentViewController = self
                 categoriesStackView.addArrangedSubview(categoryView)
             }
         }
@@ -33,7 +37,7 @@ class SettingsViewController: UIViewController {
         performUnwindToHomeOnSettingsButton()
     }
     
-    func performUnwindToHomeOnButton(sender: UIButton?) {
+    func performUnwindToHomeOnButton(sender: UIButton?) {   
         overlayView.animation = "fadeOut"
         overlayView.animate()
         
@@ -65,7 +69,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        settingsScrollView.delegate = self
         settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     
