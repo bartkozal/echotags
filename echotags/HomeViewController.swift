@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
             
             mapView.delegate = self
             mapView.attributionButton.hidden = true
+            mapView.showsUserLocation = true
             mapView.setCamera(camera, animated: false)
             
             reloadPointAnnotations()
