@@ -8,15 +8,7 @@
 
 import UIKit
 
-
 class TutorialStepViewController: UIViewController {
-    
-    @IBOutlet private weak var settingsLabel: UILabel! {
-        didSet {
-            settingsLabel = GlyphLabel(label: settingsLabel).replace("@", withImage: "glyph-settings")
-        }
-    }
-    
     @IBAction private func touchDismissTutorial(sender: UIButton) {
         let homeViewController = presentingViewController?.childViewControllers.first as? HomeViewController
         
@@ -28,7 +20,6 @@ class TutorialStepViewController: UIViewController {
     @IBAction private func touchFinishTutorial(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     @IBAction private func touchNextStep(sender: UIButton) {
         guard let tutorialPageViewController = parentViewController as? TutorialPageViewController else { return }

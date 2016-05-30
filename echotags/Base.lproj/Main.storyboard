@@ -61,7 +61,7 @@
         <!--Tutorial Step View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepStartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartTutorialStepViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -168,10 +168,10 @@ For the first run we would like to ask you for the localization permission and a
             </objects>
             <point key="canvasLocation" x="2360.5" y="1754.5"/>
         </scene>
-        <!--Tutorial Step View Controller-->
+        <!--Permissions Tutorial Step View Controller-->
         <scene sceneID="0bG-8a-Cts">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepPermissionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dFO-Bs-lys" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PermissionsTutorialStepViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dFO-Bs-lys" customClass="PermissionsTutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yKz-SN-RUx"/>
                         <viewControllerLayoutGuide type="bottom" id="Q4y-iJ-qdg"/>
@@ -255,6 +255,9 @@ For the first run we would like to ask you for the localization permission and a
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="touchLocationPermission:" destination="dFO-Bs-lys" eventType="touchUpInside" id="g8u-jL-Kzh"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All content is already available offline. You don't need to care about your mobile data plan." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dN-CSp" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="7" y="206" width="302" height="58"/>
@@ -307,15 +310,18 @@ For the first run we would like to ask you for the localization permission and a
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="locationPermissionButton" destination="4g3-2L-YUn" id="TvW-nP-3Ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-3h-mvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2775.5" y="1754.5"/>
         </scene>
-        <!--Tutorial Step View Controller-->
+        <!--Purchase Tutorial Step View Controller-->
         <scene sceneID="tCl-J8-ZpQ">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepPurchaseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nMg-DA-Qdy" customClass="TutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PurchaseTutorialStepViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nMg-DA-Qdy" customClass="PurchaseTutorialStepViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CHd-qU-Gwa"/>
                         <viewControllerLayoutGuide type="bottom" id="i56-Zl-2Hn"/>
@@ -438,7 +444,7 @@ For the first run we would like to ask you for the localization permission and a
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="settingsLabel" destination="9du-MQ-4yX" id="whx-7A-guu"/>
+                        <outlet property="settingsLabel" destination="9du-MQ-4yX" id="TDw-YT-0LE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZ8-GL-8pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
