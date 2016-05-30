@@ -17,6 +17,7 @@
 		A16ACB031CFC68040009C5CE /* PermissionsTutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB021CFC68040009C5CE /* PermissionsTutorialStepViewController.swift */; };
 		A16ACB051CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB041CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift */; };
 		A16ACB091CFC77500009C5CE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB081CFC77500009C5CE /* Alerts.swift */; };
+		A16ACB0B1CFC7A5D0009C5CE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB0A1CFC7A5D0009C5CE /* Location.swift */; };
 		A175F2591CE39EAD00A14B2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175F2581CE39EAD00A14B2E /* HomeViewController.swift */; };
 		A177D62D1CFB9AE800B0E11A /* DB.realm in Resources */ = {isa = PBXBuildFile; fileRef = A177D62C1CFB9AE800B0E11A /* DB.realm */; };
 		A177D6311CFBA15000B0E11A /* UniqueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D6301CFBA15000B0E11A /* UniqueObject.swift */; };
@@ -43,6 +44,7 @@
 		A16ACB021CFC68040009C5CE /* PermissionsTutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTutorialStepViewController.swift; sourceTree = "<group>"; };
 		A16ACB041CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseTutorialStepViewController.swift; sourceTree = "<group>"; };
 		A16ACB081CFC77500009C5CE /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		A16ACB0A1CFC7A5D0009C5CE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A175F2581CE39EAD00A14B2E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A177D62C1CFB9AE800B0E11A /* DB.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = DB.realm; sourceTree = "<group>"; };
 		A177D6301CFBA15000B0E11A /* UniqueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueObject.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		A16ACB011CFC5DC60009C5CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A16ACB0A1CFC7A5D0009C5CE /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				A177D6311CFBA15000B0E11A /* UniqueObject.swift in Sources */,
 				A16ACB091CFC77500009C5CE /* Alerts.swift in Sources */,
+				A16ACB0B1CFC7A5D0009C5CE /* Location.swift in Sources */,
 				A1650A581CF220700010765D /* Schema.swift in Sources */,
 				A15493491CEA33F7000B096E /* TutorialStepViewController.swift in Sources */,
 				A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */,

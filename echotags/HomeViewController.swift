@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
         overlayView.animation = "fadeOut"
         overlayView.animateNext { [weak weakSelf = self] in
             weakSelf?.overlayView.hidden = true
+            Location.checkPermission(self)
         }
     }
     
