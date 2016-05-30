@@ -21,13 +21,13 @@ class TutorialPageViewController: UIPageViewController {
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
        return [self.newTutorialStepViewController("Start"),
-               self.newTutorialStepViewController("Permission"),
+               self.newTutorialStepViewController("Permissions"),
                self.newTutorialStepViewController("Purchase"),
                ]
     }()
     
     private func newTutorialStepViewController(name: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialStep\(name)ViewController")
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("\(name)TutorialStepViewController")
     }
 }
 
