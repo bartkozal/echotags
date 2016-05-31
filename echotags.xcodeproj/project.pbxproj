@@ -23,6 +23,7 @@
 		A177D6311CFBA15000B0E11A /* UniqueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D6301CFBA15000B0E11A /* UniqueObject.swift */; };
 		A19FDFD81CF381E800BC54D0 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDFD71CF381E800BC54D0 /* Database.swift */; };
 		A1B2B8DB1CEB450A00077D80 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */; };
+		A1B7B24C1CFE1903006171D5 /* Audio.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B7B24B1CFE1903006171D5 /* Audio.xcassets */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
 		A1F2A0E51CE2030000593EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A0E31CE2030000593EB0 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		A177D6301CFBA15000B0E11A /* UniqueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueObject.swift; sourceTree = "<group>"; };
 		A19FDFD71CF381E800BC54D0 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		A1B7B24B1CFE1903006171D5 /* Audio.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Audio.xcassets; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				A177D62C1CFB9AE800B0E11A /* DB.realm */,
 				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
 				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
+				A1B7B24B1CFE1903006171D5 /* Audio.xcassets */,
 				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
 			);
 			name = "Support Files";
@@ -247,6 +250,7 @@
 			files = (
 				A1F2A0EA1CE2030000593EB0 /* LaunchScreen.storyboard in Resources */,
 				A177D62D1CFB9AE800B0E11A /* DB.realm in Resources */,
+				A1B7B24C1CFE1903006171D5 /* Audio.xcassets in Resources */,
 				A1363C151CF7363B000D5C92 /* CategoryView.xib in Resources */,
 				A1F2A0E71CE2030000593EB0 /* Assets.xcassets in Resources */,
 				A1F2A0E51CE2030000593EB0 /* Main.storyboard in Resources */,
