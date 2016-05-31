@@ -9,6 +9,8 @@
 import UIKit
 
 class TutorialPageViewController: UIPageViewController {
+    var skipTutorial = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,6 +18,22 @@ class TutorialPageViewController: UIPageViewController {
         
         if let firstVC = orderedViewControllers.first {
             setViewControllers([firstVC], direction: .Forward, animated: true, completion: nil)
+        }
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if skipTutorial {
+            view.hidden = true
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if skipTutorial {
+            performSegueWithIdentifier("segueToMainContainer", sender: self)
         }
     }
     
