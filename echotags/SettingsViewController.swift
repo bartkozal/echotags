@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController {
         performUnwindToHomeOnSettingsButton()
     }
     
-    func performUnwindToHomeOnButton(sender: UIButton?) {   
+    func performUnwindToHomeOnButton(sender: UIButton?) {
         overlayView.animation = "fadeOut"
         overlayView.animate()
         
@@ -61,7 +61,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         settingsScrollView.delegate = self
         settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
