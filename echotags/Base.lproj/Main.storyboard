@@ -516,48 +516,88 @@ For the first run we would like to ask you for the localization permission and a
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
-                                <rect key="frame" x="0.0" y="51" width="209" height="28"/>
-                                <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-zy-PQh">
+                                <rect key="frame" x="0.0" y="15" width="237" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUT HEADPHONES ON." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHU-jl-Ov8">
+                                        <rect key="frame" x="0.0" y="0.0" width="237" height="28"/>
+                                        <color key="backgroundColor" red="0.21568627450980393" green="0.2627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="237" id="4KJ-Jj-tff"/>
+                                            <constraint firstAttribute="height" constant="28" id="cWB-zc-Jh4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
+                                        <rect key="frame" x="0.0" y="36" width="209" height="28"/>
+                                        <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="SEg-R8-Ub7"/>
+                                            <constraint firstAttribute="width" constant="209" id="w7u-4g-sjP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENJOY AMSTERDAM!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-Y9-r9C">
+                                        <rect key="frame" x="0.0" y="72" width="216" height="28"/>
+                                        <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="216" id="OVt-ic-5PR"/>
+                                            <constraint firstAttribute="height" constant="28" id="Zoo-p7-LSb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-Dh-9eY" customClass="DesignableView" customModule="Spring">
+                                <rect key="frame" x="50" y="574" width="275" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfH-4o-LzJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="63"/>
+                                        <connections>
+                                            <action selector="touchOutOfBoundsButton:" destination="NdK-S1-o1x" eventType="touchUpInside" id="97P-Ij-RNI"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seems you are out of Amsterdam. You can still review markers but navigation won't work." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxp-7r-nBh" customClass="DesignableLabel" customModule="Spring">
+                                        <rect key="frame" x="8" y="8" width="259" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.70980392160000005" green="0.50588235290000005" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="textAlignment">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="SEg-R8-Ub7"/>
-                                    <constraint firstAttribute="width" constant="209" id="w7u-4g-sjP"/>
+                                    <constraint firstAttribute="trailing" secondItem="fxp-7r-nBh" secondAttribute="trailing" constant="8" id="BNm-be-VQa"/>
+                                    <constraint firstItem="EfH-4o-LzJ" firstAttribute="leading" secondItem="pIR-Dh-9eY" secondAttribute="leading" id="Eph-CJ-zDX"/>
+                                    <constraint firstItem="fxp-7r-nBh" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="top" constant="8" id="Er2-wR-2zU"/>
+                                    <constraint firstAttribute="trailing" secondItem="EfH-4o-LzJ" secondAttribute="trailing" id="FNJ-SJ-gcv"/>
+                                    <constraint firstItem="EfH-4o-LzJ" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="top" id="Hx1-9v-Ujb"/>
+                                    <constraint firstItem="fxp-7r-nBh" firstAttribute="leading" secondItem="pIR-Dh-9eY" secondAttribute="leading" constant="8" id="alU-0j-4Ig"/>
+                                    <constraint firstAttribute="bottom" secondItem="fxp-7r-nBh" secondAttribute="bottom" constant="8" id="oSv-sF-vNS"/>
+                                    <constraint firstAttribute="bottom" secondItem="EfH-4o-LzJ" secondAttribute="bottom" id="rCt-CX-H4x"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENJOY AMSTERDAM!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-Y9-r9C">
-                                <rect key="frame" x="0.0" y="87" width="216" height="28"/>
-                                <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="216" id="OVt-ic-5PR"/>
-                                    <constraint firstAttribute="height" constant="28" id="Zoo-p7-LSb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUT HEADPHONES ON." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHU-jl-Ov8">
-                                <rect key="frame" x="0.0" y="15" width="237" height="28"/>
-                                <color key="backgroundColor" red="0.21568627450980393" green="0.2627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="237" id="4KJ-Jj-tff"/>
-                                    <constraint firstAttribute="height" constant="28" id="cWB-zc-Jh4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <connections>
-                                            <action selector="touchOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="ejp-r9-2WV"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
                                         <rect key="frame" x="82" y="505" width="250" height="43"/>
                                         <string key="text">Settings are here, if you need them.
@@ -569,6 +609,12 @@ Tap anywhere to hide the overlay.</string>
                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" image="img-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-b4-Blt">
                                         <rect key="frame" x="207" y="563" width="88" height="59"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <connections>
+                                            <action selector="touchOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="ejp-r9-2WV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80338983050000001" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -582,23 +628,23 @@ Tap anywhere to hide the overlay.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
-                            <constraint firstItem="X7J-Y9-r9C" firstAttribute="top" secondItem="b02-4k-5ac" secondAttribute="bottom" constant="8" id="1vl-Zk-lsK"/>
-                            <constraint firstItem="oHU-jl-Ov8" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="3dP-4Q-zYM"/>
                             <constraint firstAttribute="bottom" secondItem="hue-2G-3ru" secondAttribute="bottom" id="6dg-X3-gtK"/>
-                            <constraint firstItem="b02-4k-5ac" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="AFn-Td-hTd"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
-                            <constraint firstItem="b02-4k-5ac" firstAttribute="top" secondItem="oHU-jl-Ov8" secondAttribute="bottom" constant="8" id="BVX-Mr-1QW"/>
+                            <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
+                            <constraint firstItem="pIR-Dh-9eY" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" constant="50" id="Ebk-ba-9Bl"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
-                            <constraint firstItem="X7J-Y9-r9C" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TuT-TS-zre"/>
+                            <constraint firstAttribute="trailing" secondItem="pIR-Dh-9eY" secondAttribute="trailing" constant="50" id="ZXg-l9-Kmo"/>
+                            <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="b4K-cP-eMR"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="hs8-EM-LLh"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="jFk-mB-Y3s"/>
-                            <constraint firstItem="oHU-jl-Ov8" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="mQ2-Ec-6QC"/>
                             <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
+                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="bottom" constant="30" id="ydo-Vr-88Z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
+                        <outlet property="outOfBoundsView" destination="pIR-Dh-9eY" id="hPL-q6-67M"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
                         <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>
@@ -721,7 +767,7 @@ Tap anywhere to hide the overlay.</string>
                                                     <constraint firstItem="rv7-Ra-BOv" firstAttribute="centerY" secondItem="hPI-pe-HGu" secondAttribute="centerY" id="weY-jK-n84"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
                                                 <rect key="frame" x="15" y="289" width="345" height="363"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="sMK-Rx-yS9"/>
