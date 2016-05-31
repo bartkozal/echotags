@@ -13,15 +13,8 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet private weak var overlayView: DesignableView!
     @IBOutlet private weak var settingsView: DesignableView!
-    
-    @IBOutlet private weak var settingsScrollView: UIScrollView! {
-        didSet {
-            settingsScrollView.delegate = self
-        }
-    }
-    
+    @IBOutlet private weak var settingsScrollView: UIScrollView!
     @IBOutlet private weak var overlayButton: UIButton!
-    
     @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {
             for category in Category.all() {
@@ -55,20 +48,21 @@ class SettingsViewController: UIViewController {
             settingsButton.rotate = 90.0
             settingsButton.animateNext { [weak weakSelf = self] in
                 settingsButton.userInteractionEnabled = true
-                weakSelf?.performSegueWithIdentifier("unwindToHome", sender: self)
+                weakSelf?.performSegueWithIdentifier("unwindToMap", sender: self)
             }
         }
     }
     
     private func performUnwindToHomeOnSettingsButton() {
-        if let wrapperViewController = presentingViewController?.parentViewController as? WrapperViewController {
-            performUnwindToHomeOnButton(wrapperViewController.settingsButton)
+        if let mainCVC = presentingViewController?.parentViewController as? MainContainerViewController {
+            performUnwindToHomeOnButton(mainCVC.settingsButton)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        settingsScrollView.delegate = self
         settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     

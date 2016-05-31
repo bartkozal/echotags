@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  echotags
 //
 //  Created by bkzl on 11/05/16.
@@ -10,10 +10,24 @@ import UIKit
 import Spring
 import Mapbox
 
-class HomeViewController: UIViewController {
+class MapViewController: UIViewController {
+    var isOverlayHidden: Bool {
+        get {
+            if let mainCVC = parentViewController as? MainContainerViewController {
+                    return mainCVC.isOverlayHidden
+            }
+            return true
+        }
+    }
+    
     private var location = Location()
     
-    @IBOutlet weak var overlayView: DesignableView!
+    @IBOutlet weak var overlayView: DesignableView! {
+        didSet {
+            overlayView.hidden = isOverlayHidden
+        }
+    }
+
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
@@ -26,9 +40,9 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction internal func unwindToHomeViewController(sender: UIStoryboardSegue) {}
+    @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
     
-    @IBAction func toggleOverlayView(sender: UIButton) {
+    @IBAction private func touchOverlayView(sender: UIButton) {
         overlayView.animation = "fadeOut"
         overlayView.animateNext { [weak weakSelf = self] in
             weakSelf?.overlayView.hidden = true
@@ -73,15 +87,15 @@ class HomeViewController: UIViewController {
             mapView.addAnnotation(pointAnnotation)
         }
     }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-
-        performSegueWithIdentifier("segueToTutorial", sender: self)
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        overlayView.hidden = isOverlayHidden
     }
 }
 
-extension HomeViewController: MGLMapViewDelegate {
+extension MapViewController: MGLMapViewDelegate {
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }

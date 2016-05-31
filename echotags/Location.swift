@@ -16,14 +16,14 @@ class Location {
         manager = CLLocationManager()
     }
     
-    func checkPermission(inViewControler: UIViewController) {
+    func checkPermission(inVC: UIViewController) {
         switch CLLocationManager.authorizationStatus() {
         case .AuthorizedAlways:
             return
         case .NotDetermined:
             manager.requestAlwaysAuthorization()
         case .Denied, .Restricted, .AuthorizedWhenInUse:
-            Alert(viewController: inViewControler).accessToLocationBackgroundDenied()
+            Alert(vc: inVC).accessToLocationBackgroundDenied()
         }
     }
 }

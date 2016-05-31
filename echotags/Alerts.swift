@@ -9,7 +9,7 @@
 import UIKit
 
 struct Alert {
-    var viewController: UIViewController
+    var vc: UIViewController
     
     func accessToLocationBackgroundDenied() {
         let alertController = UIAlertController(
@@ -27,6 +27,6 @@ struct Alert {
         }
         alertController.addAction(openAction)
         
-        viewController.presentViewController(alertController, animated: true, completion: nil)
+        vc.presentViewController(alertController, animated: true, completion: nil)
     }
 }
