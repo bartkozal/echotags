@@ -84,7 +84,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A10642F61CE7C3EB00ABE7BF /* Support Files */ = {
+		A10642F61CE7C3EB00ABE7BF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				A177D62C1CFB9AE800B0E11A /* DB.realm */,
@@ -93,7 +93,7 @@
 				A1B7B24B1CFE1903006171D5 /* Audio.xcassets */,
 				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
 			);
-			name = "Support Files";
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		A143EB5E1CF72AA600E2E16D /* View Controllers */ = {
@@ -167,7 +167,7 @@
 				A143EB5E1CF72AA600E2E16D /* View Controllers */,
 				A16ACB011CFC5DC60009C5CE /* Models */,
 				A1650A591CF220980010765D /* Database */,
-				A10642F61CE7C3EB00ABE7BF /* Support Files */,
+				A10642F61CE7C3EB00ABE7BF /* Assets */,
 			);
 			path = echotags;
 			sourceTree = "<group>";
