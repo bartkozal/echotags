@@ -8,8 +8,12 @@
 
 import UIKit
 import Spring
+import BEMCheckBox
 
 class SettingsViewController: UIViewController {
+    private var mainCVC: MainContainerViewController {
+        return presentingViewController?.parentViewController as! MainContainerViewController
+    }
     
     @IBOutlet private weak var overlayView: DesignableView!
     @IBOutlet private weak var settingsView: DesignableView!
@@ -21,6 +25,7 @@ class SettingsViewController: UIViewController {
                 guard let categoryView = NSBundle.mainBundle().loadNibNamed("CategoryView", owner: self, options: nil)[0] as? CategoryView else { return }
                 categoryView.checkboxLabel.setTitle(category.title, forState: .Normal)
                 categoryView.checkbox.on = category.visible
+                categoryView.delegate = self
                 categoriesStackView.addArrangedSubview(categoryView)
             }
         }
@@ -54,9 +59,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func performUnwindToHomeOnSettingsButton() {
-        if let mainCVC = presentingViewController?.parentViewController as? MainContainerViewController {
-            performUnwindToHomeOnButton(mainCVC.settingsButton)
-        }
+        performUnwindToHomeOnButton(mainCVC.settingsButton)
     }
     
     override func viewDidLoad() {
@@ -94,6 +97,15 @@ class SettingsViewController: UIViewController {
         
         overlayView.hidden = false
         settingsView.hidden = false
+    }
+}
+
+extension SettingsViewController: CategoryViewDelegate {
+    func didTapCategory(checkbox: BEMCheckBox, title: String?) {
+        if let checkboxTitle = title, category = Category.findByTitle(checkboxTitle) {
+            category.updateVisibility(checkbox.on)
+        }
+        mainCVC.categoriesHaveChanged = true
     }
 }
 
