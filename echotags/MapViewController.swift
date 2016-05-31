@@ -115,8 +115,9 @@ extension MapViewController: CLLocationManagerDelegate {
         } else {
             outOfBoundsView.hidden = false
             mapView.showsUserLocation = false
-            manager.stopUpdatingLocation()
         }
+
+        manager.stopUpdatingLocation()
     }
 }
 
