@@ -22,18 +22,18 @@ class MapViewController: UIViewController {
     
     private var location = Location()
     
-    @IBOutlet weak var overlayView: DesignableView! {
-        didSet {
-            overlayView.hidden = isOverlayHidden
-        }
-    }
+    @IBOutlet weak var overlayView: DesignableView!
 
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
-            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
-            
-            mapView.attributionButton.hidden = true
             mapView.delegate = self
+            mapView.attributionButton.hidden = true
+            mapView.showsUserLocation = true
+            
+            let defaults = Location.Defaults()
+            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: defaults.latitude, longitude: defaults.longitude), zoomLevel: defaults.zoomLevel, animated: false)
+            
+            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             mapView.setCamera(camera, animated: false)
             
             reloadPointAnnotations()
@@ -92,6 +92,19 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         overlayView.hidden = isOverlayHidden
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        location.manager.delegate = self
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation = locations[0]
+        mapView.setCenterCoordinate(userLocation.coordinate, animated: false)
     }
 }
 
