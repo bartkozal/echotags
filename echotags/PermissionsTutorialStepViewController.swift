@@ -11,6 +11,7 @@ import Spring
 import CoreLocation
 
 class PermissionsTutorialStepViewController: TutorialStepViewController, CLLocationManagerDelegate {
+    private var location = Location()
     
     @IBOutlet private weak var locationPermissionButton: DesignableButton! {
         didSet {
@@ -19,7 +20,7 @@ class PermissionsTutorialStepViewController: TutorialStepViewController, CLLocat
     }
 
     @IBAction private func touchLocationPermission(sender: DesignableButton) {
-        Location.checkPermission(self)
+        location.checkPermission(self)
     }
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -29,7 +30,7 @@ class PermissionsTutorialStepViewController: TutorialStepViewController, CLLocat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Location.manager.delegate = self
+        location.manager.delegate = self
     }
     
     private func determinePermissionButtonStyle(status: CLAuthorizationStatus) {

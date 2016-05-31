@@ -11,15 +11,15 @@ import Spring
 import Mapbox
 
 class HomeViewController: UIViewController {
+    private var location = Location()
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             
-            mapView.delegate = self
             mapView.attributionButton.hidden = true
-            mapView.showsUserLocation = true
+            mapView.delegate = self
             mapView.setCamera(camera, animated: false)
             
             reloadPointAnnotations()
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         overlayView.animation = "fadeOut"
         overlayView.animateNext { [weak weakSelf = self] in
             weakSelf?.overlayView.hidden = true
-            Location.checkPermission(self)
+            weakSelf?.location.checkPermission(weakSelf!)
         }
     }
     
