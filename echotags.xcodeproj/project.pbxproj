@@ -111,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				A1650A571CF220700010765D /* Schema.swift */,
-				A19FDFD71CF381E800BC54D0 /* Database.swift */,
 				A177D6301CFBA15000B0E11A /* UniqueObject.swift */,
 			);
 			name = Database;
@@ -121,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				A16ACB0A1CFC7A5D0009C5CE /* Location.swift */,
+				A19FDFD71CF381E800BC54D0 /* Database.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

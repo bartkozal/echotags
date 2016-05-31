@@ -11,9 +11,17 @@ import CoreLocation
 
 class Location {
     var manager: CLLocationManager
-    
+
+    struct Defaults {
+        let latitude = 52.371413
+        let longitude = 4.897451
+        let zoomLevel = 13.5
+    }
+
     init() {
         manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.startUpdatingLocation()
     }
     
     func checkPermission(inVC: UIViewController) {
