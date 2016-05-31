@@ -10,7 +10,7 @@ import UIKit
 import Spring
 import CoreLocation
 
-class PermissionsTutorialStepViewController: TutorialStepViewController, CLLocationManagerDelegate {
+class PermissionsTutorialStepViewController: TutorialStepViewController {
     private var location = Location()
     
     @IBOutlet private weak var locationPermissionButton: DesignableButton! {
@@ -21,10 +21,6 @@ class PermissionsTutorialStepViewController: TutorialStepViewController, CLLocat
 
     @IBAction private func touchLocationPermission(sender: DesignableButton) {
         location.checkPermission(self)
-    }
-
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        determinePermissionButtonStyle(status)
     }
     
     override func viewDidLoad() {
@@ -38,6 +34,14 @@ class PermissionsTutorialStepViewController: TutorialStepViewController, CLLocat
             locationPermissionButton.backgroundColor = UIColor(hex: "37435A")
             locationPermissionButton.setTitleColor(.whiteColor(), forState: .Normal)
             locationPermissionButton.setImage(UIImage(named: "icon-permissions-active"), forState: .Normal)
+        } else {
+            
         }
+    }
+}
+
+extension PermissionsTutorialStepViewController: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        determinePermissionButtonStyle(status)
     }
 }
