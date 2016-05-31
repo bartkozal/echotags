@@ -9,7 +9,7 @@
 import UIKit
 import BEMCheckBox
 
-class CategoryView: UIView, BEMCheckBoxDelegate {
+class CategoryView: UIView {
     
     @IBOutlet weak var checkbox: BEMCheckBox! {
         didSet {
@@ -26,13 +26,15 @@ class CategoryView: UIView, BEMCheckBoxDelegate {
         updateValue()
     }
     
-    func didTapCheckBox(checkBox: BEMCheckBox) {
-        updateValue()
-    }
-    
     private func updateValue() {
         if let category = Category.findByTitle(checkboxLabel.currentTitle!) {
             category.updateVisibility(checkbox.on)
         }
+    }
+}
+
+extension CategoryView: BEMCheckBoxDelegate {
+    func didTapCheckBox(checkBox: BEMCheckBox) {
+        updateValue()
     }
 }
