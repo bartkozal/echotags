@@ -104,7 +104,7 @@ class MapViewController: UIViewController {
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations[0]
-        mapView.setCenterCoordinate(userLocation.coordinate, animated: false)
+        mapView.setCenterCoordinate(userLocation.coordinate, animated: true)
     }
 }
 
