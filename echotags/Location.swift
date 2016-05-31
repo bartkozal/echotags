@@ -10,9 +10,13 @@ import UIKit
 import CoreLocation
 
 class Location {
-    static let manager = CLLocationManager()
+    var manager: CLLocationManager
     
-    static func checkPermission(inViewControler: UIViewController) {
+    init() {
+        manager = CLLocationManager()
+    }
+    
+    func checkPermission(inViewControler: UIViewController) {
         switch CLLocationManager.authorizationStatus() {
         case .AuthorizedAlways:
             return

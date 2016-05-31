@@ -24,7 +24,7 @@ class Marker: Object {
     dynamic var category: Category?
     
     static func visible() -> [Object] {
-        return Data.db.objects(Marker).filter("category.visible = true").uniqueObject("point")
+        return Database().db.objects(Marker).filter("category.visible = true").uniqueObject("point")
     }
 }
 
@@ -33,15 +33,15 @@ class Category: Object {
     dynamic var visible = true
     
     static func all() -> Results<Category> {
-        return Data.db.objects(Category)
+        return Database().db.objects(Category)
     }
     
     static func findByTitle(title: String) -> Category? {
-        return Data.db.objects(Category).filter("title = %@", title).first ?? nil
+        return Database().db.objects(Category).filter("title = %@", title).first ?? nil
     }
     
     func updateVisibility(value: Bool) {
-        try! Data.db.write {
+        try! Database().db.write {
             visible = value
         }
     }
