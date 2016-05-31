@@ -13,13 +13,13 @@ class Location {
     var manager: CLLocationManager
 
     struct Defaults {
-        let coordinate = CLLocationCoordinate2D(latitude: 52.371413, longitude: 4.897451)
-        let zoomLevel = 13.5
+        static let coordinate = CLLocationCoordinate2D(latitude: 52.371413, longitude: 4.897451)
+        static let zoomLevel = 13.5
     }
     
-    struct Bounds {
-        let northEast = CLLocationCoordinate2D(latitude: 52.42857381779567, longitude: 5.009148437500016)
-        let southWest = CLLocationCoordinate2D(latitude: 52.28064348619208, longitude: 4.724184204101562)
+    struct CityBounds {
+        static let northEast = CLLocationCoordinate2D(latitude: 52.42857381779567, longitude: 5.009148437500016)
+        static let southWest = CLLocationCoordinate2D(latitude: 52.28064348619208, longitude: 4.724184204101562)
     }
 
     init() {
@@ -29,8 +29,7 @@ class Location {
     }
     
     func cityBoundsContains(location: CLLocationCoordinate2D) -> Bool {
-        let cityBounds = Bounds()
-        return location.latitude > cityBounds.southWest.latitude && location.latitude < cityBounds.northEast.latitude && location.longitude > cityBounds.southWest.longitude && location.longitude < cityBounds.northEast.longitude
+        return location.latitude > CityBounds.southWest.latitude && location.latitude < CityBounds.northEast.latitude && location.longitude > CityBounds.southWest.longitude && location.longitude < CityBounds.northEast.longitude
     }
     
     func checkPermission(inVC: UIViewController) {
