@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HOl-Oj-aVS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eW5-sN-O2S">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,16 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLU-fH-snx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="deK-hy-8Kg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-launch-screen" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-Qv-Nes">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hL5-mU-Zx2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <segue destination="xxj-VH-DK6" kind="embed" id="g48-FY-EcB"/>
                                 </connections>
@@ -35,28 +30,33 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8mf-Qv-Nes" firstAttribute="top" secondItem="EWa-NR-aAl" secondAttribute="bottom" id="4Ww-fy-G8z"/>
                             <constraint firstItem="hL5-mU-Zx2" firstAttribute="top" secondItem="EWa-NR-aAl" secondAttribute="bottom" id="6Fv-BG-Dl1"/>
-                            <constraint firstItem="YLU-fH-snx" firstAttribute="top" secondItem="EWa-NR-aAl" secondAttribute="bottom" id="SDE-aY-Uug"/>
-                            <constraint firstAttribute="trailing" secondItem="YLU-fH-snx" secondAttribute="trailing" id="VP2-2e-II7"/>
+                            <constraint firstAttribute="trailing" secondItem="8mf-Qv-Nes" secondAttribute="trailing" id="BuF-ve-0JK"/>
                             <constraint firstItem="cz7-b8-sIr" firstAttribute="top" secondItem="hL5-mU-Zx2" secondAttribute="bottom" id="XoF-G2-o3g"/>
+                            <constraint firstItem="8mf-Qv-Nes" firstAttribute="leading" secondItem="izh-rF-nni" secondAttribute="leading" id="cEf-jm-3fZ"/>
                             <constraint firstAttribute="trailing" secondItem="hL5-mU-Zx2" secondAttribute="trailing" id="emG-gJ-k1A"/>
-                            <constraint firstItem="cz7-b8-sIr" firstAttribute="top" secondItem="YLU-fH-snx" secondAttribute="bottom" id="f3F-kj-Mmb"/>
+                            <constraint firstItem="cz7-b8-sIr" firstAttribute="top" secondItem="8mf-Qv-Nes" secondAttribute="bottom" id="guV-HJ-nTW"/>
                             <constraint firstItem="hL5-mU-Zx2" firstAttribute="leading" secondItem="izh-rF-nni" secondAttribute="leading" id="v46-0j-dQx"/>
-                            <constraint firstItem="YLU-fH-snx" firstAttribute="leading" secondItem="izh-rF-nni" secondAttribute="leading" id="zEe-lM-5gf"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZT-ma-NFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425.5" y="1744.5"/>
+            <point key="canvasLocation" x="407.5" y="200.5"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="iB5-8p-lcN">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xxj-VH-DK6" customClass="TutorialPageViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xxj-VH-DK6" customClass="TutorialPageViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="HOl-Oj-aVS" kind="presentation" identifier="segueToMainContainer" animates="NO" id="Kw9-18-Nqm"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY5-Go-Dl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944.5" y="1744.5"/>
+            <point key="canvasLocation" x="917.5" y="200.5"/>
         </scene>
         <!--Tutorial Step View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -81,7 +81,7 @@
                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="touchDismissTutorial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDV-pE-oAH"/>
+                                            <action selector="touchFinishTutorial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyy-bB-MSQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-wW-Sbk" customClass="DesignableButton" customModule="Spring">
@@ -166,7 +166,7 @@ For the first run we would like to ask you for the localization permission and a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.5" y="1754.5"/>
+            <point key="canvasLocation" x="1349.5" y="190.5"/>
         </scene>
         <!--Permissions Tutorial Step View Controller-->
         <scene sceneID="0bG-8a-Cts">
@@ -183,17 +183,6 @@ For the first run we would like to ask you for the localization permission and a
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOh-3g-7bY" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-34-jpe">
-                                        <rect key="frame" x="242" y="0.0" width="103" height="46"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                        <state key="normal" title="Skip tutorial">
-                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="touchDismissTutorial:" destination="dFO-Bs-lys" eventType="touchUpInside" id="NUb-IP-tFi"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hp0-PZ-kgh" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="121" y="506" width="104" height="46"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -280,6 +269,17 @@ For the first run we would like to ask you for the localization permission and a
                                             <constraint firstAttribute="trailing" secondItem="C7y-nZ-Rvs" secondAttribute="trailing" id="uuq-Z7-tgf"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-34-jpe">
+                                        <rect key="frame" x="242" y="0.0" width="103" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                        <state key="normal" title="Skip tutorial">
+                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchFinishTutorial:" destination="dFO-Bs-lys" eventType="touchUpInside" id="PdA-IW-GYp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -316,7 +316,7 @@ For the first run we would like to ask you for the localization permission and a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDT-3h-mvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775.5" y="1754.5"/>
+            <point key="canvasLocation" x="1776.5" y="190.5"/>
         </scene>
         <!--Purchase Tutorial Step View Controller-->
         <scene sceneID="tCl-J8-ZpQ">
@@ -449,12 +449,12 @@ For the first run we would like to ask you for the localization permission and a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZ8-GL-8pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3193.5" y="1754.5"/>
+            <point key="canvasLocation" x="2184.5" y="190.5"/>
         </scene>
-        <!--Wrapper View Controller-->
+        <!--Main Container View Controller-->
         <scene sceneID="n9Z-7B-QpK">
             <objects>
-                <viewController id="HOl-Oj-aVS" customClass="WrapperViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HOl-Oj-aVS" customClass="MainContainerViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MSh-fg-JSp"/>
                         <viewControllerLayoutGuide type="bottom" id="S6Z-JZ-c8e"/>
@@ -464,7 +464,7 @@ For the first run we would like to ask you for the localization permission and a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ink-JH-nM8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="NdK-S1-o1x" kind="embed" identifier="" id="R4L-TL-8sC"/>
                                 </connections>
@@ -495,12 +495,12 @@ For the first run we would like to ask you for the localization permission and a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="212-89-dc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.5" y="933.5"/>
+            <point key="canvasLocation" x="917.5" y="995.5"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="eUt-nJ-LtZ">
             <objects>
-                <viewController definesPresentationContext="YES" id="NdK-S1-o1x" customClass="HomeViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="NdK-S1-o1x" customClass="MapViewController" customModule="echotags" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h9P-oE-CXM"/>
                         <viewControllerLayoutGuide type="bottom" id="MAh-qW-QRa"/>
@@ -564,7 +564,7 @@ For the first run we would like to ask you for the localization permission and a
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-hv-HCp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
-                                            <action selector="toggleOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="pAf-M9-9BD"/>
+                                            <action selector="touchOverlayView:" destination="NdK-S1-o1x" eventType="touchUpInside" id="ejp-r9-2WV"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-Ox-Lk7">
@@ -606,17 +606,15 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
-                        <segue destination="eW5-sN-O2S" kind="presentation" identifier="segueToTutorial" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="ip1-XH-utK"/>
                         <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425.5" y="933.5"/>
+            <point key="canvasLocation" x="1421.5" y="995.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="pyn-mD-k9R">
@@ -851,16 +849,17 @@ Tap anywhere to hide the overlay.</string>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
-                        <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToHome" animates="NO" unwindAction="unwindToHomeViewController:" id="ZBM-oy-Ddr"/>
+                        <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToMap" animates="NO" unwindAction="unwindToMapViewController:" id="ZBM-oy-Ddr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41m-U5-ThT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Aoj-DM-LQ6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1928.5" y="933.5"/>
+            <point key="canvasLocation" x="1924.5" y="995.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bg-launch-screen" width="750" height="1334"/>
         <image name="icon-indicator-1" width="42" height="10"/>
         <image name="icon-indicator-2" width="42" height="10"/>
         <image name="icon-indicator-3" width="42" height="10"/>

@@ -14,20 +14,29 @@ class TutorialPageViewController: UIPageViewController {
         
         dataSource = self
         
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)
+        if let firstVC = orderedViewControllers.first {
+            setViewControllers([firstVC], direction: .Forward, animated: true, completion: nil)
         }
     }
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-       return [self.newTutorialStepViewController("Start"),
-               self.newTutorialStepViewController("Permissions"),
-               self.newTutorialStepViewController("Purchase"),
-               ]
+        return [self.newTutorialStepVC("Start"),
+                self.newTutorialStepVC("Permissions"),
+                self.newTutorialStepVC("Purchase"),
+                ]
     }()
     
-    private func newTutorialStepViewController(name: String) -> UIViewController {
+    private func newTutorialStepVC(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("\(name)TutorialStepViewController")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToMainContainer" {
+            if (sender as? UIButton)?.currentTitle == "Skip tutorial" {
+                let mainCVC = segue.destinationViewController as? MainContainerViewController
+                mainCVC?.isOverlayHidden = false
+            }
+        }
     }
 }
 
