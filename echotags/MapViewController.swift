@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
             mapView.showsUserLocation = true
             
             let defaults = Location.Defaults()
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: defaults.latitude, longitude: defaults.longitude), zoomLevel: defaults.zoomLevel, animated: false)
+            mapView.setCenterCoordinate(defaults.coordinate, zoomLevel: defaults.zoomLevel, animated: false)
             
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             mapView.setCamera(camera, animated: false)
@@ -103,8 +103,15 @@ class MapViewController: UIViewController {
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations[0]
-        mapView.setCenterCoordinate(userLocation.coordinate, animated: true)
+        let userLocation = locations[0].coordinate
+        
+        if location.cityBoundsContains(userLocation) {
+            mapView.setCenterCoordinate(userLocation, animated: true)
+        } else {
+            print("Out of Amsterdam")
+            mapView.showsUserLocation = false
+            manager.stopUpdatingLocation()
+        }
     }
 }
 
