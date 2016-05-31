@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     var isOverlayHidden: Bool {
         get {
             if let mainCVC = parentViewController as? MainContainerViewController {
-                    return mainCVC.isOverlayHidden
+                return mainCVC.isOverlayHidden
             }
             return true
         }
@@ -23,7 +23,8 @@ class MapViewController: UIViewController {
     private var location = Location()
     
     @IBOutlet weak var overlayView: DesignableView!
-
+    @IBOutlet private weak var outOfBoundsView: DesignableView!
+    
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
             mapView.delegate = self
@@ -41,6 +42,13 @@ class MapViewController: UIViewController {
     }
     
     @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
+    
+    @IBAction private func touchOutOfBoundsButton(sender: AnyObject) {
+        outOfBoundsView.animation = "fadeOut"
+        outOfBoundsView.animateNext { [weak weakSelf = self] in
+            weakSelf?.outOfBoundsView.hidden = true
+        }
+    }
     
     @IBAction private func touchOverlayView(sender: UIButton) {
         overlayView.animation = "fadeOut"
@@ -62,7 +70,7 @@ class MapViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
+        
         createMaskLayer()
     }
     
@@ -108,7 +116,7 @@ extension MapViewController: CLLocationManagerDelegate {
         if location.cityBoundsContains(userLocation) {
             mapView.setCenterCoordinate(userLocation, animated: true)
         } else {
-            print("Out of Amsterdam")
+            outOfBoundsView.hidden = false
             mapView.showsUserLocation = false
             manager.stopUpdatingLocation()
         }
