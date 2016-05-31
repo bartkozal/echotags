@@ -12,12 +12,10 @@ import Mapbox
 
 class MapViewController: UIViewController {
     var isOverlayHidden: Bool {
-        get {
-            if let mainCVC = parentViewController as? MainContainerViewController {
-                return mainCVC.isOverlayHidden
-            }
-            return true
+        if let mainCVC = parentViewController as? MainContainerViewController {
+            return mainCVC.isOverlayHidden
         }
+        return true
     }
     
     private var location = Location()
@@ -31,8 +29,7 @@ class MapViewController: UIViewController {
             mapView.attributionButton.hidden = true
             mapView.showsUserLocation = true
             
-            let defaults = Location.Defaults()
-            mapView.setCenterCoordinate(defaults.coordinate, zoomLevel: defaults.zoomLevel, animated: false)
+            mapView.setCenterCoordinate(Location.Defaults.coordinate, zoomLevel: Location.Defaults.zoomLevel, animated: false)
             
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             mapView.setCamera(camera, animated: false)
