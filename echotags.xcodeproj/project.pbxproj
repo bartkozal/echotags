@@ -18,6 +18,7 @@
 		A16ACB051CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB041CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift */; };
 		A16ACB091CFC77500009C5CE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB081CFC77500009C5CE /* Alerts.swift */; };
 		A16ACB0B1CFC7A5D0009C5CE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16ACB0A1CFC7A5D0009C5CE /* Location.swift */; };
+		A16C3D381CFEDDE000F2CC5D /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16C3D371CFEDDE000F2CC5D /* Audio.swift */; };
 		A175F2591CE39EAD00A14B2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175F2581CE39EAD00A14B2E /* MapViewController.swift */; };
 		A177D62D1CFB9AE800B0E11A /* DB.realm in Resources */ = {isa = PBXBuildFile; fileRef = A177D62C1CFB9AE800B0E11A /* DB.realm */; };
 		A177D6311CFBA15000B0E11A /* UniqueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D6301CFBA15000B0E11A /* UniqueObject.swift */; };
@@ -41,11 +42,14 @@
 		A1363C141CF7363B000D5C92 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		A15493481CEA33F7000B096E /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
+		A15D28AE1CFEE8DE00E55F03 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A15D28B11CFEFB9300E55F03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1650A571CF220700010765D /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		A16ACB021CFC68040009C5CE /* PermissionsTutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsTutorialStepViewController.swift; sourceTree = "<group>"; };
 		A16ACB041CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseTutorialStepViewController.swift; sourceTree = "<group>"; };
 		A16ACB081CFC77500009C5CE /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		A16ACB0A1CFC7A5D0009C5CE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A16C3D371CFEDDE000F2CC5D /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		A175F2581CE39EAD00A14B2E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A177D62C1CFB9AE800B0E11A /* DB.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = DB.realm; sourceTree = "<group>"; };
 		A177D6301CFBA15000B0E11A /* UniqueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueObject.swift; sourceTree = "<group>"; };
@@ -122,8 +126,9 @@
 		A16ACB011CFC5DC60009C5CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A16ACB0A1CFC7A5D0009C5CE /* Location.swift */,
+				A16C3D371CFEDDE000F2CC5D /* Audio.swift */,
 				A19FDFD71CF381E800BC54D0 /* Database.swift */,
+				A16ACB0A1CFC7A5D0009C5CE /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -175,6 +180,8 @@
 		C162163EB18D2D04A0F90692 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A15D28B11CFEFB9300E55F03 /* Foundation.framework */,
+				A15D28AE1CFEE8DE00E55F03 /* AVFoundation.framework */,
 				A11941BD1CE6868600B4D280 /* QuartzCore.framework */,
 				B42EAD62ED747FC68B6FC284 /* Pods_echotags.framework */,
 			);
@@ -191,8 +198,8 @@
 				A56B9037B4DADC1CCBF14E24 /* 📦 Check Pods Manifest.lock */,
 				A1F2A0D81CE2030000593EB0 /* Sources */,
 				A1F2A0D91CE2030000593EB0 /* Frameworks */,
-				A1F2A0DA1CE2030000593EB0 /* Resources */,
 				FCFC7DD06006A404E8D59693 /* 📦 Embed Pods Frameworks */,
+				A1F2A0DA1CE2030000593EB0 /* Resources */,
 				6EBC1A696EA8677D582FE945 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
@@ -218,6 +225,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 629M2HBZ4S;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
@@ -327,6 +337,7 @@
 				A16ACB031CFC68040009C5CE /* PermissionsTutorialStepViewController.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
 				A1B2B8DB1CEB450A00077D80 /* MainContainerViewController.swift in Sources */,
+				A16C3D381CFEDDE000F2CC5D /* Audio.swift in Sources */,
 				A175F2591CE39EAD00A14B2E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
