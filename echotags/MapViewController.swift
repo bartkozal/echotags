@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     }
     
     private var location = Location()
+    private var audio = Audio()
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var outOfBoundsView: DesignableView!
@@ -103,6 +104,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         location.manager.delegate = self
+        
+        audio.play("sample")
     }
 }
 
