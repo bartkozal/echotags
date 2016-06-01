@@ -23,7 +23,7 @@ class Database {
             do {
                 try fileManager.removeItemAtURL(defaultURL)
                 try fileManager.copyItemAtURL(dbPath, toURL: defaultURL)
-            } catch(let error) {
+            } catch {
                 print(error)
             }
         }
@@ -32,7 +32,7 @@ class Database {
         
         do {
             try fileManager.setAttributes([NSFileProtectionKey: NSFileProtectionNone], ofItemAtPath: folderPath)
-        } catch(let error) {
+        } catch {
             print(error)
         }
     }
