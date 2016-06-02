@@ -38,6 +38,7 @@
 		A10642F71CE7C42400ABE7BF /* MaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayer.swift; sourceTree = "<group>"; };
 		A10F34D31CEA85A600186314 /* GlyphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphLabel.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A132D1591D00426A006DCDCE /* GPXTest.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GPXTest.gpx; sourceTree = "<group>"; };
 		A1363C121CF731C3000D5C92 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		A1363C141CF7363B000D5C92 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1B7B24B1CFE1903006171D5 /* Audio.xcassets */,
 				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
+				A132D1591D00426A006DCDCE /* GPXTest.gpx */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
