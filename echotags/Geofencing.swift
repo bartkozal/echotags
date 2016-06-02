@@ -45,16 +45,16 @@ class Geofencing {
     }
     
     func monitorNearestPoints() {
-        // TODO: use recording name from DB instead of sample
+        // TODO: missing neareast point localization
         
         if let point = Point.findByTitle("Upstream Gallery") {
             let coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-            let region = circularRegionFrom(coordinate, withRecording: "sample")
+            let region = circularRegionFrom(coordinate, withAudio: point.audio)
             manager.startMonitoringForRegion(region)
         }
     }
     
-    private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withRecording recording: String) -> CLCircularRegion {
-        return CLCircularRegion(center: coordinate, radius: Defaults.pointRadius, identifier: recording)
+    private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withAudio audio: String) -> CLCircularRegion {
+        return CLCircularRegion(center: coordinate, radius: Defaults.pointRadius, identifier: audio)
     }
 }
