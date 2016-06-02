@@ -11,7 +11,7 @@ import Spring
 import CoreLocation
 
 class PermissionsTutorialStepViewController: TutorialStepViewController {
-    private var location = Location()
+    private var geofencing = Geofencing()
     
     @IBOutlet private weak var locationPermissionButton: DesignableButton! {
         didSet {
@@ -20,13 +20,13 @@ class PermissionsTutorialStepViewController: TutorialStepViewController {
     }
 
     @IBAction private func touchLocationPermission(sender: DesignableButton) {
-        location.checkPermission(self)
+        geofencing.checkPermission(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        location.manager.delegate = self
+        geofencing.manager.delegate = self
     }
     
     private func determinePermissionButtonStyle(status: CLAuthorizationStatus) {
@@ -34,8 +34,6 @@ class PermissionsTutorialStepViewController: TutorialStepViewController {
             locationPermissionButton.backgroundColor = UIColor(hex: "37435A")
             locationPermissionButton.setTitleColor(.whiteColor(), forState: .Normal)
             locationPermissionButton.setImage(UIImage(named: "icon-permissions-active"), forState: .Normal)
-        } else {
-            
         }
     }
 }

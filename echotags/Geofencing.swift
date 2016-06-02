@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  Geofencing.swift
 //  echotags
 //
 //  Created by bkzl on 30/05/16.
@@ -9,13 +9,13 @@
 import UIKit
 import CoreLocation
 
-class Location {
+class Geofencing {
     var manager: CLLocationManager
-    var defaultRadius = CLLocationDistance(30.0)
 
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.371413, longitude: 4.897451)
         static let zoomLevel = 13.5
+        static let pointRadius = CLLocationDistance(30.0)
     }
     
     struct CityBounds {
@@ -55,6 +55,6 @@ class Location {
     }
     
     private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withRecording recording: String) -> CLCircularRegion {
-        return CLCircularRegion(center: coordinate, radius: defaultRadius, identifier: recording)
+        return CLCircularRegion(center: coordinate, radius: Defaults.pointRadius, identifier: recording)
     }
 }

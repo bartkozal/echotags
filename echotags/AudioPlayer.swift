@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class Audio: NSObject {
+class AudioPlayer: NSObject {
     var player: AVAudioPlayer?
     
     func play(recording: String) {
@@ -30,7 +30,7 @@ class Audio: NSObject {
     }
 }
 
-extension Audio: AVAudioPlayerDelegate {
+extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             do {
