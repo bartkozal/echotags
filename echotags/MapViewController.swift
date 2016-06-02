@@ -105,7 +105,7 @@ class MapViewController: UIViewController {
         
         location.manager.delegate = self
         
-        audio.play("sample")
+        location.monitorNearestPoints()
     }
 }
 
@@ -121,6 +121,10 @@ extension MapViewController: CLLocationManagerDelegate {
         }
 
         manager.stopUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        audio.play(region.identifier)
     }
 }
 

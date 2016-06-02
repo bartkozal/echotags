@@ -17,6 +17,10 @@ class Point: Object {
     dynamic var latitude = 0.0
     dynamic var longitude = 0.0
     let triggers = List<Trigger>()
+    
+    static func findByTitle(title: String) -> Point? {
+        return Database().db.objects(Point).filter("title = %@", title).first ?? nil
+    }
 }
 
 class Marker: Object {
