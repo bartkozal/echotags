@@ -13,16 +13,18 @@ class Audio: NSObject {
     var player: AVAudioPlayer?
     
     func play(recording: String) {
-        if let sound = NSDataAsset(name: recording) {
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
-                try AVAudioSession.sharedInstance().setActive(true)
-                
-                try player = AVAudioPlayer(data: sound.data, fileTypeHint: AVFileTypeAppleM4A)
-                player?.delegate = self
-                player?.play()
-            } catch {
-                print(error)
+        dispatch_async(dispatch_get_main_queue()) { [weak weakSelf = self] in
+            if let sound = NSDataAsset(name: recording) {
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
+                    try AVAudioSession.sharedInstance().setActive(true)
+                    
+                    try weakSelf?.player = AVAudioPlayer(data: sound.data, fileTypeHint: AVFileTypeAppleM4A)
+                    weakSelf?.player?.delegate = self
+                    weakSelf?.player?.play()
+                } catch {
+                    print(error)
+                }
             }
         }
     }
@@ -30,10 +32,12 @@ class Audio: NSObject {
 
 extension Audio: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        do {
-            try AVAudioSession.sharedInstance().setActive(false)
-        } catch {
-            print(error)
+        dispatch_async(dispatch_get_main_queue()) {
+            do {
+                try AVAudioSession.sharedInstance().setActive(false)
+            } catch {
+                print(error)
+            }
         }
     }
 }
