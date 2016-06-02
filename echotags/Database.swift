@@ -9,14 +9,10 @@
 import RealmSwift
 
 class Database {
-    var db: Realm
-    
-    init() {
-        db = try! Realm()
-    }
+    var db = try! Realm()
 
     func copyToFileSystem() {
-        let defaultURL = db.configuration.fileURL!
+        let defaultURL = Realm.Configuration.defaultConfiguration.fileURL!
         let fileManager = NSFileManager.defaultManager()
         
         if let dbPath = NSBundle.mainBundle().URLForResource("DB", withExtension: "realm") {

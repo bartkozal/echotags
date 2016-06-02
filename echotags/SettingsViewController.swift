@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
         didSet {
             for category in Category.all() {
                 guard let categoryView = NSBundle.mainBundle().loadNibNamed("CategoryView", owner: self, options: nil)[0] as? CategoryView else { return }
-                categoryView.checkboxLabel.setTitle(category.title, forState: .Normal)
+                categoryView.checkboxLabel.setTitle(category.name, forState: .Normal)
                 categoryView.checkbox.on = category.visible
                 categoryView.delegate = self
                 categoriesStackView.addArrangedSubview(categoryView)
