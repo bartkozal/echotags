@@ -11,6 +11,7 @@ import CoreLocation
 
 class Location {
     var manager: CLLocationManager
+    var defaultRadius = CLLocationDistance(30.0)
 
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.371413, longitude: 4.897451)
@@ -41,5 +42,19 @@ class Location {
         case .Denied, .Restricted, .AuthorizedWhenInUse:
             Alert(vc: inVC).accessToLocationBackgroundDenied()
         }
+    }
+    
+    func monitorNearestPoints() {
+        // TODO: use recording name from DB instead of sample
+        
+        if let point = Point.findByTitle("Upstream Gallery") {
+            let coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+            let region = circularRegionFrom(coordinate, withRecording: "sample")
+            manager.startMonitoringForRegion(region)
+        }
+    }
+    
+    private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withRecording recording: String) -> CLCircularRegion {
+        return CLCircularRegion(center: coordinate, radius: defaultRadius, identifier: recording)
     }
 }
