@@ -18,8 +18,8 @@ class MapViewController: UIViewController {
         return true
     }
     
-    private var location = Location()
-    private var audio = Audio()
+    private var geofencing = Geofencing()
+    private var audio = AudioPlayer()
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var outOfBoundsView: DesignableView!
@@ -30,7 +30,7 @@ class MapViewController: UIViewController {
             mapView.attributionButton.hidden = true
             mapView.showsUserLocation = true
             
-            mapView.setCenterCoordinate(Location.Defaults.coordinate, zoomLevel: Location.Defaults.zoomLevel, animated: false)
+            mapView.setCenterCoordinate(Geofencing.Defaults.coordinate, zoomLevel: Geofencing.Defaults.zoomLevel, animated: false)
             
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             mapView.setCamera(camera, animated: false)
@@ -52,7 +52,7 @@ class MapViewController: UIViewController {
         overlayView.animation = "fadeOut"
         overlayView.animateNext { [weak weakSelf = self] in
             weakSelf?.overlayView.hidden = true
-            weakSelf?.location.checkPermission(weakSelf!)
+            weakSelf?.geofencing.checkPermission(weakSelf!)
         }
     }
     
@@ -103,9 +103,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        location.manager.delegate = self
+        geofencing.manager.delegate = self
         
-        location.monitorNearestPoints()
+        geofencing.monitorNearestPoints()
     }
 }
 
@@ -113,7 +113,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations[0].coordinate
         
-        if location.cityBoundsContains(userLocation) {
+        if geofencing.cityBoundsContains(userLocation) {
             mapView.setCenterCoordinate(userLocation, animated: true)
         } else {
             outOfBoundsView.hidden = false
