@@ -117,7 +117,9 @@ extension MapViewController: CLLocationManagerDelegate {
             mapView.setCenterCoordinate(userLocation, animated: true)
         } else {
             outOfBoundsView.hidden = false
-            mapView.showsUserLocation = false
+            
+            // MARK: Disable enable before release
+            // mapView.showsUserLocation = false
         }
 
         manager.stopUpdatingLocation()

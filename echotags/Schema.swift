@@ -43,8 +43,8 @@ class Category: Object {
         return Database().db.objects(Category)
     }
     
-    static func findByTitle(title: String) -> Category? {
-        return Database().db.objects(Category).filter("title = %@", title).first ?? nil
+    static func findByName(name: String) -> Category? {
+        return Database().db.objects(Category).filter("name = %@", name).first ?? nil
     }
     
     func updateVisibility(value: Bool) {
