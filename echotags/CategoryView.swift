@@ -10,7 +10,7 @@ import UIKit
 import BEMCheckBox
 
 protocol CategoryViewDelegate {
-    func didTapCategory(checkbox: BEMCheckBox, title: String?)
+    func didTapCategory(checkbox: BEMCheckBox, name: String?)
 }
 
 class CategoryView: UIView {
@@ -28,12 +28,12 @@ class CategoryView: UIView {
     
     @IBAction private func touchCheckboxLabel(sender: UIButton) {
         checkbox.setOn(!checkbox.on, animated: true)
-        delegate?.didTapCategory(checkbox, title: checkboxLabel.currentTitle)
+        delegate?.didTapCategory(checkbox, name: checkboxLabel.currentTitle)
     }
 }
 
 extension CategoryView: BEMCheckBoxDelegate {
     func didTapCheckBox(checkBox: BEMCheckBox) {
-        delegate?.didTapCategory(checkbox, title: checkboxLabel.currentTitle)
+        delegate?.didTapCategory(checkbox, name: checkboxLabel.currentTitle)
     }
 }
