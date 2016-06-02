@@ -102,7 +102,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: CategoryViewDelegate {
     func didTapCategory(checkbox: BEMCheckBox, name: String?) {
-        if let checkboxTitle = title, category = Category.findByName(checkboxTitle) {
+        if let checkboxLabel = name, category = Category.findByName(checkboxLabel) {
             category.updateVisibility(checkbox.on)
         }
         mainCVC.categoriesHaveChanged = true
