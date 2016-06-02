@@ -13,7 +13,7 @@ class Audio: NSObject {
     var player: AVAudioPlayer?
     
     func play(recording: String) {
-        dispatch_async(dispatch_get_main_queue()) { [weak weakSelf = self] in
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [weak weakSelf = self] in
             if let sound = NSDataAsset(name: recording) {
                 do {
                     try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
@@ -32,7 +32,7 @@ class Audio: NSObject {
 
 extension Audio: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        dispatch_async(dispatch_get_main_queue()) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             do {
                 try AVAudioSession.sharedInstance().setActive(false)
             } catch {
