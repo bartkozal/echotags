@@ -11,8 +11,14 @@ import Spring
 import BEMCheckBox
 
 class SettingsViewController: UIViewController {
+    var categoriesHaveChanged = false
+    
     private var mainCVC: MainContainerViewController {
         return presentingViewController?.parentViewController as! MainContainerViewController
+    }
+    
+    private var mapVC: MapViewController {
+        return presentingViewController as! MapViewController
     }
     
     @IBOutlet private weak var overlayView: DesignableView!
@@ -32,10 +38,15 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func touchOverlayButton(sender: UIButton) {
-        performUnwindToHomeOnSettingsButton()
+        touchSettingsButton()
     }
     
     func performUnwindToHomeOnButton(sender: UIButton?) {
+        if categoriesHaveChanged {
+            mapVC.reloadPointAnnotations()
+            categoriesHaveChanged = false
+        }
+        
         overlayView.animation = "fadeOut"
         overlayView.animate()
         
@@ -58,7 +69,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    private func performUnwindToHomeOnSettingsButton() {
+    private func touchSettingsButton() {
         performUnwindToHomeOnButton(mainCVC.settingsButton)
     }
     
@@ -105,7 +116,7 @@ extension SettingsViewController: CategoryViewDelegate {
         if let checkboxLabel = name, category = Category.findByName(checkboxLabel) {
             category.updateVisibility(checkbox.on)
         }
-        mainCVC.categoriesHaveChanged = true
+        categoriesHaveChanged = true
     }
 }
 
@@ -113,7 +124,7 @@ extension SettingsViewController: UIScrollViewDelegate {
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let breakScrollPoint = CGFloat(-130.0)
         if scrollView.contentOffset.y < breakScrollPoint {
-            performUnwindToHomeOnSettingsButton()
+            touchSettingsButton()
         }
     }
 }
