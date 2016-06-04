@@ -11,7 +11,6 @@ import Spring
 
 class MainContainerViewController: UIViewController {
     var isOverlayHidden = true
-    var categoriesHaveChanged = false
     
     @IBOutlet weak var settingsButton: DesignableButton!
     
@@ -21,10 +20,6 @@ class MainContainerViewController: UIViewController {
         guard let mapVC = childViewControllers.first as? MapViewController else { return }
         
         if let settingsVC = mapVC.presentedViewController as? SettingsViewController {
-            if categoriesHaveChanged {
-                mapVC.reloadPointAnnotations()
-                categoriesHaveChanged = false
-            }
             settingsVC.performUnwindToHomeOnButton(sender)
         } else {
             mapVC.performSegueToSettingsOnButton(sender)

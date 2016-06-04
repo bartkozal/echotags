@@ -80,17 +80,19 @@ class MapViewController: UIViewController {
     }
     
     func reloadPointAnnotations() {
-        if let pointAnnotations = mapView.annotations {
-            mapView.removeAnnotations(pointAnnotations)
-        }
-        
-        for point in Marker.visible() {
-            let point = point as! Point
-            let pointAnnotation = MGLPointAnnotation()
-            pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-            pointAnnotation.title = point.title
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
+            if let pointAnnotations = self.mapView.annotations {
+                self.mapView.removeAnnotations(pointAnnotations)
+            }
             
-            mapView.addAnnotation(pointAnnotation)
+            for point in Marker.visible() {
+                let point = point as! Point
+                let pointAnnotation = MGLPointAnnotation()
+                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+                pointAnnotation.title = point.title
+                
+                self.mapView.addAnnotation(pointAnnotation)
+            }
         }
     }
     
