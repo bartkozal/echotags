@@ -106,8 +106,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         geofencing.manager.delegate = self
-        
-        geofencing.monitorNearestPoints()
+        geofencing.manager.startMonitoringSignificantLocationChanges()
     }
 }
 
@@ -117,14 +116,12 @@ extension MapViewController: CLLocationManagerDelegate {
         
         if geofencing.cityBoundsContains(userLocation) {
             mapView.setCenterCoordinate(userLocation, animated: true)
+            geofencing.monitorNearestPointsTo(userLocation)
         } else {
             outOfBoundsView.hidden = false
-            
-            // MARK: Disable enable before release
-            // mapView.showsUserLocation = false
+            mapView.showsUserLocation = false
+            manager.stopMonitoringSignificantLocationChanges()
         }
-
-        manager.stopUpdatingLocation()
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
