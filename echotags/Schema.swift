@@ -55,7 +55,12 @@ class Category: Object {
 }
 
 class Trigger: Object {
+    dynamic var id = ""
     dynamic var latitude = 0.0
     dynamic var longitude = 0.0
     let point = LinkingObjects(fromType: Point.self, property: "triggers")
+    
+    static func findById(id: String) -> Trigger? {
+        return Database().db.objects(Trigger).filter("id = %@", id).first ?? nil
+    }
 }

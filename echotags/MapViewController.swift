@@ -125,11 +125,13 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        
-        // MARK: User region identifier
-        // audio.play(region.identifier)
-        
-        audio.play("sample")
+        if let audioFile = Trigger.findById(region.identifier)?.point.first?.audio {
+            // TODO: Enable
+            // audio.play(audioFile)
+            
+            print(audioFile)
+            audio.play("sample")
+        }
     }
 }
 

@@ -45,31 +45,28 @@ class Geofencing {
     }
     
     func monitorNearestPointsFor(source: CLLocationCoordinate2D) {
-        
-        // Return 20 nearest points to current user location
-        
-        let nearestPoints = Marker.visible().sort { p1, p2 in
-            distanceBetween(source, target: CLLocationCoordinate2D(latitude: (p1 as! Point).latitude, longitude: (p1 as! Point).longitude)) < distanceBetween(source, target: CLLocationCoordinate2D(latitude: (p2 as! Point).latitude, longitude: (p2 as! Point).longitude))
-        }[0...20]
+        // Return 20 nearest triggers for current user location
+        let nearestTriggers = Marker.visible().flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
+            let t1coordinate = CLLocationCoordinate2D(latitude: t1.latitude, longitude: t1.longitude)
+            let t2coordinate = CLLocationCoordinate2D(latitude: t2.latitude, longitude: t2.longitude)
+            return distanceBetween(source, target: t1coordinate) < distanceBetween(source, target: t2coordinate)
+            }[0...20]
         
         // Empty monitored regions array
-        
         for region in manager.monitoredRegions {
             manager.stopMonitoringForRegion(region)
         }
         
-        // Start monitor nearest points
-
-        for point in nearestPoints {
-            let point = point as! Point
-            let coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-            let region = circularRegionFrom(coordinate, withAudio: point.audio)
+        // Start monitoring nearest trigger
+        for trigger in nearestTriggers {
+            let coordinate = CLLocationCoordinate2D(latitude: trigger.latitude, longitude: trigger.longitude)
+            let region = circularRegionFrom(coordinate, withIdentifier: trigger.id)
             manager.startMonitoringForRegion(region)
         }
     }
     
-    private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withAudio audio: String) -> CLCircularRegion {
-        return CLCircularRegion(center: coordinate, radius: Defaults.pointRadius, identifier: audio)
+    private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withIdentifier identifier: String) -> CLCircularRegion {
+        return CLCircularRegion(center: coordinate, radius: Defaults.pointRadius, identifier: identifier)
     }
     
     private func distanceBetween(source: CLLocationCoordinate2D, target: CLLocationCoordinate2D) -> Double {
