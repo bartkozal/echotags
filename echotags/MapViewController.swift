@@ -116,7 +116,7 @@ extension MapViewController: CLLocationManagerDelegate {
         
         if geofencing.cityBoundsContains(userLocation) {
             mapView.setCenterCoordinate(userLocation, animated: true)
-            geofencing.monitorNearestPointsTo(userLocation)
+            geofencing.monitorNearestPointsFor(userLocation)
         } else {
             outOfBoundsView.hidden = false
             mapView.showsUserLocation = false
@@ -125,7 +125,11 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        audio.play(region.identifier)
+        
+        // MARK: User region identifier
+        // audio.play(region.identifier)
+        
+        audio.play("sample")
     }
 }
 
