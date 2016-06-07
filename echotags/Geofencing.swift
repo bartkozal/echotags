@@ -44,12 +44,21 @@ class Geofencing {
         }
     }
     
-    func monitorNearestPointsTo(source: CLLocationCoordinate2D) {
+    func monitorNearestPointsFor(source: CLLocationCoordinate2D) {
         
-        // Returns 20 nearest points to user location. 20 is max limit of monitored regions for iOS9
+        // Return 20 nearest points to current user location
+        
         let nearestPoints = Marker.visible().sort { p1, p2 in
             distanceBetween(source, target: CLLocationCoordinate2D(latitude: (p1 as! Point).latitude, longitude: (p1 as! Point).longitude)) < distanceBetween(source, target: CLLocationCoordinate2D(latitude: (p2 as! Point).latitude, longitude: (p2 as! Point).longitude))
         }[0...20]
+        
+        // Empty monitored regions array
+        
+        for region in manager.monitoredRegions {
+            manager.stopMonitoringForRegion(region)
+        }
+        
+        // Start monitor nearest points
 
         for point in nearestPoints {
             let point = point as! Point
