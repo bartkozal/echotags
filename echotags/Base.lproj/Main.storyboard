@@ -709,36 +709,6 @@ Tap anywhere to hide the overlay.</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
-                                                <rect key="frame" x="64" y="162" width="247" height="48"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="266" id="Gwe-Py-ohX"/>
-                                                    <constraint firstAttribute="width" constant="247" id="rTd-vV-EEb"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                <state key="normal" title="Unlock content for €7,99" image="icon-map">
-                                                    <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="Gwe-Py-ohX"/>
-                                                    </mask>
-                                                </variation>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-Ta-1Vp">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                 <subviews>
@@ -757,7 +727,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-pe-HGu">
-                                                <rect key="frame" x="0.0" y="230" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="298" width="375" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'M INTERESTED IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv7-Ra-BOv">
                                                         <rect key="frame" x="15" y="15" width="111" height="15"/>
@@ -774,7 +744,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
-                                                <rect key="frame" x="15" y="289" width="345" height="363"/>
+                                                <rect key="frame" x="15" y="357" width="345" height="295"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="sMK-Rx-yS9"/>
                                                     <constraint firstAttribute="height" constant="200" id="xUw-4L-oCU"/>
@@ -786,28 +756,81 @@ Tap anywhere to hide the overlay.</string>
                                                     </mask>
                                                 </variation>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-58-9W1">
+                                                <rect key="frame" x="58" y="162" width="260" height="116"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-Je-1ha" customClass="DesignableButton" customModule="Spring">
+                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <state key="normal" title="Enable location permission" image="icon-permissions">
+                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="touchLocationPermission:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="bcn-T8-09e"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
+                                                        <rect key="frame" x="0.0" y="68" width="260" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <state key="normal" title="Unlock content for €7,99" image="icon-map">
+                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="260" id="NAv-EW-Gst"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="hPI-pe-HGu" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="2u9-gA-Q1s"/>
-                                            <constraint firstItem="hm5-nn-rZd" firstAttribute="top" secondItem="hCt-65-i1m" secondAttribute="bottom" constant="20" id="ANb-Cy-7yN"/>
-                                            <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="hm5-nn-rZd" secondAttribute="bottom" constant="20" id="Bhm-9R-d0B"/>
+                                            <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="XrC-58-9W1" secondAttribute="bottom" constant="20" id="BRk-YK-koB"/>
                                             <constraint firstAttribute="trailing" secondItem="hPI-pe-HGu" secondAttribute="trailing" id="I8f-HS-sdX"/>
                                             <constraint firstAttribute="trailing" secondItem="PRD-sG-6ZS" secondAttribute="trailing" constant="15" id="Mjd-eh-2UD"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="top" secondItem="Y6m-Ta-1Vp" secondAttribute="bottom" constant="20" id="P39-xU-5wK"/>
+                                            <constraint firstItem="XrC-58-9W1" firstAttribute="top" secondItem="hCt-65-i1m" secondAttribute="bottom" constant="20" id="Rl0-Wb-Di4"/>
                                             <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
                                             <constraint firstAttribute="height" constant="612" id="Vss-ql-13V"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="X0d-gX-RI4"/>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="ZgD-0R-Jih"/>
                                             <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="a1V-CD-VpQ"/>
                                             <constraint firstAttribute="height" constant="700" id="aQ9-E0-hGU"/>
+                                            <constraint firstItem="XrC-58-9W1" firstAttribute="centerX" secondItem="S4C-Jq-KN2" secondAttribute="centerX" id="bFQ-4b-8nr"/>
                                             <constraint firstAttribute="trailing" secondItem="hCt-65-i1m" secondAttribute="trailing" constant="15" id="e9P-cw-dd7"/>
                                             <constraint firstAttribute="bottom" secondItem="PRD-sG-6ZS" secondAttribute="bottom" constant="15" id="eTj-N4-UcK"/>
                                             <constraint firstAttribute="height" constant="800" id="ecy-kR-U5w"/>
                                             <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="top" secondItem="S4C-Jq-KN2" secondAttribute="top" id="k5O-lO-06J"/>
                                             <constraint firstAttribute="width" constant="375" id="pgi-ht-Vhl"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="sQ0-BE-09d"/>
-                                            <constraint firstItem="hm5-nn-rZd" firstAttribute="centerX" secondItem="S4C-Jq-KN2" secondAttribute="centerX" id="vtI-57-a8n"/>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="15" id="xZ7-83-ciM"/>
                                             <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
                                         </constraints>
@@ -888,6 +911,7 @@ Tap anywhere to hide the overlay.</string>
                     </view>
                     <connections>
                         <outlet property="categoriesStackView" destination="PRD-sG-6ZS" id="Pnb-yp-aUh"/>
+                        <outlet property="locationPermissionButton" destination="kTX-Je-1ha" id="I29-lx-5r8"/>
                         <outlet property="overlayButton" destination="arE-04-u5z" id="EbP-oj-KTa"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
