@@ -9,9 +9,11 @@
 import UIKit
 import Spring
 import BEMCheckBox
+import CoreLocation
 
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
+    var geofencing = Geofencing()
     
     private var mainCVC: MainContainerViewController {
         return presentingViewController?.parentViewController as! MainContainerViewController
@@ -35,6 +37,18 @@ class SettingsViewController: UIViewController {
                 categoriesStackView.addArrangedSubview(categoryView)
             }
         }
+    }
+    
+    @IBOutlet weak var locationPermissionButton: DesignableButton! {
+        didSet {
+            if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                locationPermissionButton.hidden = true
+            }
+        }
+    }
+    
+    @IBAction func touchLocationPermission(sender: DesignableButton) {
+        geofencing.checkPermission(self)
     }
     
     @IBAction private func touchOverlayButton(sender: UIButton) {
