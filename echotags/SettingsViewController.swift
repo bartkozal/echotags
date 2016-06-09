@@ -13,7 +13,7 @@ import CoreLocation
 
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
-    var geofencing = Geofencing()
+    private var geofencing = Geofencing()
     
     private var mainCVC: MainContainerViewController {
         return presentingViewController?.parentViewController as! MainContainerViewController
