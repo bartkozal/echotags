@@ -24,6 +24,7 @@
 		A177D6311CFBA15000B0E11A /* UniqueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D6301CFBA15000B0E11A /* UniqueObject.swift */; };
 		A19FDFD81CF381E800BC54D0 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDFD71CF381E800BC54D0 /* Database.swift */; };
 		A1B2B8DB1CEB450A00077D80 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */; };
+		A1B2D14B1D099771008729CF /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2D14A1D099771008729CF /* UserDefaults.swift */; };
 		A1B7B24C1CFE1903006171D5 /* Audio.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B7B24B1CFE1903006171D5 /* Audio.xcassets */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		A177D6301CFBA15000B0E11A /* UniqueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueObject.swift; sourceTree = "<group>"; };
 		A19FDFD71CF381E800BC54D0 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		A1B2D14A1D099771008729CF /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		A1B7B24B1CFE1903006171D5 /* Audio.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Audio.xcassets; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 			children = (
 				A16C3D371CFEDDE000F2CC5D /* AudioPlayer.swift */,
 				A16ACB0A1CFC7A5D0009C5CE /* Geofencing.swift */,
+				A1B2D14A1D099771008729CF /* UserDefaults.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -237,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "echotags" */;
+			buildConfigurationList = A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "Echotags" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -339,6 +342,7 @@
 				A16ACB031CFC68040009C5CE /* PermissionsTutorialStepViewController.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
 				A1B2B8DB1CEB450A00077D80 /* MainContainerViewController.swift in Sources */,
+				A1B2D14B1D099771008729CF /* UserDefaults.swift in Sources */,
 				A16C3D381CFEDDE000F2CC5D /* AudioPlayer.swift in Sources */,
 				A175F2591CE39EAD00A14B2E /* MapViewController.swift in Sources */,
 			);
@@ -478,7 +482,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "echotags" */ = {
+		A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "Echotags" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1F2A0EC1CE2030000593EB0 /* Debug */,
