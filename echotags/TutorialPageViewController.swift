@@ -9,7 +9,7 @@
 import UIKit
 
 class TutorialPageViewController: UIPageViewController {
-    var skipTutorial = !UserDefaults.isFirstLaunch()
+    private var skipTutorial = !UserDefaults.isFirstLaunch()
 
     override func viewDidLoad() {
         super.viewDidLoad()
