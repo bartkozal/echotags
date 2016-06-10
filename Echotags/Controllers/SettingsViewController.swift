@@ -76,9 +76,9 @@ class SettingsViewController: UIViewController {
         if let settingsButton = sender as? DesignableButton {
             settingsView.animateTo()
             settingsButton.rotate = 90.0
-            settingsButton.animateNext { [weak weakSelf = self] in
+            settingsButton.animateNext { [unowned self] in
                 settingsButton.userInteractionEnabled = true
-                weakSelf?.performSegueWithIdentifier("unwindToMap", sender: self)
+                self.performSegueWithIdentifier("unwindToMap", sender: self)
             }
         }
     }
