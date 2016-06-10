@@ -65,7 +65,7 @@
 		A1F2A0E41CE2030000593EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1F2A0E61CE2030000593EB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1F2A0E91CE2030000593EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A1F2A0EB1CE2030000593EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1F2A0EB1CE2030000593EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Echotags/Info.plist; sourceTree = "<group>"; };
 		B42EAD62ED747FC68B6FC284 /* Pods_echotags.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_echotags.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81723F035FCC17FD6BDA896 /* Pods-echotags.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.release.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,28 +94,28 @@
 		A10642F61CE7C3EB00ABE7BF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				A177D62C1CFB9AE800B0E11A /* DB.realm */,
-				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
 				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1B7B24B1CFE1903006171D5 /* Audio.xcassets */,
-				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
+				A177D62C1CFB9AE800B0E11A /* DB.realm */,
 				A132D1591D00426A006DCDCE /* GPXTest.gpx */,
 			);
 			name = Assets;
+			path = ../Echotags/Assets;
 			sourceTree = "<group>";
 		};
-		A143EB5E1CF72AA600E2E16D /* View Controllers */ = {
+		A143EB5E1CF72AA600E2E16D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */,
 				A175F2581CE39EAD00A14B2E /* MapViewController.swift */,
+				A16ACB021CFC68040009C5CE /* PermissionsTutorialStepViewController.swift */,
+				A16ACB041CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift */,
 				A1E285941CE342E600DC3ACD /* SettingsViewController.swift */,
 				A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */,
 				A15493481CEA33F7000B096E /* TutorialStepViewController.swift */,
-				A16ACB021CFC68040009C5CE /* PermissionsTutorialStepViewController.swift */,
-				A16ACB041CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift */,
 			);
-			name = "View Controllers";
+			name = Controllers;
+			path = ../Echotags/Controllers;
 			sourceTree = "<group>";
 		};
 		A1650A591CF220980010765D /* Database */ = {
@@ -125,6 +125,7 @@
 				A177D6301CFBA15000B0E11A /* UniqueObject.swift */,
 			);
 			name = Database;
+			path = ../Echotags/Database;
 			sourceTree = "<group>";
 		};
 		A16ACB011CFC5DC60009C5CE /* Models */ = {
@@ -136,18 +137,20 @@
 				A1B2D14A1D099771008729CF /* UserDefaults.swift */,
 			);
 			name = Models;
+			path = ../Echotags/Models;
 			sourceTree = "<group>";
 		};
 		A1E0C6F01CEE0A1A00636552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A16ACB081CFC77500009C5CE /* Alert.swift */,
-				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
-				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
 				A1363C121CF731C3000D5C92 /* CategoryView.swift */,
 				A1363C141CF7363B000D5C92 /* CategoryView.xib */,
+				A10F34D31CEA85A600186314 /* GlyphLabel.swift */,
+				A10642F71CE7C42400ABE7BF /* MaskLayer.swift */,
 			);
 			name = Views;
+			path = ../Echotags/Views;
 			sourceTree = "<group>";
 		};
 		A1F2A0D31CE2030000593EB0 = {
@@ -171,11 +174,13 @@
 		A1F2A0DE1CE2030000593EB0 /* Echotags */ = {
 			isa = PBXGroup;
 			children = (
-				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
+				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
-				A1E0C6F01CEE0A1A00636552 /* Views */,
-				A143EB5E1CF72AA600E2E16D /* View Controllers */,
+				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
+				A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */,
 				A16ACB011CFC5DC60009C5CE /* Models */,
+				A1E0C6F01CEE0A1A00636552 /* Views */,
+				A143EB5E1CF72AA600E2E16D /* Controllers */,
 				A1650A591CF220980010765D /* Database */,
 				A10642F61CE7C3EB00ABE7BF /* Assets */,
 			);
@@ -366,6 +371,7 @@
 				A1F2A0E91CE2030000593EB0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../Echotags;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
