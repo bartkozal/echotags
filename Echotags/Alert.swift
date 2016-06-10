@@ -1,5 +1,5 @@
 //
-//  Alerts.swift
+//  Alert.swift
 //  echotags
 //
 //  Created by bkzl on 30/05/16.
