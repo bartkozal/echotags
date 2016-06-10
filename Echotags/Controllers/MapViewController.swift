@@ -43,16 +43,16 @@ class MapViewController: UIViewController {
     
     @IBAction private func touchOutOfBoundsButton(sender: AnyObject) {
         outOfBoundsView.animation = "fadeOut"
-        outOfBoundsView.animateNext { [weak weakSelf = self] in
-            weakSelf?.outOfBoundsView.hidden = true
+        outOfBoundsView.animateNext { [unowned self] in
+            self.outOfBoundsView.hidden = true
         }
     }
     
     @IBAction private func touchOverlayView(sender: UIButton) {
         overlayView.animation = "fadeOut"
-        overlayView.animateNext { [weak weakSelf = self] in
-            weakSelf?.overlayView.hidden = true
-            weakSelf?.geofencing.checkPermission(weakSelf!)
+        overlayView.animateNext { [unowned self] in
+            self.overlayView.hidden = true
+            self.geofencing.checkPermission(self)
         }
     }
     

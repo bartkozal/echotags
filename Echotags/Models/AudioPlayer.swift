@@ -11,17 +11,18 @@ import AVFoundation
 
 class AudioPlayer: NSObject {
     var player: AVAudioPlayer?
+    let session = AVAudioSession.sharedInstance()
     
     func play(recording: String) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [weak weakSelf = self] in
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
             if let sound = NSDataAsset(name: recording) {
                 do {
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
-                    try AVAudioSession.sharedInstance().setActive(true)
+                    try self.session.setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
+                    try self.session.setActive(true)
                     
-                    try weakSelf?.player = AVAudioPlayer(data: sound.data, fileTypeHint: AVFileTypeAppleM4A)
-                    weakSelf?.player?.delegate = self
-                    weakSelf?.player?.play()
+                    try self.player = AVAudioPlayer(data: sound.data, fileTypeHint: AVFileTypeAppleM4A)
+                    self.player?.delegate = self
+                    self.player?.play()
                 } catch {
                     print(error)
                 }
@@ -32,9 +33,9 @@ class AudioPlayer: NSObject {
 
 extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
             do {
-                try AVAudioSession.sharedInstance().setActive(false)
+                try self.session.setActive(false)
             } catch {
                 print(error)
             }
