@@ -18,8 +18,11 @@ class MapViewController: UIViewController {
         return true
     }
     
+    private var isFirstLoad = true
+    
     private var geofencing = Geofencing()
     private var audio = AudioPlayer()
+    private var userLocation: CLLocationCoordinate2D?
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var outOfBoundsView: DesignableView!
@@ -39,12 +42,20 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBOutlet private weak var centerMapButton: UIButton!
+    
     @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
     
     @IBAction private func touchOutOfBoundsButton(sender: AnyObject) {
         outOfBoundsView.animation = "fadeOut"
         outOfBoundsView.animateNext { [unowned self] in
             self.outOfBoundsView.hidden = true
+        }
+    }
+
+    @IBAction func touchCenterMapButton(sender: UIButton) {
+        if let userLocation = userLocation {
+            mapView.setCenterCoordinate(userLocation, animated: true)
         }
     }
     
@@ -112,15 +123,21 @@ class MapViewController: UIViewController {
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations[0].coordinate
+        userLocation = locations[0].coordinate
         
-        if geofencing.cityBoundsContains(userLocation) {
-            mapView.setCenterCoordinate(userLocation, animated: true)
-            geofencing.monitorNearestPointsFor(userLocation)
-        } else {
-            outOfBoundsView.hidden = false
-            mapView.showsUserLocation = false
-            manager.stopMonitoringSignificantLocationChanges()
+        if let userLocation = userLocation {
+            if geofencing.cityBoundsContains(userLocation) {
+                geofencing.monitorNearestPointsFor(userLocation)
+                centerMapButton.hidden = false
+                
+                if isFirstLoad {
+                    mapView.setCenterCoordinate(userLocation, animated: true)
+                    isFirstLoad = false
+                }
+            } else {
+                outOfBoundsView.hidden = false
+                manager.stopMonitoringSignificantLocationChanges()
+            }
         }
     }
     
