@@ -554,6 +554,14 @@ For the first run we would like to ask you for the localization permission and a
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-co-Ihh">
+                                <rect key="frame" x="162" y="614" width="51" height="53"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="11" maxX="10" maxY="11"/>
+                                <state key="normal" image="icon-center"/>
+                                <connections>
+                                    <action selector="touchCenterMapButton:" destination="NdK-S1-o1x" eventType="touchUpInside" id="V0C-Rh-LM8"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-Dh-9eY" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="54" y="570" width="267" height="67"/>
                                 <subviews>
@@ -634,7 +642,9 @@ Tap anywhere to hide the overlay.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
+                            <constraint firstItem="bAp-co-Ihh" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="3Me-8d-gIh"/>
                             <constraint firstAttribute="bottom" secondItem="hue-2G-3ru" secondAttribute="bottom" id="6dg-X3-gtK"/>
+                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" id="ARG-mK-hid"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
                             <constraint firstItem="pIR-Dh-9eY" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" constant="54" id="Ebk-ba-9Bl"/>
@@ -649,6 +659,7 @@ Tap anywhere to hide the overlay.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerMapButton" destination="bAp-co-Ihh" id="3uS-Th-a7N"/>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="outOfBoundsView" destination="pIR-Dh-9eY" id="hPL-q6-67M"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
@@ -927,6 +938,7 @@ Tap anywhere to hide the overlay.</string>
     </scenes>
     <resources>
         <image name="bg-launch-screen" width="750" height="1334"/>
+        <image name="icon-center" width="31" height="31"/>
         <image name="icon-indicator-1" width="42" height="10"/>
         <image name="icon-indicator-2" width="42" height="10"/>
         <image name="icon-indicator-3" width="42" height="10"/>
