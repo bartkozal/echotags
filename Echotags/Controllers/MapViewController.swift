@@ -23,6 +23,7 @@ class MapViewController: UIViewController {
     private var geofencing = Geofencing()
     private var audio = AudioPlayer()
     private var userLocation: CLLocationCoordinate2D?
+    private var userHeading: CLLocationDirection?
     
     @IBOutlet weak var overlayView: DesignableView!
     @IBOutlet private weak var outOfBoundsView: DesignableView!
@@ -35,7 +36,7 @@ class MapViewController: UIViewController {
             
             mapView.setCenterCoordinate(Geofencing.Defaults.coordinate, zoomLevel: Geofencing.Defaults.zoomLevel, animated: false)
             
-            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 1000, pitch: 30, heading: 0)
             mapView.setCamera(camera, animated: false)
             
             reloadPointAnnotations()
@@ -52,11 +53,13 @@ class MapViewController: UIViewController {
             self.outOfBoundsView.hidden = true
         }
     }
-
+    
     @IBAction func touchCenterMapButton(sender: UIButton) {
-        if let userLocation = userLocation {
-            mapView.setCenterCoordinate(userLocation, animated: true)
-        }
+        guard let userLocation = userLocation else { return }
+        guard let userHeading = userHeading else { return }
+        
+        let camera = MGLMapCamera(lookingAtCenterCoordinate: userLocation, fromDistance: 1000, pitch: 30, heading: userHeading)
+        mapView.setCamera(camera, animated: true)
     }
     
     @IBAction private func touchOverlayView(sender: UIButton) {
@@ -118,6 +121,7 @@ class MapViewController: UIViewController {
         
         geofencing.manager.delegate = self
         geofencing.manager.startMonitoringSignificantLocationChanges()
+        geofencing.manager.startUpdatingHeading()
     }
 }
 
@@ -127,6 +131,7 @@ extension MapViewController: CLLocationManagerDelegate {
         
         if let userLocation = userLocation {
             if geofencing.cityBoundsContains(userLocation) {
+                // TODO: This is slow (run in other thread/optimize etc.
                 geofencing.monitorNearestPointsFor(userLocation)
                 centerMapButton.hidden = false
                 
@@ -137,8 +142,13 @@ extension MapViewController: CLLocationManagerDelegate {
             } else {
                 outOfBoundsView.hidden = false
                 manager.stopMonitoringSignificantLocationChanges()
+                manager.stopUpdatingHeading()
             }
         }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        userHeading = newHeading.trueHeading
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
