@@ -13,7 +13,9 @@ import CoreLocation
 
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
-    private var geofencing = Geofencing()
+    
+    private let geofencing = Geofencing()
+    private let offlineMap = OfflineMap()
     
     private var mainCVC: MainContainerViewController {
         return presentingViewController?.parentViewController as! MainContainerViewController
@@ -39,15 +41,27 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var locationPermissionButton: DesignableButton! {
+    @IBOutlet private weak var locationPermissionButton: DesignableButton! {
         didSet {
-            if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            if geofencing.isEnabled {
                 locationPermissionButton.hidden = true
             }
         }
     }
     
-    @IBAction func touchLocationPermission(sender: DesignableButton) {
+    @IBOutlet private weak var offlineMapButton: DesignableButton! {
+        didSet {
+            if offlineMap.isAvailable {
+                offlineMapButton.hidden = true
+            }
+        }
+    }
+    
+    @IBAction private func touchOfflineMapButton(sender: DesignableButton) {
+        offlineMap.startDownloading()
+    }
+    
+    @IBAction private func touchLocationPermissionButton(sender: DesignableButton) {
         geofencing.checkPermission(self)
     }
     

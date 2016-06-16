@@ -18,10 +18,9 @@ class MapViewController: UIViewController {
         return true
     }
     
+    private let geofencing = Geofencing()
+    private let audio = AudioPlayer()
     private var isFirstLoad = true
-    
-    private var geofencing = Geofencing()
-    private var audio = AudioPlayer()
     private var userLocation: CLLocationCoordinate2D?
     private var userHeading: CLLocationDirection?
     

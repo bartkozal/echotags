@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642F71CE7C42400ABE7BF /* MaskLayer.swift */; };
 		A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F34D31CEA85A600186314 /* GlyphLabel.swift */; };
+		A1187E181D12EA33007F964E /* OfflineMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E171D12EA33007F964E /* OfflineMap.swift */; };
 		A1363C131CF731C3000D5C92 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1363C121CF731C3000D5C92 /* CategoryView.swift */; };
 		A1363C151CF7363B000D5C92 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1363C141CF7363B000D5C92 /* CategoryView.xib */; };
 		A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */; };
@@ -38,6 +39,7 @@
 		7F98CC84396B9733BF8C19B8 /* Pods-echotags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.debug.xcconfig"; sourceTree = "<group>"; };
 		A10642F71CE7C42400ABE7BF /* MaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayer.swift; sourceTree = "<group>"; };
 		A10F34D31CEA85A600186314 /* GlyphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphLabel.swift; sourceTree = "<group>"; };
+		A1187E171D12EA33007F964E /* OfflineMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineMap.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A132D1591D00426A006DCDCE /* GPXTest.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GPXTest.gpx; sourceTree = "<group>"; };
 		A1363C121CF731C3000D5C92 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				A16C3D371CFEDDE000F2CC5D /* AudioPlayer.swift */,
 				A19FDFD71CF381E800BC54D0 /* Database.swift */,
 				A16ACB0A1CFC7A5D0009C5CE /* Geofencing.swift */,
+				A1187E171D12EA33007F964E /* OfflineMap.swift */,
 				A1B2D14A1D099771008729CF /* UserDefaults.swift */,
 			);
 			name = Models;
@@ -347,6 +350,7 @@
 				A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */,
 				A16ACB031CFC68040009C5CE /* PermissionsTutorialStepViewController.swift in Sources */,
 				A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */,
+				A1187E181D12EA33007F964E /* OfflineMap.swift in Sources */,
 				A1B2B8DB1CEB450A00077D80 /* MainContainerViewController.swift in Sources */,
 				A1B2D14B1D099771008729CF /* UserDefaults.swift in Sources */,
 				A16C3D381CFEDDE000F2CC5D /* AudioPlayer.swift in Sources */,
