@@ -36,7 +36,7 @@ class MapViewController: UIViewController {
             
             mapView.setCenterCoordinate(Geofencing.Defaults.coordinate, zoomLevel: Geofencing.Defaults.zoomLevel, animated: false)
             
-            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 1000, pitch: 30, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
             mapView.setCamera(camera, animated: false)
             
             reloadPointAnnotations()
