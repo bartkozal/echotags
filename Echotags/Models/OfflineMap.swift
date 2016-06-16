@@ -6,8 +6,6 @@
 //  Copyright © 2016 Bartłomiej Kozal. All rights reserved.
 //
 
-import Foundation
-
 class OfflineMap {
     var isAvailable = false
     

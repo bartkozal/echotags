@@ -10,6 +10,7 @@
 		A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642F71CE7C42400ABE7BF /* MaskLayer.swift */; };
 		A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F34D31CEA85A600186314 /* GlyphLabel.swift */; };
 		A1187E181D12EA33007F964E /* OfflineMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E171D12EA33007F964E /* OfflineMap.swift */; };
+		A1187E1A1D12F34B007F964E /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E191D12F34B007F964E /* Queries.swift */; };
 		A1363C131CF731C3000D5C92 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1363C121CF731C3000D5C92 /* CategoryView.swift */; };
 		A1363C151CF7363B000D5C92 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1363C141CF7363B000D5C92 /* CategoryView.xib */; };
 		A147E2DA1CE9CEA300D0B425 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147E2D91CE9CEA300D0B425 /* TutorialPageViewController.swift */; };
@@ -40,6 +41,7 @@
 		A10642F71CE7C42400ABE7BF /* MaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayer.swift; sourceTree = "<group>"; };
 		A10F34D31CEA85A600186314 /* GlyphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphLabel.swift; sourceTree = "<group>"; };
 		A1187E171D12EA33007F964E /* OfflineMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineMap.swift; sourceTree = "<group>"; };
+		A1187E191D12F34B007F964E /* Queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A132D1591D00426A006DCDCE /* GPXTest.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GPXTest.gpx; sourceTree = "<group>"; };
 		A1363C121CF731C3000D5C92 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		A1650A591CF220980010765D /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				A1187E191D12F34B007F964E /* Queries.swift */,
 				A1650A571CF220700010765D /* Schema.swift */,
 				A177D6301CFBA15000B0E11A /* UniqueObject.swift */,
 			);
@@ -346,6 +349,7 @@
 				A16ACB051CFC6D150009C5CE /* PurchaseTutorialStepViewController.swift in Sources */,
 				A19FDFD81CF381E800BC54D0 /* Database.swift in Sources */,
 				A1363C131CF731C3000D5C92 /* CategoryView.swift in Sources */,
+				A1187E1A1D12F34B007F964E /* Queries.swift in Sources */,
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
 				A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */,
 				A16ACB031CFC68040009C5CE /* PermissionsTutorialStepViewController.swift in Sources */,
