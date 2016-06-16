@@ -11,7 +11,8 @@ import Spring
 import CoreLocation
 
 class PermissionsTutorialStepViewController: TutorialStepViewController {
-    private var geofencing = Geofencing()
+    private let geofencing = Geofencing()
+    private let offlineMap = OfflineMap()
     
     @IBOutlet private weak var locationPermissionButton: DesignableButton! {
         didSet {
@@ -19,8 +20,12 @@ class PermissionsTutorialStepViewController: TutorialStepViewController {
         }
     }
 
-    @IBAction private func touchLocationPermission(sender: DesignableButton) {
+    @IBAction private func touchLocationPermissionButton(sender: DesignableButton) {
         geofencing.checkPermission(self)
+    }
+    
+    @IBAction private func touchOfflineMapButton(sender: DesignableButton) {
+        offlineMap.startDownloading()
     }
     
     override func viewDidLoad() {

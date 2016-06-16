@@ -11,6 +11,9 @@ import CoreLocation
 
 class Geofencing {
     var manager: CLLocationManager
+    var isEnabled: Bool {
+        return CLLocationManager.authorizationStatus() == .AuthorizedAlways
+    }
     
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.371413, longitude: 4.897451)
@@ -26,7 +29,6 @@ class Geofencing {
     init() {
         manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        manager.startUpdatingLocation()
     }
     
     func cityBoundsContains(location: CLLocationCoordinate2D) -> Bool {
