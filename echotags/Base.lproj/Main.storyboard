@@ -396,7 +396,7 @@ For the first run we would like to ask you for the localization permission and a
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Unlock content for €7,99" image="icon-map">
+                                                        <state key="normal" title="Unlock content for €7,99" image="icon-unlock">
                                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -839,7 +839,7 @@ Tap anywhere to hide the overlay.</string>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Unlock content for €7,99" image="icon-map">
+                                                        <state key="normal" title="Unlock content for €7,99" image="icon-unlock">
                                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -982,9 +982,9 @@ Tap anywhere to hide the overlay.</string>
         <image name="icon-indicator-1" width="42" height="10"/>
         <image name="icon-indicator-2" width="42" height="10"/>
         <image name="icon-indicator-3" width="42" height="10"/>
-        <image name="icon-map" width="21" height="20"/>
         <image name="icon-permissions" width="20" height="20"/>
         <image name="icon-settings" width="32" height="32"/>
+        <image name="icon-unlock" width="20" height="20"/>
         <image name="img-arrow" width="88" height="59"/>
     </resources>
 </document>
