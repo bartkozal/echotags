@@ -32,10 +32,13 @@ class MapViewController: UIViewController {
             mapView.delegate = self
             mapView.attributionButton.hidden = true
             mapView.showsUserLocation = true
+            mapView.styleURL = Geofencing.Defaults.styleURL
+            mapView.minimumZoomLevel = Geofencing.Bounds.minimumZoomLevel
+            mapView.maximumZoomLevel = Geofencing.Bounds.maximumZoomLevel
             
             mapView.setCenterCoordinate(Geofencing.Defaults.coordinate, zoomLevel: Geofencing.Defaults.zoomLevel, animated: false)
             
-            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 45, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 35, heading: 0)
             mapView.setCamera(camera, animated: false)
             
             reloadPointAnnotations()
@@ -57,7 +60,7 @@ class MapViewController: UIViewController {
         guard let userLocation = userLocation else { return }
         guard let userHeading = userHeading else { return }
         
-        let camera = MGLMapCamera(lookingAtCenterCoordinate: userLocation, fromDistance: 1000, pitch: 30, heading: userHeading)
+        let camera = MGLMapCamera(lookingAtCenterCoordinate: userLocation, fromDistance: 1000, pitch: 35, heading: userHeading)
         mapView.setCamera(camera, animated: true)
     }
     
