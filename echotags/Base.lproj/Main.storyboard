@@ -271,15 +271,15 @@ For the first run we would like to ask you for the localization permission and a
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-Dk-r4V" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="28" y="254" width="260" height="48"/>
+                                                        <rect key="frame" x="3" y="254" width="310" height="48"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="260" id="bHb-aO-IL3"/>
+                                                            <constraint firstAttribute="width" constant="310" id="bHb-aO-IL3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="-4" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Make map available offline" image="icon-download">
+                                                        <state key="normal" title="Make map available offline (99 MB)" image="icon-download">
                                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -555,9 +555,6 @@ For the first run we would like to ask you for the localization permission and a
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hue-2G-3ru" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-zy-PQh">
                                 <rect key="frame" x="0.0" y="15" width="237" height="100"/>
@@ -811,10 +808,10 @@ Tap anywhere to hide the overlay.</string>
                                                 </variation>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-58-9W1">
-                                                <rect key="frame" x="58" y="162" width="260" height="184"/>
+                                                <rect key="frame" x="33" y="162" width="310" height="184"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-Je-1ha" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -838,7 +835,7 @@ Tap anywhere to hide the overlay.</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oX-u6-QtM" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="68" width="260" height="48"/>
+                                                        <rect key="frame" x="0.0" y="68" width="310" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="260" id="LQh-gq-zC6"/>
                                                         </constraints>
@@ -846,7 +843,7 @@ Tap anywhere to hide the overlay.</string>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="-4" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Make map available offline" image="icon-download">
+                                                        <state key="normal" title="Make map available offline (99 MB)" image="icon-download">
                                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -860,12 +857,17 @@ Tap anywhere to hide the overlay.</string>
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="LQh-gq-zC6"/>
+                                                            </mask>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="touchOfflineMapButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="e4W-ou-C1B"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="136" width="260" height="48"/>
+                                                        <rect key="frame" x="0.0" y="136" width="310" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -887,17 +889,26 @@ Tap anywhere to hide the overlay.</string>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="260" id="NAv-EW-Gst"/>
+                                                    <constraint firstAttribute="width" constant="310" id="KdK-fR-VGr"/>
+                                                    <constraint firstAttribute="width" constant="300" id="NAv-EW-Gst"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="NAv-EW-Gst"/>
+                                                    </mask>
+                                                </variation>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="XrC-58-9W1" firstAttribute="centerX" secondItem="S4C-Jq-KN2" secondAttribute="centerX" id="1Qc-Af-o1E"/>
                                             <constraint firstItem="hPI-pe-HGu" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="2u9-gA-Q1s"/>
+                                            <constraint firstItem="XrC-58-9W1" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="30" id="BIo-cu-SNb"/>
                                             <constraint firstItem="hPI-pe-HGu" firstAttribute="top" secondItem="XrC-58-9W1" secondAttribute="bottom" constant="20" id="BRk-YK-koB"/>
                                             <constraint firstAttribute="trailing" secondItem="hPI-pe-HGu" secondAttribute="trailing" id="I8f-HS-sdX"/>
                                             <constraint firstAttribute="trailing" secondItem="PRD-sG-6ZS" secondAttribute="trailing" constant="15" id="Mjd-eh-2UD"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="top" secondItem="Y6m-Ta-1Vp" secondAttribute="bottom" constant="20" id="P39-xU-5wK"/>
+                                            <constraint firstAttribute="trailing" secondItem="XrC-58-9W1" secondAttribute="trailing" constant="30" id="QqI-lh-OKI"/>
                                             <constraint firstItem="XrC-58-9W1" firstAttribute="top" secondItem="hCt-65-i1m" secondAttribute="bottom" constant="20" id="Rl0-Wb-Di4"/>
                                             <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
                                             <constraint firstAttribute="height" constant="612" id="Vss-ql-13V"/>
@@ -923,6 +934,9 @@ Tap anywhere to hide the overlay.</string>
                                                 <exclude reference="pgi-ht-Vhl"/>
                                                 <exclude reference="X0d-gX-RI4"/>
                                                 <exclude reference="a1V-CD-VpQ"/>
+                                                <exclude reference="BIo-cu-SNb"/>
+                                                <exclude reference="QqI-lh-OKI"/>
+                                                <exclude reference="bFQ-4b-8nr"/>
                                             </mask>
                                         </variation>
                                     </view>

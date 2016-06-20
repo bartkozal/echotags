@@ -16,14 +16,17 @@ class Geofencing {
     }
     
     struct Defaults {
-        static let coordinate = CLLocationCoordinate2D(latitude: 52.371413, longitude: 4.897451)
-        static let zoomLevel = 13.5
+        static let coordinate = CLLocationCoordinate2D(latitude: 52.373846, longitude: 4.896244)
+        static let zoomLevel = 14.0
         static let pointRadius = CLLocationDistance(30.0)
+        static let styleURL = NSURL.init(string: "mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao")
     }
     
-    struct CityBounds {
-        static let northEast = CLLocationCoordinate2D(latitude: 52.42857381779567, longitude: 5.009148437500016)
-        static let southWest = CLLocationCoordinate2D(latitude: 52.28064348619208, longitude: 4.724184204101562)
+    struct Bounds {
+        static let northEast = CLLocationCoordinate2D(latitude: 52.428573, longitude: 5.009148)
+        static let southWest = CLLocationCoordinate2D(latitude: 52.280643, longitude: 4.724184)
+        static let minimumZoomLevel = 12.0
+        static let maximumZoomLevel = 16.5
     }
     
     init() {
@@ -32,7 +35,10 @@ class Geofencing {
     }
     
     func cityBoundsContains(location: CLLocationCoordinate2D) -> Bool {
-        return location.latitude > CityBounds.southWest.latitude && location.latitude < CityBounds.northEast.latitude && location.longitude > CityBounds.southWest.longitude && location.longitude < CityBounds.northEast.longitude
+        return location.latitude > Bounds.southWest.latitude &&
+            location.latitude < Bounds.northEast.latitude &&
+            location.longitude > Bounds.southWest.longitude &&
+            location.longitude < Bounds.northEast.longitude
     }
     
     func checkPermission(inVC: UIViewController) {
