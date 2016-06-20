@@ -31,7 +31,7 @@ class Geofencing {
     
     init() {
         manager = CLLocationManager()
-        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
     }
     
     func cityBoundsContains(location: CLLocationCoordinate2D) -> Bool {
