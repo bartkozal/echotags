@@ -10,6 +10,7 @@ import UIKit
 import Spring
 import BEMCheckBox
 import CoreLocation
+import Mapbox
 
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
@@ -49,15 +50,16 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var offlineMapButton: DesignableButton! {
+    @IBOutlet private weak var downloadMapButton: DesignableButton! {
         didSet {
             if offlineMap.isAvailable {
-                offlineMapButton.hidden = true
+                downloadMapButton.hidden = true
             }
         }
     }
     
-    @IBAction private func touchOfflineMapButton(sender: DesignableButton) {
+    @IBAction private func touchDownloadButton(sender: DesignableButton) {
+        sender.userInteractionEnabled = false
         offlineMap.startDownloading()
     }
     
@@ -104,6 +106,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(offlinePackProgressDidChange),
+            name: MGLOfflinePackProgressChangedNotification,
+            object: nil
+        )
+        
         settingsScrollView.delegate = self
         settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
@@ -136,6 +145,33 @@ class SettingsViewController: UIViewController {
         
         overlayView.hidden = false
         settingsView.hidden = false
+    }
+    
+    func offlinePackProgressDidChange(notification: NSNotification) {
+        if let pack = notification.object as? MGLOfflinePack {
+            let offlinePack = OfflinePack(pack: pack)
+            
+            switch pack.state {
+            case .Active:
+                downloadMapButton.setTitle("Downloading... \(offlinePack.progressPercentage)%", forState: .Normal)
+            case .Inactive:
+                downloadMapButton.setTitle("Resume download", forState: .Normal)
+            case .Complete:
+                determineDownloadButtonStyle(offlinePack.isReady)
+            default:
+                break
+            }
+        }
+    }
+    
+    private func determineDownloadButtonStyle(status: Bool) {
+        if status {
+            downloadMapButton.backgroundColor = UIColor(hex: "37435A")
+            downloadMapButton.setTitleColor(.whiteColor(), forState: .Normal)
+            downloadMapButton.setImage(UIImage(named: "icon-download-active"), forState: .Normal)
+            downloadMapButton.setTitle("Offline map enabled", forState: .Normal)
+            downloadMapButton.userInteractionEnabled = false
+        }
     }
 }
 

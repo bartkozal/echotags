@@ -53,25 +53,10 @@ class OfflineMap: NSObject {
     
     func offlinePackProgressDidChange(notification: NSNotification) {
         if let pack = notification.object as? MGLOfflinePack {
-            let progress = pack.progress
-            let completedResources = progress.countOfResourcesCompleted
-            let expectedResources = progress.countOfResourcesExpected
-            let progressPercentage = Float(completedResources) / Float(expectedResources)
+            let offlinePack = OfflinePack(pack: pack)
             
-            // if progressView == nil {
-            //     progressView = UIProgressView(progressViewStyle: .Default)
-            //     let frame = view.bounds.size
-            //     progressView.frame = CGRectMake(frame.width / 4, frame.height * 0.75, frame.width / 2, 10)
-            //     view.addSubview(progressView)
-            // }
-            // progressView.progress = progressPercentage
-            
-            if completedResources == expectedResources {
-                let byteCount = NSByteCountFormatter.stringFromByteCount(Int64(pack.progress.countOfBytesCompleted), countStyle: .Memory)
-                print("Offline pack completed: \(byteCount), \(completedResources) resources")
-            } else {
+            if offlinePack.isReady {
                 UserDefaults.hasOfflineMap = true
-                print("Offline pack has \(completedResources) of \(expectedResources) resources — \(progressPercentage * 100)%.")
             }
         }
     }
