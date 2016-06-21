@@ -57,8 +57,10 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func touchCenterMapButton(sender: UIButton) {
-        guard let userLocation = userLocation else { return }
-        guard let userHeading = userHeading else { return }
+        guard let userLocation = userLocation, userHeading = userHeading else {
+            Alert(vc: self).mapCenteringUnavailable()
+            return
+        }
         
         let camera = MGLMapCamera(lookingAtCenterCoordinate: userLocation, fromDistance: 1000, pitch: 35, heading: userHeading)
         mapView.setCamera(camera, animated: true)
