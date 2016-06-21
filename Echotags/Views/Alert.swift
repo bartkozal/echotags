@@ -29,4 +29,16 @@ struct Alert {
         
         vc.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    func mapCenteringUnavailable() {
+        let alertController = UIAlertController(
+            title: "Centering is unavailable",
+            message: "For some reasons centering wasn't possible. Please try again in a few seconds.",
+            preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        alertController.addAction(okAction)
+        
+        vc.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
