@@ -9,12 +9,23 @@
 import Foundation
 
 struct UserDefaults {
-    static func isFirstLaunch() -> Bool {
-        return !NSUserDefaults.standardUserDefaults().boolForKey("hasBeenLaunched")
+    static var hasBeenLaunched: Bool {
+        get {
+            return NSUserDefaults.standardUserDefaults().boolForKey("hasBeenLaunched")
+        }
+        set {
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "hasBeenLaunched")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
     }
     
-    static func markAsLaunched() {
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasBeenLaunched")
-        NSUserDefaults.standardUserDefaults().synchronize()
+    static var hasOfflineMap: Bool {
+        get {
+            return NSUserDefaults.standardUserDefaults().boolForKey("hasOfflineMap")
+        }
+        set {
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "hasOfflineMap")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
     }
 }

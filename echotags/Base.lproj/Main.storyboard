@@ -271,15 +271,15 @@ For the first run we would like to ask you for the localization permission and a
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-Dk-r4V" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="3" y="254" width="310" height="48"/>
+                                                        <rect key="frame" x="28" y="254" width="260" height="48"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="310" id="bHb-aO-IL3"/>
+                                                            <constraint firstAttribute="width" constant="260" id="bHb-aO-IL3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="-4" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Make map available offline (99 MB)" image="icon-download">
+                                                        <state key="normal" title="Download map (99 MB)" image="icon-download">
                                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -808,10 +808,10 @@ Tap anywhere to hide the overlay.</string>
                                                 </variation>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-58-9W1">
-                                                <rect key="frame" x="33" y="162" width="310" height="184"/>
+                                                <rect key="frame" x="58" y="162" width="260" height="184"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-Je-1ha" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -835,7 +835,7 @@ Tap anywhere to hide the overlay.</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oX-u6-QtM" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="68" width="310" height="48"/>
+                                                        <rect key="frame" x="0.0" y="68" width="260" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="260" id="LQh-gq-zC6"/>
                                                         </constraints>
@@ -843,7 +843,7 @@ Tap anywhere to hide the overlay.</string>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="-4" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Make map available offline (99 MB)" image="icon-download">
+                                                        <state key="normal" title="Download map (99 MB)" image="icon-download">
                                                             <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -867,7 +867,7 @@ Tap anywhere to hide the overlay.</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="136" width="310" height="48"/>
+                                                        <rect key="frame" x="0.0" y="136" width="260" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -889,7 +889,7 @@ Tap anywhere to hide the overlay.</string>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="310" id="KdK-fR-VGr"/>
+                                                    <constraint firstAttribute="width" constant="260" id="KdK-fR-VGr"/>
                                                     <constraint firstAttribute="width" constant="300" id="NAv-EW-Gst"/>
                                                 </constraints>
                                                 <variation key="default">
