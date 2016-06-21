@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        if UserDefaults.isFirstLaunch() {
+        if !UserDefaults.hasBeenLaunched {
             Database().copyToFileSystem()
         }
         

@@ -9,7 +9,7 @@
 import Mapbox
 
 class OfflineMap: NSObject {
-    var isAvailable = false
+    var isAvailable = UserDefaults.hasOfflineMap
     
     override init() {
         super.init()
@@ -43,7 +43,6 @@ class OfflineMap: NSObject {
         
         MGLOfflineStorage.sharedOfflineStorage().addPackForRegion(region, withContext: context) { (pack, error) in
             guard error == nil else {
-                // The pack couldn’t be created for some reason.
                 print("Error: \(error?.localizedFailureReason)")
                 return
             }
@@ -71,6 +70,7 @@ class OfflineMap: NSObject {
                 let byteCount = NSByteCountFormatter.stringFromByteCount(Int64(pack.progress.countOfBytesCompleted), countStyle: .Memory)
                 print("Offline pack completed: \(byteCount), \(completedResources) resources")
             } else {
+                UserDefaults.hasOfflineMap = true
                 print("Offline pack has \(completedResources) of \(expectedResources) resources — \(progressPercentage * 100)%.")
             }
         }

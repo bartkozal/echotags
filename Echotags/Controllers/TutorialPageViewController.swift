@@ -9,12 +9,12 @@
 import UIKit
 
 class TutorialPageViewController: UIPageViewController {
-    private var skipTutorial = !UserDefaults.isFirstLaunch()
+    private var skipTutorial = UserDefaults.hasBeenLaunched
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.markAsLaunched()
+        UserDefaults.hasBeenLaunched = true
         
         dataSource = self
         
