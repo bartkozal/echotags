@@ -31,6 +31,8 @@ class Geofencing {
     
     init() {
         manager = CLLocationManager()
+        manager.allowsBackgroundLocationUpdates = true
+        manager.activityType = .Fitness
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
     }
     
