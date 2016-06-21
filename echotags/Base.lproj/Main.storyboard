@@ -255,8 +255,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="touchLocationPermission:" destination="dFO-Bs-lys" eventType="touchUpInside" id="g8u-jL-Kzh"/>
-                                                            <action selector="touchLocationPermissionButton:" destination="dFO-Bs-lys" eventType="touchUpInside" id="UrD-nd-vfT"/>
+                                                            <action selector="touchLocationPermissionButton:" destination="dFO-Bs-lys" eventType="touchUpInside" id="8NK-V6-N9H"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you wish to you can download map of Amsterdam and make it available offline:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dN-CSp" customClass="DesignableLabel" customModule="Spring">
@@ -294,7 +293,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="touchOfflineMapButton:" destination="dFO-Bs-lys" eventType="touchUpInside" id="Qoe-FU-Sae"/>
+                                                            <action selector="touchDownloadMapButton:" destination="dFO-Bs-lys" eventType="touchUpInside" id="KNP-1X-F3A"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -349,6 +348,7 @@ For the first run we would like to ask you for the localization permission and a
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="downloadMapButton" destination="Sm8-Dk-r4V" id="YoS-O4-k0J"/>
                         <outlet property="locationPermissionButton" destination="4g3-2L-YUn" id="TvW-nP-3Ja"/>
                     </connections>
                 </viewController>
@@ -863,7 +863,7 @@ Tap anywhere to hide the overlay.</string>
                                                             </mask>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="touchOfflineMapButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="e4W-ou-C1B"/>
+                                                            <action selector="touchDownloadButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="h8r-af-pWa"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
@@ -1006,8 +1006,8 @@ Tap anywhere to hide the overlay.</string>
                     </view>
                     <connections>
                         <outlet property="categoriesStackView" destination="PRD-sG-6ZS" id="Pnb-yp-aUh"/>
+                        <outlet property="downloadMapButton" destination="2oX-u6-QtM" id="5N0-Pe-CDi"/>
                         <outlet property="locationPermissionButton" destination="kTX-Je-1ha" id="I29-lx-5r8"/>
-                        <outlet property="offlineMapButton" destination="2oX-u6-QtM" id="Dan-yH-PhG"/>
                         <outlet property="overlayButton" destination="arE-04-u5z" id="EbP-oj-KTa"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
