@@ -11,10 +11,10 @@ import Spring
 
 class PurchaseTutorialStepViewController: TutorialStepViewController {
     
-    @IBOutlet private weak var settingsLabel: DesignableLabel! {
+    @IBOutlet weak var settingsLabel: DesignableLabel! {
         didSet {
-            settingsLabel = GlyphLabel(label: settingsLabel).replace("@", withImage: "glyph-settings") as? DesignableLabel
+            GlyphLabel(label: settingsLabel).replace("@", withImage: "glyph-settings")
         }
     }
-    
+
 }
