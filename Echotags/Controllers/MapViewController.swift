@@ -167,6 +167,17 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 extension MapViewController: MGLMapViewDelegate {
+    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        var annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier("blue")
+        
+        if annotationImage == nil {
+            let image = UIImage(named: "blue")!
+            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: "blue")
+        }
+        
+        return annotationImage
+    }
+    
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
