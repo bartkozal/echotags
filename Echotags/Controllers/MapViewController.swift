@@ -178,6 +178,18 @@ extension MapViewController: MGLMapViewDelegate {
         return annotationImage
     }
     
+    func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
+        let audioButton = UIButton()
+        audioButton.frame = CGRectMake(0, 0, 23, 23)
+        audioButton.setImage(UIImage(named: "icon-play"), forState: .Normal)
+        return audioButton
+    }
+    
+    func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
+        // TODO: implment
+        print(annotation)
+    }
+    
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
