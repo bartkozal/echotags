@@ -195,6 +195,6 @@ extension MapViewController: MGLMapViewDelegate {
     }
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return true
+        return annotation.isMemberOfClass(PointAnnotation)
     }
 }
