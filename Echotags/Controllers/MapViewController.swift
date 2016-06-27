@@ -105,9 +105,12 @@ class MapViewController: UIViewController {
             
             for point in Marker.visible() {
                 let point = point as! Point
-                let pointAnnotation = MGLPointAnnotation()
+                let pointAnnotation = PointAnnotation()
                 pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
                 pointAnnotation.title = point.title
+                pointAnnotation.audio = point.audio
+                 // TODO implement
+                pointAnnotation.marker = "red"
                 
                 self.mapView.addAnnotation(pointAnnotation)
             }
@@ -157,11 +160,8 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if let audioFile = Trigger.findById(region.identifier)?.point.first?.audio {
-            // TODO: Enable
-            // audio.play(audioFile)
-            
             print(audioFile)
-            audio.play("sample")
+            audio.play(audioFile)
         }
     }
 }
@@ -180,14 +180,18 @@ extension MapViewController: MGLMapViewDelegate {
     
     func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
         let audioButton = UIButton()
+        
         audioButton.frame = CGRectMake(0, 0, 23, 23)
         audioButton.setImage(UIImage(named: "icon-play"), forState: .Normal)
+        
         return audioButton
     }
     
     func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
-        // TODO: implment
-        print(annotation)
+        if let audioFile = (annotation as? PointAnnotation)?.audio {
+            audio.play(audioFile)
+        }
+        mapView.deselectAnnotation(annotation, animated: true)
     }
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {

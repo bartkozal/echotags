@@ -15,7 +15,9 @@ class AudioPlayer: NSObject {
     
     func play(recording: String) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
-            if let sound = NSDataAsset(name: recording) {
+            // TODO: use commented version
+            // if let sound = NSDataAsset(name: recording) {
+            if let sound = NSDataAsset(name: "sample") {
                 do {
                     try self.session.setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
                     try self.session.setActive(true)
