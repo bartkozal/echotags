@@ -10,5 +10,16 @@ import Mapbox
 
 class PointAnnotation: MGLPointAnnotation {
     var audio: String?
-    var marker: String?
+    var color = "red"
+    var visited = false
+    
+    init(fromPoint point: Point) {
+        super.init()
+        
+        coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+        title = point.title
+        audio = point.audio
+        color = point.color
+        visited = point.visited
+    }
 }

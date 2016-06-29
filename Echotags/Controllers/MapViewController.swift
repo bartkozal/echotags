@@ -97,6 +97,13 @@ class MapViewController: UIViewController {
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
     }
     
+    func replacePointAnnotation(oldPoint: Point, newPoint: Point) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
+            self.mapView.removeAnnotation(PointAnnotation(fromPoint: oldPoint))
+            self.mapView.addAnnotation(PointAnnotation(fromPoint: newPoint))
+        }
+    }
+    
     func reloadPointAnnotations() {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
             if let pointAnnotations = self.mapView.annotations {
@@ -105,13 +112,7 @@ class MapViewController: UIViewController {
             
             for point in Marker.visible() {
                 let point = point as! Point
-                let pointAnnotation = PointAnnotation()
-                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-                pointAnnotation.title = point.title
-                pointAnnotation.audio = point.audio
-                 // TODO implement
-                pointAnnotation.marker = "red"
-                
+                let pointAnnotation = PointAnnotation(fromPoint: point)
                 self.mapView.addAnnotation(pointAnnotation)
             }
         }
@@ -159,20 +160,30 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        if let audioFile = Trigger.findById(region.identifier)?.point.first?.audio {
-            print(audioFile)
-            audio.play(audioFile)
+        let point = Trigger.findById(region.identifier)?.point.first
+        if let point = point {
+//            let oldPoint = point
+            point.markAsVisited()
+//            replacePointAnnotation(oldPoint, newPoint: point)
+            audio.play(point.audio)
         }
     }
 }
 
 extension MapViewController: MGLMapViewDelegate {
     func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
-        var annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier("marker-green")
+        let annotation = annotation as! PointAnnotation
+        var imageName = "marker-\(annotation.color)"
+        
+        if annotation.visited {
+            imageName = "marker-visited"
+        }
+        
+        var annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier(imageName)
         
         if annotationImage == nil {
-            let image = UIImage(named: "marker-green")!
-            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: "marker-green")
+            let image = UIImage(named: imageName)!
+            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: imageName)
         }
         
         return annotationImage

@@ -12,6 +12,12 @@ extension Point {
     static func findByTitle(title: String) -> Point? {
         return Database().db.objects(Point).filter("title = %@", title).first ?? nil
     }
+    
+    func markAsVisited() {
+        try! Database().db.write {
+            visited = true
+        }
+    }
 }
 
 extension Marker {
