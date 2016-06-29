@@ -15,6 +15,7 @@ class Point: Object {
     dynamic var longitude = 0.0
     dynamic var audio = ""
     dynamic var visited = false
+    dynamic var color = ""
     let triggers = List<Trigger>()
 }
 
