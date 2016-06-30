@@ -11,6 +11,7 @@ import Spring
 import BEMCheckBox
 import CoreLocation
 import Mapbox
+import Social
 
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
@@ -55,6 +56,26 @@ class SettingsViewController: UIViewController {
             if offlineMap.isAvailable {
                 downloadMapButton.hidden = true
             }
+        }
+    }
+    
+    @IBAction private func touchTweetButton(sender: DesignableButton) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+            let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via @echotags")
+            self.presentViewController(vc, animated: true, completion: nil)
+        } else {
+            Alert(vc: self).twitterUnavailable()
+        }
+    }
+    
+    @IBAction private func touchShareButton(sender: DesignableButton) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
+            let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via https://www.facebook.com/echotagsapp/")
+            self.presentViewController(vc, animated: true, completion: nil)
+        } else {
+            Alert(vc: self).facebookUnavailable()
         }
     }
     
