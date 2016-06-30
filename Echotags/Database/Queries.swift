@@ -24,6 +24,10 @@ extension Marker {
     static func visible() -> [Object] {
         return Database().db.objects(Marker).filter("category.visible = true").uniqueObject("point")
     }
+    
+    static func unvisited() -> [Object] {
+        return Database().db.objects(Marker).filter("category.visible = true AND point.visited = false").uniqueObject("point")
+    }
 }
 
 extension Category {
