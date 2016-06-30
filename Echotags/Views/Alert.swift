@@ -31,14 +31,38 @@ struct Alert {
     }
     
     func mapCenteringUnavailable() {
-        let alertController = UIAlertController(
-            title: "Centering is unavailable",
-            message: "For some reasons centering wasn't possible. Please try again in a few seconds.",
-            preferredStyle: .Alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
-        alertController.addAction(okAction)
+        let alertController = okAlertController(
+            "Centering is unavailable",
+            message: "For some reasons centering wasn't possible. Please try again in a few seconds."
+        )
+
+        vc.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func twitterUnavailable() {
+        let alertController = okAlertController(
+            "Account is unavailable",
+            message: "You are not logged in to your Twitter account."
+        )
         
         vc.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func facebookUnavailable() {
+        let alertController = okAlertController(
+            "Account is unavailable",
+            message: "You are not logged in to your Facebook account."
+        )
+        
+        vc.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    private func okAlertController(title: String, message: String) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        return alertController
     }
 }

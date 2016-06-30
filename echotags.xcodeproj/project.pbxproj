@@ -27,6 +27,7 @@
 		A177D62D1CFB9AE800B0E11A /* DB.realm in Resources */ = {isa = PBXBuildFile; fileRef = A177D62C1CFB9AE800B0E11A /* DB.realm */; };
 		A177D6311CFBA15000B0E11A /* UniqueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D6301CFBA15000B0E11A /* UniqueObject.swift */; };
 		A17BE7071D2550490083E501 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A17BE7061D2550490083E501 /* Settings.bundle */; };
+		A17BE7091D2582430083E501 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17BE7081D2582430083E501 /* Social.framework */; };
 		A19E59041D21A19E0066608A /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E59031D21A19E0066608A /* PointAnnotation.swift */; };
 		A19FDFD81CF381E800BC54D0 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDFD71CF381E800BC54D0 /* Database.swift */; };
 		A1B2B8DB1CEB450A00077D80 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */; };
@@ -66,6 +67,7 @@
 		A177D62C1CFB9AE800B0E11A /* DB.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = DB.realm; sourceTree = "<group>"; };
 		A177D6301CFBA15000B0E11A /* UniqueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueObject.swift; sourceTree = "<group>"; };
 		A17BE7061D2550490083E501 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Echotags/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		A17BE7081D2582430083E501 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A19E59031D21A19E0066608A /* PointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		A19FDFD71CF381E800BC54D0 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A1B2B8DA1CEB450A00077D80 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17BE7091D2582430083E501 /* Social.framework in Frameworks */,
 				CEC67C725FA8149A2F137778 /* Pods_echotags.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +212,7 @@
 		C162163EB18D2D04A0F90692 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A17BE7081D2582430083E501 /* Social.framework */,
 				A15D28B11CFEFB9300E55F03 /* Foundation.framework */,
 				A15D28AE1CFEE8DE00E55F03 /* AVFoundation.framework */,
 				A11941BD1CE6868600B4D280 /* QuartzCore.framework */,
