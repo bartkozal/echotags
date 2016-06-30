@@ -40,8 +40,6 @@ class MapViewController: UIViewController {
             
             let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 35, heading: 0)
             mapView.setCamera(camera, animated: false)
-            
-            reloadPointAnnotations()
         }
     }
     
@@ -97,13 +95,6 @@ class MapViewController: UIViewController {
         MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
     }
     
-    func replacePointAnnotation(oldPoint: Point, newPoint: Point) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
-            self.mapView.removeAnnotation(PointAnnotation(fromPoint: oldPoint))
-            self.mapView.addAnnotation(PointAnnotation(fromPoint: newPoint))
-        }
-    }
-    
     func reloadPointAnnotations() {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
             if let pointAnnotations = self.mapView.annotations {
@@ -122,10 +113,19 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         overlayView.hidden = isOverlayHidden
+        
+        reloadPointAnnotations()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(reloadPointAnnotations),
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil
+        )
         
         geofencing.manager.delegate = self
         geofencing.manager.startMonitoringSignificantLocationChanges()
@@ -162,9 +162,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         let point = Trigger.findById(region.identifier)?.point.first
         if let point = point {
-//            let oldPoint = point
             point.markAsVisited()
-//            replacePointAnnotation(oldPoint, newPoint: point)
             audio.play(point.audio)
         }
     }
