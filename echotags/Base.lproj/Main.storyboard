@@ -388,10 +388,10 @@ For the first run we would like to ask you for the localization permission and a
                                         <rect key="frame" x="15" y="31" width="315" height="475"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
-                                                <rect key="frame" x="0.0" y="102" width="315" height="272"/>
+                                                <rect key="frame" x="0.0" y="161" width="315" height="154"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echotags isn't free but you can try the app before you decide to pay for it. First five spots will work without a charge." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="58"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In case you need settings there is @ icon on the right bottom corner of the screen. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -401,37 +401,8 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-pG-dh6" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="88" width="315" height="48"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="260" id="LdX-0d-qPu"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Unlock content for €7,99" image="icon-unlock">
-                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="LdX-0d-qPu"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In case you need settings there is @ icon on the right bottom corner of the screen. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="166" width="315" height="38"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. All content is already unlocked and ready to use." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="0.0" y="68" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -441,8 +412,8 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. Enjoy Amsterdam!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-rU-Rre" customClass="DesignableLabel" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="234" width="315" height="38"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy Amsterdam!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-rU-Rre" customClass="DesignableLabel" customModule="Spring">
+                                                        <rect key="frame" x="0.0" y="136" width="315" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -513,7 +484,7 @@ For the first run we would like to ask you for the localization permission and a
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="settingsLabel" destination="9du-MQ-4yX" id="sVc-Td-Wrt"/>
+                        <outlet property="settingsLabel" destination="miN-az-9Xe" id="gPR-xf-HwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZ8-GL-8pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -804,7 +775,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-pe-HGu">
-                                                <rect key="frame" x="0.0" y="366" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="298" width="375" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'M INTERESTED IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv7-Ra-BOv">
                                                         <rect key="frame" x="15" y="15" width="111" height="15"/>
@@ -821,7 +792,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
-                                                <rect key="frame" x="15" y="430" width="345" height="93"/>
+                                                <rect key="frame" x="15" y="362" width="345" height="161"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="sMK-Rx-yS9"/>
                                                     <constraint firstAttribute="height" constant="200" id="xUw-4L-oCU"/>
@@ -893,7 +864,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-58-9W1">
-                                                <rect key="frame" x="58" y="162" width="260" height="184"/>
+                                                <rect key="frame" x="58" y="162" width="260" height="116"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-Je-1ha" customClass="DesignableButton" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="0.0" width="260" height="48"/>
@@ -950,27 +921,6 @@ Tap anywhere to hide the overlay.</string>
                                                         <connections>
                                                             <action selector="touchDownloadButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="h8r-af-pWa"/>
                                                         </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-nn-rZd" customClass="DesignableButton" customModule="Spring">
-                                                        <rect key="frame" x="0.0" y="136" width="260" height="48"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Unlock content for €7,99" image="icon-unlock">
-                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -1140,7 +1090,6 @@ Tap anywhere to hide the overlay.</string>
         <image name="icon-permissions" width="20" height="20"/>
         <image name="icon-settings" width="32" height="32"/>
         <image name="icon-twitter" width="20" height="20"/>
-        <image name="icon-unlock" width="20" height="20"/>
         <image name="img-arrow" width="88" height="59"/>
     </resources>
 </document>
