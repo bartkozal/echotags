@@ -6,6 +6,7 @@
 //  Copyright © 2016 Bartłomiej Kozal. All rights reserved.
 //
 
+import CoreLocation
 import RealmSwift
 
 extension Point {
@@ -25,8 +26,14 @@ extension Marker {
         return Database().db.objects(Marker).filter("category.visible = true").uniqueObject("point")
     }
     
-    static func unvisited() -> [Object] {
-        return Database().db.objects(Marker).filter("category.visible = true AND point.visited = false").uniqueObject("point")
+    static func nearby(userLocation: CLLocationCoordinate2D) -> [Object] {
+        let range = 0.005
+        let minLat = userLocation.latitude - range
+        let maxLat = userLocation.latitude + range
+        let minLng = userLocation.longitude - range
+        let maxLng = userLocation.longitude + range
+        
+        return Database().db.objects(Marker).filter("category.visible = true AND point.visited = false AND point.latitude BETWEEN {%@, %@} AND point.longitude BETWEEN {%@, %@}", minLat, maxLat, minLng, maxLng).uniqueObject("point")
     }
 }
 
