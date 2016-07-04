@@ -128,7 +128,7 @@ class MapViewController: UIViewController {
         )
         
         geofencing.manager.delegate = self
-        geofencing.manager.startMonitoringSignificantLocationChanges()
+        geofencing.manager.startUpdatingLocation()
         geofencing.manager.startUpdatingHeading()
     }
 }
@@ -139,7 +139,6 @@ extension MapViewController: CLLocationManagerDelegate {
         
         if let userLocation = userLocation {
             if geofencing.cityBoundsContains(userLocation) {
-                // TODO: This is slow (run in other thread/optimize etc.
                 geofencing.monitorNearestPointsFor(userLocation)
                 centerMapButton.hidden = false
                 
@@ -149,7 +148,7 @@ extension MapViewController: CLLocationManagerDelegate {
                 }
             } else {
                 outOfBoundsView.hidden = false
-                manager.stopMonitoringSignificantLocationChanges()
+                manager.stopUpdatingLocation()
                 manager.stopUpdatingHeading()
             }
         }
