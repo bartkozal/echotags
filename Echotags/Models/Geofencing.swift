@@ -54,13 +54,13 @@ class Geofencing {
         }
     }
     
-    func monitorNearestPointsFor(source: CLLocationCoordinate2D) {
+    func monitorNearestPointsFor(userLocation: CLLocationCoordinate2D) {
         // Return 20 nearest triggers for current user location
-        let nearestTriggers = Marker.unvisited().flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
+        let nearestTriggers = Marker.nearby(userLocation).flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
             let t1coordinate = CLLocationCoordinate2D(latitude: t1.latitude, longitude: t1.longitude)
             let t2coordinate = CLLocationCoordinate2D(latitude: t2.latitude, longitude: t2.longitude)
-            return distanceBetween(source, target: t1coordinate) < distanceBetween(source, target: t2coordinate)
-            }[0...20]
+            return distanceBetween(userLocation, target: t1coordinate) < distanceBetween(userLocation, target: t2coordinate)
+            }.prefix(20)
         
         // Empty monitored regions array
         for region in manager.monitoredRegions {
