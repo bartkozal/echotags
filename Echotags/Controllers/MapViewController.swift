@@ -122,13 +122,31 @@ class MapViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(reloadPointAnnotations),
+            selector: #selector(didBecomeActive),
             name: UIApplicationDidBecomeActiveNotification,
             object: nil
         )
         
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(didBecomeInactive),
+            name: UIApplicationDidEnterBackgroundNotification,
+            object: nil
+        )
+        
         geofencing.manager.delegate = self
+        geofencing.manager.requestLocation()
+        geofencing.manager.startUpdatingHeading()
+    }
+    
+    @objc private func didBecomeInactive() {
         geofencing.manager.startUpdatingLocation()
+        geofencing.manager.stopUpdatingHeading()
+    }
+    
+    @objc private func didBecomeActive() {
+        reloadPointAnnotations()
+        geofencing.manager.stopUpdatingLocation()
         geofencing.manager.startUpdatingHeading()
     }
 }
@@ -148,7 +166,6 @@ extension MapViewController: CLLocationManagerDelegate {
                 }
             } else {
                 outOfBoundsView.hidden = false
-                manager.stopUpdatingLocation()
                 manager.stopUpdatingHeading()
             }
         }
@@ -164,6 +181,10 @@ extension MapViewController: CLLocationManagerDelegate {
             point.markAsVisited()
             audio.play(point.audio)
         }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error: \(error.localizedFailureReason)")
     }
 }
 
