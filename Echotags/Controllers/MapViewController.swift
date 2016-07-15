@@ -25,7 +25,6 @@ class MapViewController: UIViewController {
     private var userHeading: CLLocationDirection?
     
     @IBOutlet weak var overlayView: DesignableView!
-    @IBOutlet private weak var outOfBoundsView: DesignableView!
     
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
@@ -45,16 +44,29 @@ class MapViewController: UIViewController {
     
     @IBOutlet private weak var centerMapButton: UIButton!
     
-    @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
-    
-    @IBAction private func touchOutOfBoundsButton(sender: AnyObject) {
-        outOfBoundsView.animation = "fadeOut"
-        outOfBoundsView.animateNext { [unowned self] in
-            self.outOfBoundsView.hidden = true
+    @IBOutlet private weak var navigationButton: UIButton!
+
+    var navigation: Bool {
+        get {
+            return navigationButton.selected
+        }
+        
+        set {
+            if newValue {
+                navigationButton.selected = true
+                geofencing.manager.startUpdatingLocation()
+                navigationButton.setImage(UIImage(named: "icon-navigation-active"), forState: .Normal)
+            } else {
+                navigationButton.selected = false
+                geofencing.manager.stopUpdatingLocation()
+                navigationButton.setImage(UIImage(named: "icon-navigation"), forState: .Normal)
+            }
         }
     }
     
-    @IBAction func touchCenterMapButton(sender: UIButton) {
+    @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
+    
+    @IBAction private func touchCenterMapButton(sender: UIButton) {
         guard let userLocation = userLocation, userHeading = userHeading else {
             Alert(vc: self).mapCenteringUnavailable()
             return
@@ -62,6 +74,10 @@ class MapViewController: UIViewController {
         
         let camera = MGLMapCamera(lookingAtCenterCoordinate: userLocation, fromDistance: 1000, pitch: 35, heading: userHeading)
         mapView.setCamera(camera, animated: true)
+    }
+    
+    @IBAction private func touchNavigationButton(sender: UIButton) {
+        navigation = !navigation
     }
     
     @IBAction private func touchOverlayView(sender: UIButton) {
@@ -140,13 +156,11 @@ class MapViewController: UIViewController {
     }
     
     @objc private func didBecomeInactive() {
-        geofencing.manager.startUpdatingLocation()
         geofencing.manager.stopUpdatingHeading()
     }
     
     @objc private func didBecomeActive() {
         reloadPointAnnotations()
-        geofencing.manager.stopUpdatingLocation()
         geofencing.manager.startUpdatingHeading()
     }
 }
@@ -165,7 +179,8 @@ extension MapViewController: CLLocationManagerDelegate {
                     isFirstLoad = false
                 }
             } else {
-                outOfBoundsView.hidden = false
+                Alert(vc: self).outOfBounds()
+                navigation = false
                 manager.stopUpdatingHeading()
             }
         }
@@ -178,13 +193,13 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         let point = Trigger.findById(region.identifier)?.point.first
         if let point = point {
-            point.markAsVisited()
+            // point.markAsVisited()
             audio.play(point.audio)
         }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Error: \(error.localizedFailureReason)")
+        print("Error: \(error.localizedDescription)")
     }
 }
 

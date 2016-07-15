@@ -554,7 +554,7 @@ For the first run we would like to ask you for the localization permission and a
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-zy-PQh">
-                                <rect key="frame" x="0.0" y="15" width="237" height="100"/>
+                                <rect key="frame" x="0.0" y="15" width="296" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUT HEADPHONES ON." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHU-jl-Ov8">
                                         <rect key="frame" x="0.0" y="0.0" width="237" height="28"/>
@@ -567,16 +567,22 @@ For the first run we would like to ask you for the localization permission and a
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCK YOUR PHONE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
-                                        <rect key="frame" x="0.0" y="36" width="209" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TURN ON NAVIGATION MODE." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b02-4k-5ac">
+                                        <rect key="frame" x="0.0" y="36" width="296" height="28"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="SEg-R8-Ub7"/>
+                                            <constraint firstAttribute="width" constant="296" id="UjS-Zh-dTf"/>
                                             <constraint firstAttribute="width" constant="209" id="w7u-4g-sjP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="w7u-4g-sjP"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENJOY AMSTERDAM!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7J-Y9-r9C">
                                         <rect key="frame" x="0.0" y="72" width="216" height="28"/>
@@ -603,54 +609,10 @@ For the first run we would like to ask you for the localization permission and a
                                 <rect key="frame" x="157" y="605" width="62" height="62"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" image="icon-navigation"/>
+                                <connections>
+                                    <action selector="touchNavigationButton:" destination="NdK-S1-o1x" eventType="touchUpInside" id="Cbd-Zp-td7"/>
+                                </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-Dh-9eY" customClass="DesignableView" customModule="Spring">
-                                <rect key="frame" x="54" y="300" width="267" height="67"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfH-4o-LzJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="267" height="67"/>
-                                        <connections>
-                                            <action selector="touchOutOfBoundsButton:" destination="NdK-S1-o1x" eventType="touchUpInside" id="97P-Ij-RNI"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seems you are out of Amsterdam. You can still review markers but navigation won't work." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxp-7r-nBh" customClass="DesignableLabel" customModule="Spring">
-                                        <rect key="frame" x="8" y="8" width="251" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.70980392156862748" green="0.50588235294117645" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textAlignment">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fxp-7r-nBh" secondAttribute="trailing" constant="8" id="BNm-be-VQa"/>
-                                    <constraint firstItem="EfH-4o-LzJ" firstAttribute="leading" secondItem="pIR-Dh-9eY" secondAttribute="leading" id="Eph-CJ-zDX"/>
-                                    <constraint firstItem="fxp-7r-nBh" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="top" constant="8" id="Er2-wR-2zU"/>
-                                    <constraint firstAttribute="trailing" secondItem="EfH-4o-LzJ" secondAttribute="trailing" id="FNJ-SJ-gcv"/>
-                                    <constraint firstItem="EfH-4o-LzJ" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="top" id="Hx1-9v-Ujb"/>
-                                    <constraint firstItem="fxp-7r-nBh" firstAttribute="leading" secondItem="pIR-Dh-9eY" secondAttribute="leading" constant="8" id="alU-0j-4Ig"/>
-                                    <constraint firstAttribute="bottom" secondItem="fxp-7r-nBh" secondAttribute="bottom" constant="8" id="oSv-sF-vNS"/>
-                                    <constraint firstAttribute="bottom" secondItem="EfH-4o-LzJ" secondAttribute="bottom" id="rCt-CX-H4x"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.70980392160000005" green="0.50588235290000005" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-kH-0Q3" customClass="DesignableView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -689,31 +651,26 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" id="ARG-mK-hid"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
-                            <constraint firstItem="pIR-Dh-9eY" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" constant="54" id="Ebk-ba-9Bl"/>
                             <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
                             <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" id="H4T-lp-n4Y"/>
-                            <constraint firstItem="pIR-Dh-9eY" firstAttribute="centerY" secondItem="QQ3-hm-Opb" secondAttribute="centerY" id="KEv-XI-0CZ"/>
                             <constraint firstItem="bAp-co-Ihh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Pjp-5G-ngl"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
-                            <constraint firstAttribute="trailing" secondItem="pIR-Dh-9eY" secondAttribute="trailing" constant="54" id="ZXg-l9-Kmo"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="b4K-cP-eMR"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="2du-kH-0Q3" secondAttribute="bottom" id="d2M-F3-O1I"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="hs8-EM-LLh"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="jFk-mB-Y3s"/>
                             <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
-                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="bottom" constant="30" id="ydo-Vr-88Z"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="3Me-8d-gIh"/>
-                                <exclude reference="ydo-Vr-88Z"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="centerMapButton" destination="bAp-co-Ihh" id="3uS-Th-a7N"/>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
-                        <outlet property="outOfBoundsView" destination="pIR-Dh-9eY" id="hPL-q6-67M"/>
+                        <outlet property="navigationButton" destination="J2k-nZ-1nI" id="mGQ-D2-jPe"/>
                         <outlet property="overlayView" destination="2du-kH-0Q3" id="e1f-l1-kF5"/>
                         <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>

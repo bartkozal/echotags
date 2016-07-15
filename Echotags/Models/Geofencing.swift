@@ -18,7 +18,7 @@ class Geofencing {
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.373846, longitude: 4.896244)
         static let zoomLevel = 14.0
-        static let pointRadius = CLLocationDistance(30.0)
+        static let pointRadius = CLLocationDistance(20.0)
         static let styleURL = NSURL.init(string: "mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao")
     }
     
@@ -33,7 +33,7 @@ class Geofencing {
         manager = CLLocationManager()
         manager.allowsBackgroundLocationUpdates = true
         manager.activityType = .Fitness
-        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
     
     func cityBoundsContains(location: CLLocationCoordinate2D) -> Bool {
