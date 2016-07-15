@@ -30,15 +30,6 @@ struct Alert {
         vc.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func mapCenteringUnavailable() {
-        let alertController = okAlertController(
-            "Centering is unavailable",
-            message: "For some reasons centering wasn't possible. Please try again in a few seconds."
-        )
-
-        vc.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
     func twitterUnavailable() {
         let alertController = okAlertController(
             "Account is unavailable",

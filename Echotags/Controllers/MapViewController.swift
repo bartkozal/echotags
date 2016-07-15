@@ -42,11 +42,33 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var centerMapButton: UIButton!
+    @IBOutlet private weak var centerMapButton: UIButton! {
+        didSet {
+            centerMapButton.hidden = true
+        }
+    }
+    
+    private var centering: Bool {
+        get {
+            return centerMapButton.selected
+        }
+        
+        set {
+            if newValue {
+                centerMapButton.selected = true
+                geofencing.manager.startUpdatingHeading()
+                centerMapButton.setImage(UIImage(named: "icon-center-active"), forState: .Normal)
+            } else {
+                centerMapButton.selected = false
+                geofencing.manager.stopUpdatingHeading()
+                centerMapButton.setImage(UIImage(named: "icon-center"), forState: .Normal)
+            }
+        }
+    }
     
     @IBOutlet private weak var navigationButton: UIButton!
-
-    var navigation: Bool {
+    
+    private var navigation: Bool {
         get {
             return navigationButton.selected
         }
@@ -54,12 +76,15 @@ class MapViewController: UIViewController {
         set {
             if newValue {
                 navigationButton.selected = true
+                centerMapButton.hidden = false
                 geofencing.manager.startUpdatingLocation()
                 navigationButton.setImage(UIImage(named: "icon-navigation-active"), forState: .Normal)
             } else {
                 navigationButton.selected = false
+                centerMapButton.hidden = true
                 geofencing.manager.stopUpdatingLocation()
                 navigationButton.setImage(UIImage(named: "icon-navigation"), forState: .Normal)
+                centering = false
             }
         }
     }
@@ -67,13 +92,7 @@ class MapViewController: UIViewController {
     @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
     
     @IBAction private func touchCenterMapButton(sender: UIButton) {
-        guard let userLocation = userLocation, userHeading = userHeading else {
-            Alert(vc: self).mapCenteringUnavailable()
-            return
-        }
-        
-        let camera = MGLMapCamera(lookingAtCenterCoordinate: userLocation, fromDistance: 1000, pitch: 35, heading: userHeading)
-        mapView.setCamera(camera, animated: true)
+        centering = !centering
     }
     
     @IBAction private func touchNavigationButton(sender: UIButton) {
@@ -143,25 +162,21 @@ class MapViewController: UIViewController {
             object: nil
         )
         
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(didBecomeInactive),
-            name: UIApplicationDidEnterBackgroundNotification,
-            object: nil
-        )
-        
         geofencing.manager.delegate = self
         geofencing.manager.requestLocation()
-        geofencing.manager.startUpdatingHeading()
-    }
-    
-    @objc private func didBecomeInactive() {
-        geofencing.manager.stopUpdatingHeading()
     }
     
     @objc private func didBecomeActive() {
         reloadPointAnnotations()
-        geofencing.manager.startUpdatingHeading()
+    }
+    
+    private func centerMapOn(location: CLLocationCoordinate2D?, heading: CLLocationDirection?) {
+        if centering {
+            if let location = location, heading = heading {
+                let camera = MGLMapCamera(lookingAtCenterCoordinate: location, fromDistance: 1000, pitch: 35, heading: heading)
+                mapView.setCamera(camera, animated: true)
+            }
+        }
     }
 }
 
@@ -171,23 +186,24 @@ extension MapViewController: CLLocationManagerDelegate {
         
         if let userLocation = userLocation {
             if geofencing.cityBoundsContains(userLocation) {
-                geofencing.monitorNearestPointsFor(userLocation)
-                centerMapButton.hidden = false
-                
                 if isFirstLoad {
                     mapView.setCenterCoordinate(userLocation, animated: true)
                     isFirstLoad = false
+                } else {
+                    geofencing.monitorNearestPointsFor(userLocation)
                 }
+                
+                centerMapOn(userLocation, heading: userHeading)
             } else {
                 Alert(vc: self).outOfBounds()
                 navigation = false
-                manager.stopUpdatingHeading()
             }
         }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         userHeading = newHeading.trueHeading
+        centerMapOn(userLocation, heading: userHeading)
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
