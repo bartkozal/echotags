@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eW5-sN-O2S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eW5-sN-O2S">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -592,15 +592,20 @@ For the first run we would like to ask you for the localization permission and a
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-co-Ihh">
-                                <rect key="frame" x="162" y="614" width="51" height="53"/>
+                                <rect key="frame" x="0.0" y="614" width="51" height="53"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="11" maxX="10" maxY="11"/>
                                 <state key="normal" image="icon-center"/>
                                 <connections>
                                     <action selector="touchCenterMapButton:" destination="NdK-S1-o1x" eventType="touchUpInside" id="V0C-Rh-LM8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-nZ-1nI">
+                                <rect key="frame" x="157" y="605" width="62" height="62"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="icon-navigation"/>
+                            </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-Dh-9eY" customClass="DesignableView" customModule="Spring">
-                                <rect key="frame" x="54" y="570" width="267" height="67"/>
+                                <rect key="frame" x="54" y="300" width="267" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfH-4o-LzJ">
                                         <rect key="frame" x="0.0" y="0.0" width="267" height="67"/>
@@ -685,6 +690,10 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
                             <constraint firstItem="pIR-Dh-9eY" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" constant="54" id="Ebk-ba-9Bl"/>
+                            <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
+                            <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" id="H4T-lp-n4Y"/>
+                            <constraint firstItem="pIR-Dh-9eY" firstAttribute="centerY" secondItem="QQ3-hm-Opb" secondAttribute="centerY" id="KEv-XI-0CZ"/>
+                            <constraint firstItem="bAp-co-Ihh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Pjp-5G-ngl"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
                             <constraint firstAttribute="trailing" secondItem="pIR-Dh-9eY" secondAttribute="trailing" constant="54" id="ZXg-l9-Kmo"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="b4K-cP-eMR"/>
@@ -694,6 +703,12 @@ Tap anywhere to hide the overlay.</string>
                             <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="pIR-Dh-9eY" secondAttribute="bottom" constant="30" id="ydo-Vr-88Z"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Me-8d-gIh"/>
+                                <exclude reference="ydo-Vr-88Z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="centerMapButton" destination="bAp-co-Ihh" id="3uS-Th-a7N"/>
@@ -1087,6 +1102,7 @@ Tap anywhere to hide the overlay.</string>
         <image name="icon-indicator-1" width="42" height="10"/>
         <image name="icon-indicator-2" width="42" height="10"/>
         <image name="icon-indicator-3" width="42" height="10"/>
+        <image name="icon-navigation" width="52" height="52"/>
         <image name="icon-permissions" width="20" height="20"/>
         <image name="icon-settings" width="32" height="32"/>
         <image name="icon-twitter" width="20" height="20"/>

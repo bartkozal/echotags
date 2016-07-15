@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A10642F81CE7C42400ABE7BF /* MaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642F71CE7C42400ABE7BF /* MaskLayer.swift */; };
 		A10F34D41CEA85A600186314 /* GlyphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F34D31CEA85A600186314 /* GlyphLabel.swift */; };
-		A11513F31D1AC0D800EA861E /* Markers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11513F21D1AC0D800EA861E /* Markers.xcassets */; };
 		A1187E181D12EA33007F964E /* OfflineMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E171D12EA33007F964E /* OfflineMap.swift */; };
 		A1187E1A1D12F34B007F964E /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E191D12F34B007F964E /* Queries.swift */; };
 		A1293DFE1D19863000150DDA /* OfflinePack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1293DFD1D19863000150DDA /* OfflinePack.swift */; };
@@ -45,7 +44,6 @@
 		7F98CC84396B9733BF8C19B8 /* Pods-echotags.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-echotags.debug.xcconfig"; path = "Pods/Target Support Files/Pods-echotags/Pods-echotags.debug.xcconfig"; sourceTree = "<group>"; };
 		A10642F71CE7C42400ABE7BF /* MaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayer.swift; sourceTree = "<group>"; };
 		A10F34D31CEA85A600186314 /* GlyphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlyphLabel.swift; sourceTree = "<group>"; };
-		A11513F21D1AC0D800EA861E /* Markers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Markers.xcassets; sourceTree = "<group>"; };
 		A1187E171D12EA33007F964E /* OfflineMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineMap.swift; sourceTree = "<group>"; };
 		A1187E191D12F34B007F964E /* Queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -111,7 +109,6 @@
 			children = (
 				A1F2A0E61CE2030000593EB0 /* Assets.xcassets */,
 				A1B7B24B1CFE1903006171D5 /* Audio.xcassets */,
-				A11513F21D1AC0D800EA861E /* Markers.xcassets */,
 				A177D62C1CFB9AE800B0E11A /* DB.realm */,
 				A132D1591D00426A006DCDCE /* GPXTest.gpx */,
 			);
@@ -294,7 +291,6 @@
 				A17BE7071D2550490083E501 /* Settings.bundle in Resources */,
 				A1F2A0EA1CE2030000593EB0 /* LaunchScreen.storyboard in Resources */,
 				A177D62D1CFB9AE800B0E11A /* DB.realm in Resources */,
-				A11513F31D1AC0D800EA861E /* Markers.xcassets in Resources */,
 				A1B7B24C1CFE1903006171D5 /* Audio.xcassets in Resources */,
 				A1363C151CF7363B000D5C92 /* CategoryView.xib in Resources */,
 				A1F2A0E71CE2030000593EB0 /* Assets.xcassets in Resources */,
