@@ -51,7 +51,7 @@ struct Alert {
     func outOfBounds() {
         let alertController = okAlertController(
             "Out of bounds",
-            message: "Seems you are out of Amsterdam. You can still review markers but navigation won't work."
+            message: "Seems you are out of Amsterdam. You can still review markers but navigation mode is unavailable."
         )
         
         vc.presentViewController(alertController, animated: true, completion: nil)
