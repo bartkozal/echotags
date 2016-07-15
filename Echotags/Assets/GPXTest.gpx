@@ -1,17 +1,12 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode">
-    <wpt lat="52.3735736" lon="4.87895270000001">
-        <name>Galerie Fons Welters</name>
+    <wpt lat="52.3671345613035" lon="4.866">
+        <name>p1</name>
         <time>2016-06-02T13:23:00Z</time>
     </wpt>
     
-    <wpt lat="52.3726167" lon="4.89267380000001">
-        <name>Madame Tussauds</name>
-        <time>2016-06-02T13:23:15Z</time>
-    </wpt>
-    
-    <wpt lat="52.369078" lon="4.89752539999995">
-        <name>Upstream Gallery</name>
-        <time>2016-06-02T13:23:25Z</time>
+    <wpt lat="52.3671345613035" lon="4.870">
+        <name>p2</name>
+        <time>2016-06-02T13:23:10Z</time>
     </wpt>
 </gpx>
