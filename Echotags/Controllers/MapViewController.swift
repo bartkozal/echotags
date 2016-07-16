@@ -170,12 +170,19 @@ class MapViewController: UIViewController {
         reloadPointAnnotations()
     }
     
-    private func centerMapOn(location: CLLocationCoordinate2D?, heading: CLLocationDirection?) {
+    private func tryCenterMapOn(location: CLLocationCoordinate2D?, heading: CLLocationDirection?) {
         if centering {
             if let location = location, heading = heading {
                 let camera = MGLMapCamera(lookingAtCenterCoordinate: location, fromDistance: 1000, pitch: 35, heading: heading)
                 mapView.setCamera(camera, animated: true)
             }
+        }
+    }
+    
+    private func handleUserLocation(userLocation: CLLocationCoordinate2D) {
+        if let point = geofencing.lookForNearbyPoint(userLocation) {
+            point.markAsVisited()
+            audio.play(point.audio)
         }
     }
 }
@@ -190,10 +197,10 @@ extension MapViewController: CLLocationManagerDelegate {
                     mapView.setCenterCoordinate(userLocation, animated: true)
                     isFirstLoad = false
                 } else {
-                    geofencing.monitorNearestPointsFor(userLocation)
+                    handleUserLocation(userLocation)
                 }
                 
-                centerMapOn(userLocation, heading: userHeading)
+                tryCenterMapOn(userLocation, heading: userHeading)
             } else {
                 Alert(vc: self).outOfBounds()
                 navigation = false
@@ -203,15 +210,7 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         userHeading = newHeading.trueHeading
-        centerMapOn(userLocation, heading: userHeading)
-    }
-    
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        let point = Trigger.findById(region.identifier)?.point.first
-        if let point = point {
-            // point.markAsVisited()
-            audio.play(point.audio)
-        }
+        tryCenterMapOn(userLocation, heading: userHeading)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

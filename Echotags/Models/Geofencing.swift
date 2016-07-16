@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
-class Geofencing {
+class Geofencing {    
     var manager: CLLocationManager
     var isEnabled: Bool {
         return CLLocationManager.authorizationStatus() == .AuthorizedAlways
@@ -18,7 +19,7 @@ class Geofencing {
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.373846, longitude: 4.896244)
         static let zoomLevel = 14.0
-        static let pointRadius = CLLocationDistance(20.0)
+        static let minimumAccuracy = 0.07
         static let styleURL = NSURL.init(string: "mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao")
     }
     
@@ -54,29 +55,21 @@ class Geofencing {
         }
     }
     
-    func monitorNearestPointsFor(userLocation: CLLocationCoordinate2D) {
-        // Return 20 nearest triggers for current user location
-        let nearestTriggers = Marker.nearby(userLocation).flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
+    func lookForNearbyPoint(userLocation: CLLocationCoordinate2D) -> Point? {
+        let nearestTrigger = Marker.nearby(userLocation).flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
             let t1coordinate = CLLocationCoordinate2D(latitude: t1.latitude, longitude: t1.longitude)
             let t2coordinate = CLLocationCoordinate2D(latitude: t2.latitude, longitude: t2.longitude)
             return distanceBetween(userLocation, target: t1coordinate) < distanceBetween(userLocation, target: t2coordinate)
-            }.prefix(20)
+        }.first
         
-        // Empty monitored regions array
-        for region in manager.monitoredRegions {
-            manager.stopMonitoringForRegion(region)
+        if let trigger = nearestTrigger {
+            let triggerCoordinate = CLLocationCoordinate2D(latitude: trigger.latitude, longitude: trigger.longitude)
+            if distanceBetween(userLocation, target: triggerCoordinate) < Defaults.minimumAccuracy {
+                return trigger.point.first
+            }
         }
         
-        // Start monitoring nearest trigger
-        for trigger in nearestTriggers {
-            let coordinate = CLLocationCoordinate2D(latitude: trigger.latitude, longitude: trigger.longitude)
-            let region = circularRegionFrom(coordinate, withIdentifier: trigger.id)
-            manager.startMonitoringForRegion(region)
-        }
-    }
-    
-    private func circularRegionFrom(coordinate: CLLocationCoordinate2D, withIdentifier identifier: String) -> CLCircularRegion {
-        return CLCircularRegion(center: coordinate, radius: Defaults.pointRadius, identifier: identifier)
+        return nil
     }
     
     private func distanceBetween(source: CLLocationCoordinate2D, target: CLLocationCoordinate2D) -> Double {

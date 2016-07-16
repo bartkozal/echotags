@@ -27,7 +27,7 @@ extension Marker {
     }
     
     static func nearby(userLocation: CLLocationCoordinate2D) -> [Object] {
-        let range = 0.005
+        let range = 0.0015
         let minLat = userLocation.latitude - range
         let maxLat = userLocation.latitude + range
         let minLng = userLocation.longitude - range
