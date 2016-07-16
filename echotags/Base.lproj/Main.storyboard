@@ -109,7 +109,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-indicator-1" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-KE-taZ">
                                         <rect key="frame" x="152" y="592" width="42" height="10"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bZE-pr-w3e">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bZE-pr-w3e">
                                         <rect key="frame" x="15" y="306" width="315" height="160"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your interest!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idE-zQ-OJq" customClass="DesignableLabel" customModule="Spring">
@@ -123,7 +123,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrY-qa-wMm" customClass="DesignableLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrY-qa-wMm" customClass="DesignableLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="42" width="315" height="118"/>
                                                 <string key="text">Echotags is very simple to use. Just launch the app and... that's all.
 
@@ -216,10 +216,10 @@ For the first run we would like to ask you for the localization permission and a
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iub-XX-8lp">
                                         <rect key="frame" x="15" y="31" width="315" height="475"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-nZ-Rvs">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-nZ-Rvs">
                                                 <rect key="frame" x="0.0" y="87" width="315" height="302"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMz-8r-cMR" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMz-8r-cMR" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="78"/>
                                                         <string key="text">We need your permission to localize your phone position during the trip. Please don't worry, we don't gather any data about your location.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -231,7 +231,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2L-YUn" customClass="DesignableButton" customModule="Spring">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2L-YUn" customClass="DesignableButton" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="108" width="315" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="260" id="2Ma-iP-6M9"/>
@@ -263,7 +263,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             <action selector="touchLocationPermissionButton:" destination="dFO-Bs-lys" eventType="touchUpInside" id="8NK-V6-N9H"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you wish to you can download map of Amsterdam and make it available offline:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dN-CSp" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you wish to you can download map of Amsterdam and make it available offline:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-dN-CSp" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="186" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -274,7 +274,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-Dk-r4V" customClass="DesignableButton" customModule="Spring">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-Dk-r4V" customClass="DesignableButton" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="254" width="315" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="260" id="bHb-aO-IL3"/>
@@ -387,10 +387,10 @@ For the first run we would like to ask you for the localization permission and a
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXz-a0-eXG">
                                         <rect key="frame" x="15" y="31" width="315" height="475"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
                                                 <rect key="frame" x="0.0" y="161" width="315" height="154"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In case you need settings there is @ icon on the right bottom corner of the screen. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In case you need settings there is @ icon on the right bottom corner of the screen. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,7 +401,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="That's all you need to know. All content is already unlocked and ready to use." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. All content is already unlocked and ready to use." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="68" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -412,7 +412,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enjoy Amsterdam!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-rU-Rre" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy Amsterdam!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-rU-Rre" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="136" width="315" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
