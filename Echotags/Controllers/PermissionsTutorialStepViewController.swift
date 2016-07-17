@@ -78,12 +78,15 @@ class PermissionsTutorialStepViewController: TutorialStepViewController {
     }
     
     private func determinePermissionButtonStyle(status: CLAuthorizationStatus) {
-        if status == .AuthorizedAlways {
+        switch status {
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
             locationPermissionButton.backgroundColor = UIColor(hex: "37435A")
             locationPermissionButton.setTitleColor(.whiteColor(), forState: .Normal)
             locationPermissionButton.setImage(UIImage(named: "icon-permissions-active"), forState: .Normal)
             locationPermissionButton.setTitle("Location service enabled", forState: .Normal)
             locationPermissionButton.userInteractionEnabled = false
+        default:
+            return
         }
     }
 }
