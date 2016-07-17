@@ -747,7 +747,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-pe-HGu">
-                                                <rect key="frame" x="0.0" y="298" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="366" width="375" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'M INTERESTED IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv7-Ra-BOv">
                                                         <rect key="frame" x="15" y="15" width="111" height="15"/>
@@ -764,7 +764,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PRD-sG-6ZS">
-                                                <rect key="frame" x="15" y="362" width="345" height="161"/>
+                                                <rect key="frame" x="15" y="430" width="345" height="93"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="sMK-Rx-yS9"/>
                                                     <constraint firstAttribute="height" constant="200" id="xUw-4L-oCU"/>
@@ -836,7 +836,7 @@ Tap anywhere to hide the overlay.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XrC-58-9W1">
-                                                <rect key="frame" x="58" y="162" width="260" height="116"/>
+                                                <rect key="frame" x="58" y="162" width="260" height="184"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-Je-1ha" customClass="DesignableButton" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="0.0" width="260" height="48"/>
@@ -892,6 +892,38 @@ Tap anywhere to hide the overlay.</string>
                                                         </variation>
                                                         <connections>
                                                             <action selector="touchDownloadButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="h8r-af-pWa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7G-qt-dHu" customClass="DesignableButton" customModule="Spring">
+                                                        <rect key="frame" x="0.0" y="136" width="260" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="260" id="eoV-N5-LPw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="-4" maxX="8" maxY="0.0"/>
+                                                        <state key="normal" title="Reset visited places" image="icon-permissions">
+                                                            <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="eoV-N5-LPw"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="touchResetVisited:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="GQr-MH-5NE"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

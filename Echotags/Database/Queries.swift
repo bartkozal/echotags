@@ -14,6 +14,13 @@ extension Point {
         return Database().db.objects(Point).filter("title = %@", title).first ?? nil
     }
     
+    static func markAllAsUnvisited() {
+        let points = Database().db.objects(Point)
+        try! Database().db.write {
+            points.setValue(false, forKeyPath: "visited")
+        }
+    }
+    
     func markAsVisited() {
         try! Database().db.write {
             visited = true
