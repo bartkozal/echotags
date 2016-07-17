@@ -86,6 +86,14 @@ class SettingsViewController: UIViewController {
         geofencing.checkPermission(self)
     }
     
+    @IBAction private func touchResetVisited(sender: DesignableButton) {
+        Point.markAllAsUnvisited()
+        categoriesHaveChanged = true
+        sender.backgroundColor = UIColor(hex: "37435A")
+        sender.setTitleColor(.whiteColor(), forState: .Normal)
+        sender.setImage(UIImage(named: "icon-permissions-active"), forState: .Normal)
+    }
+    
     @IBAction private func touchOverlayButton(sender: UIButton) {
         touchSettingsButton()
     }
