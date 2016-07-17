@@ -53,9 +53,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet private weak var downloadMapButton: DesignableButton! {
         didSet {
-            if offlineMap.isAvailable {
-                downloadMapButton.hidden = true
-            }
+            determineDownloadButtonStyle(offlineMap.isAvailable)
         }
     }
     
