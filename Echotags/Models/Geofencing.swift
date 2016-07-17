@@ -13,7 +13,7 @@ import RealmSwift
 class Geofencing {    
     var manager: CLLocationManager
     var isEnabled: Bool {
-        return CLLocationManager.authorizationStatus() == .AuthorizedAlways
+        return CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
     }
     
     struct Defaults {
@@ -46,11 +46,11 @@ class Geofencing {
     
     func checkPermission(inVC: UIViewController) {
         switch CLLocationManager.authorizationStatus() {
-        case .AuthorizedAlways:
+        case .AuthorizedWhenInUse, .AuthorizedAlways:
             return
         case .NotDetermined:
-            manager.requestAlwaysAuthorization()
-        case .Denied, .Restricted, .AuthorizedWhenInUse:
+            manager.requestWhenInUseAuthorization()
+        case .Denied, .Restricted:
             Alert(vc: inVC).accessToLocationBackgroundDenied()
         }
     }
