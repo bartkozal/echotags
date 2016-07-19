@@ -20,7 +20,7 @@
 			<key>Title</key>
 			<string>Mapbox Settings</string>
 			<key>FooterText</key>
-			<string>This setting allows the application to share anonymized location and usage data with our maps provider Mapbox. (Disabled by default)</string>
+			<string>This setting allows the application to share anonymized location and usage data with the maps provider. (Disabled by default)</string>
 		</dict>
 		<dict>
 			<key>Type</key>
