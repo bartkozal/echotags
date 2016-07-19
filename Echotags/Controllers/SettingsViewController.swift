@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 import BEMCheckBox
 import CoreLocation
 import Mapbox
@@ -27,8 +26,8 @@ class SettingsViewController: UIViewController {
         return presentingViewController as! MapViewController
     }
     
-    @IBOutlet private weak var overlayView: DesignableView!
-    @IBOutlet private weak var settingsView: DesignableView!
+    @IBOutlet private weak var overlayView: UIView!
+    @IBOutlet private weak var settingsView: UIView!
     @IBOutlet private weak var settingsScrollView: UIScrollView!
     @IBOutlet private weak var overlayButton: UIButton!
     @IBOutlet private weak var categoriesStackView: UIStackView! {
@@ -43,7 +42,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var locationPermissionButton: DesignableButton! {
+    @IBOutlet private weak var locationPermissionButton: UIButton! {
         didSet {
             if geofencing.isEnabled {
                 locationPermissionButton.hidden = true
@@ -51,13 +50,13 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var downloadMapButton: DesignableButton! {
+    @IBOutlet private weak var downloadMapButton: UIButton! {
         didSet {
             determineDownloadButtonStyle(offlineMap.isAvailable)
         }
     }
     
-    @IBAction private func touchTweetButton(sender: DesignableButton) {
+    @IBAction private func touchTweetButton(sender: UIButton) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via @echotags")
@@ -67,7 +66,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction private func touchShareButton(sender: DesignableButton) {
+    @IBAction private func touchShareButton(sender: UIButton) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via https://www.facebook.com/echotagsapp/")
@@ -77,19 +76,18 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction private func touchDownloadButton(sender: DesignableButton) {
-        sender.userInteractionEnabled = false
+    @IBAction private func touchDownloadButton(sender: UIButton) {
         offlineMap.startDownloading()
     }
     
-    @IBAction private func touchLocationPermissionButton(sender: DesignableButton) {
+    @IBAction private func touchLocationPermissionButton(sender: UIButton) {
         geofencing.checkPermission(self)
     }
     
-    @IBAction private func touchResetVisited(sender: DesignableButton) {
+    @IBAction private func touchResetVisited(sender: UIButton) {
         Point.markAllAsUnvisited()
         categoriesHaveChanged = true
-        sender.backgroundColor = UIColor(hex: "37435A")
+        sender.backgroundColor = UIColor(hue: 219, saturation: 39, brightness: 35, alpha: 1)
         sender.setTitleColor(.whiteColor(), forState: .Normal)
         sender.setImage(UIImage(named: "icon-permissions-active"), forState: .Normal)
     }
@@ -104,26 +102,7 @@ class SettingsViewController: UIViewController {
             categoriesHaveChanged = false
         }
         
-        overlayView.animation = "fadeOut"
-        overlayView.animate()
-        
-        settingsView.curve = "linear"
-        settingsView.damping = CGFloat(1.0)
-        
-        if settingsScrollView.contentOffset.y > 0 {
-            settingsView.y = settingsScrollView.bounds.maxY
-        } else {
-            settingsView.y = view.frame.height
-        }
-        
-        if let settingsButton = sender as? DesignableButton {
-            settingsView.animateTo()
-            settingsButton.rotate = 90.0
-            settingsButton.animateNext { [unowned self] in
-                settingsButton.userInteractionEnabled = true
-                self.performSegueWithIdentifier("unwindToMap", sender: self)
-            }
-        }
+        self.performSegueWithIdentifier("unwindToMap", sender: self)
     }
     
     private func touchSettingsButton() {
@@ -152,28 +131,6 @@ class SettingsViewController: UIViewController {
         settingsScrollView.addSubview(bottomBackground)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        overlayView.hidden = true
-        settingsView.hidden = true
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        overlayView.animation = "fadeIn"
-        overlayView.animate()
-        
-        settingsView.curve = "linear"
-        settingsView.damping = CGFloat(1.0)
-        settingsView.y = view.frame.height
-        settingsView.animate()
-        
-        overlayView.hidden = false
-        settingsView.hidden = false
-    }
-    
     func offlinePackProgressDidChange(notification: NSNotification) {
         if let pack = notification.object as? MGLOfflinePack {
             let offlinePack = OfflinePack(pack: pack)
@@ -193,7 +150,7 @@ class SettingsViewController: UIViewController {
     
     private func determineDownloadButtonStyle(status: Bool) {
         if status {
-            downloadMapButton.backgroundColor = UIColor(hex: "37435A")
+            downloadMapButton.backgroundColor = UIColor(hue: 219, saturation: 39, brightness: 35, alpha: 1)
             downloadMapButton.setTitleColor(.whiteColor(), forState: .Normal)
             downloadMapButton.setImage(UIImage(named: "icon-download-active"), forState: .Normal)
             downloadMapButton.setTitle("Offline map enabled", forState: .Normal)

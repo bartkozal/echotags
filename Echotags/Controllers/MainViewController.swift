@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 
 class MainViewController: UIViewController {
     @IBOutlet private weak var tutorialView: UIView! {
@@ -24,11 +23,9 @@ class MainViewController: UIViewController {
         UserDefaults.hasPassedTutorial = true
     }
     
-    @IBOutlet weak var settingsButton: DesignableButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
-    @IBAction func touchSettings(sender: DesignableButton) {
-        sender.userInteractionEnabled = false
-        
+    @IBAction func touchSettings(sender: UIButton) {
         guard let mapVC = childViewControllers.first as? MapViewController else { return }
         
         if let settingsVC = mapVC.presentedViewController as? SettingsViewController {
