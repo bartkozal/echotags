@@ -18,14 +18,6 @@ class SettingsViewController: UIViewController {
     private let geofencing = Geofencing()
     private let offlineMap = OfflineMap()
     
-    private var mainVC: MainViewController {
-        return presentingViewController?.parentViewController as! MainViewController
-    }
-    
-    private var mapVC: MapViewController {
-        return presentingViewController as! MapViewController
-    }
-    
     @IBOutlet private weak var overlayView: UIView!
     @IBOutlet private weak var settingsView: UIView!
     @IBOutlet private weak var settingsScrollView: UIScrollView!
@@ -42,21 +34,13 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var locationPermissionButton: UIButton! {
-        didSet {
-            if geofencing.isEnabled {
-                locationPermissionButton.hidden = true
-            }
-        }
-    }
-    
     @IBOutlet private weak var downloadMapButton: UIButton! {
         didSet {
-            determineDownloadButtonStyle(offlineMap.isAvailable)
+            downloadMapButton.enabled = !UserDefaults.hasOfflineMap
         }
     }
     
-    @IBAction private func touchTweetButton(sender: UIButton) {
+    @IBAction private func touchTweetButton() {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via @echotags")
@@ -66,7 +50,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction private func touchShareButton(sender: UIButton) {
+    @IBAction private func touchShareButton() {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via https://www.facebook.com/echotagsapp/")
@@ -76,37 +60,18 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction private func touchDownloadButton(sender: UIButton) {
+    @IBAction private func touchDownloadButton() {
         offlineMap.startDownloading()
-    }
-    
-    @IBAction private func touchLocationPermissionButton(sender: UIButton) {
-        geofencing.checkPermission(self)
     }
     
     @IBAction private func touchResetVisited(sender: UIButton) {
         Point.markAllAsUnvisited()
         categoriesHaveChanged = true
-        sender.backgroundColor = UIColor(hue: 219, saturation: 39, brightness: 35, alpha: 1)
-        sender.setTitleColor(.whiteColor(), forState: .Normal)
-        sender.setImage(UIImage(named: "icon-permissions-active"), forState: .Normal)
+        sender.enabled = false
     }
     
-    @IBAction private func touchOverlayButton(sender: UIButton) {
-        touchSettingsButton()
-    }
-    
-    func performUnwindToHomeOnButton(sender: UIButton?) {
-        if categoriesHaveChanged {
-            mapVC.reloadPointAnnotations()
-            categoriesHaveChanged = false
-        }
-        
-        self.performSegueWithIdentifier("unwindToMap", sender: self)
-    }
-    
-    private func touchSettingsButton() {
-        performUnwindToHomeOnButton(mainVC.settingsButton)
+    @IBAction private func touchOverlayButton() {
+        performSegueWithIdentifier("unwindToMap", sender: nil)
     }
     
     override func viewDidLoad() {
@@ -137,24 +102,29 @@ class SettingsViewController: UIViewController {
             
             switch pack.state {
             case .Active:
-                downloadMapButton.setTitle("Downloading... \(offlinePack.progressPercentage)%", forState: .Normal)
+                downloadMapButton.enabled = false
+                downloadMapButton.setTitle("Downloading... \(offlinePack.progressPercentage)%", forState: .Disabled)
             case .Inactive:
+                downloadMapButton.enabled = true
                 downloadMapButton.setTitle("Resume download", forState: .Normal)
             case .Complete:
-                determineDownloadButtonStyle(offlinePack.isReady)
+                downloadMapButton.enabled = false
             default:
                 break
             }
         }
     }
     
-    private func determineDownloadButtonStyle(status: Bool) {
-        if status {
-            downloadMapButton.backgroundColor = UIColor(hue: 219, saturation: 39, brightness: 35, alpha: 1)
-            downloadMapButton.setTitleColor(.whiteColor(), forState: .Normal)
-            downloadMapButton.setImage(UIImage(named: "icon-download-active"), forState: .Normal)
-            downloadMapButton.setTitle("Offline map enabled", forState: .Normal)
-            downloadMapButton.userInteractionEnabled = false
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "unwindToMap" {
+            let mapVC = segue.destinationViewController as! MapViewController
+            if categoriesHaveChanged {
+                mapVC.reloadPointAnnotations()
+                categoriesHaveChanged = false
+            }
+            
+            let mainVC = mapVC.parentViewController as! MainViewController
+            mainVC.settingsButton.selected = false
         }
     }
 }
@@ -172,7 +142,7 @@ extension SettingsViewController: UIScrollViewDelegate {
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let breakScrollPoint = CGFloat(-130.0)
         if scrollView.contentOffset.y < breakScrollPoint {
-            touchSettingsButton()
+            performSegueWithIdentifier("unwindToMap", sender: nil)
         }
     }
 }

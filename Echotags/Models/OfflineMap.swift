@@ -9,8 +9,6 @@
 import Mapbox
 
 class OfflineMap: NSObject {
-    var isAvailable = UserDefaults.hasOfflineMap
-    
     override init() {
         super.init()
         
@@ -54,8 +52,8 @@ class OfflineMap: NSObject {
     func offlinePackProgressDidChange(notification: NSNotification) {
         if let pack = notification.object as? MGLOfflinePack {
             let offlinePack = OfflinePack(pack: pack)
-            
-            if offlinePack.isReady {
+
+            if offlinePack.downloaded {
                 UserDefaults.hasOfflineMap = true
             }
         }

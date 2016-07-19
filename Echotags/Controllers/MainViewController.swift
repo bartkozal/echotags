@@ -25,13 +25,15 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var settingsButton: UIButton!
     
-    @IBAction func touchSettings(sender: UIButton) {
+    @IBAction func touchSettingsButton(sender: UIButton) {
         guard let mapVC = childViewControllers.first as? MapViewController else { return }
         
-        if let settingsVC = mapVC.presentedViewController as? SettingsViewController {
-            settingsVC.performUnwindToHomeOnButton(sender)
+        if let settingsVC = mapVC.presentedViewController as?
+            SettingsViewController {
+            settingsVC.performSegueWithIdentifier("unwindToMap", sender: nil)
         } else {
-            mapVC.performSegueToSettingsOnButton(sender)
+            mapVC.performSegueWithIdentifier("segueToSettings", sender: nil)
+            sender.selected = true
         }
     }
 }
