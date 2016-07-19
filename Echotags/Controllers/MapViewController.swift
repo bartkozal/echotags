@@ -9,7 +9,7 @@
 import UIKit
 import Mapbox
 
-class MapViewController: UIViewController {    
+class MapViewController: UIViewController {
     private let geofencing = Geofencing()
     private let audio = AudioPlayer()
     private var startedNavigating = false
@@ -79,8 +79,14 @@ class MapViewController: UIViewController {
     }
     
     @IBAction private func touchNavigationButton() {
-        // geofencing.checkPermission()
-        navigation = !navigation
+        switch geofencing.checkPermission() {
+        case .Authorized:
+            navigation = !navigation
+        case .NotDetermined:
+            geofencing.manager.requestWhenInUseAuthorization()
+        case .Denied:
+            presentViewController(Alert.accessToLocationBackgroundDenied(), animated: true, completion: nil)
+        }
     }
     
     func reloadPointAnnotations() {
@@ -170,7 +176,7 @@ extension MapViewController: CLLocationManagerDelegate {
             updateDirection()
             lookForPoints()
         } else {
-            Alert(vc: self).outOfBounds()
+            presentViewController(Alert.outOfBounds(), animated: true, completion: nil)
             navigation = false
         }
     }

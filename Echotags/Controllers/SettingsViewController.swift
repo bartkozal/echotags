@@ -67,7 +67,7 @@ class SettingsViewController: UIViewController {
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via @echotags")
             self.presentViewController(vc, animated: true, completion: nil)
         } else {
-            Alert(vc: self).twitterUnavailable()
+            presentViewController(Alert.twitterUnavailable(), animated: true, completion: nil)
         }
     }
     
@@ -77,7 +77,7 @@ class SettingsViewController: UIViewController {
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via https://www.facebook.com/echotagsapp/")
             self.presentViewController(vc, animated: true, completion: nil)
         } else {
-            Alert(vc: self).facebookUnavailable()
+            presentViewController(Alert.facebookUnavailable(), animated: true, completion: nil)
         }
     }
     

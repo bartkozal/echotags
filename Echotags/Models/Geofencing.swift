@@ -30,6 +30,12 @@ class Geofencing {
         static let maximumZoomLevel = 16.5
     }
     
+    enum Permission {
+        case Authorized
+        case NotDetermined
+        case Denied
+    }
+    
     init() {
         manager = CLLocationManager()
         manager.allowsBackgroundLocationUpdates = true
@@ -44,14 +50,14 @@ class Geofencing {
             location.longitude < Bounds.northEast.longitude
     }
     
-    func checkPermission(inVC: UIViewController) {
+    func checkPermission() -> Geofencing.Permission {
         switch CLLocationManager.authorizationStatus() {
         case .AuthorizedWhenInUse, .AuthorizedAlways:
-            return
+            return .Authorized
         case .NotDetermined:
-            manager.requestWhenInUseAuthorization()
+            return .NotDetermined
         case .Denied, .Restricted:
-            Alert(vc: inVC).accessToLocationBackgroundDenied()
+            return .Denied
         }
     }
     
