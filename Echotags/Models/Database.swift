@@ -19,6 +19,7 @@ class Database {
             do {
                 try fileManager.removeItemAtURL(defaultURL)
                 try fileManager.copyItemAtURL(dbPath, toURL: defaultURL)
+                UserDefaults.hasBeenLaunched = true
             } catch {
                 print(error)
             }

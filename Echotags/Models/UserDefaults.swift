@@ -9,25 +9,38 @@
 import Foundation
 
 struct UserDefaults {
-    static var passedTutorial: Bool {
+    private static let defaults = NSUserDefaults.standardUserDefaults()
+    
+    static var hasBeenLaunched: Bool {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("passedTutorial")
+            return defaults.boolForKey("hasBeenLaunched")
         }
         
         set {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "passedTutorial")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            defaults.setBool(newValue, forKey: "hasBeenLaunched")
+            defaults.synchronize()
+        }
+    }
+    
+    static var hasPassedTutorial: Bool {
+        get {
+            return defaults.boolForKey("hasPassedTutorial")
+        }
+        
+        set {
+            defaults.setBool(newValue, forKey: "hasPassedTutorial")
+            defaults.synchronize()
         }
     }
     
     static var hasOfflineMap: Bool {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("hasOfflineMap")
+            return defaults.boolForKey("hasOfflineMap")
         }
         
         set {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "hasOfflineMap")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            defaults.setBool(newValue, forKey: "hasOfflineMap")
+            defaults.synchronize()
         }
     }
 }
