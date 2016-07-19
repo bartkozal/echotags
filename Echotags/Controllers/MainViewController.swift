@@ -12,7 +12,7 @@ import Spring
 class MainViewController: UIViewController {
     @IBOutlet private weak var tutorialView: UIView! {
         didSet {
-            tutorialView.hidden = false //UserDefaults.hasBeenLaunched
+            tutorialView.hidden = UserDefaults.passedTutorial
         }
     }
     
@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
             self.tutorialView.alpha = 0.0
         }
         
-        UserDefaults.hasBeenLaunched = true
+        UserDefaults.passedTutorial = true
     }
     
     @IBOutlet weak var settingsButton: DesignableButton!
