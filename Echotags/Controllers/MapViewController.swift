@@ -10,14 +10,7 @@ import UIKit
 import Spring
 import Mapbox
 
-class MapViewController: UIViewController {
-    var isOverlayHidden: Bool {
-        if let mainCVC = parentViewController as? MainContainerViewController {
-            return mainCVC.isOverlayHidden
-        }
-        return true
-    }
-    
+class MapViewController: UIViewController {    
     private let geofencing = Geofencing()
     private let audio = AudioPlayer()
     private var isFirstLoad = true
@@ -117,19 +110,6 @@ class MapViewController: UIViewController {
         performSegueWithIdentifier("segueToSettings", sender: sender)
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        createMaskLayer()
-    }
-    
-    private func createMaskLayer() {
-        let xOffset = CGFloat(overlayView.frame.width - 26)
-        let yOffset = CGFloat(overlayView.frame.height - 26)
-        
-        MaskLayer(bindToView: overlayView, radius: 42.0, xOffset: xOffset, yOffset: yOffset).circle()
-    }
-    
     func reloadPointAnnotations() {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
             if let pointAnnotations = self.mapView.annotations {
@@ -142,14 +122,6 @@ class MapViewController: UIViewController {
                 self.mapView.addAnnotation(pointAnnotation)
             }
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        overlayView.hidden = isOverlayHidden
-        
-        reloadPointAnnotations()
     }
     
     override func viewDidLoad() {

@@ -28,8 +28,6 @@
 	<string>sk.eyJ1IjoiZWNob3RhZ3MiLCJhIjoiY2lvZWNsNHJ5MDAyNnZvbHg2aWV6dHNkYyJ9.KuublGJwYeA1vsAeWiyQYg</string>
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We use your location to play audio messages when you are nearby interesting spots.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We use your location to play audio messages when you are nearby interesting spots.</string>
 	<key>UIBackgroundModes</key>

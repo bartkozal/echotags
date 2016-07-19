@@ -19,8 +19,8 @@ class SettingsViewController: UIViewController {
     private let geofencing = Geofencing()
     private let offlineMap = OfflineMap()
     
-    private var mainCVC: MainContainerViewController {
-        return presentingViewController?.parentViewController as! MainContainerViewController
+    private var mainVC: MainViewController {
+        return presentingViewController?.parentViewController as! MainViewController
     }
     
     private var mapVC: MapViewController {
@@ -127,7 +127,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func touchSettingsButton() {
-        performUnwindToHomeOnButton(mainCVC.settingsButton)
+        performUnwindToHomeOnButton(mainVC.settingsButton)
     }
     
     override func viewDidLoad() {

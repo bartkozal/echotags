@@ -1,5 +1,5 @@
 //
-//  MainContainerViewController.swift
+//  MainViewController.swift
 //  echotags
 //
 //  Created by bkzl on 17/05/16.
@@ -9,8 +9,20 @@
 import UIKit
 import Spring
 
-class MainContainerViewController: UIViewController {
-    var isOverlayHidden = true
+class MainViewController: UIViewController {
+    @IBOutlet private weak var tutorialView: UIView! {
+        didSet {
+            tutorialView.hidden = false //UserDefaults.hasBeenLaunched
+        }
+    }
+    
+    @IBAction private func dismissTutorial() {
+        UIView.animateWithDuration(0.3) {
+            self.tutorialView.alpha = 0.0
+        }
+        
+        UserDefaults.hasBeenLaunched = true
+    }
     
     @IBOutlet weak var settingsButton: DesignableButton!
     
