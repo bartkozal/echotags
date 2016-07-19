@@ -387,10 +387,10 @@ For the first run we would like to ask you for the localization permission and a
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXz-a0-eXG">
                                         <rect key="frame" x="15" y="31" width="315" height="475"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Cf-VW-q30">
                                                 <rect key="frame" x="0.0" y="161" width="315" height="154"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In case you need settings there is @ icon on the right bottom corner of the screen. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In case you need settings there is @ icon on the right bottom corner of the screen. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-az-9Xe" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,7 +401,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="That's all you need to know. All content is already unlocked and ready to use." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's all you need to know. All content is already unlocked and ready to use." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-MQ-4yX" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="68" width="315" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -412,7 +412,7 @@ For the first run we would like to ask you for the localization permission and a
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enjoy Amsterdam!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-rU-Rre" customClass="DesignableLabel" customModule="Spring">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy Amsterdam!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-rU-Rre" customClass="DesignableLabel" customModule="Spring">
                                                         <rect key="frame" x="0.0" y="136" width="315" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -510,8 +510,8 @@ For the first run we would like to ask you for the localization permission and a
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8f-yk-cUK" customClass="DesignableButton" customModule="Spring">
-                                <rect key="frame" x="323" y="615" width="52" height="52"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <rect key="frame" x="316" y="613" width="59" height="54"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="10"/>
                                 <state key="normal" image="icon-settings"/>
                                 <connections>
                                     <action selector="touchSettings:" destination="HOl-Oj-aVS" eventType="touchUpInside" id="rhL-A6-rHl"/>
@@ -598,15 +598,15 @@ For the first run we would like to ask you for the localization permission and a
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-co-Ihh">
-                                <rect key="frame" x="0.0" y="614" width="51" height="53"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="11" maxX="10" maxY="11"/>
+                                <rect key="frame" x="316" y="559" width="59" height="54"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="5"/>
                                 <state key="normal" image="icon-center"/>
                                 <connections>
                                     <action selector="touchCenterMapButton:" destination="NdK-S1-o1x" eventType="touchUpInside" id="V0C-Rh-LM8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-nZ-1nI">
-                                <rect key="frame" x="157" y="605" width="62" height="62"/>
+                                <rect key="frame" x="146" y="579" width="83" height="83"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" image="icon-navigation"/>
                                 <connections>
@@ -647,12 +647,14 @@ Tap anywhere to hide the overlay.</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2du-kH-0Q3" secondAttribute="trailing" id="196-QN-GPM"/>
                             <constraint firstItem="bAp-co-Ihh" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="3Me-8d-gIh"/>
+                            <constraint firstAttribute="bottom" secondItem="bAp-co-Ihh" secondAttribute="bottom" constant="54" id="5li-kn-mBE"/>
                             <constraint firstAttribute="bottom" secondItem="hue-2G-3ru" secondAttribute="bottom" id="6dg-X3-gtK"/>
+                            <constraint firstAttribute="trailing" secondItem="bAp-co-Ihh" secondAttribute="trailing" id="9DB-Uh-ZM5"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" id="ARG-mK-hid"/>
                             <constraint firstItem="2du-kH-0Q3" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Awv-6j-AHA"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
                             <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
-                            <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" id="H4T-lp-n4Y"/>
+                            <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" constant="5" id="H4T-lp-n4Y"/>
                             <constraint firstItem="bAp-co-Ihh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="Pjp-5G-ngl"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="b4K-cP-eMR"/>
@@ -664,6 +666,8 @@ Tap anywhere to hide the overlay.</string>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="3Me-8d-gIh"/>
+                                <exclude reference="Pjp-5G-ngl"/>
+                                <exclude reference="ARG-mK-hid"/>
                             </mask>
                         </variation>
                     </view>
@@ -1085,15 +1089,15 @@ Tap anywhere to hide the overlay.</string>
     </scenes>
     <resources>
         <image name="bg-launch-screen" width="750" height="1334"/>
-        <image name="icon-center" width="31" height="31"/>
+        <image name="icon-center" width="39" height="39"/>
         <image name="icon-download" width="17" height="20"/>
         <image name="icon-facebook" width="20" height="20"/>
         <image name="icon-indicator-1" width="42" height="10"/>
         <image name="icon-indicator-2" width="42" height="10"/>
         <image name="icon-indicator-3" width="42" height="10"/>
-        <image name="icon-navigation" width="52" height="52"/>
+        <image name="icon-navigation" width="73" height="73"/>
         <image name="icon-permissions" width="20" height="20"/>
-        <image name="icon-settings" width="32" height="32"/>
+        <image name="icon-settings" width="39" height="39"/>
         <image name="icon-twitter" width="20" height="20"/>
         <image name="img-arrow" width="88" height="59"/>
     </resources>
