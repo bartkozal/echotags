@@ -21,6 +21,10 @@ extension Point {
         }
     }
     
+    static func unvisited() -> Results<Point> {
+        return Database().db.objects(Point).filter("visited = true")
+    }
+    
     func markAsVisited() {
         try! Database().db.write {
             visited = true

@@ -34,10 +34,31 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    
+    @IBAction private func touchOverlayButton() {
+        performSegueWithIdentifier("unwindToMap", sender: nil)
+    }
+    
     @IBOutlet private weak var downloadMapButton: UIButton! {
         didSet {
             downloadMapButton.enabled = !UserDefaults.hasOfflineMap
         }
+    }
+    
+    @IBAction private func touchDownloadMapButton() {
+        offlineMap.startDownloading()
+    }
+    
+    @IBOutlet weak var resetVisitedButton: UIButton! {
+        didSet {
+            resetVisitedButton.hidden = Point.unvisited().count == 0
+        }
+    }
+    
+    @IBAction private func touchResetVisitedButton(sender: UIButton) {
+        Point.markAllAsUnvisited()
+        categoriesHaveChanged = true
+        sender.enabled = false
     }
     
     @IBAction private func touchTweetButton() {
@@ -58,20 +79,6 @@ class SettingsViewController: UIViewController {
         } else {
             Alert(vc: self).facebookUnavailable()
         }
-    }
-    
-    @IBAction private func touchDownloadButton() {
-        offlineMap.startDownloading()
-    }
-    
-    @IBAction private func touchResetVisited(sender: UIButton) {
-        Point.markAllAsUnvisited()
-        categoriesHaveChanged = true
-        sender.enabled = false
-    }
-    
-    @IBAction private func touchOverlayButton() {
-        performSegueWithIdentifier("unwindToMap", sender: nil)
     }
     
     override func viewDidLoad() {
@@ -96,6 +103,19 @@ class SettingsViewController: UIViewController {
         settingsScrollView.addSubview(bottomBackground)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "unwindToMap" {
+            let mapVC = segue.destinationViewController as! MapViewController
+            if categoriesHaveChanged {
+                mapVC.reloadPointAnnotations()
+                categoriesHaveChanged = false
+            }
+            
+            let mainVC = mapVC.parentViewController as! MainViewController
+            mainVC.settingsButton.selected = false
+        }
+    }
+
     func offlinePackProgressDidChange(notification: NSNotification) {
         if let pack = notification.object as? MGLOfflinePack {
             let offlinePack = OfflinePack(pack: pack)
@@ -112,19 +132,6 @@ class SettingsViewController: UIViewController {
             default:
                 break
             }
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "unwindToMap" {
-            let mapVC = segue.destinationViewController as! MapViewController
-            if categoriesHaveChanged {
-                mapVC.reloadPointAnnotations()
-                categoriesHaveChanged = false
-            }
-            
-            let mainVC = mapVC.parentViewController as! MainViewController
-            mainVC.settingsButton.selected = false
         }
     }
 }

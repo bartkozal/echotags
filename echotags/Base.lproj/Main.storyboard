@@ -411,7 +411,7 @@
                                                             </mask>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="touchDownloadButton" destination="Xi3-nm-dYf" eventType="touchUpInside" id="Ygv-O1-zQa"/>
+                                                            <action selector="touchDownloadMapButton" destination="Xi3-nm-dYf" eventType="touchUpInside" id="uOY-um-K1X"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7G-qt-dHu" customClass="RoundedButton" customModule="echotags" customModuleProvider="target">
@@ -443,7 +443,7 @@
                                                             </mask>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="touchResetVisited:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="GQr-MH-5NE"/>
+                                                            <action selector="touchResetVisitedButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="uq5-ea-9wj"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -595,9 +595,10 @@
                     </view>
                     <connections>
                         <outlet property="categoriesStackView" destination="PRD-sG-6ZS" id="Pnb-yp-aUh"/>
-                        <outlet property="downloadMapButton" destination="2oX-u6-QtM" id="5N0-Pe-CDi"/>
+                        <outlet property="downloadMapButton" destination="2oX-u6-QtM" id="UNK-7S-NjX"/>
                         <outlet property="overlayButton" destination="arE-04-u5z" id="EbP-oj-KTa"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
+                        <outlet property="resetVisitedButton" destination="l7G-qt-dHu" id="oC4-1X-3M9"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
                         <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToMap" animates="NO" unwindAction="unwindToMapViewController:" id="ZBM-oy-Ddr"/>
