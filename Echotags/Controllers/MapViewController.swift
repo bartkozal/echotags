@@ -12,7 +12,8 @@ import Mapbox
 class MapViewController: UIViewController {    
     private let geofencing = Geofencing()
     private let audio = AudioPlayer()
-    private var isFirstLoad = true
+    private var startedNavigating = false
+    private var firstLocationRequest = true
     private var userLocation: CLLocationCoordinate2D?
     private var userHeading: CLLocationDirection?
     
@@ -32,26 +33,20 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var centerMapButton: UIButton! {
-        didSet {
-            centerMapButton.hidden = true
-        }
-    }
+    @IBOutlet private weak var directionButton: UIButton!
     
-    private var centering: Bool {
+    private var directing: Bool {
         get {
-            return centerMapButton.selected
+            return directionButton.selected
         }
         
         set {
             if newValue {
-                centerMapButton.selected = true
+                directionButton.selected = true
                 geofencing.manager.startUpdatingHeading()
-                centerMapButton.setImage(UIImage(named: "icon-center-active"), forState: .Normal)
             } else {
-                centerMapButton.selected = false
+                directionButton.selected = false
                 geofencing.manager.stopUpdatingHeading()
-                centerMapButton.setImage(UIImage(named: "icon-center"), forState: .Normal)
             }
         }
     }
@@ -64,33 +59,28 @@ class MapViewController: UIViewController {
         }
         
         set {
+            navigationButton.selected = !navigationButton.selected
+            directionButton.hidden = !directionButton.hidden
+            
             if newValue {
-                navigationButton.selected = true
-                centerMapButton.hidden = false
                 geofencing.manager.startUpdatingLocation()
-                navigationButton.setImage(UIImage(named: "icon-navigation-active"), forState: .Normal)
+                startedNavigating = true
             } else {
-                navigationButton.selected = false
-                centerMapButton.hidden = true
                 geofencing.manager.stopUpdatingLocation()
-                navigationButton.setImage(UIImage(named: "icon-navigation"), forState: .Normal)
-                centering = false
+                directing = false
             }
         }
     }
     
     @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
     
-    @IBAction private func touchCenterMapButton(sender: UIButton) {
-        centering = !centering
+    @IBAction private func touchDirectionButton() {
+        directing = !directing
     }
     
-    @IBAction private func touchNavigationButton(sender: UIButton) {
+    @IBAction private func touchNavigationButton() {
+        // geofencing.checkPermission()
         navigation = !navigation
-    }
-    
-    func performSegueToSettingsOnButton(sender: UIButton?) {
-        performSegueWithIdentifier("segueToSettings", sender: sender)
     }
     
     func reloadPointAnnotations() {
@@ -125,17 +115,34 @@ class MapViewController: UIViewController {
         reloadPointAnnotations()
     }
     
-    private func tryCenterMapOn(location: CLLocationCoordinate2D?, heading: CLLocationDirection?) {
-        if centering {
-            if let location = location, heading = heading {
-                let camera = MGLMapCamera(lookingAtCenterCoordinate: location, fromDistance: 1000, pitch: 35, heading: heading)
+    private func updateDirection() {
+        if directing {
+            guard let location = userLocation else { return }
+            guard let heading = userHeading else {
+                let camera = MGLMapCamera(
+                    lookingAtCenterCoordinate: location,
+                    fromDistance: mapView.camera.altitude,
+                    pitch: mapView.camera.pitch,
+                    heading: mapView.camera.heading
+                )
                 mapView.setCamera(camera, animated: true)
+                return
             }
+            
+            let camera = MGLMapCamera(
+                lookingAtCenterCoordinate: location,
+                fromDistance: 1000,
+                pitch: 35,
+                heading: heading
+            )
+            mapView.setCamera(camera, animated: true)
         }
     }
     
-    private func handleUserLocation(userLocation: CLLocationCoordinate2D) {
-        if let point = geofencing.lookForNearbyPoint(userLocation) {
+    private func lookForPoints() {
+        guard let location = userLocation else { return }
+        
+        if let point = geofencing.lookForNearbyPoint(location) {
             point.markAsVisited()
             audio.play(point.audio)
         }
@@ -145,27 +152,32 @@ class MapViewController: UIViewController {
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0].coordinate
+        guard let location = userLocation else { return }
         
-        if let userLocation = userLocation {
-            if geofencing.cityBoundsContains(userLocation) {
-                if isFirstLoad {
-                    mapView.setCenterCoordinate(userLocation, animated: true)
-                    isFirstLoad = false
-                } else {
-                    handleUserLocation(userLocation)
-                }
-                
-                tryCenterMapOn(userLocation, heading: userHeading)
-            } else {
-                Alert(vc: self).outOfBounds()
-                navigation = false
+        if geofencing.cityBoundsContains(location) {
+            
+            // Skip looking for points on the first request (it's only to determine user position)
+            guard !firstLocationRequest else {
+                firstLocationRequest = false
+                return
             }
+            
+            if startedNavigating {
+                mapView.setCenterCoordinate(location, animated: true)
+                startedNavigating = false
+            }
+            
+            updateDirection()
+            lookForPoints()
+        } else {
+            Alert(vc: self).outOfBounds()
+            navigation = false
         }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         userHeading = newHeading.trueHeading
-        tryCenterMapOn(userLocation, heading: userHeading)
+        updateDirection()
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

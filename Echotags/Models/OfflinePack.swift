@@ -12,7 +12,7 @@ import Mapbox
 struct OfflinePack {
     let pack: MGLOfflinePack
     
-    var isReady: Bool {
+    var downloaded: Bool {
         return completedResources == expectedResources
     }
     
