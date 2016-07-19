@@ -9,12 +9,13 @@
 import Foundation
 
 struct UserDefaults {
-    static var hasBeenLaunched: Bool {
+    static var passedTutorial: Bool {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("hasBeenLaunched")
+            return NSUserDefaults.standardUserDefaults().boolForKey("passedTutorial")
         }
+        
         set {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "hasBeenLaunched")
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "passedTutorial")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
@@ -23,6 +24,7 @@ struct UserDefaults {
         get {
             return NSUserDefaults.standardUserDefaults().boolForKey("hasOfflineMap")
         }
+        
         set {
             NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "hasOfflineMap")
             NSUserDefaults.standardUserDefaults().synchronize()
