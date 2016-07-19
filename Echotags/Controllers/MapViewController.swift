@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 import Mapbox
 
 class MapViewController: UIViewController {    
@@ -16,8 +15,6 @@ class MapViewController: UIViewController {
     private var isFirstLoad = true
     private var userLocation: CLLocationCoordinate2D?
     private var userHeading: CLLocationDirection?
-    
-    @IBOutlet weak var overlayView: DesignableView!
     
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
@@ -92,21 +89,7 @@ class MapViewController: UIViewController {
         navigation = !navigation
     }
     
-    @IBAction private func touchOverlayView(sender: UIButton) {
-        overlayView.animation = "fadeOut"
-        overlayView.animateNext { [unowned self] in
-            self.overlayView.hidden = true
-            self.geofencing.checkPermission(self)
-        }
-    }
-    
     func performSegueToSettingsOnButton(sender: UIButton?) {
-        if let settingsButton = sender as? DesignableButton {
-            settingsButton.rotate = -90.0
-            settingsButton.animateNext {
-                settingsButton.userInteractionEnabled = true
-            }
-        }
         performSegueWithIdentifier("segueToSettings", sender: sender)
     }
     
