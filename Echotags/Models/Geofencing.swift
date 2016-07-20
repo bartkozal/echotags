@@ -12,9 +12,6 @@ import RealmSwift
 
 class Geofencing {    
     var manager: CLLocationManager
-    var isEnabled: Bool {
-        return CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
-    }
     
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.373846, longitude: 4.896244)

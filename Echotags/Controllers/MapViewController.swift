@@ -13,7 +13,6 @@ class MapViewController: UIViewController {
     private let geofencing = Geofencing()
     private let audio = AudioPlayer()
     private var startedNavigating = false
-    private var firstLocationRequest = true
     private var userLocation: CLLocationCoordinate2D?
     private var userHeading: CLLocationDirection?
     
@@ -59,13 +58,14 @@ class MapViewController: UIViewController {
         }
         
         set {
-            navigationButton.selected = !navigationButton.selected
-            directionButton.hidden = !directionButton.hidden
-            
             if newValue {
+                navigationButton.selected = true
+                directionButton.hidden = false
                 geofencing.manager.startUpdatingLocation()
                 startedNavigating = true
             } else {
+                navigationButton.selected = false
+                directionButton.hidden = true
                 geofencing.manager.stopUpdatingLocation()
                 directing = false
             }
@@ -114,7 +114,6 @@ class MapViewController: UIViewController {
         )
         
         geofencing.manager.delegate = self
-        geofencing.manager.requestLocation()
     }
     
     @objc private func didBecomeActive() {
@@ -161,13 +160,6 @@ extension MapViewController: CLLocationManagerDelegate {
         guard let location = userLocation else { return }
         
         if geofencing.cityBoundsContains(location) {
-            
-            // Skip looking for points on the first request (it's only to determine user position)
-            guard !firstLocationRequest else {
-                firstLocationRequest = false
-                return
-            }
-            
             if startedNavigating {
                 mapView.setCenterCoordinate(location, animated: true)
                 startedNavigating = false
@@ -176,8 +168,8 @@ extension MapViewController: CLLocationManagerDelegate {
             updateDirection()
             lookForPoints()
         } else {
-            presentViewController(Alert.outOfBounds(), animated: true, completion: nil)
             navigation = false
+            presentViewController(Alert.outOfBounds(), animated: true, completion: nil)
         }
     }
     
