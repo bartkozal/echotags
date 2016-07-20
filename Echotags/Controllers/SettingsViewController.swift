@@ -127,6 +127,7 @@ class SettingsViewController: UIViewController {
                 downloadMapButton.setTitle("Resume download", forState: .Normal)
             case .Complete:
                 downloadMapButton.enabled = false
+                downloadMapButton.setTitle("Offline map is ready", forState: .Disabled)
             default:
                 break
             }
