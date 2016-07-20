@@ -56,16 +56,14 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func touchResetVisitedButton(sender: UIButton) {
-        Point.markAllAsUnvisited()
-        categoriesHaveChanged = true
-        sender.enabled = false
+        presentViewController(Alert.resetVisitedPoints(self), animated: true, completion: nil)
     }
     
     @IBAction private func touchTweetButton() {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via @echotags")
-            self.presentViewController(vc, animated: true, completion: nil)
+            presentViewController(vc, animated: true, completion: nil)
         } else {
             presentViewController(Alert.twitterUnavailable(), animated: true, completion: nil)
         }
@@ -75,7 +73,7 @@ class SettingsViewController: UIViewController {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             vc.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io via https://www.facebook.com/echotagsapp/")
-            self.presentViewController(vc, animated: true, completion: nil)
+            presentViewController(vc, animated: true, completion: nil)
         } else {
             presentViewController(Alert.facebookUnavailable(), animated: true, completion: nil)
         }
