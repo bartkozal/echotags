@@ -18,9 +18,9 @@ class SettingsViewController: UIViewController {
     private let geofencing = Geofencing()
     private let offlineMap = OfflineMap()
     
-    @IBOutlet private weak var overlayView: UIView!
+    @IBOutlet weak var overlayView: UIView!
     @IBOutlet private weak var settingsView: UIView!
-    @IBOutlet private weak var settingsScrollView: UIScrollView!
+    @IBOutlet weak var settingsScrollView: UIScrollView!
     @IBOutlet private weak var overlayButton: UIButton!
     @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {

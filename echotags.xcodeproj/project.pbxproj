@@ -27,6 +27,8 @@
 		A1B2B8DB1CEB450A00077D80 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2B8DA1CEB450A00077D80 /* MainViewController.swift */; };
 		A1B2D14B1D099771008729CF /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2D14A1D099771008729CF /* UserDefaults.swift */; };
 		A1B7B24C1CFE1903006171D5 /* Audio.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B7B24B1CFE1903006171D5 /* Audio.xcassets */; };
+		A1CE0D361D3F8F490048B070 /* SettingsPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE0D351D3F8F490048B070 /* SettingsPresentAnimationController.swift */; };
+		A1CE0D381D3F941D0048B070 /* SettingsDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE0D371D3F941D0048B070 /* SettingsDismissAnimationController.swift */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
 		A1F2A0E51CE2030000593EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A0E31CE2030000593EB0 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		A1B2B8DA1CEB450A00077D80 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A1B2D14A1D099771008729CF /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		A1B7B24B1CFE1903006171D5 /* Audio.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Audio.xcassets; sourceTree = "<group>"; };
+		A1CE0D351D3F8F490048B070 /* SettingsPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresentAnimationController.swift; sourceTree = "<group>"; };
+		A1CE0D371D3F941D0048B070 /* SettingsDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDismissAnimationController.swift; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,9 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				A16ACB081CFC77500009C5CE /* Alert.swift */,
-				A1910A6E1D3EBBDC000C3B8E /* RoundedButton.swift */,
 				A1363C121CF731C3000D5C92 /* CategoryView.swift */,
 				A1363C141CF7363B000D5C92 /* CategoryView.xib */,
+				A1910A6E1D3EBBDC000C3B8E /* RoundedButton.swift */,
+				A1CE0D351D3F8F490048B070 /* SettingsPresentAnimationController.swift */,
+				A1CE0D371D3F941D0048B070 /* SettingsDismissAnimationController.swift */,
 			);
 			name = Views;
 			path = ../Echotags/Views;
@@ -342,6 +348,7 @@
 				A16ACB091CFC77500009C5CE /* Alert.swift in Sources */,
 				A16ACB0B1CFC7A5D0009C5CE /* Geofencing.swift in Sources */,
 				A1650A581CF220700010765D /* Schema.swift in Sources */,
+				A1CE0D381D3F941D0048B070 /* SettingsDismissAnimationController.swift in Sources */,
 				A19FDFD81CF381E800BC54D0 /* Database.swift in Sources */,
 				A1363C131CF731C3000D5C92 /* CategoryView.swift in Sources */,
 				A1187E1A1D12F34B007F964E /* Queries.swift in Sources */,
@@ -351,6 +358,7 @@
 				A1293DFE1D19863000150DDA /* OfflinePack.swift in Sources */,
 				A1B2B8DB1CEB450A00077D80 /* MainViewController.swift in Sources */,
 				A1B2D14B1D099771008729CF /* UserDefaults.swift in Sources */,
+				A1CE0D361D3F8F490048B070 /* SettingsPresentAnimationController.swift in Sources */,
 				A16C3D381CFEDDE000F2CC5D /* AudioPlayer.swift in Sources */,
 				A175F2591CE39EAD00A14B2E /* MapViewController.swift in Sources */,
 				A19E59041D21A19E0066608A /* PointAnnotation.swift in Sources */,
