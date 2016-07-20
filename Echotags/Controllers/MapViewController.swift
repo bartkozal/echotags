@@ -188,6 +188,12 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error: \(error.localizedDescription)")
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToSettings" {
+            segue.destinationViewController.transitioningDelegate = self
+        }
+    }
 }
 
 extension MapViewController: MGLMapViewDelegate {
@@ -227,5 +233,15 @@ extension MapViewController: MGLMapViewDelegate {
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return annotation.isMemberOfClass(PointAnnotation)
+    }
+}
+
+extension MapViewController: UIViewControllerTransitioningDelegate {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SettingsPresentAnimationController()
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SettingsDismissAnimationController()
     }
 }

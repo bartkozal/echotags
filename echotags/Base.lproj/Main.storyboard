@@ -228,7 +228,7 @@
                         <outlet property="directionButton" destination="bAp-co-Ihh" id="n1w-qs-wfd"/>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="navigationButton" destination="J2k-nZ-1nI" id="mGQ-D2-jPe"/>
-                        <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" animates="NO" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
+                        <segue destination="Xi3-nm-dYf" kind="presentation" identifier="segueToSettings" modalPresentationStyle="overCurrentContext" id="LNm-oK-Z5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -601,7 +601,7 @@
                         <outlet property="resetVisitedButton" destination="l7G-qt-dHu" id="oC4-1X-3M9"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
-                        <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToMap" animates="NO" unwindAction="unwindToMapViewController:" id="ZBM-oy-Ddr"/>
+                        <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToMap" unwindAction="unwindToMapViewController:" id="ZBM-oy-Ddr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41m-U5-ThT" userLabel="First Responder" sceneMemberID="firstResponder"/>
