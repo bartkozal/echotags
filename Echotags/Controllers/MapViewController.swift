@@ -12,7 +12,7 @@ import Mapbox
 class MapViewController: UIViewController {
     private let geofencing = Geofencing()
     private let audio = AudioPlayer()
-    private var startedNavigating = false
+    private var firstRequest = false
     private var userLocation: CLLocationCoordinate2D?
     private var userHeading: CLLocationDirection?
     
@@ -62,7 +62,7 @@ class MapViewController: UIViewController {
                 navigationButton.selected = true
                 directionButton.hidden = false
                 geofencing.manager.startUpdatingLocation()
-                startedNavigating = true
+                firstRequest = true
             } else {
                 navigationButton.selected = false
                 directionButton.hidden = true
@@ -90,16 +90,22 @@ class MapViewController: UIViewController {
     }
     
     func reloadPointAnnotations() {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
-            if let pointAnnotations = self.mapView.annotations {
-                self.mapView.removeAnnotations(pointAnnotations)
-            }
-            
-            for point in Marker.visible() {
-                let point = point as! Point
-                let pointAnnotation = PointAnnotation(fromPoint: point)
-                self.mapView.addAnnotation(pointAnnotation)
-            }
+        if let pointAnnotations = mapView.annotations {
+            mapView.removeAnnotations(pointAnnotations)
+        }
+        
+        for point in Marker.visible() {
+            let point = point as! Point
+            let pointAnnotation = PointAnnotation(fromPoint: point)
+            mapView.addAnnotation(pointAnnotation)
+        }
+    }
+    
+    func reloadPointAnnotation(point: Point) {
+        if let pointAnnotation = mapView.annotations?.filter({ $0.title! == point.title }).first {
+            mapView.removeAnnotation(pointAnnotation)
+            let pointAnnotation = PointAnnotation(fromPoint: point)
+            mapView.addAnnotation(pointAnnotation)
         }
     }
     
@@ -150,6 +156,7 @@ class MapViewController: UIViewController {
         if let point = geofencing.lookForNearbyPoint(location) {
             point.markAsVisited()
             audio.play(point.audio)
+            reloadPointAnnotation(point)
         }
     }
 }
@@ -160,9 +167,9 @@ extension MapViewController: CLLocationManagerDelegate {
         guard let location = userLocation else { return }
         
         if geofencing.cityBoundsContains(location) {
-            if startedNavigating {
+            if firstRequest {
                 mapView.setCenterCoordinate(location, animated: true)
-                startedNavigating = false
+                firstRequest = false
             }
             
             updateDirection()
