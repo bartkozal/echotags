@@ -37,6 +37,7 @@ class Geofencing {
         manager = CLLocationManager()
         manager.allowsBackgroundLocationUpdates = true
         manager.activityType = .Fitness
+        manager.distanceFilter = 10.0
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
     
