@@ -153,10 +153,13 @@ class MapViewController: UIViewController {
     private func lookForPoints() {
         guard let location = userLocation else { return }
         
-        if let point = geofencing.lookForNearbyPoint(location) {
-            point.markAsVisited()
-            audio.play(point.audio)
-            reloadPointAnnotation(point)
+        guard let player = audio.player where player.playing else {
+            if let point = geofencing.lookForNearbyPoint(location) {
+                point.markAsVisited()
+                audio.play(point.audio)
+                reloadPointAnnotation(point)
+            }
+            return
         }
     }
 }
