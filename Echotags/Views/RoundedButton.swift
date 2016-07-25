@@ -25,7 +25,7 @@ class RoundedButton: UIButton {
             if enabled {
                 backgroundColor = .whiteColor()
             } else {
-                backgroundColor = UIColor(red: 0.22, green: 0.26, blue: 0.35, alpha: 1.0)
+                backgroundColor = .brandColor()
             }
         }
     }

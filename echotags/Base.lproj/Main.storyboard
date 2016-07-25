@@ -24,9 +24,13 @@
                                     <segue destination="NdK-S1-o1x" kind="embed" identifier="" id="R4L-TL-8sC"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8f-yk-cUK">
-                                <rect key="frame" x="316" y="611" width="59" height="56"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="12"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8f-yk-cUK" customClass="OvalButton" customModule="echotags" customModuleProvider="target">
+                                <rect key="frame" x="327" y="619" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="4F6-Sz-Re0"/>
+                                    <constraint firstAttribute="height" constant="38" id="Pfg-Fw-0jD"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="icon-settings"/>
                                 <state key="selected" image="icon-settings-active"/>
                                 <connections>
@@ -84,15 +88,15 @@
                                                     </subviews>
                                                 </stackView>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-navigation-tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="oZT-ui-2rn">
-                                                    <rect key="frame" x="82" y="511" width="211" height="211"/>
+                                                    <rect key="frame" x="80" y="518" width="211" height="211"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BCI-pR-8ZN" firstAttribute="centerY" secondItem="vYK-Ps-gTv" secondAttribute="centerY" constant="-55" id="LUa-Le-bRi"/>
                                                 <constraint firstAttribute="trailing" secondItem="BCI-pR-8ZN" secondAttribute="trailing" constant="30" id="eQi-PV-Z5l"/>
-                                                <constraint firstAttribute="bottom" secondItem="oZT-ui-2rn" secondAttribute="bottom" constant="-55" id="lP5-0V-EGu"/>
+                                                <constraint firstAttribute="bottom" secondItem="oZT-ui-2rn" secondAttribute="bottom" constant="-62" id="lP5-0V-EGu"/>
                                                 <constraint firstItem="BCI-pR-8ZN" firstAttribute="leading" secondItem="vYK-Ps-gTv" secondAttribute="leading" constant="30" id="xM5-Xn-WFa"/>
-                                                <constraint firstItem="oZT-ui-2rn" firstAttribute="centerX" secondItem="vYK-Ps-gTv" secondAttribute="centerX" id="zax-sM-fTf"/>
+                                                <constraint firstItem="oZT-ui-2rn" firstAttribute="centerX" secondItem="vYK-Ps-gTv" secondAttribute="centerX" constant="-2" id="zax-sM-fTf"/>
                                                 <constraint firstItem="BCI-pR-8ZN" firstAttribute="centerX" secondItem="vYK-Ps-gTv" secondAttribute="centerX" id="zmy-Uq-v7g"/>
                                             </constraints>
                                         </view>
@@ -116,8 +120,8 @@
                             <constraint firstItem="Ink-JH-nM8" firstAttribute="leading" secondItem="6vp-PY-GHk" secondAttribute="leading" id="Mce-B7-WB9"/>
                             <constraint firstAttribute="trailing" secondItem="VTl-M1-w5k" secondAttribute="trailing" id="Ywp-vg-vgg"/>
                             <constraint firstItem="Ink-JH-nM8" firstAttribute="top" secondItem="MSh-fg-JSp" secondAttribute="bottom" id="e7B-Mw-zbr"/>
-                            <constraint firstItem="S6Z-JZ-c8e" firstAttribute="top" secondItem="j8f-yk-cUK" secondAttribute="bottom" id="k9j-uf-EDj"/>
-                            <constraint firstAttribute="trailing" secondItem="j8f-yk-cUK" secondAttribute="trailing" id="lTj-TJ-kO9"/>
+                            <constraint firstItem="S6Z-JZ-c8e" firstAttribute="top" secondItem="j8f-yk-cUK" secondAttribute="bottom" constant="10" id="k9j-uf-EDj"/>
+                            <constraint firstAttribute="trailing" secondItem="j8f-yk-cUK" secondAttribute="trailing" constant="10" id="lTj-TJ-kO9"/>
                             <constraint firstAttribute="bottom" secondItem="VTl-M1-w5k" secondAttribute="bottom" id="rOM-Wv-RCq"/>
                             <constraint firstItem="VTl-M1-w5k" firstAttribute="top" secondItem="6vp-PY-GHk" secondAttribute="top" id="saD-o2-zSL"/>
                         </constraints>
@@ -192,17 +196,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-nZ-1nI">
-                                <rect key="frame" x="153" y="562" width="73" height="73"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-nZ-1nI" customClass="OvalButton" customModule="echotags" customModuleProvider="target">
+                                <rect key="frame" x="153" y="570" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="0Fk-d2-CTd"/>
+                                    <constraint firstAttribute="width" constant="69" id="7Iv-k8-pWz"/>
+                                </constraints>
                                 <state key="normal" image="icon-navigation"/>
                                 <state key="selected" image="icon-navigation-active"/>
                                 <connections>
                                     <action selector="touchNavigationButton" destination="NdK-S1-o1x" eventType="touchUpInside" id="nrJ-HK-SJ6"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-co-Ihh">
-                                <rect key="frame" x="316" y="537" width="59" height="54"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="5"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-co-Ihh" customClass="OvalButton" customModule="echotags" customModuleProvider="target">
+                                <rect key="frame" x="327" y="551" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="Wd1-JY-UaM"/>
+                                    <constraint firstAttribute="height" constant="38" id="tcZ-WM-dVk"/>
+                                </constraints>
                                 <state key="normal" image="icon-center"/>
                                 <state key="selected" image="icon-center-active"/>
                                 <connections>
@@ -214,14 +225,14 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hue-2G-3ru" secondAttribute="bottom" id="6dg-X3-gtK"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
-                            <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" constant="2" id="Esh-Lx-9N0"/>
-                            <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" constant="12" id="H4T-lp-n4Y"/>
+                            <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
+                            <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" constant="8" id="H4T-lp-n4Y"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="b4K-cP-eMR"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="jFk-mB-Y3s"/>
                             <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
-                            <constraint firstAttribute="trailing" secondItem="bAp-co-Ihh" secondAttribute="trailing" id="vPF-hp-Pmb"/>
-                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" constant="56" id="wdK-pm-cnq"/>
+                            <constraint firstAttribute="trailing" secondItem="bAp-co-Ihh" secondAttribute="trailing" constant="10" id="vPF-hp-Pmb"/>
+                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" constant="58" id="wdK-pm-cnq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -611,18 +622,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon-center" width="39" height="39"/>
-        <image name="icon-center-active" width="39" height="39"/>
+        <image name="icon-center" width="23" height="23"/>
+        <image name="icon-center-active" width="23" height="23"/>
         <image name="icon-download" width="17" height="20"/>
         <image name="icon-download-active" width="17" height="20"/>
         <image name="icon-facebook" width="20" height="20"/>
-        <image name="icon-navigation" width="73" height="73"/>
-        <image name="icon-navigation-active" width="73" height="73"/>
+        <image name="icon-navigation" width="43" height="43"/>
+        <image name="icon-navigation-active" width="43" height="43"/>
         <image name="icon-navigation-tutorial" width="211" height="211"/>
         <image name="icon-place" width="20" height="20"/>
         <image name="icon-place-active" width="20" height="20"/>
-        <image name="icon-settings" width="39" height="39"/>
-        <image name="icon-settings-active" width="39" height="39"/>
+        <image name="icon-settings" width="19" height="15"/>
+        <image name="icon-settings-active" width="19" height="15"/>
         <image name="icon-twitter" width="20" height="20"/>
     </resources>
 </document>
