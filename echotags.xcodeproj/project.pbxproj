@@ -222,12 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1F2A0EE1CE2030000593EB0 /* Build configuration list for PBXNativeTarget "echotags" */;
 			buildPhases = (
-				A56B9037B4DADC1CCBF14E24 /* 📦 Check Pods Manifest.lock */,
+				A56B9037B4DADC1CCBF14E24 /* [CP] Check Pods Manifest.lock */,
 				A1F2A0D81CE2030000593EB0 /* Sources */,
 				A1F2A0D91CE2030000593EB0 /* Frameworks */,
-				FCFC7DD06006A404E8D59693 /* 📦 Embed Pods Frameworks */,
+				FCFC7DD06006A404E8D59693 /* [CP] Embed Pods Frameworks */,
 				A1F2A0DA1CE2030000593EB0 /* Resources */,
-				6EBC1A696EA8677D582FE945 /* 📦 Copy Pods Resources */,
+				6EBC1A696EA8677D582FE945 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,7 +262,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "Echotags" */;
+			buildConfigurationList = A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "echotags" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -298,14 +298,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6EBC1A696EA8677D582FE945 /* 📦 Copy Pods Resources */ = {
+		6EBC1A696EA8677D582FE945 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,14 +313,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-echotags/Pods-echotags-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A56B9037B4DADC1CCBF14E24 /* 📦 Check Pods Manifest.lock */ = {
+		A56B9037B4DADC1CCBF14E24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,14 +328,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FCFC7DD06006A404E8D59693 /* 📦 Embed Pods Frameworks */ = {
+		FCFC7DD06006A404E8D59693 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +515,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "Echotags" */ = {
+		A1F2A0D71CE2030000593EB0 /* Build configuration list for PBXProject "echotags" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1F2A0EC1CE2030000593EB0 /* Debug */,
