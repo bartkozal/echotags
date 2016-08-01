@@ -90,15 +90,26 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon-navigation-tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="oZT-ui-2rn">
                                                     <rect key="frame" x="80" y="518" width="211" height="211"/>
                                                 </imageView>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="img-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ki9-Fj-g87">
+                                                    <rect key="frame" x="212" y="361" width="48" height="140"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Ki9-Fj-g87" firstAttribute="top" secondItem="BCI-pR-8ZN" secondAttribute="top" id="EhO-Xf-vfc"/>
                                                 <constraint firstItem="BCI-pR-8ZN" firstAttribute="centerY" secondItem="vYK-Ps-gTv" secondAttribute="centerY" constant="-55" id="LUa-Le-bRi"/>
                                                 <constraint firstAttribute="trailing" secondItem="BCI-pR-8ZN" secondAttribute="trailing" constant="30" id="eQi-PV-Z5l"/>
+                                                <constraint firstItem="Ki9-Fj-g87" firstAttribute="centerX" secondItem="vYK-Ps-gTv" secondAttribute="centerX" constant="48" id="kuk-SE-kqD"/>
                                                 <constraint firstAttribute="bottom" secondItem="oZT-ui-2rn" secondAttribute="bottom" constant="-62" id="lP5-0V-EGu"/>
                                                 <constraint firstItem="BCI-pR-8ZN" firstAttribute="leading" secondItem="vYK-Ps-gTv" secondAttribute="leading" constant="30" id="xM5-Xn-WFa"/>
+                                                <constraint firstItem="Ki9-Fj-g87" firstAttribute="top" secondItem="JOf-k4-lk8" secondAttribute="top" id="zFe-6H-Ea5"/>
                                                 <constraint firstItem="oZT-ui-2rn" firstAttribute="centerX" secondItem="vYK-Ps-gTv" secondAttribute="centerX" constant="-2" id="zax-sM-fTf"/>
                                                 <constraint firstItem="BCI-pR-8ZN" firstAttribute="centerX" secondItem="vYK-Ps-gTv" secondAttribute="centerX" id="zmy-Uq-v7g"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="EhO-Xf-vfc"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
@@ -635,5 +646,6 @@
         <image name="icon-settings" width="19" height="15"/>
         <image name="icon-settings-active" width="19" height="15"/>
         <image name="icon-twitter" width="20" height="20"/>
+        <image name="img-arrow" width="48" height="140"/>
     </resources>
 </document>
