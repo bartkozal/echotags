@@ -12,16 +12,14 @@ import AVFoundation
 class AudioPlayer: NSObject {
     var player: AVAudioPlayer?
     let session = AVAudioSession.sharedInstance()
-    
+
     func play(recording: String) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
-            // TODO: use commented version
-            // if let sound = NSDataAsset(name: recording) {
-            if let sound = NSDataAsset(name: "sample2") {
+            if let sound = NSDataAsset(name: recording) {
                 do {
                     try self.session.setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
                     try self.session.setActive(true)
-                    
+
                     try self.player = AVAudioPlayer(data: sound.data, fileTypeHint: AVFileTypeAppleM4A)
                     self.player?.delegate = self
                     self.player?.play()
