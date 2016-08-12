@@ -16,7 +16,7 @@ class Geofencing {
     struct Defaults {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.373846, longitude: 4.896244)
         static let zoomLevel = 14.0
-        static let minimumAccuracy = 0.07
+        static let minimumAccuracy = 0.03
         static let styleURL = NSURL.init(string: "mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao")
     }
     
