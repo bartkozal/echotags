@@ -20,7 +20,6 @@ class MapViewController: UIViewController {
         didSet {
             mapView.delegate = self
             mapView.attributionButton.hidden = true
-            mapView.showsUserLocation = true
             mapView.styleURL = Geofencing.Defaults.styleURL
             mapView.minimumZoomLevel = Geofencing.Bounds.minimumZoomLevel
             mapView.maximumZoomLevel = Geofencing.Bounds.maximumZoomLevel
@@ -62,11 +61,13 @@ class MapViewController: UIViewController {
                 navigationButton.selected = true
                 directionButton.hidden = false
                 geofencing.manager.startUpdatingLocation()
+                mapView.showsUserLocation = true
                 firstRequest = true
             } else {
                 navigationButton.selected = false
                 directionButton.hidden = true
                 geofencing.manager.stopUpdatingLocation()
+                mapView.showsUserLocation = false
                 directing = false
             }
         }
