@@ -220,7 +220,8 @@ extension MapViewController: MGLMapViewDelegate {
     func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
         let audioButton = UIButton()
         
-        audioButton.frame = CGRectMake(0, 0, 23, 23)
+        audioButton.frame = CGRectMake(0, 0, 33, 43)
+        audioButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 10)
         audioButton.setImage(UIImage(named: "icon-play"), forState: .Normal)
         
         return audioButton
