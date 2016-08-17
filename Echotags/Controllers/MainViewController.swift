@@ -36,4 +36,17 @@ class MainViewController: UIViewController {
             sender.selected = true
         }
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        switch geofencing.checkPermission() {
+        case .Authorized:
+            break
+        case .NotDetermined:
+            geofencing.manager.requestWhenInUseAuthorization()
+        case .Denied:
+            presentViewController(Alert.accessToLocationBackgroundDenied(), animated: true, completion: nil)
+        }
+    }
 }

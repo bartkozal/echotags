@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
-class AudioPlayer: NSObject {
+let audio = Audio()
+
+class Audio: NSObject {
     var player: AVAudioPlayer?
     let session = AVAudioSession.sharedInstance()
 
@@ -31,7 +33,7 @@ class AudioPlayer: NSObject {
     }
 }
 
-extension AudioPlayer: AVAudioPlayerDelegate {
+extension Audio: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
             do {

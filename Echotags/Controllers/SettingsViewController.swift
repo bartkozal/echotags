@@ -15,9 +15,6 @@ import Social
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
     
-    private let geofencing = Geofencing()
-    private let offlineMap = OfflineMap()
-    
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet private weak var settingsView: UIView!
     @IBOutlet weak var settingsScrollView: UIScrollView!

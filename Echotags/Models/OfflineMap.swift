@@ -8,6 +8,8 @@
 
 import Mapbox
 
+let offlineMap = OfflineMap()
+
 class OfflineMap: NSObject {
     override init() {
         super.init()

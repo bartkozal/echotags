@@ -10,6 +10,8 @@ import UIKit
 import CoreLocation
 import RealmSwift
 
+let geofencing = Geofencing()
+
 class Geofencing {    
     var manager: CLLocationManager
     

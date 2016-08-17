@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaults.hasBeenLaunched {
             Database().copyToFileSystem()
         }
-        
+
         return true
     }
 }
