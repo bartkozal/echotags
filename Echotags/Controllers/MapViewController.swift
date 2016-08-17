@@ -10,8 +10,6 @@ import UIKit
 import Mapbox
 
 class MapViewController: UIViewController {
-    private let geofencing = Geofencing()
-    private let audio = AudioPlayer()
     private var firstRequest = false
     private var userLocation: CLLocationCoordinate2D?
     private var userHeading: CLLocationDirection?
