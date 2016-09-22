@@ -8,9 +8,8 @@
 
 import RealmSwift
 
-
 extension Results {
-    func uniqueObject(paramKey: String)->[Object]{
+    func uniqueObject(_ paramKey: String)->[Object]{
         var uniqueObjects = [Object]()
         
         for obj in self {

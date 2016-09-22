@@ -19,7 +19,7 @@ class Geofencing {
         static let coordinate = CLLocationCoordinate2D(latitude: 52.373846, longitude: 4.896244)
         static let zoomLevel = 14.0
         static let minimumAccuracy = 0.03
-        static let styleURL = NSURL.init(string: "mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao")
+        static let styleURL = URL.init(string: "mapbox://styles/echotags/cioedlsaw002mbzmdkem7wkao")
     }
     
     struct Bounds {
@@ -30,20 +30,20 @@ class Geofencing {
     }
     
     enum Permission {
-        case Authorized
-        case NotDetermined
-        case Denied
+        case authorized
+        case notDetermined
+        case denied
     }
     
     init() {
         manager = CLLocationManager()
         manager.allowsBackgroundLocationUpdates = true
-        manager.activityType = .Fitness
+        manager.activityType = .fitness
         manager.distanceFilter = 10.0
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
     
-    func cityBoundsContains(location: CLLocationCoordinate2D) -> Bool {
+    func cityBoundsContains(_ location: CLLocationCoordinate2D) -> Bool {
         return location.latitude > Bounds.southWest.latitude &&
             location.latitude < Bounds.northEast.latitude &&
             location.longitude > Bounds.southWest.longitude &&
@@ -52,16 +52,16 @@ class Geofencing {
     
     func checkPermission() -> Geofencing.Permission {
         switch CLLocationManager.authorizationStatus() {
-        case .AuthorizedWhenInUse, .AuthorizedAlways:
-            return .Authorized
-        case .NotDetermined:
-            return .NotDetermined
-        case .Denied, .Restricted:
-            return .Denied
+        case .authorizedWhenInUse, .authorizedAlways:
+            return .authorized
+        case .notDetermined:
+            return .notDetermined
+        case .denied, .restricted:
+            return .denied
         }
     }
     
-    func lookForNearbyPoint(userLocation: CLLocationCoordinate2D) -> Point? {
+    func lookForNearbyPoint(_ userLocation: CLLocationCoordinate2D) -> Point? {
         let nearestTrigger = Marker.nearby(userLocation).flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
             let t1coordinate = CLLocationCoordinate2D(latitude: t1.latitude, longitude: t1.longitude)
             let t2coordinate = CLLocationCoordinate2D(latitude: t2.latitude, longitude: t2.longitude)
@@ -78,7 +78,7 @@ class Geofencing {
         return nil
     }
     
-    private func distanceBetween(source: CLLocationCoordinate2D, target: CLLocationCoordinate2D) -> Double {
+    private func distanceBetween(_ source: CLLocationCoordinate2D, target: CLLocationCoordinate2D) -> Double {
         let sourceLatRad = source.latitude * M_PI / 180
         let sourceLngRad = source.longitude * M_PI / 180
         let targetLatRad = target.latitude * M_PI / 180

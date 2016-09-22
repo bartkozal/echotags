@@ -9,37 +9,37 @@
 import Foundation
 
 struct UserDefaults {
-    private static let defaults = NSUserDefaults.standardUserDefaults()
+    private static let defaults = Foundation.UserDefaults.standard
     
     static var hasBeenLaunched: Bool {
         get {
-            return defaults.boolForKey("hasBeenLaunched")
+            return defaults.bool(forKey: "hasBeenLaunched")
         }
         
         set {
-            defaults.setBool(newValue, forKey: "hasBeenLaunched")
+            defaults.set(newValue, forKey: "hasBeenLaunched")
             defaults.synchronize()
         }
     }
     
     static var hasPassedTutorial: Bool {
         get {
-            return defaults.boolForKey("hasPassedTutorial")
+            return defaults.bool(forKey: "hasPassedTutorial")
         }
         
         set {
-            defaults.setBool(newValue, forKey: "hasPassedTutorial")
+            defaults.set(newValue, forKey: "hasPassedTutorial")
             defaults.synchronize()
         }
     }
     
     static var hasOfflineMap: Bool {
         get {
-            return defaults.boolForKey("hasOfflineMap")
+            return defaults.bool(forKey: "hasOfflineMap")
         }
         
         set {
-            defaults.setBool(newValue, forKey: "hasOfflineMap")
+            defaults.set(newValue, forKey: "hasOfflineMap")
             defaults.synchronize()
         }
     }

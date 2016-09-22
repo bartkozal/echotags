@@ -25,7 +25,7 @@ struct OfflinePack {
     }
     
     var byteCount: String {
-        return NSByteCountFormatter.stringFromByteCount(Int64(pack.progress.countOfBytesCompleted), countStyle: .Memory)
+        return ByteCountFormatter.string(fromByteCount: Int64(pack.progress.countOfBytesCompleted), countStyle: .memory)
     }
     
     var progressPercentage: Float {

@@ -10,26 +10,26 @@ import UIKit
 
 struct Alert {
     
-    private static func alertDialog(title: String, message: String) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let confirmAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+    private static func alertDialog(_ title: String, message: String) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         
         alertController.addAction(confirmAction)
         
         return alertController
     }
     
-    private static func confirmDialog(title: String, message: String, caption: String, handler: (UIAlertAction) -> Void) -> UIAlertController {
+    private static func confirmDialog(_ title: String, message: String, caption: String, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: .Alert
+            preferredStyle: .alert
         )
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        let confirmAction = UIAlertAction(title: caption, style: .Default, handler: handler)
+        let confirmAction = UIAlertAction(title: caption, style: .default, handler: handler)
         alertController.addAction(confirmAction)
         
         return alertController
@@ -62,14 +62,14 @@ struct Alert {
             message: "In order to play audio messages, please tap on \"Settings\" and set location access to \"While Using the App\".",
             caption: "Settings",
             handler: { _ in
-                if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
-                    UIApplication.sharedApplication().openURL(url)
+                if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                    UIApplication.shared.openURL(url)
                 }
             }
         )
     }
     
-    static func resetVisitedPoints(sender: AnyObject?) -> UIAlertController {
+    static func resetVisitedPoints(_ sender: AnyObject?) -> UIAlertController {
         return confirmDialog(
             "Are you sure?",
             message: "This will mark all places on the map as unvisited",
@@ -77,7 +77,7 @@ struct Alert {
             handler: { _ in
                 let settingsVC = sender as! SettingsViewController
                 
-                settingsVC.resetVisitedButton.enabled = false
+                settingsVC.resetVisitedButton.isEnabled = false
                 settingsVC.categoriesHaveChanged = true
                 Point.markAllAsUnvisited()
             }

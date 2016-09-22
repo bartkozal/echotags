@@ -9,25 +9,25 @@
 import UIKit
 
 class SettingsDismissAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.2
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let settingsVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! SettingsViewController
-        let mapVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        let mapVCFrame = transitionContext.finalFrameForViewController(mapVC)
-        let containerView = transitionContext.containerView()!
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let settingsVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! SettingsViewController
+        let mapVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
+        let mapVCFrame = transitionContext.finalFrame(for: mapVC)
+        let containerView = transitionContext.containerView
         
-        containerView.sendSubviewToBack(settingsVC.view)
+        containerView.sendSubview(toBack: settingsVC.view)
         
-        UIView.animateWithDuration(
-            transitionDuration(transitionContext),
+        UIView.animate(
+            withDuration: transitionDuration(using: transitionContext),
             delay: 0.0,
-            options: .CurveEaseOut,
+            options: .curveEaseOut,
             animations: {
                 settingsVC.overlayView.alpha = 0.0
-                settingsVC.settingsScrollView.frame = CGRectOffset(mapVCFrame, 0, UIScreen.mainScreen().bounds.size.height)
+                settingsVC.settingsScrollView.frame = mapVCFrame.offsetBy(dx: 0, dy: UIScreen.main.bounds.size.height)
             },
             completion: { _ in
                 transitionContext.completeTransition(true)

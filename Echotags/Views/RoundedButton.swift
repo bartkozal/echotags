@@ -11,19 +11,19 @@ import UIKit
 class RoundedButton: UIButton {
     @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(CGColor: layer.borderColor!)
+            return UIColor(cgColor: layer.borderColor!)
         }
         
         set {
-            layer.borderColor = newValue?.CGColor
+            layer.borderColor = newValue?.cgColor
             layer.borderWidth = 1
         }
     }
     
-    override var enabled: Bool {
+    override var isEnabled: Bool {
         didSet {
-            if enabled {
-                backgroundColor = .whiteColor()
+            if isEnabled {
+                backgroundColor = .white()
             } else {
                 backgroundColor = .brandColor()
             }
