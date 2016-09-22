@@ -87,7 +87,6 @@ class SettingsViewController: UIViewController {
         )
         
         settingsScrollView.delegate = self
-        settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     
     override func viewWillLayoutSubviews() {
@@ -96,6 +95,7 @@ class SettingsViewController: UIViewController {
         let bottomBackground = UIView(frame: CGRect(x: 0, y: settingsScrollView.contentSize.height, width: settingsScrollView.contentSize.width, height: 450))
         bottomBackground.backgroundColor = .white
         settingsScrollView.addSubview(bottomBackground)
+        settingsScrollView.contentInset.top = overlayButton.bounds.height
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

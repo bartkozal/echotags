@@ -495,11 +495,11 @@
                                                 <exclude reference="aQ9-E0-hGU"/>
                                                 <exclude reference="ecy-kR-U5w"/>
                                                 <exclude reference="pgi-ht-Vhl"/>
-                                                <exclude reference="X0d-gX-RI4"/>
-                                                <exclude reference="a1V-CD-VpQ"/>
                                                 <exclude reference="BIo-cu-SNb"/>
                                                 <exclude reference="QqI-lh-OKI"/>
                                                 <exclude reference="bFQ-4b-8nr"/>
+                                                <exclude reference="X0d-gX-RI4"/>
+                                                <exclude reference="a1V-CD-VpQ"/>
                                             </mask>
                                         </variation>
                                     </view>
