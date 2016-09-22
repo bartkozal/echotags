@@ -23,9 +23,9 @@ class RoundedButton: UIButton {
     override var isEnabled: Bool {
         didSet {
             if isEnabled {
-                backgroundColor = .white()
+                backgroundColor = .white
             } else {
-                backgroundColor = .brandColor()
+                backgroundColor = .brandColor
             }
         }
     }

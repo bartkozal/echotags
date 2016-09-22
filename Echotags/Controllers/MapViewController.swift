@@ -10,11 +10,11 @@ import UIKit
 import Mapbox
 
 class MapViewController: UIViewController {
-    private var firstRequest = false
-    private var userLocation: CLLocationCoordinate2D?
-    private var userHeading: CLLocationDirection?
+    fileprivate var firstRequest = false
+    fileprivate var userHeading: CLLocationDirection?
+    fileprivate var userLocation: CLLocationCoordinate2D?
     
-    @IBOutlet private weak var mapView: MGLMapView! {
+    @IBOutlet fileprivate weak var mapView: MGLMapView! {
         didSet {
             mapView.delegate = self
             mapView.attributionButton.isHidden = true
@@ -49,7 +49,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet private weak var navigationButton: UIButton!
     
-    private var navigation: Bool {
+    fileprivate var navigation: Bool {
         get {
             return navigationButton.isSelected
         }
@@ -125,7 +125,7 @@ class MapViewController: UIViewController {
         reloadPointAnnotations()
     }
     
-    private func updateDirection() {
+    fileprivate func updateDirection() {
         if directing {
             guard let location = userLocation else { return }
             guard let heading = userHeading else {
@@ -149,11 +149,11 @@ class MapViewController: UIViewController {
         }
     }
     
-    private func lookForPoints() {
+    fileprivate func lookForPoints() {
         guard let location = userLocation else { return }
         
         guard let player = audio.player , player.isPlaying else {
-            if let point = geofencing.lookForNearbyPoint(location) {
+            if let point = geofencing.lookForNearby(pointAt: location) {
                 point.markAsVisited()
                 audio.play(point.audio)
                 reloadPointAnnotation(point)
@@ -235,7 +235,7 @@ extension MapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return annotation.isMember(of: PointAnnotation)
+        return annotation.isMember(of: PointAnnotation.self)
     }
 }
 

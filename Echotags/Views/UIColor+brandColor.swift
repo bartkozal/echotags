@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-    static func brandColor() -> UIColor {
+    static var brandColor: UIColor {
         return UIColor(red: 0.22, green: 0.26, blue: 0.35, alpha: 1.0)
     }
 }
