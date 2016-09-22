@@ -6,6 +6,7 @@
 //  Copyright © 2016 bkzl. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 
 class Database {
@@ -13,22 +14,22 @@ class Database {
 
     func copyToFileSystem() {
         let defaultURL = Realm.Configuration.defaultConfiguration.fileURL!
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
         
-        if let dbPath = NSBundle.mainBundle().URLForResource("DB", withExtension: "realm") {
+        if let dbPath = Bundle.main.url(forResource: "DB", withExtension: "realm") {
             do {
-                try fileManager.removeItemAtURL(defaultURL)
-                try fileManager.copyItemAtURL(dbPath, toURL: defaultURL)
+                try fileManager.removeItem(at: defaultURL)
+                try fileManager.copyItem(at: dbPath, to: defaultURL)
                 UserDefaults.hasBeenLaunched = true
             } catch {
                 print(error)
             }
         }
-        
-        let folderPath = defaultURL.URLByDeletingLastPathComponent!.path!
-        
+
+        let folderPath = defaultURL.deletingLastPathComponent().path
+
         do {
-            try fileManager.setAttributes([NSFileProtectionKey: NSFileProtectionNone], ofItemAtPath: folderPath)
+            try fileManager.setAttributes([.protectionKey: FileProtectionType.none], ofItemAtPath: folderPath)
         } catch {
             print(error)
         }

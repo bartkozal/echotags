@@ -61,16 +61,16 @@ class Geofencing {
         }
     }
     
-    func lookForNearbyPoint(_ userLocation: CLLocationCoordinate2D) -> Point? {
-        let nearestTrigger = Marker.nearby(userLocation).flatMap { ($0 as! Point).triggers }.sort { t1, t2 in
+    func lookForNearby(pointAt location: CLLocationCoordinate2D) -> Point? {
+        let nearestTrigger = Marker.nearby(location: location).flatMap { ($0 as! Point).triggers }.sorted { t1, t2 in
             let t1coordinate = CLLocationCoordinate2D(latitude: t1.latitude, longitude: t1.longitude)
             let t2coordinate = CLLocationCoordinate2D(latitude: t2.latitude, longitude: t2.longitude)
-            return distanceBetween(userLocation, target: t1coordinate) < distanceBetween(userLocation, target: t2coordinate)
+            return distanceBetween(location, target: t1coordinate) < distanceBetween(location, target: t2coordinate)
         }.first
         
         if let trigger = nearestTrigger {
             let triggerCoordinate = CLLocationCoordinate2D(latitude: trigger.latitude, longitude: trigger.longitude)
-            if distanceBetween(userLocation, target: triggerCoordinate) < Defaults.minimumAccuracy {
+            if distanceBetween(location, target: triggerCoordinate) < Defaults.minimumAccuracy {
                 return trigger.point.first
             }
         }
@@ -86,8 +86,12 @@ class Geofencing {
         
         let deltaLat = targetLatRad - sourceLatRad
         let deltaLng = targetLngRad - sourceLngRad
+
+        let lat = sin(deltaLat/2) * sin(deltaLat/2)
+        let lng = sin(deltaLng/2) * sin(deltaLng/2)
+        let rad = cos(sourceLatRad) * cos(targetLatRad)
         
-        let a = sin(deltaLat/2) * sin(deltaLat/2) + sin(deltaLng/2) * sin(deltaLng/2) * cos(sourceLatRad) * cos(targetLatRad)
+        let a = lat + lng * rad
         let c = 2 * asin(sqrt(a))
         let r = 6372.8
         

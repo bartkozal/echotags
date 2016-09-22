@@ -6,8 +6,8 @@
 //  Copyright © 2016 bkzl. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
-
 
 class Point: Object {
     dynamic var title = ""

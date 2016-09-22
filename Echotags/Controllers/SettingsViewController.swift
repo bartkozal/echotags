@@ -22,8 +22,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var categoriesStackView: UIStackView! {
         didSet {
             for category in Category.all() {
-                guard let categoryView = NSBundle.mainBundle().loadNibNamed("CategoryView", owner: self, options: nil)[0] as? CategoryView else { return }
-                categoryView.checkboxLabel.setTitle(category.name, forState: .Normal)
+                guard let categoryView = Bundle.main.loadNibNamed("CategoryView", owner: self, options: nil)?[0] as? CategoryView else { return }
+                categoryView.checkboxLabel.setTitle(category.name, for: .normal)
                 categoryView.checkbox.on = category.visible
                 categoryView.delegate = self
                 categoriesStackView.addArrangedSubview(categoryView)
@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var resetVisitedButton: UIButton! {
         didSet {
-            resetVisitedButton.hidden = Point.unvisited().count == 0
+            resetVisitedButton.isHidden = Point.unvisited().count == 0
         }
     }
     
@@ -94,7 +94,7 @@ class SettingsViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         let bottomBackground = UIView(frame: CGRect(x: 0, y: settingsScrollView.contentSize.height, width: settingsScrollView.contentSize.width, height: 450))
-        bottomBackground.backgroundColor = .white()
+        bottomBackground.backgroundColor = .white
         settingsScrollView.addSubview(bottomBackground)
     }
     
@@ -134,8 +134,8 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: CategoryViewDelegate {
     func didTapCategory(_ checkbox: BEMCheckBox, name: String?) {
-        if let checkboxLabel = name, let category = Category.findByName(checkboxLabel) {
-            category.updateVisibility(checkbox.on)
+        if let checkboxLabel = name, let category = Category.findBy(name: checkboxLabel) {
+            category.updateVisibility(to: checkbox.on)
         }
         categoriesHaveChanged = true
     }

@@ -43,7 +43,7 @@ class OfflineMap: NSObject {
         
         MGLOfflineStorage.shared().addPack(for: region, withContext: context) { (pack, error) in
             guard error == nil else {
-                print("Error: \(error?.localizedFailureReason)")
+                print("Error: \(error?.localizedDescription)")
                 return
             }
             

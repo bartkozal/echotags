@@ -13,7 +13,7 @@ extension Results {
         var uniqueObjects = [Object]()
         
         for obj in self {
-            if let val = obj.valueForKeyPath(paramKey) {
+            if let val = obj.value(forKeyPath: paramKey) {
                 let uniqueObj: Object = val as! Object
                 if !uniqueObjects.contains(uniqueObj) {
                     uniqueObjects.append(uniqueObj)

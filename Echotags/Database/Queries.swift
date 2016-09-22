@@ -10,19 +10,19 @@ import CoreLocation
 import RealmSwift
 
 extension Point {
-    static func findByTitle(_ title: String) -> Point? {
-        return Database().db.objects(Point).filter("title = %@", title).first ?? nil
+    static func findBy(title: String) -> Point? {
+        return Database().db.objects(Point.self).filter("title = %@", title).first ?? nil
     }
     
     static func markAllAsUnvisited() {
-        let points = Database().db.objects(Point)
+        let points = Database().db.objects(Point.self)
         try! Database().db.write {
             points.setValue(false, forKeyPath: "visited")
         }
     }
     
     static func unvisited() -> Results<Point> {
-        return Database().db.objects(Point).filter("visited = true")
+        return Database().db.objects(Point.self).filter("visited = true")
     }
     
     func markAsVisited() {
@@ -34,30 +34,30 @@ extension Point {
 
 extension Marker {
     static func visible() -> [Object] {
-        return Database().db.objects(Marker).filter("category.visible = true").uniqueObject("point")
+        return Database().db.objects(Marker.self).filter("category.visible = true").uniqueObject("point")
     }
     
-    static func nearby(_ userLocation: CLLocationCoordinate2D) -> [Object] {
+    static func nearby(location: CLLocationCoordinate2D) -> [Object] {
         let range = 0.0015
-        let minLat = userLocation.latitude - range
-        let maxLat = userLocation.latitude + range
-        let minLng = userLocation.longitude - range
-        let maxLng = userLocation.longitude + range
+        let minLat = location.latitude - range
+        let maxLat = location.latitude + range
+        let minLng = location.longitude - range
+        let maxLng = location.longitude + range
         
-        return Database().db.objects(Marker).filter("category.visible = true AND point.visited = false AND point.latitude BETWEEN {%@, %@} AND point.longitude BETWEEN {%@, %@}", minLat, maxLat, minLng, maxLng).uniqueObject("point")
+        return Database().db.objects(Marker.self).filter("category.visible = true AND point.visited = false AND point.latitude BETWEEN {%@, %@} AND point.longitude BETWEEN {%@, %@}", minLat, maxLat, minLng, maxLng).uniqueObject("point")
     }
 }
 
 extension Category {
     static func all() -> Results<Category> {
-        return Database().db.objects(Category)
+        return Database().db.objects(Category.self)
     }
     
-    static func findByName(_ name: String) -> Category? {
-        return Database().db.objects(Category).filter("name = %@", name).first ?? nil
+    static func findBy(name: String) -> Category? {
+        return Database().db.objects(Category.self).filter("name = %@", name).first ?? nil
     }
     
-    func updateVisibility(_ value: Bool) {
+    func updateVisibility(to value: Bool) {
         try! Database().db.write {
             visible = value
         }
@@ -65,7 +65,7 @@ extension Category {
 }
 
 extension Trigger {
-    static func findById(_ id: String) -> Trigger? {
-        return Database().db.objects(Trigger).filter("id = %@", id).first ?? nil
+    static func findBy(id: String) -> Trigger? {
+        return Database().db.objects(Trigger.self).filter("id = %@", id).first ?? nil
     }
 }
