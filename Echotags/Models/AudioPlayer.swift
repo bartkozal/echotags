@@ -15,11 +15,11 @@ class Audio: NSObject {
     var player: AVAudioPlayer?
     let session = AVAudioSession.sharedInstance()
 
-    func play(recording: String) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
+    func play(_ recording: String) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async { [unowned self] in
             if let sound = NSDataAsset(name: recording) {
                 do {
-                    try self.session.setCategory(AVAudioSessionCategoryPlayback, withOptions: [.DuckOthers, .InterruptSpokenAudioAndMixWithOthers])
+                    try self.session.setCategory(AVAudioSessionCategoryPlayback, with: [.duckOthers, .interruptSpokenAudioAndMixWithOthers])
                     try self.session.setActive(true)
 
                     try self.player = AVAudioPlayer(data: sound.data, fileTypeHint: AVFileTypeAppleM4A)
@@ -34,8 +34,8 @@ class Audio: NSObject {
 }
 
 extension Audio: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async { [unowned self] in
             do {
                 try self.session.setActive(false)
             } catch {

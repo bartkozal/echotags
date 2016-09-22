@@ -11,29 +11,29 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet private weak var tutorialView: UIView! {
         didSet {
-            tutorialView.hidden = UserDefaults.hasPassedTutorial
+            tutorialView.isHidden = UserDefaults.hasPassedTutorial
         }
     }
     
     @IBAction private func dismissTutorial() {
-        UIView.animateWithDuration(0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.tutorialView.alpha = 0.0
-        }
+        }) 
         
         UserDefaults.hasPassedTutorial = true
     }
     
     @IBOutlet weak var settingsButton: UIButton!
     
-    @IBAction func touchSettingsButton(sender: UIButton) {
+    @IBAction func touchSettingsButton(_ sender: UIButton) {
         guard let mapVC = childViewControllers.first as? MapViewController else { return }
         
         if let settingsVC = mapVC.presentedViewController as?
             SettingsViewController {
-            settingsVC.performSegueWithIdentifier("unwindToMap", sender: nil)
+            settingsVC.performSegue(withIdentifier: "unwindToMap", sender: nil)
         } else {
-            mapVC.performSegueWithIdentifier("segueToSettings", sender: nil)
-            sender.selected = true
+            mapVC.performSegue(withIdentifier: "segueToSettings", sender: nil)
+            sender.isSelected = true
         }
     }
 
@@ -41,12 +41,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         switch geofencing.checkPermission() {
-        case .Authorized:
+        case .authorized:
             break
-        case .NotDetermined:
+        case .notDetermined:
             geofencing.manager.requestWhenInUseAuthorization()
-        case .Denied:
-            presentViewController(Alert.accessToLocationBackgroundDenied(), animated: true, completion: nil)
+        case .denied:
+            present(Alert.accessToLocationBackgroundDenied(), animated: true, completion: nil)
         }
     }
 }

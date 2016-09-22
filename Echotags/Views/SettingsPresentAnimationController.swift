@@ -9,24 +9,24 @@
 import UIKit
 
 class SettingsPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.2
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let settingsVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! SettingsViewController
-        let containerView = transitionContext.containerView()!
-        let finalFrame = transitionContext.finalFrameForViewController(settingsVC)
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let settingsVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! SettingsViewController
+        let containerView = transitionContext.containerView
+        let finalFrame = transitionContext.finalFrame(for: settingsVC)
         
         settingsVC.overlayView.alpha = 0.0
-        settingsVC.settingsScrollView.frame = CGRectOffset(finalFrame, 0, UIScreen.mainScreen().bounds.size.height)
+        settingsVC.settingsScrollView.frame = finalFrame.offsetBy(dx: 0, dy: UIScreen.main.bounds.size.height)
         
         containerView.addSubview(settingsVC.view)
         
-        UIView.animateWithDuration(
-            transitionDuration(transitionContext),
+        UIView.animate(
+            withDuration: transitionDuration(using: transitionContext),
             delay: 0.0,
-            options: .CurveEaseIn,
+            options: .curveEaseIn,
             animations: {
                 settingsVC.overlayView.alpha = 1.0
                 settingsVC.settingsScrollView.frame = finalFrame

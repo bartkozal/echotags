@@ -10,7 +10,7 @@ import CoreLocation
 import RealmSwift
 
 extension Point {
-    static func findByTitle(title: String) -> Point? {
+    static func findByTitle(_ title: String) -> Point? {
         return Database().db.objects(Point).filter("title = %@", title).first ?? nil
     }
     
@@ -37,7 +37,7 @@ extension Marker {
         return Database().db.objects(Marker).filter("category.visible = true").uniqueObject("point")
     }
     
-    static func nearby(userLocation: CLLocationCoordinate2D) -> [Object] {
+    static func nearby(_ userLocation: CLLocationCoordinate2D) -> [Object] {
         let range = 0.0015
         let minLat = userLocation.latitude - range
         let maxLat = userLocation.latitude + range
@@ -53,11 +53,11 @@ extension Category {
         return Database().db.objects(Category)
     }
     
-    static func findByName(name: String) -> Category? {
+    static func findByName(_ name: String) -> Category? {
         return Database().db.objects(Category).filter("name = %@", name).first ?? nil
     }
     
-    func updateVisibility(value: Bool) {
+    func updateVisibility(_ value: Bool) {
         try! Database().db.write {
             visible = value
         }
@@ -65,7 +65,7 @@ extension Category {
 }
 
 extension Trigger {
-    static func findById(id: String) -> Trigger? {
+    static func findById(_ id: String) -> Trigger? {
         return Database().db.objects(Trigger).filter("id = %@", id).first ?? nil
     }
 }

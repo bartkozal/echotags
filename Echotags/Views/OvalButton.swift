@@ -13,24 +13,24 @@ class OvalButton: UIButton {
         super.init(coder: aDecoder)
         
         adjustsImageWhenHighlighted = false
-        backgroundColor = .whiteColor()
+        backgroundColor = .white()
         layer.cornerRadius = bounds.width / 2
         layer.shadowOffset = CGSize(width: 0, height: 1)
         layer.shadowRadius = 2
-        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
     }
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         didSet {
-            if selected {
-                UIView.animateWithDuration(0.2) {
+            if isSelected {
+                UIView.animate(withDuration: 0.2, animations: {
                     self.backgroundColor = .brandColor()
-                }
+                }) 
             } else {
-                UIView.animateWithDuration(0.2) {
-                    self.backgroundColor = .whiteColor()
-                }
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.backgroundColor = .white()
+                }) 
             }
         }
     }

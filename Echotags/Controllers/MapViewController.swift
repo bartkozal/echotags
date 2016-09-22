@@ -17,14 +17,14 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var mapView: MGLMapView! {
         didSet {
             mapView.delegate = self
-            mapView.attributionButton.hidden = true
-            mapView.styleURL = Geofencing.Defaults.styleURL
+            mapView.attributionButton.isHidden = true
+            mapView.styleURL = Geofencing.Defaults.styleURL as URL!
             mapView.minimumZoomLevel = Geofencing.Bounds.minimumZoomLevel
             mapView.maximumZoomLevel = Geofencing.Bounds.maximumZoomLevel
             
-            mapView.setCenterCoordinate(Geofencing.Defaults.coordinate, zoomLevel: Geofencing.Defaults.zoomLevel, animated: false)
+            mapView.setCenter(Geofencing.Defaults.coordinate, zoomLevel: Geofencing.Defaults.zoomLevel, animated: false)
             
-            let camera = MGLMapCamera(lookingAtCenterCoordinate: mapView.centerCoordinate, fromDistance: 4000, pitch: 35, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 4000, pitch: 35, heading: 0)
             mapView.setCamera(camera, animated: false)
         }
     }
@@ -33,15 +33,15 @@ class MapViewController: UIViewController {
     
     private var directing: Bool {
         get {
-            return directionButton.selected
+            return directionButton.isSelected
         }
         
         set {
             if newValue {
-                directionButton.selected = true
+                directionButton.isSelected = true
                 geofencing.manager.startUpdatingHeading()
             } else {
-                directionButton.selected = false
+                directionButton.isSelected = false
                 geofencing.manager.stopUpdatingHeading()
             }
         }
@@ -51,19 +51,19 @@ class MapViewController: UIViewController {
     
     private var navigation: Bool {
         get {
-            return navigationButton.selected
+            return navigationButton.isSelected
         }
         
         set {
             if newValue {
-                navigationButton.selected = true
-                directionButton.hidden = false
+                navigationButton.isSelected = true
+                directionButton.isHidden = false
                 geofencing.manager.startUpdatingLocation()
                 mapView.showsUserLocation = true
                 firstRequest = true
             } else {
-                navigationButton.selected = false
-                directionButton.hidden = true
+                navigationButton.isSelected = false
+                directionButton.isHidden = true
                 geofencing.manager.stopUpdatingLocation()
                 mapView.showsUserLocation = false
                 directing = false
@@ -71,7 +71,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction internal func unwindToMapViewController(sender: UIStoryboardSegue) {}
+    @IBAction internal func unwindToMapViewController(_ sender: UIStoryboardSegue) {}
     
     @IBAction private func touchDirectionButton() {
         directing = !directing
@@ -79,12 +79,12 @@ class MapViewController: UIViewController {
     
     @IBAction private func touchNavigationButton() {
         switch geofencing.checkPermission() {
-        case .Authorized:
+        case .authorized:
             navigation = !navigation
-        case .NotDetermined:
+        case .notDetermined:
             geofencing.manager.requestWhenInUseAuthorization()
-        case .Denied:
-            presentViewController(Alert.accessToLocationBackgroundDenied(), animated: true, completion: nil)
+        case .denied:
+            present(Alert.accessToLocationBackgroundDenied(), animated: true, completion: nil)
         }
     }
     
@@ -100,7 +100,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    func reloadPointAnnotation(point: Point) {
+    func reloadPointAnnotation(_ point: Point) {
         if let pointAnnotation = mapView.annotations?.filter({ $0.title! == point.title }).first {
             mapView.removeAnnotation(pointAnnotation)
             let pointAnnotation = PointAnnotation(fromPoint: point)
@@ -111,10 +111,10 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(didBecomeActive),
-            name: UIApplicationDidBecomeActiveNotification,
+            name: NSNotification.Name.UIApplicationDidBecomeActive,
             object: nil
         )
         
@@ -130,7 +130,7 @@ class MapViewController: UIViewController {
             guard let location = userLocation else { return }
             guard let heading = userHeading else {
                 let camera = MGLMapCamera(
-                    lookingAtCenterCoordinate: location,
+                    lookingAtCenter: location,
                     fromDistance: mapView.camera.altitude,
                     pitch: mapView.camera.pitch,
                     heading: mapView.camera.heading
@@ -140,7 +140,7 @@ class MapViewController: UIViewController {
             }
             
             let camera = MGLMapCamera(
-                lookingAtCenterCoordinate: location,
+                lookingAtCenter: location,
                 fromDistance: 1000,
                 pitch: 35,
                 heading: heading
@@ -152,7 +152,7 @@ class MapViewController: UIViewController {
     private func lookForPoints() {
         guard let location = userLocation else { return }
         
-        guard let player = audio.player where player.playing else {
+        guard let player = audio.player , player.isPlaying else {
             if let point = geofencing.lookForNearbyPoint(location) {
                 point.markAsVisited()
                 audio.play(point.audio)
@@ -164,13 +164,13 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0].coordinate
         guard let location = userLocation else { return }
         
         if geofencing.cityBoundsContains(location) {
             if firstRequest {
-                mapView.setCenterCoordinate(location, animated: true)
+                mapView.setCenter(location, animated: true)
                 firstRequest = false
             }
             
@@ -178,28 +178,28 @@ extension MapViewController: CLLocationManagerDelegate {
             lookForPoints()
         } else {
             navigation = false
-            presentViewController(Alert.outOfBounds(), animated: true, completion: nil)
+            present(Alert.outOfBounds(), animated: true, completion: nil)
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         userHeading = newHeading.trueHeading
         updateDirection()
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error: \(error.localizedDescription)")
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToSettings" {
-            segue.destinationViewController.transitioningDelegate = self
+            segue.destination.transitioningDelegate = self
         }
     }
 }
 
 extension MapViewController: MGLMapViewDelegate {
-    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
+    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
         let annotation = annotation as! PointAnnotation
         var imageName = "marker-\(annotation.color)"
         
@@ -207,7 +207,7 @@ extension MapViewController: MGLMapViewDelegate {
             imageName = "marker-visited"
         }
         
-        var annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier(imageName)
+        var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: imageName)
         
         if annotationImage == nil {
             let image = UIImage(named: imageName)!
@@ -217,34 +217,34 @@ extension MapViewController: MGLMapViewDelegate {
         return annotationImage
     }
     
-    func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
+    func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
         let audioButton = UIButton()
         
-        audioButton.frame = CGRectMake(0, 0, 33, 43)
+        audioButton.frame = CGRect(x: 0, y: 0, width: 33, height: 43)
         audioButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 10)
-        audioButton.setImage(UIImage(named: "icon-play"), forState: .Normal)
+        audioButton.setImage(UIImage(named: "icon-play"), for: UIControlState())
         
         return audioButton
     }
     
-    func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
         if let audioFile = (annotation as? PointAnnotation)?.audio {
             audio.play(audioFile)
         }
         mapView.deselectAnnotation(annotation, animated: true)
     }
     
-    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return annotation.isMemberOfClass(PointAnnotation)
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        return annotation.isMember(of: PointAnnotation)
     }
 }
 
 extension MapViewController: UIViewControllerTransitioningDelegate {
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return SettingsPresentAnimationController()
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return SettingsDismissAnimationController()
     }
 }
