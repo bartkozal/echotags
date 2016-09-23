@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
     @IBAction private func touchTweetButton() {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            vc?.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io/appstore via @echotags")
+            vc?.setInitialText("Amsterdam offline audio guide. Perfect for short term visitors and solo travelers. http://echotags.io/appstore")
             present(vc!, animated: true, completion: nil)
         } else {
             present(Alert.twitterUnavailable(), animated: true, completion: nil)
@@ -69,7 +69,7 @@ class SettingsViewController: UIViewController {
     @IBAction private func touchShareButton() {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            vc?.setInitialText("Enjoy Amsterdam! Offline audio guide for short term visitors and solo travelers. http://echotags.io/appstore")
+            vc?.setInitialText("Amsterdam offline audio guide. Perfect for short term visitors and solo travelers. http://echotags.io/appstore")
             present(vc!, animated: true, completion: nil)
         } else {
             present(Alert.facebookUnavailable(), animated: true, completion: nil)
