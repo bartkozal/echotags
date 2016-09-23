@@ -31,7 +31,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    
     @IBAction private func touchOverlayButton() {
         performSegue(withIdentifier: "unwindToMap", sender: nil)
     }
