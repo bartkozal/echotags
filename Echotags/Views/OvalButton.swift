@@ -22,6 +22,7 @@ class OvalButton: UIButton {
     private func setStyles() {
         adjustsImageWhenHighlighted = false
         backgroundColor = .white
+        layoutIfNeeded()
         layer.cornerRadius = bounds.width / 2
         layer.shadowOffset = CGSize(width: 0, height: 1)
         layer.shadowRadius = 2
