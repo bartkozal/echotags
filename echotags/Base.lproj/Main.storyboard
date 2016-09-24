@@ -136,6 +136,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yg-0a-DaX" customClass="GADNativeExpressAdView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ZCG-IA-FeX"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hue-2G-3ru" customClass="MGLMapView">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -205,18 +211,22 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hue-2G-3ru" secondAttribute="bottom" id="6dg-X3-gtK"/>
+                            <constraint firstAttribute="trailing" secondItem="8Yg-0a-DaX" secondAttribute="trailing" id="7uu-St-RQ9"/>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
                             <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
                             <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" constant="8" id="H4T-lp-n4Y"/>
+                            <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="hue-2G-3ru" secondAttribute="top" constant="15" id="LrW-Uq-D0Q"/>
                             <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="TYr-Do-bhf"/>
-                            <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" constant="15" id="b4K-cP-eMR"/>
-                            <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="jFk-mB-Y3s"/>
+                            <constraint firstItem="8Yg-0a-DaX" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="bGy-sG-YsJ"/>
+                            <constraint firstItem="8Yg-0a-DaX" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" id="hv2-vs-Gew"/>
                             <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="mQP-NC-KZY"/>
                             <constraint firstAttribute="trailing" secondItem="bAp-co-Ihh" secondAttribute="trailing" constant="10" id="vPF-hp-Pmb"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" constant="58" id="wdK-pm-cnq"/>
+                            <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="8Yg-0a-DaX" secondAttribute="bottom" id="weJ-uv-9V7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adView" destination="8Yg-0a-DaX" id="6sx-Nj-OcS"/>
                         <outlet property="directionButton" destination="bAp-co-Ihh" id="n1w-qs-wfd"/>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="navigationButton" destination="J2k-nZ-1nI" id="mGQ-D2-jPe"/>
@@ -225,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efm-ym-kNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="985"/>
+            <point key="canvasLocation" x="1292" y="984.55772113943033"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="pyn-mD-k9R">
