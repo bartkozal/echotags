@@ -43,4 +43,15 @@ struct UserDefaults {
             defaults.synchronize()
         }
     }
+
+    static var hasRemovedAds: Bool {
+        get {
+            return defaults.bool(forKey: "hasRemovedAds")
+        }
+
+        set {
+            defaults.set(newValue, forKey: "hasRemovedAds")
+            defaults.synchronize()
+        }
+    }
 }
