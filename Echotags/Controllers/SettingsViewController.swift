@@ -81,7 +81,7 @@ class SettingsViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var transactionIndicator: UIActivityIndicatorView! {
+    @IBOutlet fileprivate weak var transactionIndicator: UIActivityIndicatorView! {
         didSet {
             transactionIndicator.stopAnimating()
         }
@@ -102,6 +102,13 @@ class SettingsViewController: UIViewController {
         productRequest.delegate = self
         productRequest.start()
     }
+
+    @IBAction private func touchRestorePurchasesButton() {
+        transactionInProgress = true
+        
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
 
     @IBAction private func touchTweetButton() {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
@@ -215,6 +222,18 @@ extension SettingsViewController: SKProductsRequestDelegate {
 }
 
 extension SettingsViewController: SKPaymentTransactionObserver {
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        UserDefaults.hasRemovedAds = true
+        removeAdsButton.isEnabled = false
+        transactionIndicator.stopAnimating()
+    }
+
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        transactionInProgress = false
+        let alert = Alert.alertDialog("Something went wrong", message: error.localizedDescription)
+        present(alert, animated: true, completion: nil)
+    }
+
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transcation in transactions {
             switch transcation.transactionState {
@@ -222,7 +241,7 @@ extension SettingsViewController: SKPaymentTransactionObserver {
                 SKPaymentQueue.default().finishTransaction(transcation)
                 UserDefaults.hasRemovedAds = true
                 removeAdsButton.isEnabled = false
-                transactionInProgress = false
+                transactionIndicator.stopAnimating()
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transcation)
                 transactionInProgress = false
