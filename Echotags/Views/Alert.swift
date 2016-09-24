@@ -10,7 +10,7 @@ import UIKit
 
 struct Alert {
     
-    private static func alertDialog(_ title: String, message: String) -> UIAlertController {
+    static func alertDialog(_ title: String, message: String) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         
@@ -19,7 +19,7 @@ struct Alert {
         return alertController
     }
     
-    private static func confirmDialog(_ title: String, message: String, caption: String, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
+    static func confirmDialog(_ title: String, message: String, caption: String, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
             message: message,
