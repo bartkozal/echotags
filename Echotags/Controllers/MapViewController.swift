@@ -31,7 +31,13 @@ class MapViewController: UIViewController {
     }
     
     @IBOutlet private weak var directionButton: UIButton!
-    @IBOutlet private weak var adView: GADNativeExpressAdView!
+    @IBOutlet weak var adView: GADNativeExpressAdView! {
+        didSet {
+            if UserDefaults.hasRemovedAds {
+                adView.isHidden = true
+            }
+        }
+    }
     
     private var directing: Bool {
         get {
@@ -120,12 +126,14 @@ class MapViewController: UIViewController {
             object: nil
         )
 
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+        if !UserDefaults.hasRemovedAds {
+            let request = GADRequest()
+            request.testDevices = [kGADSimulatorID]
 
-        adView.adUnitID = "ca-app-pub-7534465000462120/3993390694"
-        adView.rootViewController = self
-        adView.load(request)
+            adView.adUnitID = "ca-app-pub-7534465000462120/3993390694"
+            adView.rootViewController = self
+            adView.load(request)
+        }
         
         geofencing.manager.delegate = self
     }

@@ -11,10 +11,22 @@ import BEMCheckBox
 import CoreLocation
 import Mapbox
 import Social
+import StoreKit
 
 class SettingsViewController: UIViewController {
     var categoriesHaveChanged = false
-    
+    var transactionInProgress = false {
+        didSet {
+            if transactionInProgress {
+                removeAdsStackView.isUserInteractionEnabled = false
+                transactionIndicator.startAnimating()
+            } else {
+                removeAdsStackView.isUserInteractionEnabled = true
+                transactionIndicator.stopAnimating()
+            }
+        }
+    }
+
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet private weak var settingsView: UIView!
     @IBOutlet weak var settingsScrollView: UIScrollView!
@@ -54,7 +66,43 @@ class SettingsViewController: UIViewController {
     @IBAction private func touchResetVisitedButton(_ sender: UIButton) {
         present(Alert.resetVisitedPoints(self), animated: true, completion: nil)
     }
-    
+
+    @IBOutlet private weak var removeAdsStackView: UIStackView! {
+        didSet {
+            if UserDefaults.hasRemovedAds {
+                removeAdsStackView.isUserInteractionEnabled = false
+            } else {
+                if SKPaymentQueue.canMakePayments() {
+                    SKPaymentQueue.default().add(self)
+                } else {
+                    removeAdsStackView.isHidden = true
+                }
+            }
+        }
+    }
+
+    @IBOutlet weak var transactionIndicator: UIActivityIndicatorView! {
+        didSet {
+            transactionIndicator.stopAnimating()
+        }
+    }
+
+    @IBOutlet fileprivate weak var removeAdsButton: UIButton! {
+        didSet {
+            if UserDefaults.hasRemovedAds {
+                removeAdsButton.isEnabled = false
+            }
+        }
+    }
+
+    @IBAction private func touchRemoveAdsButton() {
+        transactionInProgress = true
+
+        let productRequest = SKProductsRequest(productIdentifiers: Set(["bkzl.echotags.amsterdam.iap.noads"]))
+        productRequest.delegate = self
+        productRequest.start()
+    }
+
     @IBAction private func touchTweetButton() {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
@@ -87,6 +135,12 @@ class SettingsViewController: UIViewController {
         
         settingsScrollView.delegate = self
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        SKPaymentQueue.default().remove(self)
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -104,6 +158,8 @@ class SettingsViewController: UIViewController {
                 mapVC.reloadPointAnnotations()
                 categoriesHaveChanged = false
             }
+
+            mapVC.adView.isHidden = UserDefaults.hasRemovedAds
             
             let mainVC = mapVC.parent as! MainViewController
             mainVC.settingsButton.isSelected = false
@@ -145,6 +201,34 @@ extension SettingsViewController: UIScrollViewDelegate {
         let breakScrollPoint = CGFloat(-130.0)
         if scrollView.contentOffset.y < breakScrollPoint {
             performSegue(withIdentifier: "unwindToMap", sender: nil)
+        }
+    }
+}
+
+extension SettingsViewController: SKProductsRequestDelegate {
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        for product in response.products {
+            let payment = SKPayment(product: product)
+            SKPaymentQueue.default().add(payment)
+        }
+    }
+}
+
+extension SettingsViewController: SKPaymentTransactionObserver {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transcation in transactions {
+            switch transcation.transactionState {
+            case .purchased, .restored:
+                SKPaymentQueue.default().finishTransaction(transcation)
+                UserDefaults.hasRemovedAds = true
+                removeAdsButton.isEnabled = false
+                transactionInProgress = false
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transcation)
+                transactionInProgress = false
+            default:
+                break
+            }
         }
     }
 }
