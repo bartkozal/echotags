@@ -14,6 +14,7 @@ import Social
 import StoreKit
 
 class SettingsViewController: UIViewController {
+    let removeAdsIdentifier = "bkzl.echotags.amsterdam.iap.noads"
     var categoriesHaveChanged = false
     var transactionInProgress = false {
         didSet {
@@ -67,7 +68,7 @@ class SettingsViewController: UIViewController {
         present(Alert.resetVisitedPoints(self), animated: true, completion: nil)
     }
 
-    @IBOutlet private weak var removeAdsStackView: UIStackView! {
+    @IBOutlet fileprivate weak var removeAdsStackView: UIStackView! {
         didSet {
             if UserDefaults.hasRemovedAds {
                 removeAdsStackView.isUserInteractionEnabled = false
@@ -98,7 +99,7 @@ class SettingsViewController: UIViewController {
     @IBAction private func touchRemoveAdsButton() {
         transactionInProgress = true
 
-        let productRequest = SKProductsRequest(productIdentifiers: Set(["bkzl.echotags.amsterdam.iap.noads"]))
+        let productRequest = SKProductsRequest(productIdentifiers: Set([removeAdsIdentifier]))
         productRequest.delegate = self
         productRequest.start()
     }
@@ -222,12 +223,6 @@ extension SettingsViewController: SKProductsRequestDelegate {
 }
 
 extension SettingsViewController: SKPaymentTransactionObserver {
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        UserDefaults.hasRemovedAds = true
-        removeAdsButton.isEnabled = false
-        transactionIndicator.stopAnimating()
-    }
-
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         transactionInProgress = false
         let alert = Alert.alertDialog("Something went wrong", message: error.localizedDescription)
@@ -237,10 +232,19 @@ extension SettingsViewController: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transcation in transactions {
             switch transcation.transactionState {
-            case .purchased, .restored:
+            case .purchased:
                 SKPaymentQueue.default().finishTransaction(transcation)
                 UserDefaults.hasRemovedAds = true
                 removeAdsButton.isEnabled = false
+                removeAdsStackView.isUserInteractionEnabled = false
+                transactionIndicator.stopAnimating()
+            case .restored:
+                SKPaymentQueue.default().finishTransaction(transcation)
+                if transcation.original?.transactionIdentifier == removeAdsIdentifier {
+                    UserDefaults.hasRemovedAds = true
+                    removeAdsButton.isEnabled = false
+                    removeAdsStackView.isUserInteractionEnabled = false
+                }
                 transactionIndicator.stopAnimating()
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transcation)
