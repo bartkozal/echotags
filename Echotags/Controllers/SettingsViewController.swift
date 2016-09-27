@@ -70,14 +70,10 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet fileprivate weak var removeAdsStackView: UIStackView! {
         didSet {
-            if UserDefaults.hasRemovedAds {
-                removeAdsStackView.isUserInteractionEnabled = false
+            if !UserDefaults.hasRemovedAds && SKPaymentQueue.canMakePayments() {
+                SKPaymentQueue.default().add(self)
             } else {
-                if SKPaymentQueue.canMakePayments() {
-                    SKPaymentQueue.default().add(self)
-                } else {
-                    removeAdsStackView.isHidden = true
-                }
+                removeAdsStackView.isHidden = true
             }
         }
     }
@@ -233,22 +229,22 @@ extension SettingsViewController: SKPaymentTransactionObserver {
         for transcation in transactions {
             switch transcation.transactionState {
             case .purchased:
-                SKPaymentQueue.default().finishTransaction(transcation)
                 UserDefaults.hasRemovedAds = true
                 removeAdsButton.isEnabled = false
-                removeAdsStackView.isUserInteractionEnabled = false
                 transactionIndicator.stopAnimating()
-            case .restored:
                 SKPaymentQueue.default().finishTransaction(transcation)
-                if transcation.original?.transactionIdentifier == removeAdsIdentifier {
+            case .restored:
+                if transcation.original?.payment.productIdentifier == removeAdsIdentifier {
                     UserDefaults.hasRemovedAds = true
                     removeAdsButton.isEnabled = false
-                    removeAdsStackView.isUserInteractionEnabled = false
+                    transactionIndicator.stopAnimating()
+                } else {
+                    transactionInProgress = false
                 }
-                transactionIndicator.stopAnimating()
-            case .failed:
                 SKPaymentQueue.default().finishTransaction(transcation)
+            case .failed:
                 transactionInProgress = false
+                SKPaymentQueue.default().finishTransaction(transcation)
             default:
                 break
             }
