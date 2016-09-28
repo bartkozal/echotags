@@ -139,7 +139,6 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o5a-bZ-L6I">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yg-0a-DaX" customClass="GADNativeExpressAdView">
-                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="ZCG-IA-FeX"/>
                                         </constraints>
@@ -212,7 +211,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
                             <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
