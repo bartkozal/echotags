@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HOl-Oj-aVS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HOl-Oj-aVS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -136,18 +136,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o5a-bZ-L6I">
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yg-0a-DaX" customClass="GADNativeExpressAdView">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="ZCG-IA-FeX"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hue-2G-3ru" customClass="MGLMapView">
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hue-2G-3ru" customClass="MGLMapView">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mvg-zy-PQh">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUT HEADPHONES ON." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHU-jl-Ov8">
@@ -214,19 +205,18 @@
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mvg-zy-PQh" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="DYY-VY-WFC"/>
+                            <constraint firstItem="hue-2G-3ru" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="EbU-Tr-IgP"/>
                             <constraint firstItem="J2k-nZ-1nI" firstAttribute="centerX" secondItem="QQ3-hm-Opb" secondAttribute="centerX" id="Esh-Lx-9N0"/>
-                            <constraint firstAttribute="trailing" secondItem="o5a-bZ-L6I" secondAttribute="trailing" id="FNz-5w-IAr"/>
                             <constraint firstAttribute="bottom" secondItem="J2k-nZ-1nI" secondAttribute="bottom" constant="8" id="H4T-lp-n4Y"/>
-                            <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="hue-2G-3ru" secondAttribute="top" constant="15" id="KB3-fg-qDK"/>
-                            <constraint firstItem="o5a-bZ-L6I" firstAttribute="leading" secondItem="QQ3-hm-Opb" secondAttribute="leading" id="KBK-FL-aZW"/>
-                            <constraint firstItem="o5a-bZ-L6I" firstAttribute="top" secondItem="QQ3-hm-Opb" secondAttribute="top" id="aT9-Uo-FE9"/>
-                            <constraint firstAttribute="bottom" secondItem="o5a-bZ-L6I" secondAttribute="bottom" id="gje-fl-HgQ"/>
+                            <constraint firstItem="hue-2G-3ru" firstAttribute="top" secondItem="h9P-oE-CXM" secondAttribute="bottom" id="JKm-xu-rXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="hue-2G-3ru" secondAttribute="trailing" id="MhV-pH-0cn"/>
+                            <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="hue-2G-3ru" secondAttribute="bottom" id="jt7-Rj-dIS"/>
+                            <constraint firstItem="Mvg-zy-PQh" firstAttribute="top" secondItem="hue-2G-3ru" secondAttribute="top" constant="15" id="uC8-Dq-7o4"/>
                             <constraint firstAttribute="trailing" secondItem="bAp-co-Ihh" secondAttribute="trailing" constant="10" id="vPF-hp-Pmb"/>
                             <constraint firstItem="MAh-qW-QRa" firstAttribute="top" secondItem="bAp-co-Ihh" secondAttribute="bottom" constant="58" id="wdK-pm-cnq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adView" destination="8Yg-0a-DaX" id="6sx-Nj-OcS"/>
                         <outlet property="directionButton" destination="bAp-co-Ihh" id="n1w-qs-wfd"/>
                         <outlet property="mapView" destination="hue-2G-3ru" id="wZ3-C4-zFA"/>
                         <outlet property="navigationButton" destination="J2k-nZ-1nI" id="mGQ-D2-jPe"/>
@@ -433,50 +423,6 @@
                                                             <action selector="touchResetVisitedButton:" destination="Xi3-nm-dYf" eventType="touchUpInside" id="uq5-ea-9wj"/>
                                                         </connections>
                                                     </button>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="my2-VV-dqv">
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eA0-YW-gfw" customClass="RoundedButton" customModule="echotags" customModuleProvider="target">
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="260" id="W49-d9-uvs"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
-                                                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                                <state key="normal" title="Permanently remove ads" image="icon-pricetag">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </state>
-                                                                <state key="disabled" image="icon-pricetag-active">
-                                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.2156862745" green="0.26274509800000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="5"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="W49-d9-uvs"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="touchRemoveAdsButton" destination="Xi3-nm-dYf" eventType="touchUpInside" id="YxA-ve-XRz"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX6-z8-Smy">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Restore your in-app purchases.">
-                                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="touchRestorePurchasesButton" destination="Xi3-nm-dYf" eventType="touchUpInside" id="AGk-Uj-lR3"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="260" id="KdK-fR-VGr"/>
@@ -488,10 +434,6 @@
                                                     </mask>
                                                 </variation>
                                             </stackView>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AAm-9l-eU9">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </activityIndicatorView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wr7-ql-r4K">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TELL YOUR FRIENDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQd-b5-9VQ">
@@ -532,7 +474,6 @@
                                             <constraint firstAttribute="trailing" secondItem="kwP-4F-CHP" secondAttribute="trailing" constant="62" id="T1n-F6-hrp"/>
                                             <constraint firstItem="Y6m-Ta-1Vp" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" id="TdD-vb-yXd"/>
                                             <constraint firstAttribute="height" constant="612" id="Vss-ql-13V"/>
-                                            <constraint firstItem="AAm-9l-eU9" firstAttribute="centerY" secondItem="my2-VV-dqv" secondAttribute="centerY" id="WmR-rr-BJ4"/>
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="X0d-gX-RI4"/>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="ZgD-0R-Jih"/>
                                             <constraint firstAttribute="trailing" secondItem="wr7-ql-r4K" secondAttribute="trailing" id="ZgR-Bz-cWK"/>
@@ -547,7 +488,6 @@
                                             <constraint firstItem="hCt-65-i1m" firstAttribute="leading" secondItem="S4C-Jq-KN2" secondAttribute="leading" constant="15" id="sQ0-BE-09d"/>
                                             <constraint firstItem="PRD-sG-6ZS" firstAttribute="top" secondItem="hPI-pe-HGu" secondAttribute="bottom" constant="20" id="xZ7-83-ciM"/>
                                             <constraint firstAttribute="trailing" secondItem="Y6m-Ta-1Vp" secondAttribute="trailing" id="ymM-di-mfJ"/>
-                                            <constraint firstItem="AAm-9l-eU9" firstAttribute="centerX" secondItem="my2-VV-dqv" secondAttribute="centerX" id="zws-Wu-bYO"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -631,12 +571,9 @@
                         <outlet property="downloadMapButton" destination="2oX-u6-QtM" id="UNK-7S-NjX"/>
                         <outlet property="overlayButton" destination="arE-04-u5z" id="EbP-oj-KTa"/>
                         <outlet property="overlayView" destination="KQL-jL-fWV" id="iaQ-4A-5ST"/>
-                        <outlet property="removeAdsButton" destination="eA0-YW-gfw" id="sI6-uU-wkB"/>
-                        <outlet property="removeAdsStackView" destination="my2-VV-dqv" id="UbB-A5-2Zs"/>
                         <outlet property="resetVisitedButton" destination="l7G-qt-dHu" id="oC4-1X-3M9"/>
                         <outlet property="settingsScrollView" destination="Myz-WO-kb8" id="QRl-Wd-7AE"/>
                         <outlet property="settingsView" destination="S4C-Jq-KN2" id="qbU-bK-Sfp"/>
-                        <outlet property="transactionIndicator" destination="AAm-9l-eU9" id="6j3-Zz-ZoU"/>
                         <segue destination="Aoj-DM-LQ6" kind="unwind" identifier="unwindToMap" unwindAction="unwindToMapViewController:" id="ZBM-oy-Ddr"/>
                     </connections>
                 </viewController>
@@ -657,8 +594,6 @@
         <image name="icon-navigation-tutorial" width="211" height="211"/>
         <image name="icon-place" width="20" height="20"/>
         <image name="icon-place-active" width="20" height="20"/>
-        <image name="icon-pricetag" width="20" height="20"/>
-        <image name="icon-pricetag-active" width="20" height="20"/>
         <image name="icon-settings" width="19" height="15"/>
         <image name="icon-settings-active" width="19" height="15"/>
         <image name="icon-twitter" width="20" height="20"/>

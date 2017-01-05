@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A11297241D969FF500B0AE72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A11297231D969FF500B0AE72 /* GoogleService-Info.plist */; };
-		A11297261D96A00100B0AE72 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11297251D96A00100B0AE72 /* GoogleMobileAds.framework */; };
-		A11297281D96AA1400B0AE72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11297271D96AA1300B0AE72 /* StoreKit.framework */; };
 		A1187E181D12EA33007F964E /* OfflineMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E171D12EA33007F964E /* OfflineMap.swift */; };
 		A1187E1A1D12F34B007F964E /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1187E191D12F34B007F964E /* Queries.swift */; };
 		A1293DFE1D19863000150DDA /* OfflinePack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1293DFD1D19863000150DDA /* OfflinePack.swift */; };
@@ -61,9 +58,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A11297231D969FF500B0AE72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A11297251D96A00100B0AE72 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		A11297271D96AA1300B0AE72 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A1187E171D12EA33007F964E /* OfflineMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineMap.swift; sourceTree = "<group>"; };
 		A1187E191D12F34B007F964E /* Queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
 		A11941BD1CE6868600B4D280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -110,8 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A11297261D96A00100B0AE72 /* GoogleMobileAds.framework in Frameworks */,
-				A11297281D96AA1400B0AE72 /* StoreKit.framework in Frameworks */,
 				A17BE7091D2582430083E501 /* Social.framework in Frameworks */,
 				A14C2D381D9407A300331D20 /* Mapbox.framework in Frameworks */,
 				A14C2D461D940C2700331D20 /* BEMCheckBox.framework in Frameworks */,
@@ -149,7 +141,6 @@
 		A14C2D3B1D9407CA00331D20 /* Embedded Binaries */ = {
 			isa = PBXGroup;
 			children = (
-				A11297251D96A00100B0AE72 /* GoogleMobileAds.framework */,
 				A14C2D371D9407A300331D20 /* Mapbox.framework */,
 			);
 			name = "Embedded Binaries";
@@ -218,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				A1F2A0EB1CE2030000593EB0 /* Info.plist */,
-				A11297231D969FF500B0AE72 /* GoogleService-Info.plist */,
 				A17BE7061D2550490083E501 /* Settings.bundle */,
 				A1F2A0E31CE2030000593EB0 /* Main.storyboard */,
 				A1F2A0E81CE2030000593EB0 /* LaunchScreen.storyboard */,
@@ -237,7 +227,6 @@
 		C162163EB18D2D04A0F90692 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A11297271D96AA1300B0AE72 /* StoreKit.framework */,
 				A14C2D491D94148C00331D20 /* RealmSwift.framework */,
 				A14C2D471D94148800331D20 /* Realm.framework */,
 				A14C2D451D940C2700331D20 /* BEMCheckBox.framework */,
@@ -290,7 +279,7 @@
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -323,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A17BE7071D2550490083E501 /* Settings.bundle in Resources */,
-				A11297241D969FF500B0AE72 /* GoogleService-Info.plist in Resources */,
 				A1F2A0EA1CE2030000593EB0 /* LaunchScreen.storyboard in Resources */,
 				A177D62D1CFB9AE800B0E11A /* DB.realm in Resources */,
 				A1B7B24C1CFE1903006171D5 /* Audio.xcassets in Resources */,

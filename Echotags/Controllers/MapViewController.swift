@@ -8,7 +8,6 @@
 
 import UIKit
 import Mapbox
-import GoogleMobileAds
 
 class MapViewController: UIViewController {
     fileprivate var firstRequest = false
@@ -31,13 +30,6 @@ class MapViewController: UIViewController {
     }
     
     @IBOutlet private weak var directionButton: UIButton!
-    @IBOutlet weak var adView: GADNativeExpressAdView! {
-        didSet {
-            if UserDefaults.hasRemovedAds {
-                adView.isHidden = true
-            }
-        }
-    }
     
     private var directing: Bool {
         get {
@@ -125,15 +117,6 @@ class MapViewController: UIViewController {
             name: NSNotification.Name.UIApplicationDidBecomeActive,
             object: nil
         )
-
-        if !UserDefaults.hasRemovedAds {
-            let request = GADRequest()
-            request.testDevices = [kGADSimulatorID]
-
-            adView.adUnitID = "ca-app-pub-7534465000462120/3993390694"
-            adView.rootViewController = self
-            adView.load(request)
-        }
         
         geofencing.manager.delegate = self
     }
