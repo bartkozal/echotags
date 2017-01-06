@@ -179,13 +179,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-nZ-1nI" customClass="OvalButton" customModule="echotags" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-nZ-1nI" customClass="DiscoveryButton" customModule="echotags" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.65490196078431373" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="0Fk-d2-CTd"/>
                                     <constraint firstAttribute="width" constant="69" id="7Iv-k8-pWz"/>
                                 </constraints>
-                                <state key="normal" image="icon-navigation"/>
-                                <state key="selected" image="icon-navigation-active"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="START"/>
+                                <state key="selected" title="STOP"/>
                                 <connections>
                                     <action selector="touchNavigationButton" destination="NdK-S1-o1x" eventType="touchUpInside" id="nrJ-HK-SJ6"/>
                                 </connections>
@@ -589,8 +591,6 @@
         <image name="icon-download" width="17" height="20"/>
         <image name="icon-download-active" width="17" height="20"/>
         <image name="icon-facebook" width="20" height="20"/>
-        <image name="icon-navigation" width="43" height="43"/>
-        <image name="icon-navigation-active" width="43" height="43"/>
         <image name="icon-navigation-tutorial" width="211" height="211"/>
         <image name="icon-place" width="20" height="20"/>
         <image name="icon-place-active" width="20" height="20"/>

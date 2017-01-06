@@ -35,8 +35,9 @@
 		A1CE0D361D3F8F490048B070 /* SettingsPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE0D351D3F8F490048B070 /* SettingsPresentAnimationController.swift */; };
 		A1CE0D381D3F941D0048B070 /* SettingsDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE0D371D3F941D0048B070 /* SettingsDismissAnimationController.swift */; };
 		A1DE1BC91D467401005783F3 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE1BC81D467401005783F3 /* OvalButton.swift */; };
-		A1DE1BCB1D467694005783F3 /* UIColor+brandColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE1BCA1D467694005783F3 /* UIColor+brandColor.swift */; };
+		A1DE1BCB1D467694005783F3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE1BCA1D467694005783F3 /* Colors.swift */; };
 		A1E285951CE342E600DC3ACD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E285941CE342E600DC3ACD /* SettingsViewController.swift */; };
+		A1EE51B11E1F1D0A00F583A3 /* DiscoveryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE51B01E1F1D0A00F583A3 /* DiscoveryButton.swift */; };
 		A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */; };
 		A1F2A0E51CE2030000593EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A0E31CE2030000593EB0 /* Main.storyboard */; };
 		A1F2A0E71CE2030000593EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F2A0E61CE2030000593EB0 /* Assets.xcassets */; };
@@ -89,8 +90,9 @@
 		A1CE0D351D3F8F490048B070 /* SettingsPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresentAnimationController.swift; sourceTree = "<group>"; };
 		A1CE0D371D3F941D0048B070 /* SettingsDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDismissAnimationController.swift; sourceTree = "<group>"; };
 		A1DE1BC81D467401005783F3 /* OvalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
-		A1DE1BCA1D467694005783F3 /* UIColor+brandColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+brandColor.swift"; sourceTree = "<group>"; };
+		A1DE1BCA1D467694005783F3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A1E285941CE342E600DC3ACD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A1EE51B01E1F1D0A00F583A3 /* DiscoveryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryButton.swift; sourceTree = "<group>"; };
 		A1F2A0DC1CE2030000593EB0 /* echotags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echotags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F2A0DF1CE2030000593EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1F2A0E41CE2030000593EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,10 +181,11 @@
 				A1363C121CF731C3000D5C92 /* CategoryView.swift */,
 				A1363C141CF7363B000D5C92 /* CategoryView.xib */,
 				A1DE1BC81D467401005783F3 /* OvalButton.swift */,
+				A1EE51B01E1F1D0A00F583A3 /* DiscoveryButton.swift */,
 				A1910A6E1D3EBBDC000C3B8E /* RoundedButton.swift */,
 				A1CE0D371D3F941D0048B070 /* SettingsDismissAnimationController.swift */,
 				A1CE0D351D3F8F490048B070 /* SettingsPresentAnimationController.swift */,
-				A1DE1BCA1D467694005783F3 /* UIColor+brandColor.swift */,
+				A1DE1BCA1D467694005783F3 /* Colors.swift */,
 			);
 			name = Views;
 			path = ../Echotags/Views;
@@ -351,9 +354,10 @@
 				A16ACB091CFC77500009C5CE /* Alert.swift in Sources */,
 				A16ACB0B1CFC7A5D0009C5CE /* Geofencing.swift in Sources */,
 				A1650A581CF220700010765D /* Schema.swift in Sources */,
+				A1EE51B11E1F1D0A00F583A3 /* DiscoveryButton.swift in Sources */,
 				A1CE0D381D3F941D0048B070 /* SettingsDismissAnimationController.swift in Sources */,
 				A19FDFD81CF381E800BC54D0 /* Database.swift in Sources */,
-				A1DE1BCB1D467694005783F3 /* UIColor+brandColor.swift in Sources */,
+				A1DE1BCB1D467694005783F3 /* Colors.swift in Sources */,
 				A1363C131CF731C3000D5C92 /* CategoryView.swift in Sources */,
 				A1187E1A1D12F34B007F964E /* Queries.swift in Sources */,
 				A1F2A0E01CE2030000593EB0 /* AppDelegate.swift in Sources */,
