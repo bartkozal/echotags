@@ -3,7 +3,6 @@
 //  echotags
 //
 //  Created by bkzl on 01/06/16.
-//  Copyright © 2016 bkzl. All rights reserved.
 //
 
 import UIKit

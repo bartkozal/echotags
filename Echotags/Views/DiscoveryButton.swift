@@ -3,7 +3,6 @@
 //  echotags
 //
 //  Created by bkzl on 06/01/2017.
-//  Copyright © 2017 Bartłomiej Kozal. All rights reserved.
 //
 
 import UIKit

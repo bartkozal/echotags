@@ -3,7 +3,6 @@
 //  Echotags
 //
 //  Created by bkzl on 16/06/16.
-//  Copyright © 2016 Bartłomiej Kozal. All rights reserved.
 //
 
 import CoreLocation
